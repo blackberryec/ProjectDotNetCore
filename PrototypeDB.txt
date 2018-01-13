@@ -3,6 +3,7 @@ Product Category
 	Alias
 	Name
 	ParentId
+	Image
 	Seo
 	CreatedDate,
 	SortingOrder
@@ -15,17 +16,29 @@ Product
 	Seo
 	CategoryId
 	CreatedDate,
+	Color
+	Sold,
 	Status,
 	Image,
 	Price
 	PromotionPrice,
 	Quantity,
+	Star
 	Description
 	Content,
 	HotFlg,
 	NewFlg
 	Status
 	
+Reviews
+	Id,
+	Name
+	Contents
+	Price
+	Value
+	Quality
+	Star
+	ShowIndex
 
 Bill
 	CustomerId,
@@ -35,6 +48,29 @@ Bill
 	CustomerEmail,
 	BillDate,
 	Status
+	
+ShippingInfo
+	BillId
+	Name
+	Address
+	Phone
+
+ShippingServices
+	Id
+	Name
+	Content
+	Price
+
+Payment
+	Id
+	Name
+	Type
+
+PaymentInfo
+	Id
+	Name
+	Money
+	CreditCard
 
 BillDetail
 	BillId,
@@ -42,18 +78,44 @@ BillDetail
 	Quantity,
 	Price
 
+Services
+	Id
+	Name
+	Content
+	Image
+
 User
 UserRole
 Role
+
+Blog Category
+	Id
+	Alias
+	Name
+	ParentId
+	Seo
+	SortingOrder
+	Status
 
 Blog
 	Id
 	Name
 	Seo,
 	Description,
+	Time,
 	Content,
 	Image,
-	Status
+	Status,
+	View,
+	Reviews,
+
+Comment
+	Id
+	Name
+	Time
+	Content
+	Avatar
+
 Menu
 	Id
 	Name
@@ -75,10 +137,14 @@ Slide
 AdvertisementPage
 	Id
 	Name
+	Image
+	Url
+
 AdvertisementPosition
 	Id
 	PageId
 	Name
+
 Advertisement
 	PositionId
 	Image
@@ -91,9 +157,17 @@ Brand
 	Image
 	Status
 
-Footer
+FooterInfo
 	Id
-	Content
+	Name
+	Status
+
+FooterInfoSub
+	Id
+	Name
+	Url
+	Image
+
 
 Language
 	Id
@@ -103,9 +177,11 @@ Language
 ProductTag
 	ProductId
 	TagId
+
 BlogTag
 	BlogId
 	TagId
+
 Tag
 	Id
 	Name
@@ -140,3 +216,17 @@ SystemConfig
 	Value2
 	Value3
 	Value4
+Announcement
+AnnouncementUser
+
+Size
+
+ProductSize
+ProductColor
+ProductQuantity
+ProductImage
+
+Function
+WholePrice
+
+Permission
