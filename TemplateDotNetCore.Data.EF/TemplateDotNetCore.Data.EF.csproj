@@ -9,6 +9,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TemplateDotNetCore.Data\TemplateDotNetCore.Data.csproj" />
     <ProjectReference Include="..\TemplateDotNetCore.Infrastucture\TemplateDotNetCore.Infrastucture.csproj" />
     <ProjectReference Include="..\TemplateDotNetCore.Utilities\TemplateDotNetCore.Utilities.csproj" />

@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using TemplateDotNetCore.Data.Enums;
 using TemplateDotNetCore.Data.Interfaces;
 using TemplateDotNetCore.Infrastucture.SharedKernel;
 
 namespace TemplateDotNetCore.Data.Entities
 {
-    public class ProductCategory : DomainEntity<int>, IHasSeoMetaData, IHasStatus, IMultiLanguage, IHasTag,IDateTracking
+    [Table("ProductCategories")]
+    public class ProductCategory : DomainEntity<int>, IHasSeoMetaData, IHasStatus, IMultiLanguage, IHasTag,IDateTracking, ISortable
     {
         public ProductCategory()
         {
@@ -29,5 +31,6 @@ namespace TemplateDotNetCore.Data.Entities
         */
         public virtual ICollection<Product> Products { set; get; }
 
+        public int SortOrder { get; set; }
     }
 }

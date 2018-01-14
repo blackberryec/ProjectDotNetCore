@@ -8,7 +8,7 @@ using TemplateDotNetCore.Infrastucture.SharedKernel;
 
 namespace TemplateDotNetCore.Data.Entities
 {
-    public class Product : DomainEntity<int>, IHasStatus, IDateTracking, IHasSeoMetaData, IBasicInfo, IHasPrice,IHasStatusFlag, IHasTag, IMultiLanguage
+    public class Product : DomainEntity<int>, IHasStatus, IDateTracking, IHasSeoMetaData, IBasicInfo, IHasPrice,IHasStatusFlag, IHasTag, IMultiLanguage, IHasGuarantee
     {
         public Status Status { get; set; }
 
@@ -62,5 +62,8 @@ namespace TemplateDotNetCore.Data.Entities
         public string Tags { get; set; }
 
         public int LanguageId { get; set; }
+        public DateTime PurchaseTime { get; set; }
+        public DateTime ErrorTime { get; set; }
+        public int Warranty { get; set; }
     }
 }
