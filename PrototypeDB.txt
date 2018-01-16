@@ -30,60 +30,7 @@ Product
 	NewFlg
 	Status
 	
-Reviews
-	Id,
-	Name
-	Contents
-	Price
-	Value
-	Quality
-	Star
-	ShowIndex
-
-Bill
-	CustomerId,
-	CustomerName,
-	CustomerAddress,
-	CustomerPhone,
-	CustomerEmail,
-	BillDate,
-	Status
 	
-ShippingInfo
-	BillId
-	Name
-	Address
-	Phone
-
-ShippingServices
-	Id
-	Name
-	Content
-	Price
-
-Payment
-	Id
-	Name
-	Type
-
-PaymentInfo
-	Id
-	Name
-	Money
-	CreditCard
-
-BillDetail
-	BillId,
-	ProductId,
-	Quantity,
-	Price
-
-Services
-	Id
-	Name
-	Content
-	Image
-
 User
 UserRole
 Role
@@ -230,3 +177,61 @@ Function
 WholePrice
 
 Permission
+
+
+
+/// Thinh
+
+Reviews
+		Id,
+		Name
+		Contents
+		Price
+		Value
+		Quality
+		Star
+		ShowIndex
+
+	Bill
+		CustomerId,
+		CustomerName,
+		CustomerAddress,
+		CustomerPhone,
+		CustomerEmail,
+		BillDate,
+		Status
+		
+	ShippingInfo
+		BillId
+		Name
+		Address
+		Phone
+
+	ShippingServices
+		Id
+		Name
+		Content
+		Price
+
+	Payment
+		Id
+		Name
+		Type
+
+	PaymentInfo
+		Id
+		Name
+		Money
+		CreditCard
+
+	BillDetail
+		BillId,
+		ProductId,
+		Quantity,
+		Price
+
+	Services
+		Id
+		Name
+		Content
+		Image
