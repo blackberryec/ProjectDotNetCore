@@ -5,5 +5,7 @@
         bool? HomeFlag { get; set; }
 
         bool? HotFlag { get; set; }
+
+        bool? NewFlag { get; set; }
     }
 }

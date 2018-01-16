@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -10,13 +10,18 @@ namespace TemplateDotNetCore.Data.Entities
 {
     public class Product : DomainEntity<int>, IHasStatus, IDateTracking, IHasSeoMetaData, IBasicInfo, IHasPrice,IHasStatusFlag, IHasTag, IMultiLanguage, IHasGuarantee
     {
+
         public Status Status { get; set; }
 
         public DateTime DateCreated { get; set; }
 
+        public decimal Sold { get; set; }
+
         public DateTime DateModified { get; set; }
 
         public string Color { get; set; }
+
+        public string Image { get; set; }
 
         public string Size { get; set; }
 
@@ -57,13 +62,24 @@ namespace TemplateDotNetCore.Data.Entities
         public bool? HomeFlag { get; set; }
 
         public bool? HotFlag { get; set; }
+        public bool? NewFlag { get; set; }
 
         [StringLength(255)]
         public string Tags { get; set; }
 
         public int LanguageId { get; set; }
+
         public DateTime PurchaseTime { get; set; }
+
         public DateTime ErrorTime { get; set; }
+
         public int Warranty { get; set; }
+
+        public double Quantity { get; set; }
+
+        public int Star { get; set; }
+
+        [ForeignKey("CategoryId")]
+        public virtual ProductCategory ProductCategory { set; get; }
     }
 }
