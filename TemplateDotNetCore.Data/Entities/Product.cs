@@ -1,5 +1,7 @@
 ﻿    using System;
-using System.ComponentModel;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using TemplateDotNetCore.Data.Enums;
@@ -81,5 +83,12 @@ namespace TemplateDotNetCore.Data.Entities
 
         [ForeignKey("CategoryId")]
         public virtual ProductCategory ProductCategory { set; get; }
+
+        public virtual ICollection<ProductTag> ProductTags { set; get; }
+
+        public Product()
+        {
+            ProductTags = new List<ProductTag>();
+        }
     }
 }

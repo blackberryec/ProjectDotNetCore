@@ -40,6 +40,7 @@ namespace TemplateDotNetCore.Data.Entities
             Status = status;
             CustomerId = customerId;
         }
+
         [Required]
         [MaxLength(256)]
         public string CustomerName { set; get; }

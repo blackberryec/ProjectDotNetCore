@@ -18,7 +18,7 @@ namespace TemplateDotNetCore.Data.Entities
         [MaxLength(256)]
         public string Image { set; get; }
 
-        [MaxLength(500)]
+        [MaxLength(5000)]
         public string Description { set; get; }
 
         public string Content { set; get; }
