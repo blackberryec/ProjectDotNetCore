@@ -21,6 +21,7 @@ namespace TemplateDotNetCore.Data.Entities
         public string Alias { set; get; }
 
         public string Content { set; get; }
+
         public Status Status { set; get; }
     }
 }
