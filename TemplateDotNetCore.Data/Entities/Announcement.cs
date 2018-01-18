@@ -29,9 +29,13 @@ namespace TemplateDotNetCore.Data.Entities
         [ForeignKey("UserId")]
         public virtual AppUser AppUser { get; set; }
 
-        public virtual ICollection<AnnouncementUser> AnnouncementUsers { get; set; }
         public DateTime DateCreated { set; get; }
+
         public DateTime DateModified { set; get; }
+
         public Status Status { set; get; }
+
+        public virtual ICollection<AnnouncementUser> AnnouncementUsers { get; set; }
+
     }
 }

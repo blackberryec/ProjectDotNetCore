@@ -43,18 +43,21 @@ namespace TemplateDotNetCore.Data.Entities
 
         public DateTime DateModified { get; set; }
 
-        /*
-         Sử dụng ICollection thay cho IEnumerable vì enum chỉ có thể đọc, 
-         Collection ta có thể điều chỉnh va khi sử dụng Collection entity có thể null,
-         khắc phục bằng cách tạo mới entity đó ở contructor 
-        */
-        public virtual ICollection<Product> Products { set; get; }
 
         public int SortOrder { get; set; }
 
         public bool? HomeFlag { get; set; }
 
         public bool? HotFlag { get; set; }
+
         public bool? NewFlag { get; set; }
+
+
+        /*
+         Sử dụng ICollection thay cho IEnumerable vì enum chỉ có thể đọc, 
+         Collection ta có thể điều chỉnh va khi sử dụng Collection entity có thể null,
+         khắc phục bằng cách tạo mới entity đó ở contructor 
+        */
+        public virtual ICollection<Product> Products { set; get; }
     }
 }

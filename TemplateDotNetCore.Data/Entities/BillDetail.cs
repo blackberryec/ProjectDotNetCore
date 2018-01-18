@@ -29,6 +29,7 @@ namespace TemplateDotNetCore.Data.Entities
             ColorId = colorId;
             SizeId = sizeId;
         }
+
         public int BillId { set; get; }
 
         public int ProductId { set; get; }
