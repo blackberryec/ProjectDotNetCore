@@ -4,7 +4,7 @@
     {
         public T Id { get; set; }
 
-        //True if domain entity has an identity
+        //True if domain entity had set Type
         public bool IsTransient()
         {
             return Id.Equals(default(T));

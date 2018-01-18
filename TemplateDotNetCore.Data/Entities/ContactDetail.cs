@@ -9,7 +9,7 @@ using TemplateDotNetCore.Infrastucture.SharedKernel;
 namespace TemplateDotNetCore.Data.Entities
 {
     [Table("ContactDetails")]
-    public class Contact : DomainEntity<string>
+    public class ContactDetail : DomainEntity<string>
     {
 
         [StringLength(250)]
