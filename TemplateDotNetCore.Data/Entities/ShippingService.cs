@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using TemplateDotNetCore.Infrastucture.SharedKernel;
 
 namespace TemplateDotNetCore.Data.Entities
 {
-    public class ShippingServices : DomainEntity<int>
+    [Table("ShippingServices")]
+    public class ShippingService : DomainEntity<int>
     {
         [StringLength(255)]
         [Required]

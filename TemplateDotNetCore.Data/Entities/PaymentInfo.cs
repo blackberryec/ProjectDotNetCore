@@ -8,6 +8,7 @@ using TemplateDotNetCore.Infrastucture.SharedKernel;
 
 namespace TemplateDotNetCore.Data.Entities
 {
+    [Table("PaymentInfos")]
     public class PaymentInfo : DomainEntity<int>
     {
         [ForeignKey("PaymentId")]

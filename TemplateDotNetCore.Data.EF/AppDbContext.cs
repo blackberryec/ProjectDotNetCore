@@ -38,12 +38,18 @@ namespace TemplateDotNetCore.Data.EF
         public DbSet<Function> Functions { get; set; }
         public DbSet<Language> Languages { set; get; }
         public DbSet<Page> Pages { set; get; }
+        public DbSet<Payment> Payments { get; set; }
+        public DbSet<PaymentInfo> PaymentInfos { get; set; }
         public DbSet<Permission> Permissions { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<ProductTag> ProductTags { get; set; }
         public DbSet<ProductImage> ProductImages { set; get; }
         public DbSet<ProductQuantity> ProductQuantities { set; get; }
+        public DbSet<Review> Reviews { get; set; }
+        public DbSet<Service> Services { get; set; }
+        public DbSet<ShippingInfo> ShippingInfos { get; set; }
+        public DbSet<ShippingService> ShippingServices { get; set; }
         public DbSet<Size> Sizes { set; get; }
         public DbSet<Slide> Slides { set; get; }
         public DbSet<SystemConfig> SystemConfigs { get; set; }

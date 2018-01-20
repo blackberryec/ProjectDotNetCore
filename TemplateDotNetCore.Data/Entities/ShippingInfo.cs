@@ -7,7 +7,7 @@ using TemplateDotNetCore.Infrastucture.SharedKernel;
 
 namespace TemplateDotNetCore.Data.Entities
 {
-    [Table("ShippingInfo")]
+    [Table("ShippingInfos")]
     public class ShippingInfo : DomainEntity<int>
     {
         [ForeignKey("BillId")]
