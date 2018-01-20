@@ -1,7 +1,7 @@
-﻿    using System;
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.ComponentModel;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using TemplateDotNetCore.Data.Enums;
@@ -10,7 +10,8 @@ using TemplateDotNetCore.Infrastucture.SharedKernel;
 
 namespace TemplateDotNetCore.Data.Entities
 {
-    public class Product : DomainEntity<int>, IHasStatus, IDateTracking, IHasSeoMetaData, IBasicInfo, IHasPrice,IHasStatusFlag, IHasTag, IMultiLanguage, IHasGuarantee
+    [Table("Products")]
+    public class Product : DomainEntity<int>, IHasStatus, IDateTracking, IHasSeoMetaData, IBasicInfo, IHasPrice, IHasStatusFlag, IHasTag, IMultiLanguage, IHasGuarantee
     {
 
         public Status Status { get; set; }
@@ -29,7 +30,7 @@ namespace TemplateDotNetCore.Data.Entities
 
         public string SeoPageTitle { get; set; }
 
-        [Column(TypeName ="varchar")]
+        [Column(TypeName = "varchar")]
         [StringLength(255)]
         public string SeoAlias { get; set; }
 

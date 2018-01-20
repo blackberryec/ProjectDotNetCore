@@ -23,30 +23,22 @@ namespace TemplateDotNetCore.Data.EF
         public DbSet<Announcement> Announcements { set; get; }
         public DbSet<AnnouncementUser> AnnouncementUsers { set; get; }
         public DbSet<AppRole> AppRoles { get; set; }
-
         public DbSet<AppUser> AppUsers { get; set; }
         public DbSet<Blog> Bills { set; get; }
         public DbSet<BillDetail> BillDetails { set; get; }
-
         public DbSet<Blog> Blogs { set; get; }
-
         public DbSet<BlogCategory> BlogCategories { set; get; }
-
         public DbSet<BlogTag> BlogTags { set; get; }
-
+        public DbSet<Brand> Brands { set; get; }
         public DbSet<Color> Colors { set; get; }
         public DbSet<ContactDetail> Contacts { set; get; }
         public DbSet<Feedback> Feedbacks { set; get; }
-
+        public DbSet<FooterInfo> FooterInfos { get; set; }
+        public DbSet<FooterInfoSub> FooterInfoSubs { get; set; }
         public DbSet<Function> Functions { get; set; }
-
         public DbSet<Language> Languages { set; get; }
-
         public DbSet<Page> Pages { set; get; }
-
         public DbSet<Permission> Permissions { get; set; }
-
-
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<ProductTag> ProductTags { get; set; }
@@ -55,7 +47,6 @@ namespace TemplateDotNetCore.Data.EF
         public DbSet<Size> Sizes { set; get; }
         public DbSet<Slide> Slides { set; get; }
         public DbSet<SystemConfig> SystemConfigs { get; set; }
-
         public DbSet<Tag> Tags { get; set; }
         public DbSet<WholePrice> WholePrices { get; set; }
 

@@ -50,13 +50,13 @@ namespace TemplateDotNetCore.Data.Entities
         public string SeoDescription { set; get; }
 
         [Required]
-        public int CategoryId { get; set; }
+        public int BlogId { get; set; }
 
         public double Views { get; set; }
 
         public double Reviews { get; set; }
 
-        [ForeignKey("CategoryId")]
-        public virtual ProductCategory ProductCategory { set; get; }
+        [ForeignKey("BlogId")]
+        public virtual BlogCategory BlogCategory { set; get; }
     }
 }

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using TemplateDotNetCore.Data.Interfaces;
 using TemplateDotNetCore.Infrastucture.SharedKernel;
 
 namespace TemplateDotNetCore.Data.Entities
 {
+    [Table("Comments")]
     public class Comment : DomainEntity<Guid>, IHasOwner<int>, IBasicInfo
     {
         public int OwnerId { get; set; }

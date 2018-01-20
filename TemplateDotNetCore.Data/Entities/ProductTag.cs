@@ -5,6 +5,7 @@ using TemplateDotNetCore.Infrastucture.SharedKernel;
 
 namespace TemplateDotNetCore.Data.Entities
 {
+    [Table("ProductTags")]
     public class ProductTag : DomainEntity<int>
     {
         public int ProductId { get; set; }
