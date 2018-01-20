@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TemplateDotNetCore.Data.EF;
 using TemplateDotNetCore.Data.Entities;
+using AutoMapper;
 
 namespace TemplateDotNetCore
 {
@@ -29,11 +30,19 @@ namespace TemplateDotNetCore
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
 
-
+            // Add application services.
             services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
-            // Add application services.
             //services.AddTransient<IEmailSender, EmailSender>();
+
+            #region automapperconfig
+
+            services.AddSingleton(Mapper.Configuration);
+            services.AddScoped<IMapper>(sp =>
+                new Mapper(sp.GetRequiredService<AutoMapper.IConfigurationProvider>(), sp.GetService));
+
+            #endregion
+
             services.AddTransient<DbInitializer>();
 
             services.AddMvc();

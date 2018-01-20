@@ -15,6 +15,29 @@ namespace TemplateDotNetCore.Data.Entities
             Products = new List<Product>();
         }
 
+        public ProductCategory(string name, string discription,int? parentId, int? homeOrder, string image, string seoPageTitle, string seoAlias,string seoKeywords,string seoDescription,
+            Status status,int languageId, string tags, DateTime dateCreated, DateTime dateModified,int sortOrder, bool? homeFlag, bool? hotFlag, bool? newflag)
+        {
+            Name = name;
+            Discription = discription;
+            ParentId = parentId;
+            HomeOrder = homeOrder;
+            Image = image;
+            SeoPageTitle = seoPageTitle;
+            SeoAlias = seoAlias;
+            SeoKeywords = seoKeywords;
+            SeoDescription = seoDescription;
+            Status = status;
+            LanguageId = languageId;
+            Tags = tags;
+            DateCreated = dateCreated;
+            DateModified = dateModified;
+            SortOrder = sortOrder;
+            HomeFlag = homeFlag;
+            HotFlag = hotFlag;
+            NewFlag = newflag;
+        }
+
         public string Name { get; set; }
 
         public string Discription { get; set; }

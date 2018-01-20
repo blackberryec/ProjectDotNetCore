@@ -1,22 +1,13 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using TemplateDotNetCore.Data.Enums;
-using TemplateDotNetCore.Data.Interfaces;
-using TemplateDotNetCore.Infrastucture.SharedKernel;
 
-namespace TemplateDotNetCore.Data.Entities
+namespace TemplateDotNetCore.Application.ViewModels
 {
-    [Table("Products")]
-    public class Product : DomainEntity<int>, IHasStatus, IDateTracking, IHasSeoMetaData, IBasicInfo, IHasPrice, IHasStatusFlag, IHasTag, IMultiLanguage, IHasGuarantee
+    public class ProductViewModel
     {
-        public Product()
-        {
-            ProductTags = new List<ProductTag>();
-        }
+        public int Id { get; set; }
 
         public Status Status { get; set; }
 
@@ -34,7 +25,6 @@ namespace TemplateDotNetCore.Data.Entities
 
         public string SeoPageTitle { get; set; }
 
-        [Column(TypeName = "varchar")]
         [StringLength(255)]
         public string SeoAlias { get; set; }
 
@@ -86,10 +76,6 @@ namespace TemplateDotNetCore.Data.Entities
 
         public int Star { get; set; }
 
-        [ForeignKey("CategoryId")]
-        public virtual ProductCategory ProductCategory { set; get; }
-
-        public virtual ICollection<ProductTag> ProductTags { set; get; }
-
+        public virtual ProductCategoryViewModel ProductCategory { get; set; }
     }
 }
