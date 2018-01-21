@@ -7,6 +7,10 @@ using Microsoft.Extensions.DependencyInjection;
 using TemplateDotNetCore.Data.EF;
 using TemplateDotNetCore.Data.Entities;
 using AutoMapper;
+using TemplateDotNetCore.Application.Implementations;
+using TemplateDotNetCore.Application.Interfaces;
+using TemplateDotNetCore.Data.EF.Repositories;
+using TemplateDotNetCore.Data.IRepositories;
 
 namespace TemplateDotNetCore
 {
@@ -34,6 +38,7 @@ namespace TemplateDotNetCore
             services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
             //services.AddTransient<IEmailSender, EmailSender>();
+            services.AddTransient<DbInitializer>();
 
             #region automapperconfig
 
@@ -43,7 +48,9 @@ namespace TemplateDotNetCore
 
             #endregion
 
-            services.AddTransient<DbInitializer>();
+            services.AddTransient<IProductCategoryRepository, ProductCategoryRepository>();
+            services.AddTransient<IProductCategoryService, ProductCategoryService>();
+
 
             services.AddMvc();
         }
