@@ -79,7 +79,6 @@ namespace TemplateDotNetCore
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-            dbInitializer.Seed().Wait();
         }
     }
 }
