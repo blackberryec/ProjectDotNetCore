@@ -34,7 +34,7 @@ namespace TemplateDotNetCore.Data.Entities
 
         public string SeoPageTitle { get; set; }
 
-        [Column(TypeName = "varchar")]
+        [Column(TypeName = "varchar(255)")]
         [StringLength(255)]
         public string SeoAlias { get; set; }
 

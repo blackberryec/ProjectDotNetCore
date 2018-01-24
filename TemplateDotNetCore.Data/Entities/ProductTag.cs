@@ -10,8 +10,8 @@ namespace TemplateDotNetCore.Data.Entities
     {
         public int ProductId { get; set; }
 
-        [StringLength(50)]
-        [Column(TypeName = "varchar")]
+        [StringLength(255)]
+        [Column(TypeName = "varchar(255)")]
         public string TagId { set; get; }
 
         [ForeignKey("ProductId")]
