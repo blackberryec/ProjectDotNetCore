@@ -32,7 +32,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Components\" />
     <Folder Include="Data\Migrations\" />
   </ItemGroup>
 

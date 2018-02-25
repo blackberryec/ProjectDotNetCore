@@ -73,7 +73,8 @@ namespace TemplateDotNetCore
 
             services.AddTransient<IProductCategoryRepository, ProductCategoryRepository>();
             services.AddTransient<IProductCategoryService, ProductCategoryService>();
-
+            services.AddTransient<IFunctionRepository, FunctionRepository>();
+            services.AddTransient<IFunctionService, FunctionService>();
 
             services.AddMvc();
         }
