@@ -6,6 +6,7 @@
     "jquery": "~3.3.1",
     "jquery-validation": "~1.17.0",
     "jquery-validation-unobtrusive": "~3.2.6",
-    "notifyjs": "~0.4.2"
+    "notifyjs": "~0.4.2",
+    "mustache": "~2.3.0"
   }
 }

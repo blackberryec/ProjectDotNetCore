@@ -13,6 +13,7 @@ using TemplateDotNetCore.Utilities.Dtos;
 namespace TemplateDotNetCore.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
