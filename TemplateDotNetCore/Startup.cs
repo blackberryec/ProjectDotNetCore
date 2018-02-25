@@ -12,6 +12,7 @@ using TemplateDotNetCore.Application.Implementations;
 using TemplateDotNetCore.Application.Interfaces;
 using TemplateDotNetCore.Data.EF.Repositories;
 using TemplateDotNetCore.Data.IRepositories;
+using Microsoft.Extensions.Logging;
 
 namespace TemplateDotNetCore
 {
@@ -29,11 +30,12 @@ namespace TemplateDotNetCore
         {
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
-                o=>o.MigrationsAssembly("TemplateDotNetCore.Data.EF")));
+                o => o.MigrationsAssembly("TemplateDotNetCore.Data.EF")));
 
             services.AddIdentity<AppUser, AppRole>()
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
+
             // Configure Identity
             services.Configure<IdentityOptions>(options =>
             {
@@ -75,8 +77,10 @@ namespace TemplateDotNetCore
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            //Add log for ASPNetCore By Serilog Extension ( Add file logging to ASP.NET Core apps with one line of code. )
+            loggerFactory.AddFile("Logs/{Date}.txt");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -97,6 +101,9 @@ namespace TemplateDotNetCore
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute(
+                    name: "areaRoute",
+                    template: "{area:exists}/{controller=Login}/{action=Index}/{id?}");
             });
         }
     }
