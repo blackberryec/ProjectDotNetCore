@@ -57,8 +57,22 @@ namespace TemplateDotNetCore.Data.EF
                 }, "123654$");
                 var user = await _userManager.FindByNameAsync("admin");
                 await _userManager.AddToRoleAsync(user, "Admin");
-            }
 
+                await _userManager.CreateAsync(new AppUser()
+                {
+                    UserName = "NamHai",
+                    FullName = "Hai Admin",
+                    Email = "trannamhaibp@gmail.com",
+                    Balance = 0,
+                    DateCreated = DateTime.Now,
+                    DateModified = DateTime.Now,
+                    Avatar = "/admin-side/images/avatar/avatarhaiadmin.jpg",
+                    Status = Status.Active
+                }, "123654$");
+                var newuser = await _userManager.FindByNameAsync("admin");
+                await _userManager.AddToRoleAsync(newuser, "Admin");
+            }
+            
         }
     }
 }

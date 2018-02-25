@@ -13,6 +13,7 @@ using TemplateDotNetCore.Application.Interfaces;
 using TemplateDotNetCore.Data.EF.Repositories;
 using TemplateDotNetCore.Data.IRepositories;
 using Microsoft.Extensions.Logging;
+using TemplateDotNetCore.Helpers;
 
 namespace TemplateDotNetCore
 {
@@ -57,6 +58,7 @@ namespace TemplateDotNetCore
             // Add application services.
             services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
+            services.AddScoped<IUserClaimsPrincipalFactory<AppUser>, CustomClaimsPrincipalFactory>();
             //services.AddTransient<IEmailSender, EmailSender>();
             services.AddTransient<DbInitializer>();
 
