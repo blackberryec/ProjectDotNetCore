@@ -20,7 +20,7 @@
                     render += Mustache.render(template, {
                         Id: item.id,
                         Name: item.name,
-                        Image: item.image == null ? '<img src="/admin-side/images/user.png" width=25' : '<img src="' + item.image + '" width=25 />',
+                        //Image: item.image == null ? '<img src="/admin-side/images/user.png" width=25' : '<img src="' + item.image + '" width=25 />',
                         CategoryName: item.productCategory.name,
                         Price: common.formatNumber(item.price, 0),
                         CreatedDate: common.dateTimeFormatJson(item.dateCreated),
