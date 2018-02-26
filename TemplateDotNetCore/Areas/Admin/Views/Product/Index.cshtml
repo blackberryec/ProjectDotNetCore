@@ -66,8 +66,8 @@
         <td>{{CreatedDate}}</td>
         <td>{{{Status}}}</td>
         <td scope="row">
-            <button class="btn btn-default btn-sm"><i class="fa fa-pencil"></i></button>
-            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+            <button class="btn btn-default btn-sm"><i data-id="{{Id}}" class="fa fa-pencil"></i></button>
+            <button class="btn btn-danger btn-sm"><i data-id="{{Id}}" class="fa fa-trash"></i></button>
         </td>
     </tr>
 </script>
@@ -85,6 +85,7 @@
     <script src="~/admin-side/assets/js/lib/data-table/buttons.print.min.js"></script>
     <script src="~/admin-side/assets/js/lib/data-table/buttons.colVis.min.js"></script>
     <script src="~/admin-side/assets/js/lib/data-table/datatables-init.js"></script>
+    <script src="~/admin-app/shared/common.js"></script>
 
     <script src="~/admin-app/controllers/product/index.js"></script>
     <script>

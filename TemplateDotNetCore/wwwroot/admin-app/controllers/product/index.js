@@ -18,13 +18,13 @@
             success: function (response) {
                 $.each(response, function (i, item) {
                     render += Mustache.render(template, {
-                        Id: item.Id,
-                        Name: item.Name,
-                        Image: item.Image == null ? '<img src="/admin-side/images/user.png" width=25' : '<img src="' + item.Image + '" width=25 />',
-                        CategoryName: item.ProductCategory.Name,
-                        Price: common.formatNumber(item.Price, 0),
-                        CreatedDate: common.dateTimeFormatJson(item.DateCreated),
-                        Status: common.getStatus(item.Status)
+                        Id: item.id,
+                        Name: item.name,
+                        Image: item.image == null ? '<img src="/admin-side/images/user.png" width=25' : '<img src="' + item.image + '" width=25 />',
+                        CategoryName: item.productCategory.name,
+                        Price: common.formatNumber(item.price, 0),
+                        CreatedDate: common.dateTimeFormatJson(item.dateCreated),
+                        Status: common.getStatus(item.status)
                     });
                     if (render != '') {
                         $('#tbl-content').html(render);

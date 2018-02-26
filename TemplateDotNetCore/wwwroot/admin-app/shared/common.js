@@ -108,9 +108,9 @@
     },
     getStatus: function (status) {
         if (status == 1)
-            return '<span class="badge bg-green">Kích hoạt</span>';
+            return '<span class="badge badge-success">Kích hoạt</span>';
         else
-            return '<span class="badge bg-red">Khoá</span>';
+            return '<span class="badge badge-danger">Khoá</span>';
     },
     formatNumber: function (number, precision) {
         if (!isFinite(number)) {
