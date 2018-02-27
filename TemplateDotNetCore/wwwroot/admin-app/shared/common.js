@@ -144,3 +144,4 @@ $(document).ajaxSend(function (e, xhr, options) {
         xhr.setRequestHeader("RequestVerificationToken", token);
     }
 });
+

@@ -36,17 +36,16 @@
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
+                                    <th>Id</th>
                                     <th>Tên</th>
                                     <th>Thuộc danh mục</th>
                                     <th>Giá</th>
                                     <th>Ngày đã tạo</th>
                                     <th>Trạng thái</th>
-                                    <th width="10%">QUẢN TRỊ</th>
+                                    <th>cập nhật</th>
+                                    <th>xóa</th>
                                 </tr>
                             </thead>
-                            <tbody id="tbl-content">
-                                <!--Binding table template-->
-                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -56,6 +55,7 @@
         </div>
     </div><!-- .animated -->
 </div><!-- .content -->
+<!--
 <script id="table-template" type="x-tmpl-mustache">
     <tr>
         <td>{{Name}}</td>
@@ -65,10 +65,14 @@
         <td>{{{Status}}}</td>
         <td scope="row">
             <button class="btn btn-default btn-sm"><i data-id="{{Id}}" class="fa fa-pencil"></i></button>
+        </td>
+        <td scope="row">
             <button class="btn btn-danger btn-sm"><i data-id="{{Id}}" class="fa fa-trash"></i></button>
         </td>
     </tr>
 </script>
+-->
+
 
 @section Scripts{
 
@@ -82,7 +86,6 @@
     <script src="~/admin-side/assets/js/lib/data-table/buttons.html5.min.js"></script>
     <script src="~/admin-side/assets/js/lib/data-table/buttons.print.min.js"></script>
     <script src="~/admin-side/assets/js/lib/data-table/buttons.colVis.min.js"></script>
-    <script src="~/admin-side/assets/js/lib/data-table/datatables-init.js"></script>
     <script src="~/admin-app/shared/common.js"></script>
 
     <script src="~/admin-app/controllers/product/index.js"></script>
