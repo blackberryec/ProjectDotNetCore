@@ -15,6 +15,7 @@ using TemplateDotNetCore.Data.IRepositories;
 using Microsoft.Extensions.Logging;
 using TemplateDotNetCore.Helpers;
 using TemplateDotNetCore.Services;
+using Newtonsoft.Json.Serialization;
 
 namespace TemplateDotNetCore
 {
@@ -79,7 +80,7 @@ namespace TemplateDotNetCore
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<IProductService, ProductService>();
 
-            services.AddMvc();
+            services.AddMvc().AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

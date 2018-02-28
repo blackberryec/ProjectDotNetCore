@@ -23,9 +23,9 @@ namespace TemplateDotNetCore.Application.Implementations
             GC.SuppressFinalize(this);
         }
 
-        public IEnumerable<ProductViewModel> GetAll()
+        public IQueryable<ProductViewModel> GetAll()
         {
-            return _productRepository.FindAll(x => x.ProductCategory).ProjectTo<ProductViewModel>().ToList();
+            return _productRepository.FindAll(x => x.ProductCategory).ProjectTo<ProductViewModel>();
         }
 
         public PagedResult<ProductViewModel> GetAllPaging(int? categoryId, string keyword, int page, int pageSize)

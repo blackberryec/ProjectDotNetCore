@@ -33,18 +33,18 @@
                 "searchable": false
             }],
             "columns": [
-                { "data": "id", "name": "Id", "autoWidth": true },
-                { "data": "name", "name": "Tên", "autoWidth": true },
-                { "data": "productCategory.name", "name": "Thuộc danh mục", "autoWidth": true },
-                { "data": "price", "name": "Giá", "autoWidth": true },
+                { "data": "Id", "name": "Id", "autoWidth": true },
+                { "data": "Name", "name": "Name", "autoWidth": true },
+                { "data": "ProductCategory.Name", "name": "ProductCategory.Name", "autoWidth": true },
+                { "data": "Price", "name": "Price", "autoWidth": true },
                 {
-                    "render": function (data, type, full, meta) { return common.dateTimeFormatJson(full.dateCreated); }
+                    "name": "DateCreated", "render": function (data, type, full, meta) { return common.dateTimeFormatJson(full.DateCreated); }
                 },
                 {
-                    "render": function (data, type, full, meta) { return common.getStatus(full.status); }
+                    "name": "Status", "render": function (data, type, full, meta) { return common.getStatus(full.Status); }
                 },
                 {
-                    "render": function (data, type, full, meta) { return '<a class="btn btn-info" href="/DemoGrid/Edit/' + full.Id + '">Edit</a>'; }
+                    "render": function (data, type, full, meta) { return '<a class="btn btn-info" href="/Admin/Product/Edit/' + full.Id + '">Edit</a>'; }
                 },
                 {
                     data: null, render: function (data, type, row) {
@@ -97,11 +97,11 @@
 
 
     function Delete(CustomerID) {
-        var url = '@Url.Content("~/")' + "DemoGrid/Delete";
+        var url = '@Url.Content("~/")' + "/Admin/Product/Delete";
 
         $.post(url, { ID: CustomerID }, function (data) {
             if (data) {
-                oTable = $('#example').DataTable();
+                oTable = $('#bootstrap-data-table').DataTable();
                 oTable.draw();
             }
             else {

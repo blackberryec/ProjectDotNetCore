@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Dynamic.Core;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TemplateDotNetCore.Application.Interfaces;
+using TemplateDotNetCore.Application.ViewModels;
 
 namespace TemplateDotNetCore.Areas.Admin.Controllers
 {
@@ -67,14 +69,17 @@ namespace TemplateDotNetCore.Areas.Admin.Controllers
                 var customerData = _productService.GetAll();
 
                 ////Sorting  
-                //if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDirection)))
-                //{
-                //    customerData = customerData.OrderBy(sortColumn + " " + sortColumnDirection);
-                //}
+                if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDirection)))
+                {
+                    if (sortColumn != "")
+                    {
+                        customerData = customerData.OrderBy(sortColumn + " " + sortColumnDirection);
+                    }
+                }
                 //Search  
                 if (!string.IsNullOrEmpty(searchValue))
                 {
-                    customerData = customerData.Where(m => m.Name == searchValue.ToString());
+                    customerData = customerData.ToList().AsQueryable().Where<ProductViewModel>(m => m.Name == searchValue);
                 }
 
                 //total number of rows counts   
