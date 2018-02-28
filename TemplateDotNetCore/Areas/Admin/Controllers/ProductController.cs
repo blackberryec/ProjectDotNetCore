@@ -13,9 +13,11 @@ namespace TemplateDotNetCore.Areas.Admin.Controllers
     public class ProductController : AdminBaseController
     {
         IProductService _productService;
-        public ProductController(IProductService productService)
+        IProductCategoryService _productCategoryService;
+        public ProductController(IProductService productService, IProductCategoryService productCategoryService)
         {
             _productService = productService;
+            _productCategoryService = productCategoryService;
         }
         public IActionResult Index()
         {
@@ -36,6 +38,14 @@ namespace TemplateDotNetCore.Areas.Admin.Controllers
             var model = _productService.GetAllPaging(categoryId, keyword, page, pageSize);
             return new OkObjectResult(model);
         }
+
+        [HttpGet]
+        public IActionResult GetAllCategories()
+        {
+            var model = _productCategoryService.GetAll();
+            return new OkObjectResult(model);
+        }
+
 
         [HttpPost]
         public IActionResult GetAllDataTable()
@@ -79,7 +89,7 @@ namespace TemplateDotNetCore.Areas.Admin.Controllers
                 //Search  
                 if (!string.IsNullOrEmpty(searchValue))
                 {
-                    customerData = customerData.ToList().AsQueryable().Where<ProductViewModel>(m => m.Name == searchValue);
+                    customerData = customerData.ToList().AsQueryable().Where<ProductViewModel>(m => m.Name.Contains(searchValue) || m.ProductCategory.Name.Contains(searchValue));
                 }
 
                 //total number of rows counts   

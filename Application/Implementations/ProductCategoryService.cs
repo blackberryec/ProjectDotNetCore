@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using TemplateDotNetCore.Application.Interfaces;
 using TemplateDotNetCore.Application.ViewModels;
 using TemplateDotNetCore.Data.Entities;
@@ -79,5 +80,10 @@ namespace TemplateDotNetCore.Application.Implementations
             _unitOfWork.Commit();
         }
 
+        public List<ProductCategoryViewModel> GetAll()
+        {
+            return _productCategoryRepository.FindAll().OrderBy(x => x.ParentId)
+                 .ProjectTo<ProductCategoryViewModel>().ToList();
+        }
     }
 }

@@ -16,6 +16,7 @@ using Microsoft.Extensions.Logging;
 using TemplateDotNetCore.Helpers;
 using TemplateDotNetCore.Services;
 using Newtonsoft.Json.Serialization;
+using TemplateDotNetCore.Infrastucture.Interfaces;
 
 namespace TemplateDotNetCore
 {
@@ -63,6 +64,8 @@ namespace TemplateDotNetCore
             services.AddScoped<IUserClaimsPrincipalFactory<AppUser>, CustomClaimsPrincipalFactory>();
             services.AddTransient<IEmailSender, EmailSender>();
             services.AddTransient<DbInitializer>();
+            services.AddTransient(typeof(IUnitOfWork), typeof(EFUnitOfWork));
+            services.AddTransient(typeof(IRepository<,>), typeof(EFRepository<,>));
 
             #region automapperconfig
 

@@ -2,6 +2,7 @@
     this.initialize = function () {
         //loadData();
         registerEvents();
+        loadCategories();
     }
 
     function registerEvents() {
@@ -15,6 +16,10 @@
         //$('#bootstrap-data-table').DataTable({
         //    lengthMenu: [[10, 20, 50, -1], [10, 20, 50, "All"]],
         //});
+
+        $('#global_filter').on('change', function () {
+            filterGlobal();
+        });
 
         $('#bootstrap-data-table').DataTable({
             "processing": true,
@@ -85,6 +90,32 @@
             }
         });
     }
+
+    function loadCategories() {
+        $.ajax({
+            type: 'GET',
+            url: '/admin/product/GetAllCategories',
+            dataType: 'json',
+            success: function (response) {
+                var render = "<option value=''>--Select category--</option>";
+                $.each(response, function (i, item) {
+                    render += "<option value='" + item.Name + "'>" + item.Name + "</option>"
+                });
+                $('#global_filter').html(render);
+            },
+            error: function (status) {
+                console.log(status);
+                common.notify('Không thể tải dữ liệu của Danh Mục Sản Phẩm', 'error');
+            }
+        });
+    }
+
+    function filterGlobal() {
+        $('#bootstrap-data-table').DataTable().search(
+            $('#global_filter').val(),
+        ).draw();
+    }
+
 
     function DeleteData(CustomerID) {
         if (confirm("Are you sure you want to delete ...?")) {

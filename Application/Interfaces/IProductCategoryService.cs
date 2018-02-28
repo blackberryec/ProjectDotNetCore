@@ -18,6 +18,8 @@ namespace TemplateDotNetCore.Application.Interfaces
 
         void RemoveMultiple(List<ProductCategoryViewModel> entities);
 
+        List<ProductCategoryViewModel> GetAll();
+
         ProductCategoryViewModel FindById(int id, params Expression<Func<ProductCategoryViewModel, object>>[] includeProperties);
 
         ProductCategoryViewModel FindSingle(Expression<Func<ProductCategoryViewModel, bool>> predicate, params Expression<Func<ProductCategoryViewModel, object>>[] includeProperties);
