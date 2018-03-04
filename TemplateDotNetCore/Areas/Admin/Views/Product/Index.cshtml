@@ -95,17 +95,13 @@
     <script src="~/admin-side/assets/js/lib/data-table/buttons.html5.min.js"></script>
     <script src="~/admin-side/assets/js/lib/data-table/buttons.print.min.js"></script>
     <script src="~/admin-side/assets/js/lib/data-table/buttons.colVis.min.js"></script>
-    <script src="~/admin-app/shared/common.js"></script>
-
     <script src="~/admin-app/controllers/product/index.js"></script>
-    <script>
-        var product = new productController();
-        product.initialize();
-    </script>
 
     <script type="text/javascript">
         $(document).ready(function () {
             $('#bootstrap-data-table-export').DataTable();
+            var product = new productController();
+            product.initialize();
         });
     </script>
 }

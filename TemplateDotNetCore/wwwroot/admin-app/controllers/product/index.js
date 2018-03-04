@@ -7,15 +7,6 @@
 
     function registerEvents() {
         //todo: binding event to controls
-       
-
-
-
-         /*  Data Table Init
-         /*-------------*/
-        //$('#bootstrap-data-table').DataTable({
-        //    lengthMenu: [[10, 20, 50, -1], [10, 20, 50, "All"]],
-        //});
 
         $('#global_filter').on('change', function () {
             filterGlobal();
@@ -53,18 +44,10 @@
                 },
                 {
                     data: null, render: function (data, type, row) {
-                        return "<a href='#' class='btn btn-danger' onclick=DeleteData('" + row.Id + "'); >Delete</a>";
+                        return "<a href='#' class='btn btn-danger' onclick=deleteData('" + row.Id + "');>Delete</a>";
                     }
                 },
             ]  
-        });
-
-        $('#bootstrap-data-table-export').DataTable({
-            dom: 'lBfrtip',
-            lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
-            buttons: [
-                'copy', 'csv', 'excel', 'pdf', 'print'
-            ]
         });
 
         $('#row-select').DataTable({
@@ -89,86 +72,55 @@
                 });
             }
         });
-    }
 
-    function loadCategories() {
+    }
+}
+
+function loadCategories() {
+    $.ajax({
+        type: 'GET',
+        url: '/admin/product/GetAllCategories',
+        dataType: 'json',
+        success: function (response) {
+            var render = "<option value=''>--Select category--</option>";
+            $.each(response, function (i, item) {
+                render += "<option value='" + item.Name + "'>" + item.Name + "</option>"
+            });
+            $('#global_filter').html(render);
+        },
+        error: function (status) {
+            console.log(status);
+            common.notify('Không thể tải dữ liệu của Danh Mục Sản Phẩm', 'error');
+        }
+    });
+}
+
+function filterGlobal() {
+    $('#bootstrap-data-table').DataTable().search(
+        $('#global_filter').val(),
+    ).draw();
+}
+
+function deleteData(id) {
+    common.confirm('Bạn sẽ xóa item này chứ?', function () {
         $.ajax({
-            type: 'GET',
-            url: '/admin/product/GetAllCategories',
-            dataType: 'json',
-            success: function (response) {
-                var render = "<option value=''>--Select category--</option>";
-                $.each(response, function (i, item) {
-                    render += "<option value='" + item.Name + "'>" + item.Name + "</option>"
-                });
-                $('#global_filter').html(render);
+            type: "POST",
+            url: "/Admin/Product/Delete",
+            data: { id: id },
+            dataType: "json",
+            beforeSend: function () {
+                common.startLoading();
             },
-            error: function (status) {
-                console.log(status);
-                common.notify('Không thể tải dữ liệu của Danh Mục Sản Phẩm', 'error');
-            }
-        });
-    }
-
-    function filterGlobal() {
-        $('#bootstrap-data-table').DataTable().search(
-            $('#global_filter').val(),
-        ).draw();
-    }
-
-
-    function DeleteData(CustomerID) {
-        if (confirm("Are you sure you want to delete ...?")) {
-            Delete(CustomerID);
-        }
-        else {
-            return false;
-        }
-    }
-
-
-    function Delete(CustomerID) {
-        var url = '@Url.Content("~/")' + "/Admin/Product/Delete";
-
-        $.post(url, { ID: CustomerID }, function (data) {
-            if (data) {
+            success: function (response) {
                 oTable = $('#bootstrap-data-table').DataTable();
                 oTable.draw();
-            }
-            else {
-                alert("Something Went Wrong!");
+                common.notify('Đã xóa item thành công', 'success');
+                common.stopLoading();
+            },
+            error: function (status) {
+                common.notify('Xin lỗi bạn! Xóa item xảy ra lỗi rồi!', 'error');
+                common.stopLoading();
             }
         });
-    }  
-
-    //function loadData() {
-    //    var template = $('#table-template').html();
-    //    var render = "";
-    //    $.ajax({
-    //        type: 'GET',
-    //        url: '/admin/product/GetAll',
-    //        dataType: 'json',
-    //        success: function (response) {
-    //            $.each(response, function (i, item) {
-    //                render += Mustache.render(template, {
-    //                    Id: item.id,
-    //                    Name: item.name,
-    //                    //Image: item.image == null ? '<img src="/admin-side/images/user.png" width=25' : '<img src="' + item.image + '" width=25 />',
-    //                    CategoryName: item.productCategory.name,
-    //                    Price: common.formatNumber(item.price, 0),
-    //                    CreatedDate: common.dateTimeFormatJson(item.dateCreated),
-    //                    Status: common.getStatus(item.status)
-    //                });
-    //                if (render != '') {
-    //                    $('#tbl-content').html(render);
-    //                }
-    //            });
-    //        },
-    //        error: function (status) {
-    //            console.log(status);
-    //            common.notify('Không thể tải dữ liệu của sản phẩm', 'error');
-    //        }
-    //    })
-    //}
-
+    });
 }

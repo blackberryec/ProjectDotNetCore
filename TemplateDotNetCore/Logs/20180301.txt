@@ -1,0 +1,1093 @@
+2018-03-01T18:32:17.6105600+07:00  [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-01T18:32:17.8535100+07:00  [INF] Executed DbCommand ("10"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-01T18:32:17.8964181+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-01T18:32:17.9363522+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Functions] AS [f]" (0723d8ff)
+2018-03-01T18:32:17.9665238+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [ProductCategories] AS [p]" (0723d8ff)
+2018-03-01T18:32:18.0147427+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeTitle')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-01T18:32:18.0446295+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaKeyword')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-01T18:32:18.0545953+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaDescription')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-01T18:32:18.4283303+07:00 0HLBVD0BGTM2V:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-01T18:32:18.5174052+07:00 0HLBVD0BGTM2V:00000001 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-01T18:32:18.6427785+07:00 0HLBVD0BGTM2V:00000001 [INF] Executed DbCommand ("57"ms) [Parameters=["@__get_Item_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Avatar], [e].[Balance], [e].[BirthDay], [e].[ConcurrencyStamp], [e].[DateCreated], [e].[DateModified], [e].[Email], [e].[EmailConfirmed], [e].[FullName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[ProductIdBuyed], [e].[SecurityStamp], [e].[Status], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AppUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2018-03-01T18:32:18.7936301+07:00 0HLBVD0BGTM2V:00000001 [INF] Executed DbCommand ("6"ms) [Parameters=["@__user_Id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AppUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2018-03-01T18:32:18.8610577+07:00 0HLBVD0BGTM2V:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-03-01T18:32:18.8984425+07:00 0HLBVD0BGTM2V:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AppRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-03-01T18:32:18.9331541+07:00 0HLBVD0BGTM2V:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__role_Id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AppRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2018-03-01T18:32:18.9415006+07:00 0HLBVD0BGTM2V:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@__userId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-03-01T18:32:18.9674739+07:00 0HLBVD0BGTM2V:00000001 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T18:32:19.2163076+07:00 0HLBVD0BGTM2V:00000001 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-01T18:32:22.0109339+07:00 0HLBVD0BGTM2V:00000001 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-01T18:32:22.7179856+07:00 0HLBVD0BGTM2V:00000001 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 3512.9819ms (afa2e885)
+2018-03-01T18:32:22.7591740+07:00 0HLBVD0BGTM2V:00000001 [INF] Request finished in 4340.3703ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-01T18:32:22.8071132+07:00 0HLBVD0BGTM31:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/lib/bootstrap/dist/css/bootstrap.css   (ca22a1cb)
+2018-03-01T18:32:22.8092402+07:00 0HLBVD0BGTM32:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/lib/bootstrap/dist/js/bootstrap.js   (ca22a1cb)
+2018-03-01T18:32:22.8936349+07:00 0HLBVD0BGTM2V:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/lib/jquery/dist/jquery.js   (ca22a1cb)
+2018-03-01T18:32:22.8954040+07:00 0HLBVD0BGTM31:00000001 [INF] The file "/lib/bootstrap/dist/css/bootstrap.css" was not modified (f1f8d725)
+2018-03-01T18:32:22.9007879+07:00 0HLBVD0BGTM2V:00000002 [INF] The file "/lib/jquery/dist/jquery.js" was not modified (f1f8d725)
+2018-03-01T18:32:22.9346372+07:00 0HLBVD0BGTM31:00000001 [INF] Request finished in 166.4494ms 304 text/css (791a596a)
+2018-03-01T18:32:22.9362222+07:00 0HLBVD0BGTM2V:00000002 [INF] Request finished in 58.3577ms 304 application/javascript (791a596a)
+2018-03-01T18:32:22.9670825+07:00 0HLBVD0BGTM32:00000001 [INF] The file "/lib/bootstrap/dist/js/bootstrap.js" was not modified (f1f8d725)
+2018-03-01T18:32:22.9736472+07:00 0HLBVD0BGTM32:00000001 [INF] Request finished in 231.4628ms 304 application/javascript (791a596a)
+2018-03-01T18:32:27.0391402+07:00 0HLBVD0BGTM31:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin   (ca22a1cb)
+2018-03-01T18:32:27.0496022+07:00 0HLBVD0BGTM31:00000002 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T18:32:27.0657171+07:00 0HLBVD0BGTM31:00000002 [INF] Executing action method "TemplateDotNetCore.Areas.Admin.Controllers.LoginController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-01T18:32:27.3849674+07:00 0HLBVD0BGTM31:00000002 [INF] Executing ViewResult, running view at path "/Areas/Admin/Views/Login/Index.cshtml". (9707eebe)
+2018-03-01T18:32:27.4303905+07:00 0HLBVD0BGTM31:00000002 [INF] Executed action "TemplateDotNetCore.Areas.Admin.Controllers.LoginController.Index (TemplateDotNetCore)" in 367.3214ms (afa2e885)
+2018-03-01T18:32:27.4441967+07:00 0HLBVD0BGTM31:00000002 [INF] Request finished in 402.6004ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-01T18:32:27.5603200+07:00 0HLBVD0BGTM31:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/css/normalize.css   (ca22a1cb)
+2018-03-01T18:32:27.6777079+07:00 0HLBVD0BGTM31:00000003 [INF] The file "/admin-side/assets/css/normalize.css" was not modified (f1f8d725)
+2018-03-01T18:32:27.7671424+07:00 0HLBVD0BGTM37:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/lib/notifyjs/dist/styles/metro/notify-metro.js   (ca22a1cb)
+2018-03-01T18:32:27.7959641+07:00 0HLBVD0BGTM33:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/scss/style.css   (ca22a1cb)
+2018-03-01T18:32:27.8252979+07:00 0HLBVD0BGTM35:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/lib/notifyjs/dist/notify.js   (ca22a1cb)
+2018-03-01T18:32:27.8437173+07:00 0HLBVD0BGTM36:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-app/shared/common.js   (ca22a1cb)
+2018-03-01T18:32:27.8684869+07:00 0HLBVD0BGTM33:00000001 [INF] The file "/admin-side/assets/scss/style.css" was not modified (f1f8d725)
+2018-03-01T18:32:27.8887199+07:00 0HLBVD0BGTM32:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/css/themify-icons.css   (ca22a1cb)
+2018-03-01T18:32:27.9280811+07:00 0HLBVD0BGTM2V:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/css/bootstrap.min.css   (ca22a1cb)
+2018-03-01T18:32:27.9483920+07:00 0HLBVD0BGTM34:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/css/font-awesome.min.css   (ca22a1cb)
+2018-03-01T18:32:28.0099929+07:00 0HLBVD0BGTM37:00000001 [INF] The file "/lib/notifyjs/dist/styles/metro/notify-metro.js" was not modified (f1f8d725)
+2018-03-01T18:32:28.0219190+07:00 0HLBVD0BGTM31:00000003 [INF] Request finished in 167.1329ms 304 text/css (791a596a)
+2018-03-01T18:32:28.1396609+07:00 0HLBVD0BGTM35:00000001 [INF] The file "/lib/notifyjs/dist/notify.js" was not modified (f1f8d725)
+2018-03-01T18:32:28.2153808+07:00 0HLBVD0BGTM33:00000001 [INF] Request finished in 397.7487ms 304 text/css (791a596a)
+2018-03-01T18:32:28.2709980+07:00 0HLBVD0BGTM34:00000001 [INF] The file "/admin-side/assets/css/font-awesome.min.css" was not modified (f1f8d725)
+2018-03-01T18:32:28.2941648+07:00 0HLBVD0BGTM36:00000001 [INF] The file "/admin-app/shared/common.js" was not modified (f1f8d725)
+2018-03-01T18:32:28.3658895+07:00 0HLBVD0BGTM2V:00000003 [INF] The file "/admin-side/assets/css/bootstrap.min.css" was not modified (f1f8d725)
+2018-03-01T18:32:28.4032245+07:00 0HLBVD0BGTM37:00000001 [INF] Request finished in 492.1874ms 304 application/javascript (791a596a)
+2018-03-01T18:32:28.4258303+07:00 0HLBVD0BGTM38:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/images/logo.png   (ca22a1cb)
+2018-03-01T18:32:28.4441663+07:00 0HLBVD0BGTM32:00000002 [INF] The file "/admin-side/assets/css/themify-icons.css" was not modified (f1f8d725)
+2018-03-01T18:32:28.5159660+07:00 0HLBVD0BGTM38:00000001 [INF] The file "/admin-side/images/logo.png" was not modified (f1f8d725)
+2018-03-01T18:32:28.5311024+07:00 0HLBVD0BGTM34:00000001 [INF] Request finished in 766.8917ms 304 text/css (791a596a)
+2018-03-01T18:32:28.5879194+07:00 0HLBVD0BGTM35:00000001 [INF] Request finished in 668.7662ms 304 application/javascript (791a596a)
+2018-03-01T18:32:28.6350270+07:00 0HLBVD0BGTM36:00000001 [INF] Request finished in 822.3829ms 304 application/javascript (791a596a)
+2018-03-01T18:32:28.6827813+07:00 0HLBVD0BGTM31:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/css/animate.css   (ca22a1cb)
+2018-03-01T18:32:28.7322047+07:00 0HLBVD0BGTM38:00000001 [INF] Request finished in 469.1039ms 304 image/png (791a596a)
+2018-03-01T18:32:28.7647309+07:00 0HLBVD0BGTM31:00000004 [INF] The file "/admin-side/assets/css/animate.css" was not modified (f1f8d725)
+2018-03-01T18:32:28.7878532+07:00 0HLBVD0BGTM2V:00000003 [INF] Request finished in 903.222ms 304 text/css (791a596a)
+2018-03-01T18:32:28.8090063+07:00 0HLBVD0BGTM32:00000002 [INF] Request finished in 982.3972ms 304 text/css (791a596a)
+2018-03-01T18:32:28.8508145+07:00 0HLBVD0BGTM39:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js   (ca22a1cb)
+2018-03-01T18:32:28.9117556+07:00 0HLBVD0BGTM3D:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/lib/notifyjs/dist/styles/metro/notify-metro.css   (ca22a1cb)
+2018-03-01T18:32:28.9528421+07:00 0HLBVD0BGTM3B:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/css/cs-skin-elastic.css   (ca22a1cb)
+2018-03-01T18:32:28.9656006+07:00 0HLBVD0BGTM31:00000004 [INF] Request finished in 447.304ms 304 text/css (791a596a)
+2018-03-01T18:32:29.0391536+07:00 0HLBVD0BGTM3A:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/css/flag-icon.min.css   (ca22a1cb)
+2018-03-01T18:32:29.1093355+07:00 0HLBVD0BGTM3D:00000001 [INF] The file "/lib/notifyjs/dist/styles/metro/notify-metro.css" was not modified (f1f8d725)
+2018-03-01T18:32:29.1257045+07:00 0HLBVD0BGTM3C:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-app/controllers/login/index.js   (ca22a1cb)
+2018-03-01T18:32:29.1624406+07:00 0HLBVD0BGTM3B:00000001 [INF] The file "/admin-side/assets/css/cs-skin-elastic.css" was not modified (f1f8d725)
+2018-03-01T18:32:29.2520390+07:00 0HLBVD0BGTM39:00000001 [INF] The file "/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" was not modified (f1f8d725)
+2018-03-01T18:32:29.2986709+07:00 0HLBVD0BGTM3E:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/lib/jquery-validation/dist/additional-methods.js   (ca22a1cb)
+2018-03-01T18:32:29.3228601+07:00 0HLBVD0BGTM3F:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/lib/jquery-validation/dist/jquery.validate.js   (ca22a1cb)
+2018-03-01T18:32:29.3720228+07:00 0HLBVD0BGTM3A:00000001 [INF] The file "/admin-side/assets/css/flag-icon.min.css" was not modified (f1f8d725)
+2018-03-01T18:32:29.3981463+07:00 0HLBVD0BGTM3D:00000001 [INF] Request finished in 322.709ms 304 text/css (791a596a)
+2018-03-01T18:32:29.4561303+07:00 0HLBVD0BGTM3B:00000001 [INF] Request finished in 496.1297ms 304 text/css (791a596a)
+2018-03-01T18:32:29.4752328+07:00 0HLBVD0BGTM3C:00000001 [INF] The file "/admin-app/controllers/login/index.js" was not modified (f1f8d725)
+2018-03-01T18:32:29.4882461+07:00 0HLBVD0BGTM3F:00000001 [INF] The file "/lib/jquery-validation/dist/jquery.validate.js" was not modified (f1f8d725)
+2018-03-01T18:32:29.5661799+07:00 0HLBVD0BGTM3E:00000001 [INF] The file "/lib/jquery-validation/dist/additional-methods.js" was not modified (f1f8d725)
+2018-03-01T18:32:29.5805618+07:00 0HLBVD0BGTM3C:00000001 [INF] Request finished in 730.6321ms 304 application/javascript (791a596a)
+2018-03-01T18:32:29.6279870+07:00 0HLBVD0BGTM39:00000001 [INF] Request finished in 761.8784ms 304 application/javascript (791a596a)
+2018-03-01T18:32:29.6532082+07:00 0HLBVD0BGTM3F:00000001 [INF] Request finished in 475.3191ms 304 application/javascript (791a596a)
+2018-03-01T18:32:29.6682766+07:00 0HLBVD0BGTM3E:00000001 [INF] Request finished in 746.4848ms 304 application/javascript (791a596a)
+2018-03-01T18:32:29.6731797+07:00 0HLBVD0BGTM3A:00000001 [INF] Request finished in 765.9396ms 304 text/css (791a596a)
+2018-03-01T18:32:42.0150671+07:00 0HLBVD0BGTM33:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:44357/admin/login/authen application/x-www-form-urlencoded; charset=UTF-8 46 (ca22a1cb)
+2018-03-01T18:32:42.0207824+07:00 0HLBVD0BGTM33:00000002 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T18:32:42.1408168+07:00 0HLBVD0BGTM33:00000002 [INF] Executing action method "TemplateDotNetCore.Areas.Admin.Controllers.LoginController.Authen (TemplateDotNetCore)" with arguments (["TemplateDotNetCore.Models.AccountViewModels.LoginViewModel"]) - ModelState is Valid (ba7f4ac2)
+2018-03-01T18:32:42.1502446+07:00 0HLBVD0BGTM33:00000002 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-01T18:32:42.1649026+07:00 0HLBVD0BGTM33:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProductIdBuyed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AppUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-03-01T18:32:42.2245059+07:00 0HLBVD0BGTM33:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__user_Id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AppUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2018-03-01T18:32:42.2326659+07:00 0HLBVD0BGTM33:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-03-01T18:32:42.2413751+07:00 0HLBVD0BGTM33:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AppRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-03-01T18:32:42.2489405+07:00 0HLBVD0BGTM33:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__role_Id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AppRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2018-03-01T18:32:42.2559983+07:00 0HLBVD0BGTM33:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__userId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-03-01T18:32:42.2639596+07:00 0HLBVD0BGTM33:00000002 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2018-03-01T18:32:42.2708206+07:00 0HLBVD0BGTM33:00000002 [INF] User logged in. (fdce0db4)
+2018-03-01T18:32:42.2830964+07:00 0HLBVD0BGTM33:00000002 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2018-03-01T18:32:42.3579610+07:00 0HLBVD0BGTM33:00000002 [INF] Executed action "TemplateDotNetCore.Areas.Admin.Controllers.LoginController.Authen (TemplateDotNetCore)" in 276.6021ms (afa2e885)
+2018-03-01T18:32:42.3660519+07:00 0HLBVD0BGTM33:00000002 [INF] Request finished in 350.8323ms 200 application/json; charset=utf-8 (791a596a)
+2018-03-01T18:32:42.3991297+07:00 0HLBVD0BGTM37:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/Admin/Home/Index   (ca22a1cb)
+2018-03-01T18:32:42.4045992+07:00 0HLBVD0BGTM37:00000002 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T18:32:42.4211824+07:00 0HLBVD0BGTM37:00000002 [INF] Authorization was successful for user: "NamHai". (d7eb274a)
+2018-03-01T18:32:42.4270621+07:00 0HLBVD0BGTM37:00000002 [INF] Executing action method "TemplateDotNetCore.Areas.Admin.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-01T18:32:42.6641940+07:00 0HLBVD0BGTM37:00000002 [INF] Executing ViewResult, running view at path "/Areas/Admin/Views/Home/Index.cshtml". (9707eebe)
+2018-03-01T18:32:42.9894971+07:00 0HLBVD0BGTM37:00000002 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-01T18:32:43.0396130+07:00 0HLBVD0BGTM37:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Name], [dto].[URL], [dto].[ParentId], [dto].[IconCss], [dto].[SortOrder], [dto].[Status]
+FROM [Functions] AS [dto]" (0723d8ff)
+2018-03-01T18:32:43.6094302+07:00 0HLBVD0BGTM37:00000002 [INF] Executed action "TemplateDotNetCore.Areas.Admin.Controllers.HomeController.Index (TemplateDotNetCore)" in 1196.917ms (afa2e885)
+2018-03-01T18:32:43.6168284+07:00 0HLBVD0BGTM37:00000002 [INF] Request finished in 1242.1978ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-01T18:32:43.8021053+07:00 0HLBVD0BGTM34:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/css/lib/vector-map/jqvmap.min.css   (ca22a1cb)
+2018-03-01T18:32:43.8146324+07:00 0HLBVD0BGTM3A:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/lib/twbs-pagination/jquery.twbsPagination.js   (ca22a1cb)
+2018-03-01T18:32:43.9359607+07:00 0HLBVD0BGTM35:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/images/logo2.png   (ca22a1cb)
+2018-03-01T18:32:43.9874029+07:00 0HLBVD0BGTM3D:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/images/avatar/2.jpg   (ca22a1cb)
+2018-03-01T18:32:44.0018822+07:00 0HLBVD0BGTM2V:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/images/avatar/avatarhaiadmin.jpg   (ca22a1cb)
+2018-03-01T18:32:44.0320919+07:00 0HLBVD0BGTM31:00000005 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/js/plugins.js   (ca22a1cb)
+2018-03-01T18:32:44.0428936+07:00 0HLBVD0BGTM32:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/images/avatar/1.jpg   (ca22a1cb)
+2018-03-01T18:32:44.0678228+07:00 0HLBVD0BGTM3B:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/js/main.js   (ca22a1cb)
+2018-03-01T18:32:44.1408232+07:00 0HLBVD0BGTM36:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/js/vendor/jquery-2.1.4.min.js   (ca22a1cb)
+2018-03-01T18:32:44.1616697+07:00 0HLBVD0BGTM3C:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/lib/mustache/mustache.js   (ca22a1cb)
+2018-03-01T18:32:44.2416492+07:00 0HLBVD0BGTM35:00000002 [INF] The file "/admin-side/images/logo2.png" was not modified (f1f8d725)
+2018-03-01T18:32:44.2533941+07:00 0HLBVD0BGTM3D:00000002 [INF] The file "/admin-side/images/avatar/2.jpg" was not modified (f1f8d725)
+2018-03-01T18:32:44.3339650+07:00 0HLBVD0BGTM31:00000005 [INF] The file "/admin-side/assets/js/plugins.js" was not modified (f1f8d725)
+2018-03-01T18:32:44.3493269+07:00 0HLBVD0BGTM3A:00000002 [INF] The file "/lib/twbs-pagination/jquery.twbsPagination.js" was not modified (f1f8d725)
+2018-03-01T18:32:44.3896367+07:00 0HLBVD0BGTM2V:00000004 [INF] The file "/admin-side/images/avatar/avatarhaiadmin.jpg" was not modified (f1f8d725)
+2018-03-01T18:32:44.4099188+07:00 0HLBVD0BGTM34:00000002 [INF] The file "/admin-side/assets/css/lib/vector-map/jqvmap.min.css" was not modified (f1f8d725)
+2018-03-01T18:32:44.4317799+07:00 0HLBVD0BGTM36:00000002 [INF] The file "/admin-side/assets/js/vendor/jquery-2.1.4.min.js" was not modified (f1f8d725)
+2018-03-01T18:32:44.5060898+07:00 0HLBVD0BGTM32:00000003 [INF] The file "/admin-side/images/avatar/1.jpg" was not modified (f1f8d725)
+2018-03-01T18:32:44.5415043+07:00 0HLBVD0BGTM3B:00000002 [INF] The file "/admin-side/assets/js/main.js" was not modified (f1f8d725)
+2018-03-01T18:32:44.6287522+07:00 0HLBVD0BGTM3C:00000002 [INF] The file "/lib/mustache/mustache.js" was not modified (f1f8d725)
+2018-03-01T18:32:44.6447135+07:00 0HLBVD0BGTM35:00000002 [INF] Request finished in 607.427ms 304 image/png (791a596a)
+2018-03-01T18:32:44.7154592+07:00 0HLBVD0BGTM3D:00000002 [INF] Request finished in 533.6247ms 304 image/jpeg (791a596a)
+2018-03-01T18:32:44.7415436+07:00 0HLBVD0BGTM34:00000002 [INF] Request finished in 769.9586ms 304 text/css (791a596a)
+2018-03-01T18:32:44.7514628+07:00 0HLBVD0BGTM2V:00000004 [INF] Request finished in 700.0516ms 304 image/jpeg (791a596a)
+2018-03-01T18:32:44.7979169+07:00 0HLBVD0BGTM31:00000005 [INF] Request finished in 667.9113ms 304 application/javascript (791a596a)
+2018-03-01T18:32:44.8321929+07:00 0HLBVD0BGTM3A:00000002 [INF] Request finished in 683.2555ms 304 application/javascript (791a596a)
+2018-03-01T18:32:44.8451746+07:00 0HLBVD0BGTM36:00000002 [INF] Request finished in 762.1217ms 304 application/javascript (791a596a)
+2018-03-01T18:32:44.8650522+07:00 0HLBVD0BGTM32:00000003 [INF] Request finished in 830.8439ms 304 image/jpeg (791a596a)
+2018-03-01T18:32:44.9062054+07:00 0HLBVD0BGTM3B:00000002 [INF] Request finished in 875.4069ms 304 application/javascript (791a596a)
+2018-03-01T18:32:44.9797110+07:00 0HLBVD0BGTM3C:00000002 [INF] Request finished in 963.5606ms 304 application/javascript (791a596a)
+2018-03-01T18:32:45.0672563+07:00 0HLBVD0BGTM39:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/js/lib/chosen/chosen.jquery.js   (ca22a1cb)
+2018-03-01T18:32:45.1677060+07:00 0HLBVD0BGTM37:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/images/flags/4x3/us.svg   (ca22a1cb)
+2018-03-01T18:32:45.1959173+07:00 0HLBVD0BGTM3F:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/images/avatar/4.jpg   (ca22a1cb)
+2018-03-01T18:32:45.2527987+07:00 0HLBVD0BGTM38:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/images/avatar/3.jpg   (ca22a1cb)
+2018-03-01T18:32:45.3261218+07:00 0HLBVD0BGTM33:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/fonts/themify.woff?-fvbane   (ca22a1cb)
+2018-03-01T18:32:45.3456837+07:00 0HLBVD0BGTM38:00000002 [INF] The file "/admin-side/images/avatar/3.jpg" was not modified (f1f8d725)
+2018-03-01T18:32:45.3641583+07:00 0HLBVD0BGTM3E:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/fonts/fontawesome-webfont.woff2?v=4.7.0   (ca22a1cb)
+2018-03-01T18:32:45.4172097+07:00 0HLBVD0BGTM3F:00000002 [INF] The file "/admin-side/images/avatar/4.jpg" was not modified (f1f8d725)
+2018-03-01T18:32:45.4478664+07:00 0HLBVD0BGTM39:00000002 [INF] The file "/admin-side/assets/js/lib/chosen/chosen.jquery.js" was not modified (f1f8d725)
+2018-03-01T18:32:45.4805949+07:00 0HLBVD0BGTM38:00000002 [INF] Request finished in 480.6524ms 304 image/jpeg (791a596a)
+2018-03-01T18:32:45.5065525+07:00 0HLBVD0BGTM33:00000003 [INF] The file "/admin-side/assets/fonts/themify.woff" was not modified (f1f8d725)
+2018-03-01T18:32:45.5668962+07:00 0HLBVD0BGTM37:00000003 [INF] The file "/admin-side/images/flags/4x3/us.svg" was not modified (f1f8d725)
+2018-03-01T18:32:45.5714548+07:00 0HLBVD0BGTM3F:00000002 [INF] Request finished in 500.3324ms 304 image/jpeg (791a596a)
+2018-03-01T18:32:45.6063640+07:00 0HLBVD0BGTM37:00000003 [INF] Request finished in 573.6626ms 304 image/svg+xml (791a596a)
+2018-03-01T18:32:45.6176359+07:00 0HLBVD0BGTM33:00000003 [INF] Request finished in 526.8387ms 304 application/font-woff (791a596a)
+2018-03-01T18:32:45.6421559+07:00 0HLBVD0BGTM3E:00000002 [INF] The file "/admin-side/assets/fonts/fontawesome-webfont.woff2" was not modified (f1f8d725)
+2018-03-01T18:32:45.6766791+07:00 0HLBVD0BGTM39:00000002 [INF] Request finished in 560.2704ms 304 application/javascript (791a596a)
+2018-03-01T18:32:45.7261792+07:00 0HLBVD0BGTM3E:00000002 [INF] Request finished in 691.521ms 304 font/woff2 (791a596a)
+2018-03-01T18:32:45.7340145+07:00 0HLBVD0BGTM35:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/Admin/Home/favicon.ico   (ca22a1cb)
+2018-03-01T18:32:45.7410992+07:00 0HLBVD0BGTM35:00000003 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T18:32:45.7701003+07:00 0HLBVD0BGTM35:00000003 [INF] Request finished in 65.9773ms 404  (791a596a)
+2018-03-01T18:32:49.7095712+07:00 0HLBVD0BGTM3D:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin/product/index   (ca22a1cb)
+2018-03-01T18:32:49.7164362+07:00 0HLBVD0BGTM3D:00000003 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T18:32:49.7248273+07:00 0HLBVD0BGTM3D:00000003 [INF] Authorization was successful for user: "NamHai". (d7eb274a)
+2018-03-01T18:32:49.7351819+07:00 0HLBVD0BGTM3D:00000003 [INF] Executing action method "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-01T18:32:49.9342011+07:00 0HLBVD0BGTM3D:00000003 [INF] Executing ViewResult, running view at path "/Areas/Admin/Views/Product/Index.cshtml". (9707eebe)
+2018-03-01T18:32:49.9616571+07:00 0HLBVD0BGTM3D:00000003 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-01T18:32:49.9725086+07:00 0HLBVD0BGTM3D:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Name], [dto].[URL], [dto].[ParentId], [dto].[IconCss], [dto].[SortOrder], [dto].[Status]
+FROM [Functions] AS [dto]" (0723d8ff)
+2018-03-01T18:32:50.0128014+07:00 0HLBVD0BGTM3D:00000003 [INF] Executed action "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.Index (TemplateDotNetCore)" in 287.865ms (afa2e885)
+2018-03-01T18:32:50.0221363+07:00 0HLBVD0BGTM3D:00000003 [INF] Request finished in 311.9507ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-01T18:32:50.1234503+07:00 0HLBVD0BGTM31:00000006 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/js/lib/data-table/dataTables.buttons.min.js   (ca22a1cb)
+2018-03-01T18:32:50.1683669+07:00 0HLBVD0BGTM2V:00000005 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/js/lib/data-table/jszip.min.js   (ca22a1cb)
+2018-03-01T18:32:50.4084958+07:00 0HLBVD0BGTM3F:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/js/lib/data-table/buttons.colVis.min.js   (ca22a1cb)
+2018-03-01T18:32:50.4228337+07:00 0HLBVD0BGTM2V:00000005 [INF] The file "/admin-side/assets/js/lib/data-table/jszip.min.js" was not modified (f1f8d725)
+2018-03-01T18:32:50.4715863+07:00 0HLBVD0BGTM32:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/js/lib/data-table/pdfmake.min.js   (ca22a1cb)
+2018-03-01T18:32:50.5019701+07:00 0HLBVD0BGTM3C:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/js/lib/data-table/buttons.print.min.js   (ca22a1cb)
+2018-03-01T18:32:50.5198420+07:00 0HLBVD0BGTM38:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/js/lib/data-table/buttons.html5.min.js   (ca22a1cb)
+2018-03-01T18:32:50.5454076+07:00 0HLBVD0BGTM3B:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/js/lib/data-table/vfs_fonts.js   (ca22a1cb)
+2018-03-01T18:32:50.5588622+07:00 0HLBVD0BGTM3A:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/css/lib/datatable/dataTables.bootstrap.min.css   (ca22a1cb)
+2018-03-01T18:32:50.5704288+07:00 0HLBVD0BGTM34:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/js/lib/data-table/dataTables.bootstrap.min.js   (ca22a1cb)
+2018-03-01T18:32:50.6090998+07:00 0HLBVD0BGTM36:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/js/lib/data-table/datatables.min.js   (ca22a1cb)
+2018-03-01T18:32:50.6235145+07:00 0HLBVD0BGTM31:00000006 [INF] The file "/admin-side/assets/js/lib/data-table/dataTables.buttons.min.js" was not modified (f1f8d725)
+2018-03-01T18:32:50.6717291+07:00 0HLBVD0BGTM3F:00000003 [INF] The file "/admin-side/assets/js/lib/data-table/buttons.colVis.min.js" was not modified (f1f8d725)
+2018-03-01T18:32:50.7588970+07:00 0HLBVD0BGTM3C:00000003 [INF] The file "/admin-side/assets/js/lib/data-table/buttons.print.min.js" was not modified (f1f8d725)
+2018-03-01T18:32:50.7692781+07:00 0HLBVD0BGTM3B:00000003 [INF] The file "/admin-side/assets/js/lib/data-table/vfs_fonts.js" was not modified (f1f8d725)
+2018-03-01T18:32:50.8383377+07:00 0HLBVD0BGTM2V:00000005 [INF] Request finished in 359.3376ms 304 application/javascript (791a596a)
+2018-03-01T18:32:50.8725800+07:00 0HLBVD0BGTM32:00000004 [INF] The file "/admin-side/assets/js/lib/data-table/pdfmake.min.js" was not modified (f1f8d725)
+2018-03-01T18:32:50.9074135+07:00 0HLBVD0BGTM3A:00000003 [INF] The file "/admin-side/assets/css/lib/datatable/dataTables.bootstrap.min.css" was not modified (f1f8d725)
+2018-03-01T18:32:50.9604517+07:00 0HLBVD0BGTM38:00000003 [INF] The file "/admin-side/assets/js/lib/data-table/buttons.html5.min.js" was not modified (f1f8d725)
+2018-03-01T18:32:51.0415615+07:00 0HLBVD0BGTM34:00000003 [INF] The file "/admin-side/assets/js/lib/data-table/dataTables.bootstrap.min.js" was not modified (f1f8d725)
+2018-03-01T18:32:51.0972324+07:00 0HLBVD0BGTM3B:00000003 [INF] Request finished in 708.5585ms 304 application/javascript (791a596a)
+2018-03-01T18:32:51.1141889+07:00 0HLBVD0BGTM36:00000003 [INF] The file "/admin-side/assets/js/lib/data-table/datatables.min.js" was not modified (f1f8d725)
+2018-03-01T18:32:51.1750122+07:00 0HLBVD0BGTM32:00000004 [INF] Request finished in 811.5859ms 304 application/javascript (791a596a)
+2018-03-01T18:32:51.2028645+07:00 0HLBVD0BGTM31:00000006 [INF] Request finished in 565.5468ms 304 application/javascript (791a596a)
+2018-03-01T18:32:51.2389075+07:00 0HLBVD0BGTM3F:00000003 [INF] Request finished in 574.7395ms 304 application/javascript (791a596a)
+2018-03-01T18:32:51.2501166+07:00 0HLBVD0BGTM3C:00000003 [INF] Request finished in 675.8726ms 304 application/javascript (791a596a)
+2018-03-01T18:32:51.3045977+07:00 0HLBVD0BGTM3A:00000003 [INF] Request finished in 846.7693ms 304 text/css (791a596a)
+2018-03-01T18:32:51.3968786+07:00 0HLBVD0BGTM38:00000003 [INF] Request finished in 875.3433ms 304 application/javascript (791a596a)
+2018-03-01T18:32:51.4360213+07:00 0HLBVD0BGTM39:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-app/controllers/product/index.js   (ca22a1cb)
+2018-03-01T18:32:51.4623198+07:00 0HLBVD0BGTM34:00000003 [INF] Request finished in 968.794ms 304 application/javascript (791a596a)
+2018-03-01T18:32:51.4835982+07:00 0HLBVD0BGTM39:00000003 [INF] The file "/admin-app/controllers/product/index.js" was not modified (f1f8d725)
+2018-03-01T18:32:51.5159897+07:00 0HLBVD0BGTM36:00000003 [INF] Request finished in 1053.291ms 304 application/javascript (791a596a)
+2018-03-01T18:32:51.5734771+07:00 0HLBVD0BGTM39:00000003 [INF] Request finished in 410.3535ms 304 application/javascript (791a596a)
+2018-03-01T18:32:51.5839495+07:00 0HLBVD0BGTM33:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/js/lib/data-table/buttons.bootstrap.min.js   (ca22a1cb)
+2018-03-01T18:32:51.6131970+07:00 0HLBVD0BGTM33:00000004 [INF] The file "/admin-side/assets/js/lib/data-table/buttons.bootstrap.min.js" was not modified (f1f8d725)
+2018-03-01T18:32:51.6200802+07:00 0HLBVD0BGTM33:00000004 [INF] Request finished in 244.4208ms 304 application/javascript (791a596a)
+2018-03-01T18:32:51.9766374+07:00 0HLBVD0BGTM37:00000004 [INF] Request starting HTTP/1.1 POST http://localhost:44357/Admin/Product/GetAllDataTable application/x-www-form-urlencoded; charset=UTF-8 1851 (ca22a1cb)
+2018-03-01T18:32:52.0329238+07:00 0HLBVD0BGTM3E:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin/product/GetAllCategories   (ca22a1cb)
+2018-03-01T18:32:52.0839714+07:00 0HLBVD0BGTM37:00000004 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T18:32:52.0859198+07:00 0HLBVD0BGTM35:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin/product/favicon.ico   (ca22a1cb)
+2018-03-01T18:32:52.0881583+07:00 0HLBVD0BGTM3E:00000003 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T18:32:52.0947024+07:00 0HLBVD0BGTM35:00000004 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T18:32:52.1649903+07:00 0HLBVD0BGTM35:00000004 [INF] Request finished in 92.7593ms 404  (791a596a)
+2018-03-01T18:32:52.2121662+07:00 0HLBVD0BGTM3E:00000003 [INF] Authorization was successful for user: "NamHai". (d7eb274a)
+2018-03-01T18:32:52.2184390+07:00 0HLBVD0BGTM3E:00000003 [INF] Executing action method "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.GetAllCategories (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-01T18:32:52.2479189+07:00 0HLBVD0BGTM37:00000004 [INF] Authorization was successful for user: "NamHai". (d7eb274a)
+2018-03-01T18:32:52.2708996+07:00 0HLBVD0BGTM3E:00000003 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-01T18:32:52.2754532+07:00 0HLBVD0BGTM37:00000004 [INF] Executing action method "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.GetAllDataTable (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-01T18:32:52.3532783+07:00 0HLBVD0BGTM37:00000004 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-01T18:32:52.4045673+07:00 0HLBVD0BGTM3E:00000003 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Name], [x].[Discription], [x].[ParentId], [x].[HomeOrder], [x].[Image], [x].[SeoPageTitle], [x].[SeoAlias], [x].[SeoKeywords], [x].[SeoDescription], [x].[Status], [x].[LanguageId], [x].[Tags], [x].[DateCreated], [x].[DateModified], [x].[SortOrder], [x].[HomeFlag], [x].[HotFlag], [x].[NewFlag]
+FROM [ProductCategories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2018-03-01T18:32:52.4332985+07:00 0HLBVD0BGTM3E:00000003 [INF] Executed DbCommand ("2"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:32:52.4480932+07:00 0HLBVD0BGTM3E:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:32:52.4536153+07:00 0HLBVD0BGTM3E:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:32:52.4596093+07:00 0HLBVD0BGTM3E:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:32:52.4660029+07:00 0HLBVD0BGTM3E:00000003 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2018-03-01T18:32:52.5426678+07:00 0HLBVD0BGTM3E:00000003 [INF] Executed action "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.GetAllCategories (TemplateDotNetCore)" in 440.1909ms (afa2e885)
+2018-03-01T18:32:52.5498473+07:00 0HLBVD0BGTM3E:00000003 [INF] Request finished in 563.8394ms 200 application/json; charset=utf-8 (791a596a)
+2018-03-01T18:32:52.8864530+07:00 0HLBVD0BGTM37:00000004 [WRN] The Include operation for navigation '"[x].ProductCategory"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information. (10efaee6)
+2018-03-01T18:32:52.9125584+07:00 0HLBVD0BGTM37:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+INNER JOIN [ProductCategories] AS [x.ProductCategory] ON [x].[CategoryId] = [x.ProductCategory].[Id]" (0723d8ff)
+2018-03-01T18:32:52.9267181+07:00 0HLBVD0BGTM37:00000004 [WRN] The Include operation for navigation '"[x].ProductCategory"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information. (10efaee6)
+2018-03-01T18:32:52.9700320+07:00 0HLBVD0BGTM37:00000004 [INF] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?', @__p_1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id] AS [Id1], [x].[Status], [x].[DateCreated], [x].[Sold], [x].[DateModified], [x].[Color], [x].[Image], [x].[Size], [x].[SeoPageTitle], [x].[SeoAlias], [x].[SeoKeywords], [x].[SeoDescription], [x].[Name], [x].[CategoryId] AS [Id0], [x].[Price], [x].[Description], [x].[Content], [x].[PromotionPrice], [x].[Unit], [x].[HomeFlag], [x].[HotFlag], [x].[NewFlag], [x].[Tags], [x].[LanguageId], [x].[PurchaseTime], [x].[ErrorTime], [x].[Warranty], [x].[Quantity], [x].[Star], CASE
+    WHEN [x].[CategoryId] IS NOT NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, [x.ProductCategory].[Name] AS [Name0], [x.ProductCategory].[Discription], [x.ProductCategory].[ParentId], [x.ProductCategory].[HomeOrder], [x.ProductCategory].[Image] AS [Image0], [x.ProductCategory].[SeoPageTitle] AS [SeoPageTitle0], [x.ProductCategory].[SeoAlias] AS [SeoAlias0], [x.ProductCategory].[SeoKeywords] AS [SeoKeywords0], [x.ProductCategory].[SeoDescription] AS [SeoDescription0], [x.ProductCategory].[Status] AS [Status0], [x.ProductCategory].[LanguageId] AS [LanguageId0], [x.ProductCategory].[Tags] AS [Tags0], [x.ProductCategory].[DateCreated] AS [DateCreated0], [x.ProductCategory].[DateModified] AS [DateModified0], [x.ProductCategory].[SortOrder], [x.ProductCategory].[HomeFlag] AS [HomeFlag0], [x.ProductCategory].[HotFlag] AS [HotFlag0], [x.ProductCategory].[NewFlag] AS [NewFlag0], [x.ProductCategory].[Id]
+FROM [Products] AS [x]
+INNER JOIN [ProductCategories] AS [x.ProductCategory] ON [x].[CategoryId] = [x.ProductCategory].[Id]
+ORDER BY [Id1]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2018-03-01T18:32:52.9811210+07:00 0HLBVD0BGTM37:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:32:52.9877138+07:00 0HLBVD0BGTM37:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:32:52.9955727+07:00 0HLBVD0BGTM37:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:32:53.0021864+07:00 0HLBVD0BGTM37:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:32:53.0076016+07:00 0HLBVD0BGTM37:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:32:53.0136349+07:00 0HLBVD0BGTM37:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:32:53.0186629+07:00 0HLBVD0BGTM37:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:32:53.0240918+07:00 0HLBVD0BGTM37:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:32:53.0313961+07:00 0HLBVD0BGTM37:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:32:53.0372375+07:00 0HLBVD0BGTM37:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:32:53.0471994+07:00 0HLBVD0BGTM37:00000004 [INF] Executing JsonResult, writing value "{ draw = 1, recordsFiltered = 20, recordsTotal = 20, data = System.Collections.Generic.List`1[TemplateDotNetCore.Application.ViewModels.ProductViewModel] }". (7bb75e80)
+2018-03-01T18:32:53.0641305+07:00 0HLBVD0BGTM37:00000004 [INF] Executed action "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.GetAllDataTable (TemplateDotNetCore)" in 935.6037ms (afa2e885)
+2018-03-01T18:32:53.0703283+07:00 0HLBVD0BGTM37:00000004 [INF] Request finished in 1095.2624ms 200 application/json; charset=utf-8 (791a596a)
+2018-03-01T18:33:02.0218088+07:00 0HLBVD0BGTM3D:00000004 [INF] Request starting HTTP/1.1 POST http://localhost:44357/Admin/Product/GetAllDataTable application/x-www-form-urlencoded; charset=UTF-8 1882 (ca22a1cb)
+2018-03-01T18:33:02.0287153+07:00 0HLBVD0BGTM3D:00000004 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T18:33:02.0355625+07:00 0HLBVD0BGTM3D:00000004 [INF] Authorization was successful for user: "NamHai". (d7eb274a)
+2018-03-01T18:33:02.0431263+07:00 0HLBVD0BGTM3D:00000004 [INF] Executing action method "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.GetAllDataTable (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-01T18:33:02.0499633+07:00 0HLBVD0BGTM3D:00000004 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-01T18:33:02.0607840+07:00 0HLBVD0BGTM3D:00000004 [WRN] The Include operation for navigation '"[x].ProductCategory"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information. (10efaee6)
+2018-03-01T18:33:02.0878888+07:00 0HLBVD0BGTM3D:00000004 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id] AS [Id1], [x].[Status], [x].[DateCreated], [x].[Sold], [x].[DateModified], [x].[Color], [x].[Image], [x].[Size], [x].[SeoPageTitle], [x].[SeoAlias], [x].[SeoKeywords], [x].[SeoDescription], [x].[Name], [x].[CategoryId] AS [Id0], [x].[Price], [x].[Description], [x].[Content], [x].[PromotionPrice], [x].[Unit], [x].[HomeFlag], [x].[HotFlag], [x].[NewFlag], [x].[Tags], [x].[LanguageId], [x].[PurchaseTime], [x].[ErrorTime], [x].[Warranty], [x].[Quantity], [x].[Star], CASE
+    WHEN [x].[CategoryId] IS NOT NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, [x.ProductCategory].[Name] AS [Name0], [x.ProductCategory].[Discription], [x.ProductCategory].[ParentId], [x.ProductCategory].[HomeOrder], [x.ProductCategory].[Image] AS [Image0], [x.ProductCategory].[SeoPageTitle] AS [SeoPageTitle0], [x.ProductCategory].[SeoAlias] AS [SeoAlias0], [x.ProductCategory].[SeoKeywords] AS [SeoKeywords0], [x.ProductCategory].[SeoDescription] AS [SeoDescription0], [x.ProductCategory].[Status] AS [Status0], [x.ProductCategory].[LanguageId] AS [LanguageId0], [x.ProductCategory].[Tags] AS [Tags0], [x.ProductCategory].[DateCreated] AS [DateCreated0], [x.ProductCategory].[DateModified] AS [DateModified0], [x.ProductCategory].[SortOrder], [x.ProductCategory].[HomeFlag] AS [HomeFlag0], [x.ProductCategory].[HotFlag] AS [HotFlag0], [x.ProductCategory].[NewFlag] AS [NewFlag0], [x.ProductCategory].[Id]
+FROM [Products] AS [x]
+INNER JOIN [ProductCategories] AS [x.ProductCategory] ON [x].[CategoryId] = [x.ProductCategory].[Id]
+ORDER BY [Id1]" (0723d8ff)
+2018-03-01T18:33:02.1004502+07:00 0HLBVD0BGTM3D:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:02.1059238+07:00 0HLBVD0BGTM3D:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:02.1123115+07:00 0HLBVD0BGTM3D:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:02.1181967+07:00 0HLBVD0BGTM3D:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:02.1240598+07:00 0HLBVD0BGTM3D:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:02.1292344+07:00 0HLBVD0BGTM3D:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:02.1356020+07:00 0HLBVD0BGTM3D:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:02.1407883+07:00 0HLBVD0BGTM3D:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:02.1458637+07:00 0HLBVD0BGTM3D:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:02.1514013+07:00 0HLBVD0BGTM3D:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:02.1569464+07:00 0HLBVD0BGTM3D:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:02.1622015+07:00 0HLBVD0BGTM3D:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:02.1675428+07:00 0HLBVD0BGTM3D:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:02.1730084+07:00 0HLBVD0BGTM3D:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:02.1780913+07:00 0HLBVD0BGTM3D:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:02.1831461+07:00 0HLBVD0BGTM3D:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:02.1883609+07:00 0HLBVD0BGTM3D:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:02.1937053+07:00 0HLBVD0BGTM3D:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:02.1987416+07:00 0HLBVD0BGTM3D:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:02.2038292+07:00 0HLBVD0BGTM3D:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:02.2162645+07:00 0HLBVD0BGTM3D:00000004 [INF] Executing JsonResult, writing value "{ draw = 2, recordsFiltered = 5, recordsTotal = 5, data = System.Collections.Generic.List`1[TemplateDotNetCore.Application.ViewModels.ProductViewModel] }". (7bb75e80)
+2018-03-01T18:33:02.2221039+07:00 0HLBVD0BGTM3D:00000004 [INF] Executed action "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.GetAllDataTable (TemplateDotNetCore)" in 187.6433ms (afa2e885)
+2018-03-01T18:33:02.2269194+07:00 0HLBVD0BGTM3D:00000004 [INF] Request finished in 209.9422ms 200 application/json; charset=utf-8 (791a596a)
+2018-03-01T18:33:06.5350211+07:00 0HLBVD0BGTM2V:00000006 [INF] Request starting HTTP/1.1 POST http://localhost:44357/Admin/Product/GetAllDataTable application/x-www-form-urlencoded; charset=UTF-8 1882 (ca22a1cb)
+2018-03-01T18:33:06.5431210+07:00 0HLBVD0BGTM2V:00000006 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T18:33:06.5508618+07:00 0HLBVD0BGTM2V:00000006 [INF] Authorization was successful for user: "NamHai". (d7eb274a)
+2018-03-01T18:33:06.5580578+07:00 0HLBVD0BGTM2V:00000006 [INF] Executing action method "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.GetAllDataTable (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-01T18:33:06.5645187+07:00 0HLBVD0BGTM2V:00000006 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-01T18:33:06.5740140+07:00 0HLBVD0BGTM2V:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id] AS [Id1], [x].[Status], [x].[DateCreated], [x].[Sold], [x].[DateModified], [x].[Color], [x].[Image], [x].[Size], [x].[SeoPageTitle], [x].[SeoAlias], [x].[SeoKeywords], [x].[SeoDescription], [x].[Name], [x].[CategoryId] AS [Id0], [x].[Price], [x].[Description], [x].[Content], [x].[PromotionPrice], [x].[Unit], [x].[HomeFlag], [x].[HotFlag], [x].[NewFlag], [x].[Tags], [x].[LanguageId], [x].[PurchaseTime], [x].[ErrorTime], [x].[Warranty], [x].[Quantity], [x].[Star], CASE
+    WHEN [x].[CategoryId] IS NOT NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, [x.ProductCategory].[Name] AS [Name0], [x.ProductCategory].[Discription], [x.ProductCategory].[ParentId], [x.ProductCategory].[HomeOrder], [x.ProductCategory].[Image] AS [Image0], [x.ProductCategory].[SeoPageTitle] AS [SeoPageTitle0], [x.ProductCategory].[SeoAlias] AS [SeoAlias0], [x.ProductCategory].[SeoKeywords] AS [SeoKeywords0], [x.ProductCategory].[SeoDescription] AS [SeoDescription0], [x.ProductCategory].[Status] AS [Status0], [x.ProductCategory].[LanguageId] AS [LanguageId0], [x.ProductCategory].[Tags] AS [Tags0], [x.ProductCategory].[DateCreated] AS [DateCreated0], [x.ProductCategory].[DateModified] AS [DateModified0], [x.ProductCategory].[SortOrder], [x.ProductCategory].[HomeFlag] AS [HomeFlag0], [x.ProductCategory].[HotFlag] AS [HotFlag0], [x.ProductCategory].[NewFlag] AS [NewFlag0], [x.ProductCategory].[Id]
+FROM [Products] AS [x]
+INNER JOIN [ProductCategories] AS [x.ProductCategory] ON [x].[CategoryId] = [x.ProductCategory].[Id]
+ORDER BY [Id1]" (0723d8ff)
+2018-03-01T18:33:06.5792087+07:00 0HLBVD0BGTM2V:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:06.5843670+07:00 0HLBVD0BGTM2V:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:06.5901037+07:00 0HLBVD0BGTM2V:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:06.5972840+07:00 0HLBVD0BGTM2V:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:06.6024189+07:00 0HLBVD0BGTM2V:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:06.6072924+07:00 0HLBVD0BGTM2V:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:06.6123271+07:00 0HLBVD0BGTM2V:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:06.6176901+07:00 0HLBVD0BGTM2V:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:06.6230684+07:00 0HLBVD0BGTM2V:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:06.6287617+07:00 0HLBVD0BGTM2V:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:06.6343056+07:00 0HLBVD0BGTM2V:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:06.6398989+07:00 0HLBVD0BGTM2V:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:06.6450098+07:00 0HLBVD0BGTM2V:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:06.6507548+07:00 0HLBVD0BGTM2V:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:06.6559522+07:00 0HLBVD0BGTM2V:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:06.6607526+07:00 0HLBVD0BGTM2V:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:06.6654946+07:00 0HLBVD0BGTM2V:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:06.6704032+07:00 0HLBVD0BGTM2V:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:06.6750243+07:00 0HLBVD0BGTM2V:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:06.6799594+07:00 0HLBVD0BGTM2V:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:06.6896648+07:00 0HLBVD0BGTM2V:00000006 [INF] Executing JsonResult, writing value "{ draw = 3, recordsFiltered = 5, recordsTotal = 5, data = System.Collections.Generic.List`1[TemplateDotNetCore.Application.ViewModels.ProductViewModel] }". (7bb75e80)
+2018-03-01T18:33:06.6952518+07:00 0HLBVD0BGTM2V:00000006 [INF] Executed action "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.GetAllDataTable (TemplateDotNetCore)" in 146.9073ms (afa2e885)
+2018-03-01T18:33:06.7020670+07:00 0HLBVD0BGTM2V:00000006 [INF] Request finished in 168.1936ms 200 application/json; charset=utf-8 (791a596a)
+2018-03-01T18:33:09.6725251+07:00 0HLBVD0BGTM31:00000007 [INF] Request starting HTTP/1.1 POST http://localhost:44357/Admin/Product/GetAllDataTable application/x-www-form-urlencoded; charset=UTF-8 1883 (ca22a1cb)
+2018-03-01T18:33:09.6800076+07:00 0HLBVD0BGTM31:00000007 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T18:33:09.6875765+07:00 0HLBVD0BGTM31:00000007 [INF] Authorization was successful for user: "NamHai". (d7eb274a)
+2018-03-01T18:33:09.6927606+07:00 0HLBVD0BGTM31:00000007 [INF] Executing action method "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.GetAllDataTable (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-01T18:33:09.6985929+07:00 0HLBVD0BGTM31:00000007 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-01T18:33:09.7117504+07:00 0HLBVD0BGTM31:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id] AS [Id1], [x].[Status], [x].[DateCreated], [x].[Sold], [x].[DateModified], [x].[Color], [x].[Image], [x].[Size], [x].[SeoPageTitle], [x].[SeoAlias], [x].[SeoKeywords], [x].[SeoDescription], [x].[Name], [x].[CategoryId] AS [Id0], [x].[Price], [x].[Description], [x].[Content], [x].[PromotionPrice], [x].[Unit], [x].[HomeFlag], [x].[HotFlag], [x].[NewFlag], [x].[Tags], [x].[LanguageId], [x].[PurchaseTime], [x].[ErrorTime], [x].[Warranty], [x].[Quantity], [x].[Star], CASE
+    WHEN [x].[CategoryId] IS NOT NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, [x.ProductCategory].[Name] AS [Name0], [x.ProductCategory].[Discription], [x.ProductCategory].[ParentId], [x.ProductCategory].[HomeOrder], [x.ProductCategory].[Image] AS [Image0], [x.ProductCategory].[SeoPageTitle] AS [SeoPageTitle0], [x.ProductCategory].[SeoAlias] AS [SeoAlias0], [x.ProductCategory].[SeoKeywords] AS [SeoKeywords0], [x.ProductCategory].[SeoDescription] AS [SeoDescription0], [x.ProductCategory].[Status] AS [Status0], [x.ProductCategory].[LanguageId] AS [LanguageId0], [x.ProductCategory].[Tags] AS [Tags0], [x.ProductCategory].[DateCreated] AS [DateCreated0], [x.ProductCategory].[DateModified] AS [DateModified0], [x.ProductCategory].[SortOrder], [x.ProductCategory].[HomeFlag] AS [HomeFlag0], [x.ProductCategory].[HotFlag] AS [HotFlag0], [x.ProductCategory].[NewFlag] AS [NewFlag0], [x.ProductCategory].[Id]
+FROM [Products] AS [x]
+INNER JOIN [ProductCategories] AS [x.ProductCategory] ON [x].[CategoryId] = [x.ProductCategory].[Id]
+ORDER BY [Id1]" (0723d8ff)
+2018-03-01T18:33:09.7177573+07:00 0HLBVD0BGTM31:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:09.7229136+07:00 0HLBVD0BGTM31:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:09.7279700+07:00 0HLBVD0BGTM31:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:09.7336364+07:00 0HLBVD0BGTM31:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:09.7399878+07:00 0HLBVD0BGTM31:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:09.7456992+07:00 0HLBVD0BGTM31:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:09.7510262+07:00 0HLBVD0BGTM31:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:09.7564350+07:00 0HLBVD0BGTM31:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:09.7618826+07:00 0HLBVD0BGTM31:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:09.7677382+07:00 0HLBVD0BGTM31:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:09.7730687+07:00 0HLBVD0BGTM31:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:09.7784747+07:00 0HLBVD0BGTM31:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:09.7837994+07:00 0HLBVD0BGTM31:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:09.7892812+07:00 0HLBVD0BGTM31:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:09.7946549+07:00 0HLBVD0BGTM31:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:09.8000336+07:00 0HLBVD0BGTM31:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:09.8052283+07:00 0HLBVD0BGTM31:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:09.8102603+07:00 0HLBVD0BGTM31:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:09.8156307+07:00 0HLBVD0BGTM31:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:09.8209337+07:00 0HLBVD0BGTM31:00000007 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:09.8290052+07:00 0HLBVD0BGTM31:00000007 [INF] Executing JsonResult, writing value "{ draw = 4, recordsFiltered = 5, recordsTotal = 5, data = System.Collections.Generic.List`1[TemplateDotNetCore.Application.ViewModels.ProductViewModel] }". (7bb75e80)
+2018-03-01T18:33:09.8347245+07:00 0HLBVD0BGTM31:00000007 [INF] Executed action "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.GetAllDataTable (TemplateDotNetCore)" in 149.5178ms (afa2e885)
+2018-03-01T18:33:09.8397643+07:00 0HLBVD0BGTM31:00000007 [INF] Request finished in 167.6006ms 200 application/json; charset=utf-8 (791a596a)
+2018-03-01T18:33:12.8522929+07:00 0HLBVD0BGTM3F:00000004 [INF] Request starting HTTP/1.1 POST http://localhost:44357/Admin/Product/GetAllDataTable application/x-www-form-urlencoded; charset=UTF-8 1899 (ca22a1cb)
+2018-03-01T18:33:12.8582231+07:00 0HLBVD0BGTM3F:00000004 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T18:33:12.8664558+07:00 0HLBVD0BGTM3F:00000004 [INF] Authorization was successful for user: "NamHai". (d7eb274a)
+2018-03-01T18:33:12.8706268+07:00 0HLBVD0BGTM3F:00000004 [INF] Executing action method "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.GetAllDataTable (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-01T18:33:12.8756556+07:00 0HLBVD0BGTM3F:00000004 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-01T18:33:12.8862489+07:00 0HLBVD0BGTM3F:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id] AS [Id1], [x].[Status], [x].[DateCreated], [x].[Sold], [x].[DateModified], [x].[Color], [x].[Image], [x].[Size], [x].[SeoPageTitle], [x].[SeoAlias], [x].[SeoKeywords], [x].[SeoDescription], [x].[Name], [x].[CategoryId] AS [Id0], [x].[Price], [x].[Description], [x].[Content], [x].[PromotionPrice], [x].[Unit], [x].[HomeFlag], [x].[HotFlag], [x].[NewFlag], [x].[Tags], [x].[LanguageId], [x].[PurchaseTime], [x].[ErrorTime], [x].[Warranty], [x].[Quantity], [x].[Star], CASE
+    WHEN [x].[CategoryId] IS NOT NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, [x.ProductCategory].[Name] AS [Name0], [x.ProductCategory].[Discription], [x.ProductCategory].[ParentId], [x.ProductCategory].[HomeOrder], [x.ProductCategory].[Image] AS [Image0], [x.ProductCategory].[SeoPageTitle] AS [SeoPageTitle0], [x.ProductCategory].[SeoAlias] AS [SeoAlias0], [x.ProductCategory].[SeoKeywords] AS [SeoKeywords0], [x.ProductCategory].[SeoDescription] AS [SeoDescription0], [x.ProductCategory].[Status] AS [Status0], [x.ProductCategory].[LanguageId] AS [LanguageId0], [x.ProductCategory].[Tags] AS [Tags0], [x.ProductCategory].[DateCreated] AS [DateCreated0], [x.ProductCategory].[DateModified] AS [DateModified0], [x.ProductCategory].[SortOrder], [x.ProductCategory].[HomeFlag] AS [HomeFlag0], [x.ProductCategory].[HotFlag] AS [HotFlag0], [x.ProductCategory].[NewFlag] AS [NewFlag0], [x.ProductCategory].[Id]
+FROM [Products] AS [x]
+INNER JOIN [ProductCategories] AS [x.ProductCategory] ON [x].[CategoryId] = [x.ProductCategory].[Id]
+ORDER BY [Id1]" (0723d8ff)
+2018-03-01T18:33:12.8909548+07:00 0HLBVD0BGTM3F:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:12.8973584+07:00 0HLBVD0BGTM3F:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:12.9024148+07:00 0HLBVD0BGTM3F:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:12.9073008+07:00 0HLBVD0BGTM3F:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:12.9123442+07:00 0HLBVD0BGTM3F:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:12.9190496+07:00 0HLBVD0BGTM3F:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:12.9250036+07:00 0HLBVD0BGTM3F:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:12.9313048+07:00 0HLBVD0BGTM3F:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:12.9376002+07:00 0HLBVD0BGTM3F:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:12.9440089+07:00 0HLBVD0BGTM3F:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:12.9502520+07:00 0HLBVD0BGTM3F:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:12.9557662+07:00 0HLBVD0BGTM3F:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:12.9613300+07:00 0HLBVD0BGTM3F:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:12.9665226+07:00 0HLBVD0BGTM3F:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:12.9718895+07:00 0HLBVD0BGTM3F:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:12.9770886+07:00 0HLBVD0BGTM3F:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:12.9823271+07:00 0HLBVD0BGTM3F:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:12.9874499+07:00 0HLBVD0BGTM3F:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:12.9919034+07:00 0HLBVD0BGTM3F:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:12.9969523+07:00 0HLBVD0BGTM3F:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T18:33:13.0037908+07:00 0HLBVD0BGTM3F:00000004 [INF] Executing JsonResult, writing value "{ draw = 5, recordsFiltered = 5, recordsTotal = 5, data = System.Collections.Generic.List`1[TemplateDotNetCore.Application.ViewModels.ProductViewModel] }". (7bb75e80)
+2018-03-01T18:33:13.0085387+07:00 0HLBVD0BGTM3F:00000004 [INF] Executed action "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.GetAllDataTable (TemplateDotNetCore)" in 145.9244ms (afa2e885)
+2018-03-01T18:33:13.0133395+07:00 0HLBVD0BGTM3F:00000004 [INF] Request finished in 161.5577ms 200 application/json; charset=utf-8 (791a596a)
+2018-03-01T19:08:21.7383610+07:00  [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-01T19:08:22.0144852+07:00  [INF] Executed DbCommand ("41"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-01T19:08:22.0916134+07:00  [INF] Executed DbCommand ("38"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-01T19:08:22.1784974+07:00  [INF] Executed DbCommand ("51"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Functions] AS [f]" (0723d8ff)
+2018-03-01T19:08:22.2098262+07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [ProductCategories] AS [p]" (0723d8ff)
+2018-03-01T19:08:22.3008726+07:00  [INF] Executed DbCommand ("50"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeTitle')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-01T19:08:22.3300041+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaKeyword')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-01T19:08:22.3579728+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaDescription')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-01T19:08:22.7517808+07:00 0HLBVDKGHI6LG:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-01T19:08:22.9463828+07:00 0HLBVDKGHI6LG:00000001 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-01T19:08:25.4274030+07:00 0HLBVDKGHI6LG:00000001 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-01T19:08:26.1054043+07:00 0HLBVDKGHI6LG:00000001 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 3153.2512ms (afa2e885)
+2018-03-01T19:08:26.1337397+07:00 0HLBVDKGHI6LG:00000001 [INF] Request finished in 3403.7374ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-01T19:10:58.6802418+07:00 0HLBVDKGHI6LI:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin   (ca22a1cb)
+2018-03-01T19:10:58.6967562+07:00 0HLBVDKGHI6LI:00000001 [INF] Executing action method "TemplateDotNetCore.Areas.Admin.Controllers.LoginController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-01T19:10:59.0328247+07:00 0HLBVDKGHI6LI:00000001 [INF] Executing ViewResult, running view at path "/Areas/Admin/Views/Login/Index.cshtml". (9707eebe)
+2018-03-01T19:10:59.0915435+07:00 0HLBVDKGHI6LI:00000001 [INF] Executed action "TemplateDotNetCore.Areas.Admin.Controllers.LoginController.Index (TemplateDotNetCore)" in 396.1727ms (afa2e885)
+2018-03-01T19:10:59.1002558+07:00 0HLBVDKGHI6LI:00000001 [INF] Request finished in 417.3417ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-01T19:11:04.8110267+07:00 0HLBVDKGHI6LI:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:44357/admin/login/authen application/x-www-form-urlencoded; charset=UTF-8 46 (ca22a1cb)
+2018-03-01T19:11:04.9107261+07:00 0HLBVDKGHI6LI:00000002 [INF] Executing action method "TemplateDotNetCore.Areas.Admin.Controllers.LoginController.Authen (TemplateDotNetCore)" with arguments (["TemplateDotNetCore.Models.AccountViewModels.LoginViewModel"]) - ModelState is Valid (ba7f4ac2)
+2018-03-01T19:11:04.9246737+07:00 0HLBVDKGHI6LI:00000002 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-01T19:11:04.9963502+07:00 0HLBVDKGHI6LI:00000002 [INF] Executed DbCommand ("32"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProductIdBuyed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AppUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2018-03-01T19:11:05.1351394+07:00 0HLBVDKGHI6LI:00000002 [INF] Executed DbCommand ("7"ms) [Parameters=["@__user_Id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AppUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2018-03-01T19:11:05.2087623+07:00 0HLBVDKGHI6LI:00000002 [INF] Executed DbCommand ("27"ms) [Parameters=["@__userId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-03-01T19:11:05.2306013+07:00 0HLBVDKGHI6LI:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AppRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2018-03-01T19:11:05.2601812+07:00 0HLBVDKGHI6LI:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__role_Id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AppRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2018-03-01T19:11:05.2690772+07:00 0HLBVDKGHI6LI:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2018-03-01T19:11:05.2815237+07:00 0HLBVDKGHI6LI:00000002 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2018-03-01T19:11:05.2891559+07:00 0HLBVDKGHI6LI:00000002 [INF] User logged in. (fdce0db4)
+2018-03-01T19:11:05.3015888+07:00 0HLBVDKGHI6LI:00000002 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2018-03-01T19:11:05.3628325+07:00 0HLBVDKGHI6LI:00000002 [INF] Executed action "TemplateDotNetCore.Areas.Admin.Controllers.LoginController.Authen (TemplateDotNetCore)" in 502.1532ms (afa2e885)
+2018-03-01T19:11:05.3904501+07:00 0HLBVDKGHI6LI:00000002 [INF] Request finished in 563.8066ms 200 application/json; charset=utf-8 (791a596a)
+2018-03-01T19:11:05.3996926+07:00 0HLBVDKGHI6LI:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/Admin/Home/Index   (ca22a1cb)
+2018-03-01T19:11:05.4121801+07:00 0HLBVDKGHI6LI:00000003 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T19:11:05.4289884+07:00 0HLBVDKGHI6LI:00000003 [INF] Authorization was successful for user: "NamHai". (d7eb274a)
+2018-03-01T19:11:05.4546536+07:00 0HLBVDKGHI6LI:00000003 [INF] Executing action method "TemplateDotNetCore.Areas.Admin.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-01T19:11:05.6223289+07:00 0HLBVDKGHI6LI:00000003 [INF] Executing ViewResult, running view at path "/Areas/Admin/Views/Home/Index.cshtml". (9707eebe)
+2018-03-01T19:11:05.9240475+07:00 0HLBVDKGHI6LI:00000003 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-01T19:11:05.9730447+07:00 0HLBVDKGHI6LI:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Name], [dto].[URL], [dto].[ParentId], [dto].[IconCss], [dto].[SortOrder], [dto].[Status]
+FROM [Functions] AS [dto]" (0723d8ff)
+2018-03-01T19:11:06.4890568+07:00 0HLBVDKGHI6LI:00000003 [INF] Executed action "TemplateDotNetCore.Areas.Admin.Controllers.HomeController.Index (TemplateDotNetCore)" in 1068.29ms (afa2e885)
+2018-03-01T19:11:06.4963018+07:00 0HLBVDKGHI6LI:00000003 [INF] Request finished in 1095.9822ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-01T19:11:06.7060212+07:00 0HLBVDKGHI6LI:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44357/Admin/Home/favicon.ico   (ca22a1cb)
+2018-03-01T19:11:06.7114205+07:00 0HLBVDKGHI6LI:00000004 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T19:11:06.7215673+07:00 0HLBVDKGHI6LI:00000004 [INF] Request finished in 12.188ms 404  (791a596a)
+2018-03-01T19:11:09.3091270+07:00 0HLBVDKGHI6LI:00000005 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin/product/index   (ca22a1cb)
+2018-03-01T19:11:09.3168848+07:00 0HLBVDKGHI6LI:00000005 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T19:11:09.3252634+07:00 0HLBVDKGHI6LI:00000005 [INF] Authorization was successful for user: "NamHai". (d7eb274a)
+2018-03-01T19:11:09.3374431+07:00 0HLBVDKGHI6LI:00000005 [INF] Executing action method "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-01T19:11:09.5319510+07:00 0HLBVDKGHI6LI:00000005 [INF] Executing ViewResult, running view at path "/Areas/Admin/Views/Product/Index.cshtml". (9707eebe)
+2018-03-01T19:11:09.5587038+07:00 0HLBVDKGHI6LI:00000005 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-01T19:11:09.5696585+07:00 0HLBVDKGHI6LI:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Name], [dto].[URL], [dto].[ParentId], [dto].[IconCss], [dto].[SortOrder], [dto].[Status]
+FROM [Functions] AS [dto]" (0723d8ff)
+2018-03-01T19:11:09.6071428+07:00 0HLBVDKGHI6LI:00000005 [INF] Executed action "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.Index (TemplateDotNetCore)" in 282.086ms (afa2e885)
+2018-03-01T19:11:09.6203619+07:00 0HLBVDKGHI6LI:00000005 [INF] Request finished in 306.5581ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-01T19:11:10.8192645+07:00 0HLBVDKGHI6LI:00000006 [INF] Request starting HTTP/1.1 POST http://localhost:44357/Admin/Product/GetAllDataTable application/x-www-form-urlencoded; charset=UTF-8 1851 (ca22a1cb)
+2018-03-01T19:11:10.8316828+07:00 0HLBVDKGHI6LJ:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin/product/GetAllCategories   (ca22a1cb)
+2018-03-01T19:11:10.8693216+07:00 0HLBVDKGHI6LK:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin/product/favicon.ico   (ca22a1cb)
+2018-03-01T19:11:10.8783076+07:00 0HLBVDKGHI6LJ:00000001 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T19:11:10.8844209+07:00 0HLBVDKGHI6LK:00000001 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T19:11:10.8929207+07:00 0HLBVDKGHI6LK:00000001 [INF] Request finished in 61.0757ms 404  (791a596a)
+2018-03-01T19:11:10.9027474+07:00 0HLBVDKGHI6LJ:00000001 [INF] Authorization was successful for user: "NamHai". (d7eb274a)
+2018-03-01T19:11:10.9077754+07:00 0HLBVDKGHI6LJ:00000001 [INF] Executing action method "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.GetAllCategories (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-01T19:11:10.9145633+07:00 0HLBVDKGHI6LI:00000006 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T19:11:10.9205947+07:00 0HLBVDKGHI6LJ:00000001 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-01T19:11:10.9265578+07:00 0HLBVDKGHI6LI:00000006 [INF] Authorization was successful for user: "NamHai". (d7eb274a)
+2018-03-01T19:11:10.9314984+07:00 0HLBVDKGHI6LI:00000006 [INF] Executing action method "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.GetAllDataTable (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-01T19:11:10.9528183+07:00 0HLBVDKGHI6LI:00000006 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-01T19:11:10.9956343+07:00 0HLBVDKGHI6LJ:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Name], [x].[Discription], [x].[ParentId], [x].[HomeOrder], [x].[Image], [x].[SeoPageTitle], [x].[SeoAlias], [x].[SeoKeywords], [x].[SeoDescription], [x].[Status], [x].[LanguageId], [x].[Tags], [x].[DateCreated], [x].[DateModified], [x].[SortOrder], [x].[HomeFlag], [x].[HotFlag], [x].[NewFlag]
+FROM [ProductCategories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2018-03-01T19:11:11.0359405+07:00 0HLBVDKGHI6LJ:00000001 [INF] Executed DbCommand ("16"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:11.0539317+07:00 0HLBVDKGHI6LJ:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:11.0756708+07:00 0HLBVDKGHI6LJ:00000001 [INF] Executed DbCommand ("7"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:11.0833048+07:00 0HLBVDKGHI6LJ:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:11.0887351+07:00 0HLBVDKGHI6LJ:00000001 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2018-03-01T19:11:11.1507929+07:00 0HLBVDKGHI6LJ:00000001 [INF] Executed action "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.GetAllCategories (TemplateDotNetCore)" in 249.2081ms (afa2e885)
+2018-03-01T19:11:11.1562867+07:00 0HLBVDKGHI6LJ:00000001 [INF] Request finished in 369.9244ms 200 application/json; charset=utf-8 (791a596a)
+2018-03-01T19:11:11.4544099+07:00 0HLBVDKGHI6LI:00000006 [WRN] The Include operation for navigation '"[x].ProductCategory"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information. (10efaee6)
+2018-03-01T19:11:11.5096086+07:00 0HLBVDKGHI6LI:00000006 [INF] Executed DbCommand ("33"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+INNER JOIN [ProductCategories] AS [x.ProductCategory] ON [x].[CategoryId] = [x.ProductCategory].[Id]" (0723d8ff)
+2018-03-01T19:11:11.5269056+07:00 0HLBVDKGHI6LI:00000006 [WRN] The Include operation for navigation '"[x].ProductCategory"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information. (10efaee6)
+2018-03-01T19:11:11.5755382+07:00 0HLBVDKGHI6LI:00000006 [INF] Executed DbCommand ("3"ms) [Parameters=["@__p_0='?', @__p_1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id] AS [Id1], [x].[Status], [x].[DateCreated], [x].[Sold], [x].[DateModified], [x].[Color], [x].[Image], [x].[Size], [x].[SeoPageTitle], [x].[SeoAlias], [x].[SeoKeywords], [x].[SeoDescription], [x].[Name], [x].[CategoryId] AS [Id0], [x].[Price], [x].[Description], [x].[Content], [x].[PromotionPrice], [x].[Unit], [x].[HomeFlag], [x].[HotFlag], [x].[NewFlag], [x].[Tags], [x].[LanguageId], [x].[PurchaseTime], [x].[ErrorTime], [x].[Warranty], [x].[Quantity], [x].[Star], CASE
+    WHEN [x].[CategoryId] IS NOT NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, [x.ProductCategory].[Name] AS [Name0], [x.ProductCategory].[Discription], [x.ProductCategory].[ParentId], [x.ProductCategory].[HomeOrder], [x.ProductCategory].[Image] AS [Image0], [x.ProductCategory].[SeoPageTitle] AS [SeoPageTitle0], [x.ProductCategory].[SeoAlias] AS [SeoAlias0], [x.ProductCategory].[SeoKeywords] AS [SeoKeywords0], [x.ProductCategory].[SeoDescription] AS [SeoDescription0], [x.ProductCategory].[Status] AS [Status0], [x.ProductCategory].[LanguageId] AS [LanguageId0], [x.ProductCategory].[Tags] AS [Tags0], [x.ProductCategory].[DateCreated] AS [DateCreated0], [x.ProductCategory].[DateModified] AS [DateModified0], [x.ProductCategory].[SortOrder], [x.ProductCategory].[HomeFlag] AS [HomeFlag0], [x.ProductCategory].[HotFlag] AS [HotFlag0], [x.ProductCategory].[NewFlag] AS [NewFlag0], [x.ProductCategory].[Id]
+FROM [Products] AS [x]
+INNER JOIN [ProductCategories] AS [x.ProductCategory] ON [x].[CategoryId] = [x.ProductCategory].[Id]
+ORDER BY [Id1]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2018-03-01T19:11:11.5886716+07:00 0HLBVDKGHI6LI:00000006 [INF] Executed DbCommand ("2"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:11.5980721+07:00 0HLBVDKGHI6LI:00000006 [INF] Executed DbCommand ("2"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:11.6081474+07:00 0HLBVDKGHI6LI:00000006 [INF] Executed DbCommand ("2"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:11.6165219+07:00 0HLBVDKGHI6LI:00000006 [INF] Executed DbCommand ("2"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:11.6240577+07:00 0HLBVDKGHI6LI:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:11.6332184+07:00 0HLBVDKGHI6LI:00000006 [INF] Executed DbCommand ("2"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:11.6404749+07:00 0HLBVDKGHI6LI:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:11.6474161+07:00 0HLBVDKGHI6LI:00000006 [INF] Executed DbCommand ("2"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:11.6526630+07:00 0HLBVDKGHI6LI:00000006 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:11.6595556+07:00 0HLBVDKGHI6LI:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:11.6673063+07:00 0HLBVDKGHI6LI:00000006 [INF] Executing JsonResult, writing value "{ draw = 1, recordsFiltered = 20, recordsTotal = 20, data = System.Collections.Generic.List`1[TemplateDotNetCore.Application.ViewModels.ProductViewModel] }". (7bb75e80)
+2018-03-01T19:11:11.6813599+07:00 0HLBVDKGHI6LI:00000006 [INF] Executed action "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.GetAllDataTable (TemplateDotNetCore)" in 754.9537ms (afa2e885)
+2018-03-01T19:11:11.6863566+07:00 0HLBVDKGHI6LI:00000006 [INF] Request finished in 912.5463ms 200 application/json; charset=utf-8 (791a596a)
+2018-03-01T19:11:23.1059305+07:00 0HLBVDKGHI6LK:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/js/lib/data-table/pdfmake.min.js.map   (ca22a1cb)
+2018-03-01T19:11:23.1504860+07:00 0HLBVDKGHI6LJ:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/js/bootstrap.min.js.map   (ca22a1cb)
+2018-03-01T19:11:23.1763230+07:00 0HLBVDKGHI6LI:00000007 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/css/bootstrap.min.css.map   (ca22a1cb)
+2018-03-01T19:11:23.1815915+07:00 0HLBVDKGHI6LL:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/scss/style.css.map   (ca22a1cb)
+2018-03-01T19:11:23.1865536+07:00 0HLBVDKGHI6LJ:00000002 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T19:11:23.2164079+07:00 0HLBVDKGHI6LJ:00000002 [INF] Request finished in 125.7679ms 404  (791a596a)
+2018-03-01T19:11:23.2651424+07:00 0HLBVDKGHI6LI:00000007 [INF] The file "/admin-side/assets/css/bootstrap.min.css.map" was not modified (f1f8d725)
+2018-03-01T19:11:23.2697741+07:00 0HLBVDKGHI6LK:00000002 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T19:11:23.3006185+07:00 0HLBVDKGHI6LL:00000001 [INF] The file "/admin-side/assets/scss/style.css.map" was not modified (f1f8d725)
+2018-03-01T19:11:23.3380589+07:00 0HLBVDKGHI6LL:00000001 [INF] Request finished in 149.4688ms 304 text/plain (791a596a)
+2018-03-01T19:11:23.3663423+07:00 0HLBVDKGHI6LK:00000002 [INF] Request finished in 211.6441ms 404  (791a596a)
+2018-03-01T19:11:23.3928035+07:00 0HLBVDKGHI6LI:00000007 [INF] Request finished in 185.3405ms 304 text/plain (791a596a)
+2018-03-01T19:11:29.7217822+07:00 0HLBVDKGHI6LJ:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin/product/index   (ca22a1cb)
+2018-03-01T19:11:29.7271175+07:00 0HLBVDKGHI6LJ:00000003 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T19:11:29.7540137+07:00 0HLBVDKGHI6LJ:00000003 [INF] Authorization was successful for user: "NamHai". (d7eb274a)
+2018-03-01T19:11:29.7583673+07:00 0HLBVDKGHI6LJ:00000003 [INF] Executing action method "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-01T19:11:29.7835592+07:00 0HLBVDKGHI6LJ:00000003 [INF] Executing ViewResult, running view at path "/Areas/Admin/Views/Product/Index.cshtml". (9707eebe)
+2018-03-01T19:11:29.7916501+07:00 0HLBVDKGHI6LJ:00000003 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-01T19:11:29.8026324+07:00 0HLBVDKGHI6LJ:00000003 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Name], [dto].[URL], [dto].[ParentId], [dto].[IconCss], [dto].[SortOrder], [dto].[Status]
+FROM [Functions] AS [dto]" (0723d8ff)
+2018-03-01T19:11:29.8112265+07:00 0HLBVDKGHI6LJ:00000003 [INF] Executed action "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.Index (TemplateDotNetCore)" in 76.3686ms (afa2e885)
+2018-03-01T19:11:29.8194087+07:00 0HLBVDKGHI6LJ:00000003 [INF] Request finished in 96.7913ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-01T19:11:30.1232717+07:00 0HLBVDKGHI6LK:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:44357/Admin/Product/GetAllDataTable application/x-www-form-urlencoded; charset=UTF-8 1851 (ca22a1cb)
+2018-03-01T19:11:30.1273800+07:00 0HLBVDKGHI6LI:00000008 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin/product/GetAllCategories   (ca22a1cb)
+2018-03-01T19:11:30.1327173+07:00 0HLBVDKGHI6LK:00000003 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T19:11:30.1501616+07:00 0HLBVDKGHI6LI:00000008 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T19:11:30.1555087+07:00 0HLBVDKGHI6LK:00000003 [INF] Authorization was successful for user: "NamHai". (d7eb274a)
+2018-03-01T19:11:30.2527635+07:00 0HLBVDKGHI6LI:00000008 [INF] Authorization was successful for user: "NamHai". (d7eb274a)
+2018-03-01T19:11:30.2758451+07:00 0HLBVDKGHI6LL:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/js/bootstrap.min.js.map   (ca22a1cb)
+2018-03-01T19:11:30.2978598+07:00 0HLBVDKGHI6LJ:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44357/admin-side/assets/js/lib/data-table/pdfmake.min.js.map   (ca22a1cb)
+2018-03-01T19:11:30.3031928+07:00 0HLBVDKGHI6LK:00000003 [INF] Executing action method "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.GetAllDataTable (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-01T19:11:30.3258405+07:00 0HLBVDKGHI6LI:00000008 [INF] Executing action method "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.GetAllCategories (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-01T19:11:30.3948226+07:00 0HLBVDKGHI6LJ:00000004 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T19:11:30.4427563+07:00 0HLBVDKGHI6LI:00000008 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-01T19:11:30.4475243+07:00 0HLBVDKGHI6LK:00000003 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-01T19:11:30.4511225+07:00 0HLBVDKGHI6LL:00000002 [INF] AuthenticationScheme: "Identity.Application" was successfully authenticated. (1805f3b3)
+2018-03-01T19:11:30.4760663+07:00 0HLBVDKGHI6LL:00000002 [INF] Request finished in 299.193ms 404  (791a596a)
+2018-03-01T19:11:30.4847676+07:00 0HLBVDKGHI6LI:00000008 [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Name], [x].[Discription], [x].[ParentId], [x].[HomeOrder], [x].[Image], [x].[SeoPageTitle], [x].[SeoAlias], [x].[SeoKeywords], [x].[SeoDescription], [x].[Status], [x].[LanguageId], [x].[Tags], [x].[DateCreated], [x].[DateModified], [x].[SortOrder], [x].[HomeFlag], [x].[HotFlag], [x].[NewFlag]
+FROM [ProductCategories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2018-03-01T19:11:30.4921706+07:00 0HLBVDKGHI6LI:00000008 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:30.5381100+07:00 0HLBVDKGHI6LJ:00000004 [INF] Request finished in 212.7716ms 404  (791a596a)
+2018-03-01T19:11:30.5620879+07:00 0HLBVDKGHI6LK:00000003 [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+INNER JOIN [ProductCategories] AS [x.ProductCategory] ON [x].[CategoryId] = [x.ProductCategory].[Id]" (0723d8ff)
+2018-03-01T19:11:30.6148409+07:00 0HLBVDKGHI6LI:00000008 [INF] Executed DbCommand ("23"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:30.6198705+07:00 0HLBVDKGHI6LK:00000003 [INF] Executed DbCommand ("4"ms) [Parameters=["@__p_0='?', @__p_1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id] AS [Id1], [x].[Status], [x].[DateCreated], [x].[Sold], [x].[DateModified], [x].[Color], [x].[Image], [x].[Size], [x].[SeoPageTitle], [x].[SeoAlias], [x].[SeoKeywords], [x].[SeoDescription], [x].[Name], [x].[CategoryId] AS [Id0], [x].[Price], [x].[Description], [x].[Content], [x].[PromotionPrice], [x].[Unit], [x].[HomeFlag], [x].[HotFlag], [x].[NewFlag], [x].[Tags], [x].[LanguageId], [x].[PurchaseTime], [x].[ErrorTime], [x].[Warranty], [x].[Quantity], [x].[Star], CASE
+    WHEN [x].[CategoryId] IS NOT NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, [x.ProductCategory].[Name] AS [Name0], [x.ProductCategory].[Discription], [x.ProductCategory].[ParentId], [x.ProductCategory].[HomeOrder], [x.ProductCategory].[Image] AS [Image0], [x.ProductCategory].[SeoPageTitle] AS [SeoPageTitle0], [x.ProductCategory].[SeoAlias] AS [SeoAlias0], [x.ProductCategory].[SeoKeywords] AS [SeoKeywords0], [x.ProductCategory].[SeoDescription] AS [SeoDescription0], [x.ProductCategory].[Status] AS [Status0], [x.ProductCategory].[LanguageId] AS [LanguageId0], [x.ProductCategory].[Tags] AS [Tags0], [x.ProductCategory].[DateCreated] AS [DateCreated0], [x.ProductCategory].[DateModified] AS [DateModified0], [x.ProductCategory].[SortOrder], [x.ProductCategory].[HomeFlag] AS [HomeFlag0], [x.ProductCategory].[HotFlag] AS [HotFlag0], [x.ProductCategory].[NewFlag] AS [NewFlag0], [x.ProductCategory].[Id]
+FROM [Products] AS [x]
+INNER JOIN [ProductCategories] AS [x.ProductCategory] ON [x].[CategoryId] = [x.ProductCategory].[Id]
+ORDER BY [Id1]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2018-03-01T19:11:30.6667757+07:00 0HLBVDKGHI6LI:00000008 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:30.6718574+07:00 0HLBVDKGHI6LK:00000003 [INF] Executed DbCommand ("22"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:30.6973938+07:00 0HLBVDKGHI6LI:00000008 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:30.7473660+07:00 0HLBVDKGHI6LK:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:30.7499687+07:00 0HLBVDKGHI6LI:00000008 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2018-03-01T19:11:30.8200511+07:00 0HLBVDKGHI6LK:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:30.8225712+07:00 0HLBVDKGHI6LI:00000008 [INF] Executed action "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.GetAllCategories (TemplateDotNetCore)" in 598.3982ms (afa2e885)
+2018-03-01T19:11:30.8709536+07:00 0HLBVDKGHI6LI:00000008 [INF] Request finished in 699.4471ms 200 application/json; charset=utf-8 (791a596a)
+2018-03-01T19:11:30.8941205+07:00 0HLBVDKGHI6LK:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:30.9237386+07:00 0HLBVDKGHI6LK:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:30.9285761+07:00 0HLBVDKGHI6LK:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:30.9340781+07:00 0HLBVDKGHI6LK:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:30.9395916+07:00 0HLBVDKGHI6LK:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:30.9458613+07:00 0HLBVDKGHI6LK:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:30.9512479+07:00 0HLBVDKGHI6LK:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-01T19:11:30.9564537+07:00 0HLBVDKGHI6LK:00000003 [INF] Executing JsonResult, writing value "{ draw = 1, recordsFiltered = 20, recordsTotal = 20, data = System.Collections.Generic.List`1[TemplateDotNetCore.Application.ViewModels.ProductViewModel] }". (7bb75e80)
+2018-03-01T19:11:30.9821620+07:00 0HLBVDKGHI6LK:00000003 [INF] Executed action "TemplateDotNetCore.Areas.Admin.Controllers.ProductController.GetAllDataTable (TemplateDotNetCore)" in 824.8485ms (afa2e885)
+2018-03-01T19:11:30.9871382+07:00 0HLBVDKGHI6LK:00000003 [INF] Request finished in 863.5981ms 200 application/json; charset=utf-8 (791a596a)

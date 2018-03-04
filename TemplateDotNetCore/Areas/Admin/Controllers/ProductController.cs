@@ -46,6 +46,21 @@ namespace TemplateDotNetCore.Areas.Admin.Controllers
             return new OkObjectResult(model);
         }
 
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return new BadRequestObjectResult(ModelState);
+            }
+            else
+            {
+                _productService.Delete(id);
+                _productService.Save();
+
+                return new OkObjectResult(id);
+            }
+        }
 
         [HttpPost]
         public IActionResult GetAllDataTable()

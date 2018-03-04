@@ -17,7 +17,8 @@
     <link rel="shortcut icon" href="favicon.ico">
 
     <link rel="stylesheet" href="~/admin-side/assets/css/normalize.css">
-    <link rel="stylesheet" href="~/admin-side/assets/css/bootstrap.min.css">
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    @*<link rel="stylesheet" href="~/admin-side/assets/css/bootstrap.min.css">*@
     <link rel="stylesheet" href="~/admin-side/assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/admin-side/assets/css/themify-icons.css">
     <link rel="stylesheet" href="~/admin-side/assets/css/flag-icon.min.css">
@@ -27,7 +28,7 @@
     <link href="~/admin-side/assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-
+    <link href="~/lib/notifyjs/dist/styles/metro/notify-metro.css" rel="stylesheet" />
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
     @RenderSection("Styles", required: false)
 
@@ -169,14 +170,18 @@
     </div><!-- /#right-panel -->
     <!-- Right Panel -->
 
-    <script src="~/admin-side/assets/js/vendor/jquery-2.1.4.min.js"></script>
-    <script src="~/admin-side/assets/js/lib/chosen/chosen.jquery.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
-    <script src="~/admin-side/assets/js/plugins.js"></script>
-    <script src="~/admin-side/assets/js/main.js"></script>
-    <script src="~/lib/twbs-pagination/jquery.twbsPagination.js"></script>
     <script src="~/lib/mustache/mustache.js"></script>
     <script src="~/lib/notifyjs/dist/notify.js"></script>
+    <script src="~/lib/notifyjs/dist/styles/metro/notify-metro.js"></script>
+    <script src="~/lib/bootbox/bootbox.js"></script>
+
+    <script src="~/admin-app/shared/common.js"></script>
+    <script src="~/admin-side/assets/js/main.js"></script>
+    <script src="~/admin-side/assets/js/plugins.js"></script>
+    <script src="~/admin-side/assets/js/lib/chosen/chosen.jquery.js"></script>
 
     @RenderSection("Scripts", required: false)
 
