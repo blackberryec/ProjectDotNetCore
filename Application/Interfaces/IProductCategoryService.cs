@@ -16,20 +16,8 @@ namespace TemplateDotNetCore.Application.Interfaces
 
         void Remove(int id);
 
-        void RemoveMultiple(List<ProductCategoryViewModel> entities);
-
         List<ProductCategoryViewModel> GetAll();
 
-        ProductCategoryViewModel FindById(int id, params Expression<Func<ProductCategoryViewModel, object>>[] includeProperties);
-
-        ProductCategoryViewModel FindSingle(Expression<Func<ProductCategoryViewModel, bool>> predicate, params Expression<Func<ProductCategoryViewModel, object>>[] includeProperties);
-
-        IQueryable<ProductCategoryViewModel> FindAll(params Expression<Func<ProductCategoryViewModel, object>>[] includeProperties);
-
-        IQueryable<ProductCategoryViewModel> FindAll(Expression<Func<ProductCategoryViewModel, bool>> predicate,
-            params Expression<Func<ProductCategoryViewModel, object>>[] includeProperties);
-
-        IQueryable<ProductCategoryViewModel> FindMultiPaging(Expression<Func<ProductCategoryViewModel, bool>> filter, out int total, int index = 0, int size = 50,
-            string[] includes = null);
+        void Save();
     }
 }

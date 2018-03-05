@@ -45,36 +45,6 @@ namespace TemplateDotNetCore.Application.Implementations
             _productCategoryRepository.Remove(id);
         }
 
-        public void RemoveMultiple(List<ProductCategoryViewModel> entities)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ProductCategoryViewModel FindById(int id, params Expression<Func<ProductCategoryViewModel, object>>[] includeProperties)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ProductCategoryViewModel FindSingle(Expression<Func<ProductCategoryViewModel, bool>> predicate, params Expression<Func<ProductCategoryViewModel, object>>[] includeProperties)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IQueryable<ProductCategoryViewModel> FindAll(params Expression<Func<ProductCategoryViewModel, object>>[] includeProperties)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IQueryable<ProductCategoryViewModel> FindAll(Expression<Func<ProductCategoryViewModel, bool>> predicate, params Expression<Func<ProductCategoryViewModel, object>>[] includeProperties)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IQueryable<ProductCategoryViewModel> FindMultiPaging(Expression<Func<ProductCategoryViewModel, bool>> filter, out int total, int index = 0, int size = 50, string[] includes = null)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Save()
         {
             _unitOfWork.Commit();

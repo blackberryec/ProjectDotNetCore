@@ -1,6 +1,5 @@
 ﻿var productController = function () {
     this.initialize = function () {
-        //loadData();
         registerEvents();
         loadCategories();
     }

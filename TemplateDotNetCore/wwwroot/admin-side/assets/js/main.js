@@ -1,6 +1,4 @@
-$.noConflict();
-
-jQuery(document).ready(function($) {
+$(document).ready(function() {
 
 	"use strict";
 
@@ -8,7 +6,7 @@ jQuery(document).ready(function($) {
 		new SelectFx(el);
 	} );
 
-	jQuery('.selectpicker').selectpicker;
+	$('.selectpicker').selectpicker;
 
 
 	$('#menuToggle').on('click', function(event) {
@@ -33,6 +31,4 @@ jQuery(document).ready(function($) {
 	// 	$('.user-menu').parent().removeClass('open');
 	// 	$('.user-menu').parent().toggleClass('open');
 	// });
-
-
 });
