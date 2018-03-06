@@ -13,9 +13,11 @@ namespace TemplateDotNetCore.Application.Interfaces
 
         PagedResult<ProductViewModel> GetAllPaging(int? categoryId, string keyword, int page, int pageSize);
 
-        void Update(ProductViewModel productCategoryVm);
+        void Update(ProductViewModel productVm);
 
         void Delete(int id);
+
+        ProductViewModel Add(ProductViewModel productViewModel);
 
         void Save();
 

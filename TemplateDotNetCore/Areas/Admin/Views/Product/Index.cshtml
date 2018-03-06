@@ -6,7 +6,7 @@
     <div class="col-sm-4">
         <div class="page-header float-left">
             <div class="page-title">
-                <h1>Dashboard</h1>
+                <h1>Trang quản trị sản phẩm</h1>
             </div>
         </div>
     </div>
@@ -29,7 +29,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong class="card-title">Data Table</strong>
+                        <button type="button" id="btnAdd" class="btn btn-outline-success btn-lg btn-block" data-toggle="modal" data-target="#modal-add-edit">Thêm sản phẩm</button>
                     </div>
                     <div class="card-body">
 
@@ -64,6 +64,7 @@
         </div>
     </div><!-- .animated -->
 </div><!-- .content -->
+@Html.Partial("_AddEditModal.cshtml")
 
 @section Scripts{
 
@@ -77,12 +78,10 @@
     <script src="~/admin-side/assets/js/lib/data-table/buttons.html5.min.js"></script>
     <script src="~/admin-side/assets/js/lib/data-table/buttons.print.min.js"></script>
     <script src="~/admin-side/assets/js/lib/data-table/buttons.colVis.min.js"></script>
-    <script src="~/lib/notifyjs/dist/notify.js"></script>
     <script src="~/admin-app/controllers/product/index.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#bootstrap-data-table-export').DataTable();
             var product = new productController();
             product.initialize();
         });

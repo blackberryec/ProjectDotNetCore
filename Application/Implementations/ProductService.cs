@@ -24,6 +24,12 @@ namespace TemplateDotNetCore.Application.Implementations
             _unitOfWork = unitOfWork;
         }
 
+        public ProductViewModel Add(ProductViewModel productViewModel)
+        {
+            List<ProductTag> productTags = new List<ProductTag>();
+            return new ProductViewModel();
+        }
+
         public void Delete(int id)
         {
             _productRepository.Remove(id);

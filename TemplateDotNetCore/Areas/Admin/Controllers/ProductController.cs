@@ -5,8 +5,10 @@ using System.Linq.Dynamic.Core;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using TemplateDotNetCore.Application.Interfaces;
 using TemplateDotNetCore.Application.ViewModels;
+using TemplateDotNetCore.Utilities.Helpers;
 
 namespace TemplateDotNetCore.Areas.Admin.Controllers
 {
@@ -30,6 +32,23 @@ namespace TemplateDotNetCore.Areas.Admin.Controllers
         {
             var model = _productService.GetAll();
             return new OkObjectResult(model);
+        }
+
+        [HttpPost]
+        public IActionResult SaveEntity(ProductViewModel productViewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                IEnumerable<ModelError> allErrors = ModelState.Values.SelectMany(v => v.Errors);
+                return new BadRequestObjectResult(allErrors);
+            }
+            else
+            {
+                productViewModel.SeoAlias = TextHelper.ToUnsignString(productViewModel.Name);
+
+            }
+            return new OkObjectResult(productViewModel);
+
         }
 
         [HttpGet]

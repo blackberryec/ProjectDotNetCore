@@ -11,6 +11,15 @@
             filterGlobal();
         });
 
+        //$('#btnAdd').off('click').on('click', function () {
+        //    $('#modal-add-edit').modal('show');
+        //});
+
+        $('#btnSave').on('click', function (e) {
+            e.preventDefault();
+            saveItem(e);
+        });
+
         $('#bootstrap-data-table').DataTable({
             "processing": true,
             "serverSide": true,
@@ -73,6 +82,10 @@
         });
 
     }
+}
+
+function saveItem(e) {
+    console.log("save execute!!!!")
 }
 
 function loadCategories() {
