@@ -1,0 +1,40 @@
+{
+  "name": "jquery-mobile-menu",
+  "version": "1.0.3",
+  "description": "jQuery mobile menu",
+  "keywords": [
+    "jquery",
+    "mobile",
+    "menu"
+  ],
+  "scripts": {
+    "test": "gulp lint && mocha-phantomjs test/index.html"
+  },
+  "author": {
+    "name": "Daniel Husár",
+    "email": "dano.husar@gmail.com"
+  },
+  "files": [
+    "cli.js",
+    "index.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielhusar/jquery-mobile-menu"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "express": "^4.2.0",
+    "gulp": "^3.8.6",
+    "gulp-cssmin": "~0.1.1",
+    "gulp-jshint": "^1.6.0",
+    "gulp-less": "^1.2.3",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^0.3.0",
+    "jshint-stylish": "^0.2.0",
+    "mocha": "^1.18.2",
+    "open": "^0.0.5",
+    "serve-index": "^1.0.2"
+  },
+  "readmeFilename": "Readme.md"
+}

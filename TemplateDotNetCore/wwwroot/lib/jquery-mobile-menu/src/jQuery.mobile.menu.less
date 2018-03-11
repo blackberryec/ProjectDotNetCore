@@ -1,0 +1,54 @@
+html,body{
+  margin: 0;
+  padding: 0;
+}
+
+.menu-open,
+.menu-open body {
+  overflow-y: hidden;
+  height: 100%;
+}
+
+.main-menu {
+  display: none;
+  position: absolute;
+  top: 50px; //height of the navbar
+  right: 0;
+  left: 0;
+  z-index: 10;
+  overflow-y: scroll;
+  .menu-open & {
+    display: block; //you can do here translate or opacity if you want to do some transition
+  }
+}
+
+.nav-bar{
+  top: 0;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  z-index: 20;
+}
+
+
+//non essential styles
+body{
+  max-width: 500px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.nav-bar{
+  background: #FAFAFA;
+}
+
+.main-menu ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-menu ul li{
+  background-color: #DC3D24;
+  padding: 40px 10px;
+}
