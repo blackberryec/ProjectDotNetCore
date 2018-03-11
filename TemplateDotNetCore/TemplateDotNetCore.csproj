@@ -34,7 +34,8 @@
 
   <ItemGroup>
     <Folder Include="Data\Migrations\" />
-    <Folder Include="wwwroot\client-app\" />
+    <Folder Include="wwwroot\client-app\controllers\" />
+    <Folder Include="wwwroot\client-app\shared\" />
   </ItemGroup>
 
   <ItemGroup>
