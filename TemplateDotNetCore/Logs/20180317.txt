@@ -228,3 +228,127 @@ WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
 2018-03-17T21:58:54.5011595+07:00 0HLCC2UAUUT4H:00000002 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
 2018-03-17T21:58:54.5128308+07:00 0HLCC2UAUUT4H:00000002 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 40.1919ms (afa2e885)
 2018-03-17T21:58:54.5171998+07:00 0HLCC2UAUUT4H:00000002 [INF] Request finished in 69.9567ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-17T23:17:19.0371285+07:00  [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-17T23:17:19.2496802+07:00  [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-17T23:17:19.2898493+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-17T23:17:19.3278989+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Functions] AS [f]" (0723d8ff)
+2018-03-17T23:17:19.3584510+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [ProductCategories] AS [p]" (0723d8ff)
+2018-03-17T23:17:19.4009778+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeTitle')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-17T23:17:19.4090477+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaKeyword')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-17T23:17:19.4375158+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaDescription')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-17T23:17:19.8754464+07:00 0HLCC4A7EPFVO:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-17T23:17:20.0203123+07:00 0HLCC4A7EPFVO:00000001 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-17T23:17:22.2206397+07:00 0HLCC4A7EPFVO:00000001 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-17T23:17:24.2855128+07:00 0HLCC4A7EPFVO:00000001 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-17T23:17:24.3614226+07:00 0HLCC4A7EPFVO:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Name], [x].[Discription], [x].[ParentId], [x].[HomeOrder], [x].[Image], [x].[SeoPageTitle], [x].[SeoAlias], [x].[SeoKeywords], [x].[SeoDescription], [x].[Status], [x].[LanguageId], [x].[Tags], [x].[DateCreated], [x].[DateModified], [x].[SortOrder], [x].[HomeFlag], [x].[HotFlag], [x].[NewFlag]
+FROM [ProductCategories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2018-03-17T23:17:24.4065403+07:00 0HLCC4A7EPFVO:00000001 [INF] Executed DbCommand ("24"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-17T23:17:24.4203402+07:00 0HLCC4A7EPFVO:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-17T23:17:24.4460397+07:00 0HLCC4A7EPFVO:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-17T23:17:24.4718340+07:00 0HLCC4A7EPFVO:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-17T23:17:25.6769042+07:00 0HLCC4A7EPFVO:00000001 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 5660.3896ms (afa2e885)
+2018-03-17T23:17:25.7078233+07:00 0HLCC4A7EPFVO:00000001 [INF] Request finished in 5852.8028ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-17T23:17:26.4638483+07:00 0HLCC4A7EPFVO:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-17T23:17:26.4948753+07:00 0HLCC4A7EPFVO:00000002 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-17T23:17:26.4994327+07:00 0HLCC4A7EPFVO:00000002 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-17T23:17:26.5156235+07:00 0HLCC4A7EPFVO:00000002 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 43.5108ms (afa2e885)
+2018-03-17T23:17:26.5224379+07:00 0HLCC4A7EPFVO:00000002 [INF] Request finished in 56.092ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-17T23:18:00.0033266+07:00 0HLCC4A7EPFVO:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-17T23:18:00.0286417+07:00 0HLCC4A7EPFVO:00000003 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-17T23:18:00.0339099+07:00 0HLCC4A7EPFVO:00000003 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-17T23:18:00.2861721+07:00 0HLCC4A7EPFVO:00000003 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 275.3227ms (afa2e885)
+2018-03-17T23:18:00.2909646+07:00 0HLCC4A7EPFVO:00000003 [INF] Request finished in 291.1398ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-17T23:18:00.9250913+07:00 0HLCC4A7EPFVO:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-17T23:18:00.9497069+07:00 0HLCC4A7EPFVO:00000004 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-17T23:18:00.9549600+07:00 0HLCC4A7EPFVO:00000004 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-17T23:18:00.9727670+07:00 0HLCC4A7EPFVO:00000004 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 38.9068ms (afa2e885)
+2018-03-17T23:18:00.9990508+07:00 0HLCC4A7EPFVQ:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/favicon.ico   (ca22a1cb)
+2018-03-17T23:18:01.0255967+07:00 0HLCC4A7EPFVQ:00000001 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\favicon.ico"' (27b0a520)
+2018-03-17T23:18:01.0297672+07:00 0HLCC4A7EPFVO:00000004 [INF] Request finished in 124.459ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-17T23:18:01.0791231+07:00 0HLCC4A7EPFVQ:00000001 [INF] Request finished in 96.2306ms 200 image/x-icon (791a596a)
+2018-03-17T23:19:12.6278676+07:00 0HLCC4A7EPFVR:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-17T23:19:12.6337730+07:00 0HLCC4A7EPFVR:00000001 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-17T23:19:12.6587574+07:00 0HLCC4A7EPFVR:00000001 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-17T23:19:12.6953543+07:00 0HLCC4A7EPFVR:00000001 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 39.4674ms (afa2e885)
+2018-03-17T23:19:12.7024927+07:00 0HLCC4A7EPFVR:00000001 [INF] Request finished in 93.0895ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-17T23:19:13.3018920+07:00 0HLCC4A7EPFVR:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-17T23:19:13.3263404+07:00 0HLCC4A7EPFVR:00000002 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-17T23:19:13.3500603+07:00 0HLCC4A7EPFVR:00000002 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-17T23:19:13.3804702+07:00 0HLCC4A7EPFVR:00000002 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 53.66ms (afa2e885)
+2018-03-17T23:19:13.4059106+07:00 0HLCC4A7EPFVS:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/favicon.ico   (ca22a1cb)
+2018-03-17T23:19:13.4280075+07:00 0HLCC4A7EPFVR:00000002 [INF] Request finished in 104.5562ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-17T23:19:13.4726582+07:00 0HLCC4A7EPFVS:00000001 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\favicon.ico"' (27b0a520)
+2018-03-17T23:19:13.5006763+07:00 0HLCC4A7EPFVS:00000001 [INF] Request finished in 96.0584ms 200 image/x-icon (791a596a)
+2018-03-17T23:19:29.3750294+07:00 0HLCC4A7EPFVR:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-17T23:19:29.3802177+07:00 0HLCC4A7EPFVR:00000003 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-17T23:19:29.3858138+07:00 0HLCC4A7EPFVR:00000003 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-17T23:19:29.6036417+07:00 0HLCC4A7EPFVR:00000003 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 223.7182ms (afa2e885)
+2018-03-17T23:19:29.6099642+07:00 0HLCC4A7EPFVR:00000003 [INF] Request finished in 235.5925ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-17T23:19:30.2225325+07:00 0HLCC4A7EPFVS:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-17T23:19:30.2469575+07:00 0HLCC4A7EPFVS:00000002 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-17T23:19:30.2730640+07:00 0HLCC4A7EPFVS:00000002 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-17T23:19:30.3138703+07:00 0HLCC4A7EPFVS:00000002 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 60.6755ms (afa2e885)
+2018-03-17T23:19:30.3359131+07:00 0HLCC4A7EPFVR:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44357/favicon.ico   (ca22a1cb)
+2018-03-17T23:19:30.3611216+07:00 0HLCC4A7EPFVS:00000002 [INF] Request finished in 96.5487ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-17T23:19:30.4041086+07:00 0HLCC4A7EPFVR:00000004 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\favicon.ico"' (27b0a520)
+2018-03-17T23:19:30.4116586+07:00 0HLCC4A7EPFVR:00000004 [INF] Request finished in 118.2703ms 200 image/x-icon (791a596a)
+2018-03-17T23:20:03.1694058+07:00 0HLCC4A7EPFVR:00000005 [INF] Request starting HTTP/1.1 GET http://localhost:44357/trang-chu.html   (ca22a1cb)
+2018-03-17T23:20:03.1770265+07:00 0HLCC4A7EPFVR:00000005 [INF] Request finished in 11.0652ms 404  (791a596a)
+2018-03-17T23:20:05.6491148+07:00 0HLCC4A7EPFVR:00000006 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-17T23:20:05.6745351+07:00 0HLCC4A7EPFVR:00000006 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-17T23:20:05.6993299+07:00 0HLCC4A7EPFVR:00000006 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-17T23:20:05.7108416+07:00 0HLCC4A7EPFVR:00000006 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 56.4361ms (afa2e885)
+2018-03-17T23:20:05.7176347+07:00 0HLCC4A7EPFVR:00000006 [INF] Request finished in 87.2651ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-17T23:20:07.1709852+07:00 0HLCC4A7EPFVR:00000007 [INF] Request starting HTTP/1.1 GET http://localhost:44357/index.html   (ca22a1cb)
+2018-03-17T23:20:07.1971616+07:00 0HLCC4A7EPFVR:00000007 [INF] Request finished in 26.1463ms 404  (791a596a)
