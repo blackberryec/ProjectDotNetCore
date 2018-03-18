@@ -1,8 +1,15 @@
-﻿<!-- Slideshow  -->
+﻿@section Scripts{
+    <script src="~/client-app/controllers/home/index.js"></script>
+    <script>
+        var homeController = new HomeController();
+        homeController.initialize();
+    </script>
+}
+<!-- Slideshow  -->
 @await Component.InvokeAsync("SlideShow")
 <!-- service section -->
 @await Component.InvokeAsync("Service")
-
+@await Component.InvokeAsync("SpecialProductsOffer")
 <!-- All products-->
 @await Component.InvokeAsync("ProductSlideTab")
 @await Component.InvokeAsync("DailyDeal")
@@ -16,3 +23,4 @@
 <!-- BANNER-AREA-START -->
 @await Component.InvokeAsync("BannerPromoteProduct")
 <!-- BANNER-AREA-END -->
+@await Component.InvokeAsync("FooterCustomersRateRegisterNewLetter")

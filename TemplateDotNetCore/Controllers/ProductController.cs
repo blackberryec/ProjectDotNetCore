@@ -1,19 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using TemplateDotNetCore.Models;
 
 namespace TemplateDotNetCore.Controllers
 {
-    public class HomeController : Controller
+    public class ProductController : Controller
     {
-        [Route("trang-chu.html")]
+        [Route("danh-muc-san-pham.html")]
         public IActionResult Index()
         {
-            ViewData["BodyClass"] = "cms-index-index cms-home-page";
+            ViewData["BodyClass"] = "shop_grid_page";
             return View();
         }
     }
