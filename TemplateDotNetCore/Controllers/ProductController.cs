@@ -8,10 +8,25 @@ namespace TemplateDotNetCore.Controllers
 {
     public class ProductController : Controller
     {
-        [Route("danh-muc-san-pham.html")]
-        public IActionResult Index()
+        [Route("danh-muc-tat-ca-san-pham.html")]
+        public IActionResult Category()
         {
             ViewData["BodyClass"] = "shop_grid_page";
+            return View();
+        }
+
+        [Route("tim-kiem.html")]
+        public IActionResult Search()
+        {
+            ViewData["BodyClass"] = "shop_grid_full_width_page";
+            
+            return View();
+        }
+
+        [Route("chi-tiet-san-pham.html")]
+        public IActionResult Details()
+        {
+            ViewData["BodyClass"] = "product-page";
             return View();
         }
     }

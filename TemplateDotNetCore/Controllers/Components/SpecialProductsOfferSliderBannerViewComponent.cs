@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TemplateDotNetCore.Controllers.Components
 {
-    public class SpecialProductsOfferViewComponent : ViewComponent
+    public class SpecialProductsOfferSliderBannerViewComponent : ViewComponent
     {
         public async Task<IViewComponentResult> InvokeAsync()
         {
