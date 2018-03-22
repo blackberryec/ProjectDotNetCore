@@ -1,0 +1,556 @@
+2018-03-12T00:34:23.6165882+07:00  [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-12T00:34:23.8909084+07:00  [INF] Executed DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-12T00:34:23.9339082+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-12T00:34:23.9743553+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Functions] AS [f]" (0723d8ff)
+2018-03-12T00:34:24.0046289+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [ProductCategories] AS [p]" (0723d8ff)
+2018-03-12T00:34:24.0527506+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeTitle')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-12T00:34:24.0798443+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaKeyword')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-12T00:34:24.1111442+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaDescription')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-12T00:34:24.4405001+07:00 0HLC7EPAEEO6A:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-12T00:34:24.6049035+07:00 0HLC7EPAEEO6A:00000001 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-12T00:34:27.4373902+07:00 0HLC7EPAEEO6A:00000001 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-12T00:34:28.8704652+07:00 0HLC7EPAEEO6A:00000001 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 4277.1606ms (afa2e885)
+2018-03-12T00:34:28.9938650+07:00 0HLC7EPAEEO6A:00000001 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.InvalidOperationException: The partial view '_Banner.cshtml' was not found. The following locations were searched:
+/Views/Home/_Banner.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper.<RenderPartialCoreAsync>d__60.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper.<PartialAsync>d__57.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Microsoft.AspNetCore.Mvc.Rendering.HtmlHelperPartialExtensions.Partial(IHtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at Microsoft.AspNetCore.Mvc.Rendering.HtmlHelperPartialExtensions.Partial(IHtmlHelper htmlHelper, String partialViewName)
+   at AspNetCore._Views_Home_Index_cshtml.<ExecuteAsync>d__0.MoveNext() in F:\TemplateDotNetCore\TemplateDotNetCore\Views\Home\Index.cshtml:line 9
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.<RenderPageCoreAsync>d__16.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.<RenderPageAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.<RenderAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.<ExecuteAsync>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.<ExecuteAsync>d__21.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.ViewResult.<ExecuteResultAsync>d__26.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeResultAsync>d__19.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResultFilterAsync>d__24.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2018-03-12T00:34:29.1207521+07:00 0HLC7EPAEEO6A:00000001 [INF] Request finished in 4701.3534ms 500 text/html; charset=utf-8 (791a596a)
+2018-03-12T00:35:46.9054980+07:00  [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-12T00:35:47.1921679+07:00  [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-12T00:35:47.2124622+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-12T00:35:47.2521738+07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Functions] AS [f]" (0723d8ff)
+2018-03-12T00:35:47.2824880+07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [ProductCategories] AS [p]" (0723d8ff)
+2018-03-12T00:35:47.3311348+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeTitle')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-12T00:35:47.3612014+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaKeyword')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-12T00:35:47.3707369+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaDescription')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-12T00:35:47.7132973+07:00 0HLC7EQ38CUUA:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-12T00:35:47.8671596+07:00 0HLC7EQ38CUUA:00000001 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-12T00:35:50.5056743+07:00 0HLC7EQ38CUUA:00000001 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-12T00:35:53.2794441+07:00 0HLC7EQ38CUUA:00000001 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 5432.1441ms (afa2e885)
+2018-03-12T00:35:53.3151948+07:00 0HLC7EQ38CUUA:00000001 [INF] Request finished in 5617.7185ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-12T00:35:54.6871660+07:00 0HLC7EQ38CUUA:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-12T00:35:54.6975763+07:00 0HLC7EQ38CUUA:00000002 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-12T00:35:54.7033730+07:00 0HLC7EQ38CUUA:00000002 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-12T00:35:54.7325697+07:00 0HLC7EQ38CUUA:00000002 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 35.661ms (afa2e885)
+2018-03-12T00:35:54.7394627+07:00 0HLC7EQ38CUUA:00000002 [INF] Request finished in 73.1215ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-12T23:54:23.9577616+07:00  [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-12T23:54:24.3915680+07:00  [INF] Executed DbCommand ("94"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-12T23:54:24.4393606+07:00  [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-12T23:54:24.4845549+07:00  [INF] Executed DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Functions] AS [f]" (0723d8ff)
+2018-03-12T23:54:24.5262663+07:00  [INF] Executed DbCommand ("12"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [ProductCategories] AS [p]" (0723d8ff)
+2018-03-12T23:54:24.5717328+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeTitle')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-12T23:54:24.6017678+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaKeyword')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-12T23:54:24.6107180+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaDescription')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-12T23:54:25.0049786+07:00 0HLC877KI8M1I:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-12T23:54:25.1749193+07:00 0HLC877KI8M1I:00000001 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-12T23:54:28.0310219+07:00 0HLC877KI8M1I:00000001 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-12T23:54:32.1485544+07:00 0HLC877KI8M1I:00000001 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 6994.7421ms (afa2e885)
+2018-03-12T23:54:32.1659928+07:00 0HLC877KI8M1I:00000001 [INF] Request finished in 7176.8348ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-12T23:54:32.8237317+07:00 0HLC877KI8M1I:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-12T23:54:32.8315082+07:00 0HLC877KI8M1I:00000002 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-12T23:54:32.8379429+07:00 0HLC877KI8M1I:00000002 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-12T23:54:32.8518854+07:00 0HLC877KI8M1I:00000002 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 20.7142ms (afa2e885)
+2018-03-12T23:54:32.8588760+07:00 0HLC877KI8M1I:00000002 [INF] Request finished in 36.0908ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-12T23:55:10.6607888+07:00 0HLC877KI8M1I:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2018-03-12T23:55:10.6718016+07:00 0HLC877KI8M1I:00000003 [INF] Request finished in 14.5509ms 404  (791a596a)
+2018-03-12T23:56:57.1117476+07:00  [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-12T23:56:57.3738309+07:00  [INF] Executed DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-12T23:56:57.4163103+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-12T23:56:57.4572337+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Functions] AS [f]" (0723d8ff)
+2018-03-12T23:56:57.4897508+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [ProductCategories] AS [p]" (0723d8ff)
+2018-03-12T23:56:57.5339898+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeTitle')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-12T23:56:57.5636463+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaKeyword')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-12T23:56:57.5932321+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaDescription')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-12T23:56:58.0834703+07:00 0HLC87925SVNQ:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-12T23:56:58.2468758+07:00 0HLC87925SVNQ:00000001 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-12T23:57:00.6832079+07:00 0HLC87925SVNQ:00000001 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-12T23:57:03.8416576+07:00 0HLC87925SVNQ:00000001 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 5601.5465ms (afa2e885)
+2018-03-12T23:57:03.8533384+07:00 0HLC87925SVNQ:00000001 [INF] Request finished in 5809.7085ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-12T23:57:04.4641322+07:00 0HLC87925SVNQ:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-12T23:57:04.4725205+07:00 0HLC87925SVNQ:00000002 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-12T23:57:04.4780720+07:00 0HLC87925SVNQ:00000002 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-12T23:57:04.4916167+07:00 0HLC87925SVNQ:00000002 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 20.444ms (afa2e885)
+2018-03-12T23:57:04.5006252+07:00 0HLC87925SVNQ:00000002 [INF] Request finished in 37.0888ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-12T23:57:07.6351498+07:00 0HLC87925SVNQ:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2018-03-12T23:57:07.6451942+07:00 0HLC87925SVNQ:00000003 [INF] Request finished in 8.1651ms 404  (791a596a)
+2018-03-12T23:59:33.6904919+07:00 0HLC87925SVNR:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-12T23:59:33.6971903+07:00 0HLC87925SVNR:00000001 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-12T23:59:33.7035721+07:00 0HLC87925SVNR:00000001 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-12T23:59:33.9217592+07:00 0HLC87925SVNR:00000001 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 224.5444ms (afa2e885)
+2018-03-12T23:59:33.9272514+07:00 0HLC87925SVNR:00000001 [INF] Request finished in 237.1963ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-12T23:59:33.9657877+07:00 0HLC87925SVNR:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/style.css   (ca22a1cb)
+2018-03-12T23:59:34.0346858+07:00 0HLC87925SVNS:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/flag-english.jpg   (ca22a1cb)
+2018-03-12T23:59:34.1606026+07:00 0HLC87925SVNU:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/flag-german.jpg   (ca22a1cb)
+2018-03-12T23:59:34.1857151+07:00 0HLC87925SVNT:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/flag-chile.jpg   (ca22a1cb)
+2018-03-12T23:59:34.2551496+07:00 0HLC87925SVO0:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/flag-brazil.jpg   (ca22a1cb)
+2018-03-12T23:59:34.3920899+07:00 0HLC87925SVNT:00000001 [INF] Sending file. Request path: '"/client-side/images/flag-chile.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\flag-chile.jpg"' (27b0a520)
+2018-03-12T23:59:34.3956830+07:00 0HLC87925SVO3:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/products/product-1.jpg   (ca22a1cb)
+2018-03-12T23:59:34.4221292+07:00 0HLC87925SVNV:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/flag-default.jpg   (ca22a1cb)
+2018-03-12T23:59:34.4693885+07:00 0HLC87925SVNU:00000001 [INF] Sending file. Request path: '"/client-side/images/flag-german.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\flag-german.jpg"' (27b0a520)
+2018-03-12T23:59:34.4975063+07:00 0HLC87925SVO0:00000001 [INF] Sending file. Request path: '"/client-side/images/flag-brazil.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\flag-brazil.jpg"' (27b0a520)
+2018-03-12T23:59:34.4993963+07:00 0HLC87925SVO3:00000001 [INF] Sending file. Request path: '"/client-side/images/products/product-1.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\products\product-1.jpg"' (27b0a520)
+2018-03-12T23:59:34.5026093+07:00 0HLC87925SVNV:00000001 [INF] Sending file. Request path: '"/client-side/images/flag-default.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\flag-default.jpg"' (27b0a520)
+2018-03-12T23:59:34.5601473+07:00 0HLC87925SVO1:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/flag-spain.jpg   (ca22a1cb)
+2018-03-12T23:59:34.5646138+07:00 0HLC87925SVNS:00000001 [INF] Sending file. Request path: '"/client-side/images/flag-english.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\flag-english.jpg"' (27b0a520)
+2018-03-12T23:59:34.6210693+07:00 0HLC87925SVNR:00000002 [INF] Sending file. Request path: '"/client-side/style.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\style.css"' (27b0a520)
+2018-03-12T23:59:34.6344165+07:00 0HLC87925SVNU:00000001 [INF] Request finished in 526.6103ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:34.7600502+07:00 0HLC87925SVNU:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/pe-icon-7-stroke.min.css   (ca22a1cb)
+2018-03-12T23:59:34.7839581+07:00 0HLC87925SVO0:00000001 [INF] Request finished in 579.7758ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:34.8774234+07:00 0HLC87925SVNV:00000001 [INF] Request finished in 581.023ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:34.9273889+07:00 0HLC87925SVO3:00000001 [INF] Request finished in 428.1641ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:34.9529862+07:00 0HLC87925SVO1:00000001 [INF] Sending file. Request path: '"/client-side/images/flag-spain.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\flag-spain.jpg"' (27b0a520)
+2018-03-12T23:59:34.9559637+07:00 0HLC87925SVNT:00000001 [INF] Request finished in 526.5854ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:35.0593703+07:00 0HLC87925SVNT:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/owl.carousel.css   (ca22a1cb)
+2018-03-12T23:59:35.0696337+07:00 0HLC87925SVNR:00000002 [INF] Request finished in 705.3652ms 200 text/css (791a596a)
+2018-03-12T23:59:35.1152352+07:00 0HLC87925SVNS:00000001 [INF] Request finished in 653.0487ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:35.1292836+07:00 0HLC87925SVNU:00000002 [INF] Sending file. Request path: '"/client-side/css/pe-icon-7-stroke.min.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\pe-icon-7-stroke.min.css"' (27b0a520)
+2018-03-12T23:59:35.1341634+07:00 0HLC87925SVNS:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/jquery-ui.css   (ca22a1cb)
+2018-03-12T23:59:35.1652900+07:00 0HLC87925SVNS:00000002 [INF] Sending file. Request path: '"/client-side/css/jquery-ui.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\jquery-ui.css"' (27b0a520)
+2018-03-12T23:59:35.1690897+07:00 0HLC87925SVO0:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/simple-line-icons.css   (ca22a1cb)
+2018-03-12T23:59:35.2505297+07:00 0HLC87925SVNV:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/animate.css   (ca22a1cb)
+2018-03-12T23:59:35.2619213+07:00 0HLC87925SVNV:00000002 [INF] Sending file. Request path: '"/client-side/css/animate.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\animate.css"' (27b0a520)
+2018-03-12T23:59:35.2673436+07:00 0HLC87925SVO3:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/bootstrap.min.css   (ca22a1cb)
+2018-03-12T23:59:35.3236023+07:00 0HLC87925SVO6:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/menu-banner-img5.jpg   (ca22a1cb)
+2018-03-12T23:59:35.3339668+07:00 0HLC87925SVO3:00000002 [INF] Sending file. Request path: '"/client-side/css/bootstrap.min.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\bootstrap.min.css"' (27b0a520)
+2018-03-12T23:59:35.3432807+07:00 0HLC87925SVNT:00000002 [INF] Sending file. Request path: '"/client-side/css/owl.carousel.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\owl.carousel.css"' (27b0a520)
+2018-03-12T23:59:35.3470615+07:00 0HLC87925SVNS:00000002 [INF] Request finished in 114.0049ms 200 text/css (791a596a)
+2018-03-12T23:59:35.3703168+07:00 0HLC87925SVNV:00000002 [INF] Request finished in 350.587ms 200 text/css (791a596a)
+2018-03-12T23:59:35.3939937+07:00 0HLC87925SVNR:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/owl.transitions.css   (ca22a1cb)
+2018-03-12T23:59:35.4651439+07:00 0HLC87925SVNU:00000002 [INF] Request finished in 468.4406ms 200 text/css (791a596a)
+2018-03-12T23:59:35.4884348+07:00 0HLC87925SVO0:00000002 [INF] Sending file. Request path: '"/client-side/css/simple-line-icons.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\simple-line-icons.css"' (27b0a520)
+2018-03-12T23:59:35.5331151+07:00 0HLC87925SVNR:00000003 [INF] Sending file. Request path: '"/client-side/css/owl.transitions.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\owl.transitions.css"' (27b0a520)
+2018-03-12T23:59:35.6153718+07:00 0HLC87925SVO6:00000001 [INF] Sending file. Request path: '"/client-side/images/menu-banner-img5.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\menu-banner-img5.jpg"' (27b0a520)
+2018-03-12T23:59:35.6407418+07:00 0HLC87925SVO0:00000002 [INF] Request finished in 733.6141ms 200 text/css (791a596a)
+2018-03-12T23:59:35.6891322+07:00 0HLC87925SVNT:00000002 [INF] Request finished in 501.1695ms 200 text/css (791a596a)
+2018-03-12T23:59:35.7192225+07:00 0HLC87925SVO4:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/logo.png   (ca22a1cb)
+2018-03-12T23:59:35.7520209+07:00 0HLC87925SVNR:00000003 [INF] Request finished in 418.2235ms 200 text/css (791a596a)
+2018-03-12T23:59:35.7814874+07:00 0HLC87925SVO9:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/banner-left.jpg   (ca22a1cb)
+2018-03-12T23:59:35.8002366+07:00 0HLC87925SVO9:00000001 [INF] Sending file. Request path: '"/client-side/images/banner-left.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\banner-left.jpg"' (27b0a520)
+2018-03-12T23:59:35.8291354+07:00 0HLC87925SVOB:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/menu-banner-img3.jpg   (ca22a1cb)
+2018-03-12T23:59:35.8536000+07:00 0HLC87925SVO7:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/menu-banner-img2.jpg   (ca22a1cb)
+2018-03-12T23:59:35.9697292+07:00 0HLC87925SVO8:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/menu-banner-img1.jpg   (ca22a1cb)
+2018-03-12T23:59:35.9923888+07:00 0HLC87925SVO4:00000001 [INF] Sending file. Request path: '"/client-side/images/logo.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\logo.png"' (27b0a520)
+2018-03-12T23:59:35.9973623+07:00 0HLC87925SVO8:00000001 [INF] Sending file. Request path: '"/client-side/images/menu-banner-img1.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\menu-banner-img1.jpg"' (27b0a520)
+2018-03-12T23:59:36.0022484+07:00 0HLC87925SVOE:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/banner-mob.jpg   (ca22a1cb)
+2018-03-12T23:59:36.0223764+07:00 0HLC87925SVOC:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/slider/slide-1.jpg   (ca22a1cb)
+2018-03-12T23:59:36.1575930+07:00 0HLC87925SVO6:00000001 [INF] Request finished in 717.4829ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:36.2094441+07:00 0HLC87925SVOB:00000001 [INF] Sending file. Request path: '"/client-side/images/menu-banner-img3.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\menu-banner-img3.jpg"' (27b0a520)
+2018-03-12T23:59:36.2131984+07:00 0HLC87925SVO4:00000001 [INF] Request finished in 579.9239ms 200 image/png (791a596a)
+2018-03-12T23:59:36.2374576+07:00 0HLC87925SVOC:00000001 [INF] Sending file. Request path: '"/client-side/images/slider/slide-1.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\slider\slide-1.jpg"' (27b0a520)
+2018-03-12T23:59:36.2645908+07:00 0HLC87925SVOH:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/sub1.jpg   (ca22a1cb)
+2018-03-12T23:59:36.2871441+07:00 0HLC87925SVOD:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/banner-laptop.jpg   (ca22a1cb)
+2018-03-12T23:59:36.3857483+07:00 0HLC87925SVO7:00000001 [INF] Sending file. Request path: '"/client-side/images/menu-banner-img2.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\menu-banner-img2.jpg"' (27b0a520)
+2018-03-12T23:59:36.3941544+07:00 0HLC87925SVOI:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand3.png   (ca22a1cb)
+2018-03-12T23:59:36.4455742+07:00 0HLC87925SVOF:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand2.png   (ca22a1cb)
+2018-03-12T23:59:36.4548545+07:00 0HLC87925SVOO:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand6.png   (ca22a1cb)
+2018-03-12T23:59:36.4784477+07:00 0HLC87925SVOL:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/sub1a.jpg   (ca22a1cb)
+2018-03-12T23:59:36.4968501+07:00 0HLC87925SVOE:00000001 [INF] Sending file. Request path: '"/client-side/images/banner-mob.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\banner-mob.jpg"' (27b0a520)
+2018-03-12T23:59:36.5285226+07:00 0HLC87925SVOH:00000001 [INF] Sending file. Request path: '"/client-side/images/sub1.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\sub1.jpg"' (27b0a520)
+2018-03-12T23:59:36.5335134+07:00 0HLC87925SVOD:00000001 [INF] Sending file. Request path: '"/client-side/images/banner-laptop.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\banner-laptop.jpg"' (27b0a520)
+2018-03-12T23:59:36.5921426+07:00 0HLC87925SVOL:00000001 [INF] Sending file. Request path: '"/client-side/images/sub1a.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\sub1a.jpg"' (27b0a520)
+2018-03-12T23:59:36.6034286+07:00 0HLC87925SVOK:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand4.png   (ca22a1cb)
+2018-03-12T23:59:36.7244413+07:00 0HLC87925SVOF:00000001 [INF] Sending file. Request path: '"/client-side/images/brand2.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand2.png"' (27b0a520)
+2018-03-12T23:59:36.7449213+07:00 0HLC87925SVOH:00000001 [INF] Request finished in 446.3906ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:36.7851062+07:00 0HLC87925SVOD:00000001 [INF] Request finished in 710.7747ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:36.8079048+07:00 0HLC87925SVOI:00000001 [INF] Sending file. Request path: '"/client-side/images/brand3.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand3.png"' (27b0a520)
+2018-03-12T23:59:36.8361912+07:00 0HLC87925SVOE:00000001 [INF] Request finished in 627.5119ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:36.8579181+07:00 0HLC87925SVOO:00000001 [INF] Sending file. Request path: '"/client-side/images/brand6.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand6.png"' (27b0a520)
+2018-03-12T23:59:36.8689430+07:00 0HLC87925SVOM:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand1.png   (ca22a1cb)
+2018-03-12T23:59:36.9729526+07:00 0HLC87925SVOI:00000001 [INF] Request finished in 618.384ms 200 image/png (791a596a)
+2018-03-12T23:59:37.0224503+07:00 0HLC87925SVOO:00000001 [INF] Request finished in 480.5757ms 200 image/png (791a596a)
+2018-03-12T23:59:37.0700825+07:00 0HLC87925SVOK:00000001 [INF] Sending file. Request path: '"/client-side/images/brand4.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand4.png"' (27b0a520)
+2018-03-12T23:59:37.1005140+07:00 0HLC87925SVOL:00000001 [INF] Request finished in 368.3588ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:37.1352510+07:00 0HLC87925SVOM:00000001 [INF] Sending file. Request path: '"/client-side/images/brand1.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand1.png"' (27b0a520)
+2018-03-12T23:59:37.1939545+07:00 0HLC87925SVOF:00000001 [INF] Request finished in 599.4352ms 200 image/png (791a596a)
+2018-03-12T23:59:37.2161993+07:00 0HLC87925SVO2:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/menu-banner-img4.jpg   (ca22a1cb)
+2018-03-12T23:59:37.2822382+07:00 0HLC87925SVOA:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/slider/slide-2.jpg   (ca22a1cb)
+2018-03-12T23:59:37.3001582+07:00 0HLC87925SVOA:00000001 [INF] Sending file. Request path: '"/client-side/images/slider/slide-2.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\slider\slide-2.jpg"' (27b0a520)
+2018-03-12T23:59:37.3079457+07:00 0HLC87925SVOM:00000001 [INF] Request finished in 395.125ms 200 image/png (791a596a)
+2018-03-12T23:59:37.3548545+07:00 0HLC87925SVOG:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/blog-img1.jpg   (ca22a1cb)
+2018-03-12T23:59:37.3975105+07:00 0HLC87925SVOJ:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand5.png   (ca22a1cb)
+2018-03-12T23:59:37.4670181+07:00 0HLC87925SVOK:00000001 [INF] Request finished in 822.3675ms 200 image/png (791a596a)
+2018-03-12T23:59:37.4902213+07:00 0HLC87925SVO5:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/slider/slide-3.jpg   (ca22a1cb)
+2018-03-12T23:59:37.5192667+07:00 0HLC87925SVO2:00000001 [INF] Sending file. Request path: '"/client-side/images/menu-banner-img4.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\menu-banner-img4.jpg"' (27b0a520)
+2018-03-12T23:59:37.5268890+07:00 0HLC87925SVO5:00000001 [INF] Sending file. Request path: '"/client-side/images/slider/slide-3.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\slider\slide-3.jpg"' (27b0a520)
+2018-03-12T23:59:37.5351762+07:00 0HLC87925SVOJ:00000001 [INF] Sending file. Request path: '"/client-side/images/brand5.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand5.png"' (27b0a520)
+2018-03-12T23:59:37.5799869+07:00 0HLC87925SVOQ:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand10.png   (ca22a1cb)
+2018-03-12T23:59:37.6019657+07:00 0HLC87925SVOP:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand8.png   (ca22a1cb)
+2018-03-12T23:59:37.7041442+07:00 0HLC87925SVOG:00000001 [INF] Sending file. Request path: '"/client-side/images/blog-img1.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\blog-img1.jpg"' (27b0a520)
+2018-03-12T23:59:37.7788693+07:00 0HLC87925SVOQ:00000001 [INF] Sending file. Request path: '"/client-side/images/brand10.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand10.png"' (27b0a520)
+2018-03-12T23:59:37.7811769+07:00 0HLC87925SVOS:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand9.png   (ca22a1cb)
+2018-03-12T23:59:37.8374562+07:00 0HLC87925SVOG:00000001 [INF] Request finished in 646.0312ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:37.8619947+07:00 0HLC87925SVO2:00000001 [INF] Request finished in 650.7901ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:37.9187114+07:00 0HLC87925SVON:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand7.png   (ca22a1cb)
+2018-03-12T23:59:38.0015483+07:00 0HLC87925SVOP:00000001 [INF] Sending file. Request path: '"/client-side/images/brand8.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand8.png"' (27b0a520)
+2018-03-12T23:59:38.0078160+07:00 0HLC87925SVOJ:00000001 [INF] Request finished in 347.9847ms 200 image/png (791a596a)
+2018-03-12T23:59:38.0634920+07:00 0HLC87925SVOU:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/banner-women.jpg   (ca22a1cb)
+2018-03-12T23:59:38.0906399+07:00 0HLC87925SVOT:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/banner-sunglasses.jpg   (ca22a1cb)
+2018-03-12T23:59:38.1615899+07:00 0HLC87925SVOS:00000001 [INF] Sending file. Request path: '"/client-side/images/brand9.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand9.png"' (27b0a520)
+2018-03-12T23:59:38.1633478+07:00 0HLC87925SVON:00000001 [INF] Sending file. Request path: '"/client-side/images/brand7.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand7.png"' (27b0a520)
+2018-03-12T23:59:38.2225381+07:00 0HLC87925SVP1:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/testimonials-img3.jpg   (ca22a1cb)
+2018-03-12T23:59:38.2626751+07:00 0HLC87925SVOT:00000001 [INF] Sending file. Request path: '"/client-side/images/banner-sunglasses.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\banner-sunglasses.jpg"' (27b0a520)
+2018-03-12T23:59:38.2742196+07:00 0HLC87925SVP1:00000001 [INF] Sending file. Request path: '"/client-side/images/testimonials-img3.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\testimonials-img3.jpg"' (27b0a520)
+2018-03-12T23:59:38.2815674+07:00 0HLC87925SVP2:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/testimonials-img1.jpg   (ca22a1cb)
+2018-03-12T23:59:38.3346771+07:00 0HLC87925SVP0:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/banner-kids.jpg   (ca22a1cb)
+2018-03-12T23:59:38.3432919+07:00 0HLC87925SVOQ:00000001 [INF] Request finished in 486.7462ms 200 image/png (791a596a)
+2018-03-12T23:59:38.3726054+07:00 0HLC87925SVP2:00000001 [INF] Sending file. Request path: '"/client-side/images/testimonials-img1.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\testimonials-img1.jpg"' (27b0a520)
+2018-03-12T23:59:38.3791638+07:00 0HLC87925SVOP:00000001 [INF] Request finished in 623.7888ms 200 image/png (791a596a)
+2018-03-12T23:59:38.4001152+07:00 0HLC87925SVP6:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/paypal.png   (ca22a1cb)
+2018-03-12T23:59:38.4465986+07:00 0HLC87925SVOU:00000001 [INF] Sending file. Request path: '"/client-side/images/banner-women.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\banner-women.jpg"' (27b0a520)
+2018-03-12T23:59:38.4516214+07:00 0HLC87925SVP0:00000001 [INF] Sending file. Request path: '"/client-side/images/banner-kids.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\banner-kids.jpg"' (27b0a520)
+2018-03-12T23:59:38.4549210+07:00 0HLC87925SVP2:00000001 [INF] Request finished in 129.4609ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:38.4642902+07:00 0HLC87925SVP5:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/footer-logo.png   (ca22a1cb)
+2018-03-12T23:59:38.5604554+07:00 0HLC87925SVP4:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/testimonials-img2.jpg   (ca22a1cb)
+2018-03-12T23:59:38.5913366+07:00 0HLC87925SVP1:00000001 [INF] Request finished in 115.328ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:38.6359063+07:00 0HLC87925SVP8:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/visa.png   (ca22a1cb)
+2018-03-12T23:59:38.6565917+07:00 0HLC87925SVP4:00000001 [INF] Sending file. Request path: '"/client-side/images/testimonials-img2.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\testimonials-img2.jpg"' (27b0a520)
+2018-03-12T23:59:38.6619874+07:00 0HLC87925SVP0:00000001 [INF] Request finished in 468.8547ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:38.6671794+07:00 0HLC87925SVON:00000001 [INF] Request finished in 894.3383ms 200 image/png (791a596a)
+2018-03-12T23:59:38.7272536+07:00 0HLC87925SVP6:00000001 [INF] Sending file. Request path: '"/client-side/images/paypal.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\paypal.png"' (27b0a520)
+2018-03-12T23:59:38.7298587+07:00 0HLC87925SVOU:00000001 [INF] Request finished in 784.6367ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:38.8003911+07:00 0HLC87925SVP8:00000001 [INF] Sending file. Request path: '"/client-side/images/visa.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\visa.png"' (27b0a520)
+2018-03-12T23:59:38.8057062+07:00 0HLC87925SVP5:00000001 [INF] Sending file. Request path: '"/client-side/images/footer-logo.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\footer-logo.png"' (27b0a520)
+2018-03-12T23:59:38.8083125+07:00 0HLC87925SVP6:00000001 [INF] Request finished in 436.2534ms 200 image/png (791a596a)
+2018-03-12T23:59:38.9064174+07:00 0HLC87925SVPE:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/jquery-ui.js   (ca22a1cb)
+2018-03-12T23:59:38.9235793+07:00 0HLC87925SVP4:00000001 [INF] Request finished in 547.8236ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:38.9646373+07:00 0HLC87925SVPB:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/main.js   (ca22a1cb)
+2018-03-12T23:59:39.0032996+07:00 0HLC87925SVPA:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/owl.carousel.min.js   (ca22a1cb)
+2018-03-12T23:59:39.0128984+07:00 0HLC87925SVP8:00000001 [INF] Request finished in 406.7991ms 200 image/png (791a596a)
+2018-03-12T23:59:39.0653133+07:00 0HLC87925SVPD:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/countdown.js   (ca22a1cb)
+2018-03-12T23:59:39.1103503+07:00 0HLC87925SVP9:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/jquery.min.js   (ca22a1cb)
+2018-03-12T23:59:39.1354332+07:00 0HLC87925SVP5:00000001 [INF] Request finished in 434.6376ms 200 image/png (791a596a)
+2018-03-12T23:59:39.1603714+07:00 0HLC87925SVPA:00000001 [INF] Sending file. Request path: '"/client-side/js/owl.carousel.min.js"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\js\owl.carousel.min.js"' (27b0a520)
+2018-03-12T23:59:39.1873913+07:00 0HLC87925SVPE:00000001 [INF] Sending file. Request path: '"/client-side/js/jquery-ui.js"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\js\jquery-ui.js"' (27b0a520)
+2018-03-12T23:59:39.2671093+07:00 0HLC87925SVPB:00000001 [INF] Sending file. Request path: '"/client-side/js/main.js"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\js\main.js"' (27b0a520)
+2018-03-12T23:59:39.3370597+07:00 0HLC87925SVPA:00000001 [INF] Request finished in 497.6958ms 200 application/javascript (791a596a)
+2018-03-12T23:59:39.4044814+07:00 0HLC87925SVP7:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/bootstrap.min.js   (ca22a1cb)
+2018-03-12T23:59:39.4068893+07:00 0HLC87925SVPF:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/discover.png   (ca22a1cb)
+2018-03-12T23:59:39.4359208+07:00 0HLC87925SVP9:00000001 [INF] Sending file. Request path: '"/client-side/js/jquery.min.js"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\js\jquery.min.js"' (27b0a520)
+2018-03-12T23:59:39.4384552+07:00 0HLC87925SVOV:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/banner-arrival.jpg   (ca22a1cb)
+2018-03-12T23:59:39.4442305+07:00 0HLC87925SVOV:00000001 [INF] Sending file. Request path: '"/client-side/images/banner-arrival.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\banner-arrival.jpg"' (27b0a520)
+2018-03-12T23:59:39.4510730+07:00 0HLC87925SVP7:00000001 [INF] Sending file. Request path: '"/client-side/js/bootstrap.min.js"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\js\bootstrap.min.js"' (27b0a520)
+2018-03-12T23:59:39.5189814+07:00 0HLC87925SVOR:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand11.png   (ca22a1cb)
+2018-03-12T23:59:39.5401449+07:00 0HLC87925SVPD:00000001 [INF] Sending file. Request path: '"/client-side/js/countdown.js"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\js\countdown.js"' (27b0a520)
+2018-03-12T23:59:39.5647750+07:00 0HLC87925SVP3:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/testimonials-img4.jpg   (ca22a1cb)
+2018-03-12T23:59:39.6573751+07:00 0HLC87925SVPF:00000001 [INF] Sending file. Request path: '"/client-side/images/discover.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\discover.png"' (27b0a520)
+2018-03-12T23:59:39.6599300+07:00 0HLC87925SVPB:00000001 [INF] Request finished in 667.5277ms 200 application/javascript (791a596a)
+2018-03-12T23:59:39.7116400+07:00 0HLC87925SVOV:00000001 [INF] Request finished in 329.4282ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:39.7363496+07:00 0HLC87925SVPC:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/mobile-menu.js   (ca22a1cb)
+2018-03-12T23:59:39.8753237+07:00 0HLC87925SVOR:00000001 [INF] Sending file. Request path: '"/client-side/images/brand11.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand11.png"' (27b0a520)
+2018-03-12T23:59:39.8790507+07:00 0HLC87925SVP7:00000001 [INF] Request finished in 171.8503ms 200 application/javascript (791a596a)
+2018-03-12T23:59:39.9536217+07:00 0HLC87925SVPC:00000001 [INF] Sending file. Request path: '"/client-side/js/mobile-menu.js"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\js\mobile-menu.js"' (27b0a520)
+2018-03-12T23:59:40.0150824+07:00 0HLC87925SVPG:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/revolution-slider.js   (ca22a1cb)
+2018-03-12T23:59:40.0525074+07:00 0HLC87925SVPL:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/quick_view_popup.css   (ca22a1cb)
+2018-03-12T23:59:40.0589746+07:00 0HLC87925SVPI:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/font-awesome.min.css   (ca22a1cb)
+2018-03-12T23:59:40.0613702+07:00 0HLC87925SVPH:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/master-card.png   (ca22a1cb)
+2018-03-12T23:59:40.1101216+07:00 0HLC87925SVP3:00000001 [INF] Sending file. Request path: '"/client-side/images/testimonials-img4.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\testimonials-img4.jpg"' (27b0a520)
+2018-03-12T23:59:40.1215460+07:00 0HLC87925SVPD:00000001 [INF] Request finished in 803.5317ms 200 application/javascript (791a596a)
+2018-03-12T23:59:40.1822717+07:00 0HLC87925SVPF:00000001 [INF] Request finished in 656.9318ms 200 image/png (791a596a)
+2018-03-12T23:59:40.2082506+07:00 0HLC87925SVOR:00000001 [INF] Request finished in 742.2647ms 200 image/png (791a596a)
+2018-03-12T23:59:40.3062141+07:00 0HLC87925SVP3:00000001 [INF] Request finished in 857.1622ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:40.3283159+07:00 0HLC87925SVPM:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/shortcode.css   (ca22a1cb)
+2018-03-12T23:59:40.3758454+07:00 0HLC87925SVPL:00000001 [INF] Sending file. Request path: '"/client-side/css/quick_view_popup.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\quick_view_popup.css"' (27b0a520)
+2018-03-12T23:59:40.3778171+07:00 0HLC87925SVPI:00000001 [INF] Sending file. Request path: '"/client-side/css/font-awesome.min.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\font-awesome.min.css"' (27b0a520)
+2018-03-12T23:59:40.4051652+07:00 0HLC87925SVPG:00000001 [INF] Sending file. Request path: '"/client-side/js/revolution-slider.js"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\js\revolution-slider.js"' (27b0a520)
+2018-03-12T23:59:40.4288698+07:00 0HLC87925SVPH:00000001 [INF] Sending file. Request path: '"/client-side/images/master-card.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\master-card.png"' (27b0a520)
+2018-03-12T23:59:40.4458468+07:00 0HLC87925SVPN:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/shortcodes/featured-box.css   (ca22a1cb)
+2018-03-12T23:59:40.5975220+07:00 0HLC87925SVPI:00000001 [INF] Request finished in 454.5605ms 200 text/css (791a596a)
+2018-03-12T23:59:40.6189009+07:00 0HLC87925SVPK:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/revolution-slider.css   (ca22a1cb)
+2018-03-12T23:59:40.6543912+07:00 0HLC87925SVPL:00000001 [INF] Request finished in 429.149ms 200 text/css (791a596a)
+2018-03-12T23:59:40.7022609+07:00 0HLC87925SVPM:00000001 [INF] Sending file. Request path: '"/client-side/css/shortcode.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\shortcode.css"' (27b0a520)
+2018-03-12T23:59:40.7040865+07:00 0HLC87925SVPO:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/shortcodes/shortcodes.css   (ca22a1cb)
+2018-03-12T23:59:40.7293554+07:00 0HLC87925SVPN:00000001 [INF] Sending file. Request path: '"/client-side/css/shortcodes/featured-box.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\shortcodes\featured-box.css"' (27b0a520)
+2018-03-12T23:59:40.7956092+07:00 0HLC87925SVPH:00000001 [INF] Request finished in 782.3872ms 200 image/png (791a596a)
+2018-03-12T23:59:40.8190700+07:00 0HLC87925SVPP:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/shortcodes/pricing-table.css   (ca22a1cb)
+2018-03-12T23:59:40.8774760+07:00 0HLC87925SVPQ:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/shortcodes/tooltip.css   (ca22a1cb)
+2018-03-12T23:59:40.9008909+07:00 0HLC87925SVPK:00000001 [INF] Sending file. Request path: '"/client-side/css/revolution-slider.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\revolution-slider.css"' (27b0a520)
+2018-03-12T23:59:40.9055040+07:00 0HLC87925SVPM:00000001 [INF] Request finished in 586.736ms 200 text/css (791a596a)
+2018-03-12T23:59:40.9584486+07:00 0HLC87925SVPN:00000001 [INF] Request finished in 458.2836ms 200 text/css (791a596a)
+2018-03-12T23:59:41.0287760+07:00 0HLC87925SVPT:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/blog.css   (ca22a1cb)
+2018-03-12T23:59:41.0516603+07:00 0HLC87925SVPO:00000001 [INF] Sending file. Request path: '"/client-side/css/shortcodes/shortcodes.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\shortcodes\shortcodes.css"' (27b0a520)
+2018-03-12T23:59:41.0557456+07:00 0HLC87925SVPP:00000001 [INF] Sending file. Request path: '"/client-side/css/shortcodes/pricing-table.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\shortcodes\pricing-table.css"' (27b0a520)
+2018-03-12T23:59:41.0582626+07:00 0HLC87925SVPR:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/shortcodes/post.css   (ca22a1cb)
+2018-03-12T23:59:41.0862413+07:00 0HLC87925SVPR:00000001 [INF] Sending file. Request path: '"/client-side/css/shortcodes/post.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\shortcodes\post.css"' (27b0a520)
+2018-03-12T23:59:41.1113305+07:00 0HLC87925SVPQ:00000001 [INF] Sending file. Request path: '"/client-side/css/shortcodes/tooltip.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\shortcodes\tooltip.css"' (27b0a520)
+2018-03-12T23:59:41.1586301+07:00 0HLC87925SVPT:00000001 [INF] Sending file. Request path: '"/client-side/css/blog.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\blog.css"' (27b0a520)
+2018-03-12T23:59:41.1705968+07:00 0HLC87925SVPQ:00000001 [INF] Request finished in 280.4998ms 200 text/css (791a596a)
+2018-03-12T23:59:41.2452604+07:00 0HLC87925SVPS:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/responsive.css   (ca22a1cb)
+2018-03-12T23:59:41.3174386+07:00 0HLC87925SVPJ:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/flexslider.css   (ca22a1cb)
+2018-03-12T23:59:41.3928081+07:00 0HLC87925SVO1:00000001 [INF] Request finished in 6954.6911ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:41.4053573+07:00 0HLC87925SVPS:00000001 [INF] Sending file. Request path: '"/client-side/css/responsive.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\responsive.css"' (27b0a520)
+2018-03-12T23:59:41.4821695+07:00 0HLC87925SVO8:00000001 [INF] Request finished in 5620.3297ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:41.6289216+07:00 0HLC87925SVO9:00000001 [INF] Request finished in 5626.1051ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:41.7325459+07:00 0HLC87925SVPU:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/style.css   (ca22a1cb)
+2018-03-12T23:59:41.7781029+07:00 0HLC87925SVPP:00000001 [INF] Request finished in 654.1695ms 200 text/css (791a596a)
+2018-03-12T23:59:41.8238222+07:00 0HLC87925SVOB:00000001 [INF] Request finished in 5866.9206ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:41.9275220+07:00 0HLC87925SVPT:00000001 [INF] Request finished in 354.3851ms 200 text/css (791a596a)
+2018-03-12T23:59:41.9706454+07:00 0HLC87925SVPJ:00000001 [INF] Sending file. Request path: '"/client-side/css/flexslider.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\flexslider.css"' (27b0a520)
+2018-03-12T23:59:42.1058817+07:00 0HLC87925SVO7:00000001 [INF] Request finished in 6089.0125ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:42.1291185+07:00 0HLC87925SVOS:00000001 [INF] Request finished in 3864.9804ms 200 image/png (791a596a)
+2018-03-12T23:59:42.2164845+07:00 0HLC87925SVPO:00000001 [INF] Request finished in 1403.7402ms 200 text/css (791a596a)
+2018-03-12T23:59:42.2268529+07:00 0HLC87925SVOT:00000001 [INF] Request finished in 3630.9075ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:42.2556604+07:00 0HLC87925SVPU:00000001 [INF] Sending file. Request path: '"/client-side/css/style.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\style.css"' (27b0a520)
+2018-03-12T23:59:42.3703327+07:00 0HLC87925SVO3:00000002 [INF] Request finished in 6447.6157ms 200 text/css (791a596a)
+2018-03-12T23:59:42.3973577+07:00 0HLC87925SVPC:00000001 [INF] Request finished in 1976.7664ms 200 application/javascript (791a596a)
+2018-03-12T23:59:42.4271288+07:00 0HLC87925SVPE:00000001 [INF] Request finished in 2755.2066ms 200 application/javascript (791a596a)
+2018-03-12T23:59:42.4446027+07:00 0HLC87925SVO5:00000001 [INF] Request finished in 4972.7905ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:42.4784038+07:00 0HLC87925SVPR:00000001 [INF] Request finished in 709.3178ms 200 text/css (791a596a)
+2018-03-12T23:59:42.5064710+07:00 0HLC87925SVPG:00000001 [INF] Request finished in 2341.7751ms 200 application/javascript (791a596a)
+2018-03-12T23:59:42.5207576+07:00 0HLC87925SVPK:00000001 [INF] Request finished in 1308.0467ms 200 text/css (791a596a)
+2018-03-12T23:59:42.5481164+07:00 0HLC87925SVOA:00000001 [INF] Request finished in 4787.2631ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:42.5586756+07:00 0HLC87925SVOC:00000001 [INF] Request finished in 5824.2302ms 200 image/jpeg (791a596a)
+2018-03-12T23:59:42.7397937+07:00 0HLC87925SVPS:00000001 [INF] Request finished in 899.1063ms 200 text/css (791a596a)
+2018-03-12T23:59:42.7609327+07:00 0HLC87925SVPJ:00000001 [INF] Request finished in 1097.3566ms 200 text/css (791a596a)
+2018-03-12T23:59:42.7879782+07:00 0HLC87925SVP9:00000001 [INF] Request finished in 3143.8499ms 200 application/javascript (791a596a)
+2018-03-12T23:59:42.8148128+07:00 0HLC87925SVPU:00000001 [INF] Request finished in 1367.3253ms 200 text/css (791a596a)
+2018-03-12T23:59:42.9923809+07:00 0HLC87925SVNR:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/bg_text_des.png   (ca22a1cb)
+2018-03-12T23:59:43.0079072+07:00 0HLC87925SVNV:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/fonts/simple-line-icons/Simple-Line-Icons.woff2?v=2.4.0   (ca22a1cb)
+2018-03-12T23:59:43.0429302+07:00 0HLC87925SVNT:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/fonts/pe-icon-7-stroke/Pe-icon-7-stroke.woff?d7yf1v   (ca22a1cb)
+2018-03-12T23:59:43.0923066+07:00 0HLC87925SVNV:00000003 [INF] Sending file. Request path: '"/client-side/fonts/simple-line-icons/Simple-Line-Icons.woff2"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\fonts\simple-line-icons\Simple-Line-Icons.woff2"' (27b0a520)
+2018-03-12T23:59:43.0969360+07:00 0HLC87925SVNS:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/select-arrow.png   (ca22a1cb)
+2018-03-12T23:59:43.1213102+07:00 0HLC87925SVNU:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/fonts/font-awesome/fontawesome-webfont.woff2?v=4.7.0   (ca22a1cb)
+2018-03-12T23:59:43.1673353+07:00 0HLC87925SVO0:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2018-03-12T23:59:43.1728812+07:00 0HLC87925SVNS:00000003 [INF] Sending file. Request path: '"/client-side/images/select-arrow.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\select-arrow.png"' (27b0a520)
+2018-03-12T23:59:43.1907905+07:00 0HLC87925SVO0:00000003 [INF] Request finished in 57.3218ms 404  (791a596a)
+2018-03-12T23:59:43.2407769+07:00 0HLC87925SVNU:00000003 [INF] Sending file. Request path: '"/client-side/fonts/font-awesome/fontawesome-webfont.woff2"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\fonts\font-awesome\fontawesome-webfont.woff2"' (27b0a520)
+2018-03-12T23:59:43.2433906+07:00 0HLC87925SVNR:00000004 [INF] Sending file. Request path: '"/client-side/images/bg_text_des.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\bg_text_des.png"' (27b0a520)
+2018-03-12T23:59:43.2764114+07:00 0HLC87925SVNS:00000003 [INF] Request finished in 376.6298ms 200 image/png (791a596a)
+2018-03-12T23:59:43.2826234+07:00 0HLC87925SVNT:00000003 [INF] Sending file. Request path: '"/client-side/fonts/pe-icon-7-stroke/Pe-icon-7-stroke.woff"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\fonts\pe-icon-7-stroke\Pe-icon-7-stroke.woff"' (27b0a520)
+2018-03-12T23:59:43.3093315+07:00 0HLC87925SVNV:00000003 [INF] Request finished in 309.7233ms 200 font/woff2 (791a596a)
+2018-03-12T23:59:43.3502718+07:00 0HLC87925SVNR:00000004 [INF] Request finished in 432.2498ms 200 image/png (791a596a)
+2018-03-12T23:59:43.3643755+07:00 0HLC87925SVNT:00000003 [INF] Request finished in 498.5961ms 200 application/font-woff (791a596a)
+2018-03-12T23:59:43.4141142+07:00 0HLC87925SVO6:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-12T23:59:43.4372277+07:00 0HLC87925SVNU:00000003 [INF] Request finished in 474.1157ms 200 font/woff2 (791a596a)
+2018-03-12T23:59:43.4906981+07:00 0HLC87925SVO6:00000002 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-12T23:59:43.5001682+07:00 0HLC87925SVO6:00000002 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-12T23:59:43.5129666+07:00 0HLC87925SVO6:00000002 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 91.9743ms (afa2e885)
+2018-03-12T23:59:43.5191517+07:00 0HLC87925SVO6:00000002 [INF] Request finished in 157.2911ms 200 text/html; charset=utf-8 (791a596a)

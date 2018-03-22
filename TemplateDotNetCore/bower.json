@@ -8,7 +8,9 @@
     "jquery-validation-unobtrusive": "~3.2.6",
     "notifyjs": "~0.4.2",
     "mustache": "~2.3.0",
-    "twbs-pagination": "~1.4.1",
     "bootbox": "~4.4.0"
+  },
+  "resolutions": {
+    "jquery": ">= 1.7.2"
   }
 }

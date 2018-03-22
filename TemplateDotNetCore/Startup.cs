@@ -64,9 +64,9 @@ namespace TemplateDotNetCore
             services.AddScoped<IUserClaimsPrincipalFactory<AppUser>, CustomClaimsPrincipalFactory>();
             services.AddTransient<IEmailSender, EmailSender>();
             services.AddTransient<DbInitializer>();
-            services.AddTransient(typeof(IUnitOfWork), typeof(EFUnitOfWork));
-            services.AddTransient(typeof(IRepository<,>), typeof(EFRepository<,>));
-
+            
+            services.AddMvc()
+                .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
             #region automapperconfig
 
             services.AddAutoMapper();
@@ -75,7 +75,10 @@ namespace TemplateDotNetCore
                 new Mapper(sp.GetRequiredService<AutoMapper.IConfigurationProvider>(), sp.GetService));
 
             #endregion
+            services.AddTransient(typeof(IUnitOfWork), typeof(EFUnitOfWork));
+            services.AddTransient(typeof(IRepository<,>), typeof(EFRepository<,>));
 
+            //repositories
             services.AddTransient<IProductCategoryRepository, ProductCategoryRepository>();
             services.AddTransient<IProductCategoryService, ProductCategoryService>();
             services.AddTransient<IFunctionRepository, FunctionRepository>();
@@ -83,7 +86,6 @@ namespace TemplateDotNetCore
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<IProductService, ProductService>();
 
-            services.AddMvc().AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -101,6 +103,8 @@ namespace TemplateDotNetCore
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            
+            app.UseStatusCodePagesWithReExecute("/Home/Error");
 
             app.UseStaticFiles();
 
@@ -109,11 +113,18 @@ namespace TemplateDotNetCore
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                    name: "trang-chu",
+                    template: "trang-chu.html",
+                    defaults: new {controller= "Home", action= "Index" });
+
+                routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+
                 routes.MapRoute(
                     name: "areaRoute",
                     template: "{area:exists}/{controller=Login}/{action=Index}/{id?}");
+
             });
         }
     }

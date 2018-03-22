@@ -1,0 +1,46 @@
+﻿@model List<ProductCategoryViewModel>
+
+<div id="mobile-menu">
+    <ul>
+        @foreach (var first in Model.Where(x => x.ParentId == null))
+        {
+            @if (Model.Any(x => x.ParentId == first.Id))
+            {
+                <li>
+                    <a href="/@first.SeoAlias-c.@(first.Id).html">@first.Name</a>
+                    <ul>
+                        @foreach (var second in Model.Where(x => x.ParentId == first.Id))
+                        {
+                            if (Model.Where(x => x.ParentId == first.Id).Count() >= 2)
+                            {
+                                <li>
+                                    <a href="/@second.SeoAlias-c.@(first.Id).html">@second.Name</a>
+                                    <ul>
+                                        @foreach (var third in Model.Where(x => x.ParentId == second.Id))
+                                        {
+                                            <li>
+                                                <a href="/@third.SeoAlias-c.@(third.Id).html">@third.Name</a>
+                                            </li>
+                                        }
+                                    </ul>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a href="/@second.SeoAlias-c.@(first.Id).html"><span>@second.Name</span></a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </li>
+            }
+            else
+            {
+                <li>
+                    <a href="/@first.SeoAlias-c.@(first.Id).html">@first.Name</a>
+                </li>
+            }
+        }
+    </ul>
+</div>

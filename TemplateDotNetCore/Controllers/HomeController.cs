@@ -12,12 +12,25 @@ namespace TemplateDotNetCore.Controllers
     {
         public IActionResult Index()
         {
+            ViewData["BodyClass"] = "cms-index-index cms-home-page";
+            return View();
+        }
+
+        [Route("thong-tin-ve-cong-ty.html")]
+        public IActionResult About()
+        {
+            return View();
+        }
+
+        [Route("lien-he.html")]
+        public IActionResult Contact()
+        {
             return View();
         }
 
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
         }
     }
 }

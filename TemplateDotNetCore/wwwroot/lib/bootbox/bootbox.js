@@ -22,7 +22,7 @@
     root.bootbox = factory(root.jQuery);
   }
 
-}(this, function init(jQuery, undefined) {
+}(this, function init($, undefined) {
 
   "use strict";
 
@@ -105,7 +105,7 @@
 
     // so, if the callback can be invoked and it *explicitly returns false*
     // then we'll set a flag to keep the dialog active...
-    var preserveDialog = jQuery.isFunction(callback) && callback.call(dialog, e) === false;
+    var preserveDialog = $.isFunction(callback) && callback.call(dialog, e) === false;
 
     // ... otherwise we'll bin it
     if (!preserveDialog) {
@@ -124,7 +124,7 @@
 
   function each(collection, iterator) {
     var index = 0;
-    jQuery.each(collection, function(key, value) {
+    $.each(collection, function(key, value) {
       iterator(key, value, index++);
     });
   }
@@ -142,7 +142,7 @@
     }
 
     // make sure any supplied options take precedence over defaults
-    options = jQuery.extend({}, defaults, options);
+    options = $.extend({}, defaults, options);
 
     if (!options.buttons) {
       options.buttons = {};
@@ -154,7 +154,7 @@
 
     each(buttons, function(key, button, index) {
 
-      if (jQuery.isFunction(button)) {
+      if ($.isFunction(button)) {
         // short form, assume value is our callback. Since button
         // isn't an object it isn't a reference either so re-assign it
         button = buttons[key] = {
@@ -163,7 +163,7 @@
       }
 
       // before any further checks make sure by now button is the correct type
-      if (jQuery.type(button) !== "object") {
+      if ($.type(button) !== "object") {
         throw new Error("button with key " + key + " must be an object");
       }
 
@@ -191,8 +191,8 @@
    * use the properties argument to map the unnamed args to
    * object properties
    * so in the latter case:
-   * mapArguments(["foo", jQuery.noop], ["message", "callback"])
-   * -> { message: "foo", callback: jQuery.noop }
+   * mapArguments(["foo", $.noop], ["message", "callback"])
+   * -> { message: "foo", callback: $.noop }
    */
   function mapArguments(args, properties) {
     var argn = args.length;
@@ -216,7 +216,7 @@
    * merge a set of default dialog options with user supplied arguments
    */
   function mergeArguments(defaults, args, properties) {
-    return jQuery.extend(
+    return $.extend(
       // deep merge
       true,
       // ensure the target is an empty, unreferenced object
@@ -298,7 +298,7 @@
 
     options = mergeDialogOptions("alert", ["ok"], ["message", "callback"], arguments);
 
-    if (options.callback && !jQuery.isFunction(options.callback)) {
+    if (options.callback && !$.isFunction(options.callback)) {
       throw new Error("alert requires callback property to be a function when provided");
     }
 
@@ -306,7 +306,7 @@
      * overrides
      */
     options.buttons.ok.callback = options.onEscape = function() {
-      if (jQuery.isFunction(options.callback)) {
+      if ($.isFunction(options.callback)) {
         return options.callback.call(this);
       }
       return true;
@@ -332,7 +332,7 @@
     };
 
     // confirm specific validation
-    if (!jQuery.isFunction(options.callback)) {
+    if (!$.isFunction(options.callback)) {
       throw new Error("confirm requires a callback");
     }
 
@@ -352,7 +352,7 @@
     // its value is undefined when gearing up our options
     // @TODO this could be solved by allowing message to
     // be a function instead...
-    form = jQuery(templates.form);
+    form = $(templates.form);
 
     // prompt defaults are more complex than others in that
     // users can override more defaults
@@ -408,7 +408,7 @@
           value = [];
 
           each(checkedItems, function(_, item) {
-            value.push(jQuery(item).val());
+            value.push($(item).val());
           });
           break;
       }
@@ -423,7 +423,7 @@
       throw new Error("prompt requires a title");
     }
 
-    if (!jQuery.isFunction(options.callback)) {
+    if (!$.isFunction(options.callback)) {
       throw new Error("prompt requires a callback");
     }
 
@@ -432,7 +432,7 @@
     }
 
     // create the input based on the supplied type
-    input = jQuery(templates.inputs[options.inputType]);
+    input = $(templates.inputs[options.inputType]);
 
     switch (options.inputType) {
       case "text":
@@ -449,7 +449,7 @@
         var groups = {};
         inputOptions = options.inputOptions || [];
 
-        if (!jQuery.isArray(inputOptions)) {
+        if (!$.isArray(inputOptions)) {
           throw new Error("Please pass an array of input options");
         }
 
@@ -471,7 +471,7 @@
           if (option.group) {
             // initialise group if necessary
             if (!groups[option.group]) {
-              groups[option.group] = jQuery("<optgroup/>").attr("label", option.group);
+              groups[option.group] = $("<optgroup/>").attr("label", option.group);
             }
 
             elem = groups[option.group];
@@ -489,7 +489,7 @@
         break;
 
       case "checkbox":
-        var values   = jQuery.isArray(options.value) ? options.value : [options.value];
+        var values   = $.isArray(options.value) ? options.value : [options.value];
         inputOptions = options.inputOptions || [];
 
         if (!inputOptions.length) {
@@ -503,10 +503,10 @@
         // checkboxes have to nest within a containing element, so
         // they break the rules a bit and we end up re-assigning
         // our 'input' element to this container instead
-        input = jQuery("<div/>");
+        input = $("<div/>");
 
         each(inputOptions, function(_, option) {
-          var checkbox = jQuery(templates.inputs[options.inputType]);
+          var checkbox = $(templates.inputs[options.inputType]);
 
           checkbox.find("input").attr("value", option.value);
           checkbox.find("label").append(option.text);
@@ -571,7 +571,7 @@
   exports.dialog = function(options) {
     options = sanitize(options);
 
-    var dialog = jQuery(templates.dialog);
+    var dialog = $(templates.dialog);
     var innerDialog = dialog.find(".modal-dialog");
     var body = dialog.find(".modal-body");
     var buttons = options.buttons;
@@ -580,9 +580,9 @@
       onEscape: options.onEscape
     };
 
-    if (jQuery.fn.modal === undefined) {
+    if ($.fn.modal === undefined) {
       throw new Error(
-        "jQuery.fn.modal is not defined; please double check you have included " +
+        "$.fn.modal is not defined; please double check you have included " +
         "the Bootstrap JavaScript library. See http://getbootstrap.com/javascript/ " +
         "for more details."
       );
@@ -618,7 +618,7 @@
     }
 
     if (options.closeButton) {
-      var closeButton = jQuery(templates.closeButton);
+      var closeButton = $(templates.closeButton);
 
       if (options.title) {
         dialog.find(".modal-header").prepend(closeButton);
@@ -678,7 +678,7 @@
       // should show a dialog the user can dismiss by clicking on
       // the background.
       // We always only ever pass static/false to the actual
-      // jQuery.modal function because with `true` we can't trap
+      // $.modal function because with `true` we can't trap
       // this event (the .modal-backdrop swallows it)
       // However, we still want to sort of respect true
       // and invoke the escape mechanism instead
@@ -709,7 +709,7 @@
      */
 
     dialog.on("click", ".modal-footer button", function(e) {
-      var callbackKey = jQuery(this).data("bb-handler");
+      var callbackKey = $(this).data("bb-handler");
 
       processCallback(e, dialog, callbacks[callbackKey]);
     });
@@ -732,7 +732,7 @@
     // functionality and then giving the resulting object back
     // to our caller
 
-    jQuery(options.container).append(dialog);
+    $(options.container).append(dialog);
 
     dialog.modal({
       backdrop: options.backdrop ? "static": false,
@@ -779,11 +779,11 @@
       values = arguments[0];
     }
 
-    jQuery.extend(defaults, values);
+    $.extend(defaults, values);
   };
 
   exports.hideAll = function() {
-    jQuery(".bootbox").modal("hide");
+    $(".bootbox").modal("hide");
 
     return exports;
   };
@@ -952,7 +952,7 @@
   };
 
   exports.addLocale = function(name, values) {
-    jQuery.each(["OK", "CANCEL", "CONFIRM"], function(_, v) {
+    $.each(["OK", "CANCEL", "CONFIRM"], function(_, v) {
       if (!values[v]) {
         throw new Error("Please supply a translation for '" + v + "'");
       }
@@ -977,8 +977,8 @@
     return exports.setDefaults("locale", name);
   };
 
-  exports.init = function(_jQuery) {
-    return init(_jQuery || jQuery);
+  exports.init = function(_$) {
+    return init(_$ || $);
   };
 
   return exports;
