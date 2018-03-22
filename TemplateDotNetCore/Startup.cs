@@ -103,6 +103,8 @@ namespace TemplateDotNetCore
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            
+            app.UseStatusCodePagesWithReExecute("/Home/Error");
 
             app.UseStaticFiles();
 
@@ -110,6 +112,11 @@ namespace TemplateDotNetCore
 
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                    name: "trang-chu",
+                    template: "trang-chu.html",
+                    defaults: new {controller= "Home", action= "Index" });
+
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");

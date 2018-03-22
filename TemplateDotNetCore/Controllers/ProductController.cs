@@ -29,5 +29,11 @@ namespace TemplateDotNetCore.Controllers
             ViewData["BodyClass"] = "product-page";
             return View();
         }
+
+        [Route("so-sanh-san-pham.html")]
+        public IActionResult Compare()
+        {
+            return View();
+        }
     }
 }
