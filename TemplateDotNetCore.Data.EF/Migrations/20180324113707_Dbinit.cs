@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace TemplateDotNetCore.Data.EF.Migrations
 {
-    public partial class DbInit : Migration
+    public partial class Dbinit : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -404,13 +404,14 @@ namespace TemplateDotNetCore.Data.EF.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Content = table.Column<string>(nullable: true),
+                    Content = table.Column<string>(maxLength: 250, nullable: true),
+                    ContentUrl = table.Column<string>(maxLength: 125, nullable: true),
                     Description = table.Column<string>(maxLength: 250, nullable: true),
                     DisplayOrder = table.Column<int>(nullable: true),
-                    GroupAlias = table.Column<string>(maxLength: 25, nullable: false),
+                    GroupAlias = table.Column<string>(maxLength: 125, nullable: true),
                     Image = table.Column<string>(maxLength: 250, nullable: false),
                     Name = table.Column<string>(maxLength: 250, nullable: false),
-                    Status = table.Column<bool>(nullable: false),
+                    Status = table.Column<int>(nullable: false),
                     Url = table.Column<string>(maxLength: 250, nullable: true)
                 },
                 constraints: table =>

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using TemplateDotNetCore.Data.Enums;
 using TemplateDotNetCore.Infrastucture.SharedKernel;
 
 namespace TemplateDotNetCore.Data.Entities
@@ -18,17 +19,20 @@ namespace TemplateDotNetCore.Data.Entities
         [Required]
         public string Image { set; get; }
 
+        [StringLength(125)]
+        public string ContentUrl { set; get; }
+
         [StringLength(250)]
         public string Url { set; get; }
 
         public int? DisplayOrder { set; get; }
 
-        public bool Status { set; get; }
+        public Status Status { set; get; }
 
+        [StringLength(250)]
         public string Content { set; get; }
 
-        [StringLength(25)]
-        [Required]
+        [StringLength(125)]
         public string GroupAlias { get; set; }
     }
 }

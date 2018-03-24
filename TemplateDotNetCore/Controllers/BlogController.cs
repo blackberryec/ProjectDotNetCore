@@ -8,7 +8,7 @@ namespace TemplateDotNetCore.Controllers
 {
     public class BlogController : Controller
     {
-        [Route("blog-review-cong-nghe.html")]
+        [Route("blog-review.html")]
         public IActionResult Index()
         {
             return View();

@@ -12,8 +12,8 @@ using TemplateDotNetCore.Data.Enums;
 namespace TemplateDotNetCore.Data.EF.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20180124160851_DbInit")]
-    partial class DbInit
+    [Migration("20180324113707_Dbinit")]
+    partial class Dbinit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -1030,7 +1030,11 @@ namespace TemplateDotNetCore.Data.EF.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Content");
+                    b.Property<string>("Content")
+                        .HasMaxLength(250);
+
+                    b.Property<string>("ContentUrl")
+                        .HasMaxLength(125);
 
                     b.Property<string>("Description")
                         .HasMaxLength(250);
@@ -1038,8 +1042,7 @@ namespace TemplateDotNetCore.Data.EF.Migrations
                     b.Property<int?>("DisplayOrder");
 
                     b.Property<string>("GroupAlias")
-                        .IsRequired()
-                        .HasMaxLength(25);
+                        .HasMaxLength(125);
 
                     b.Property<string>("Image")
                         .IsRequired()
@@ -1049,7 +1052,7 @@ namespace TemplateDotNetCore.Data.EF.Migrations
                         .IsRequired()
                         .HasMaxLength(250);
 
-                    b.Property<bool>("Status");
+                    b.Property<int>("Status");
 
                     b.Property<string>("Url")
                         .HasMaxLength(250);

@@ -108,7 +108,6 @@ namespace TemplateDotNetCore.Data.EF
                     new Function() {Id = "READER",Name = "Reader Report",ParentId = "REPORT",SortOrder = 3,Status = Status.Active,URL = "/admin/report/reader",IconCss = "fa-bar-chart-o"  },
                 };
                 _context.Functions.AddRange(functions);
-
             }
 
             if (_context.ProductCategories.Count() == 0)
@@ -154,12 +153,13 @@ namespace TemplateDotNetCore.Data.EF
                         }},
                     new ProductCategory() { Name="Các loại phụ kiện",SeoAlias="cac-loai-phu-kien",ParentId = null,Status=Status.Active,SortOrder=1},
                     new ProductCategory() { Name="Photo & Camera",SeoAlias="photo-and-camera",ParentId = null,Status=Status.Active,SortOrder=1},
-                    new ProductCategory() { Name="CD & License Key",SeoAlias="photo-and-camera",ParentId = null,Status=Status.Active,SortOrder=1},
-
+                    new ProductCategory() { Name="CD & License Key",SeoAlias="photo-and-camera",ParentId = null,Status=Status.Active,SortOrder=1}
                     };
 
                 _context.ProductCategories.AddRange(listProductCategory);
             }
+
+         
 
             if (!_context.SystemConfigs.Any(x => x.Id == "HomeTitle"))
             {
@@ -192,8 +192,16 @@ namespace TemplateDotNetCore.Data.EF
                 });
             }
 
-
-
+            if (_context.Slides.Count() == 0)
+            {
+                List<Slide> slides = new List<Slide>()
+                {
+                    new Slide(){Name = "Template for your business", Content = "Easy to modify", Description = "Perfect website solution for your", ContentUrl = "Get Started", Url = "/danh-muc-san-pham.html", Image = "~/client-side/images/slider/slide-3.jpg", Status = Status.Active, GroupAlias = "/slide" },
+                    new Slide(){Name = "Smooth, Rich & Loud Audio", Content = "headphone", Description = "World's Most advanced Wireless earbuds.", ContentUrl = "EXPLORE NOW", Url = "/blog-review.html", Image = "~/client-side/images/slider/slide-1.jpg", Status = Status.Active, GroupAlias = "/slide" },
+                    new Slide(){Name = "It’s Time To Look", Content = "The New Standard", Description = "The New Standard. under favorable smartwatches", ContentUrl = "Start Buying", Url = "/danh-muc-san-pham.html", Image = "~/client-side/images/slider/slide-2.jpg", Status = Status.Active, GroupAlias = "/slide" },
+                };
+                _context.Slides.AddRange(slides);
+            }
             //save seed data to db
             await _context.SaveChangesAsync();
         }
