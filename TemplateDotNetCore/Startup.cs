@@ -78,13 +78,15 @@ namespace TemplateDotNetCore
             services.AddTransient(typeof(IUnitOfWork), typeof(EFUnitOfWork));
             services.AddTransient(typeof(IRepository<,>), typeof(EFRepository<,>));
 
-            //repositories
+            //register repositories and services
             services.AddTransient<IProductCategoryRepository, ProductCategoryRepository>();
             services.AddTransient<IProductCategoryService, ProductCategoryService>();
             services.AddTransient<IFunctionRepository, FunctionRepository>();
             services.AddTransient<IFunctionService, FunctionService>();
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<ISlideRepository, SlideRepository>();
+            services.AddTransient<ISlideService, SlideService>();
 
         }
 

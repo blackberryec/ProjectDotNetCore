@@ -8,6 +8,24 @@ namespace TemplateDotNetCore.Data.Entities
     [Table("Slides")]
     public class Slide : DomainEntity<int>
     {
+        public Slide()
+        {
+
+        }
+
+        public Slide(string name, string description, string image, string contentUrl, string url, int displayOrder, Status status, string content, string groupAlias)
+        {
+            Name = name;
+            Description = description;
+            Image = image;
+            ContentUrl = contentUrl;
+            Url = url;
+            DisplayOrder = displayOrder;
+            Status = status;
+            Content = content;
+            GroupAlias = groupAlias;
+        }
+
         [StringLength(250)]
         [Required]
         public string Name { set; get; }

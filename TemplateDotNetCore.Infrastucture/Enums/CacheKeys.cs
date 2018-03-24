@@ -6,6 +6,7 @@ namespace TemplateDotNetCore.Infrastucture.Enums
 {
     public enum CacheKeys
     {
-        ProductCategories
+        ProductCategories,
+        Slides
     }
 }
