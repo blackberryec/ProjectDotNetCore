@@ -35,5 +35,11 @@ namespace TemplateDotNetCore.Controllers
         {
             return View();
         }
+
+        [Route("gio-hang.html")]
+        public IActionResult ShoppingCart()
+        {
+            return View();
+        }
     }
 }

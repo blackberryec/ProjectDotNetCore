@@ -1,0 +1,1131 @@
+2018-03-24T16:31:47.2533686+07:00  [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-24T16:31:47.7089729+07:00  [INF] Executed DbCommand ("192"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T16:31:47.7538701+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T16:31:47.7916234+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Functions] AS [f]" (0723d8ff)
+2018-03-24T16:31:47.8320078+07:00  [INF] Executed DbCommand ("12"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [ProductCategories] AS [p]" (0723d8ff)
+2018-03-24T16:31:47.8793349+07:00  [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeTitle')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T16:31:47.9077209+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaKeyword')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T16:31:47.9359461+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaDescription')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T16:31:48.3798815+07:00 0HLCHD88HT12N:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-24T16:31:48.5420365+07:00 0HLCHD88HT12N:00000001 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T16:31:51.1782539+07:00 0HLCHD88HT12N:00000001 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T16:31:53.4900555+07:00 0HLCHD88HT12N:00000001 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-24T16:31:53.5809564+07:00 0HLCHD88HT12N:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Name], [x].[Discription], [x].[ParentId], [x].[HomeOrder], [x].[Image], [x].[SeoPageTitle], [x].[SeoAlias], [x].[SeoKeywords], [x].[SeoDescription], [x].[Status], [x].[LanguageId], [x].[Tags], [x].[DateCreated], [x].[DateModified], [x].[SortOrder], [x].[HomeFlag], [x].[HotFlag], [x].[NewFlag]
+FROM [ProductCategories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2018-03-24T16:31:53.6354322+07:00 0HLCHD88HT12N:00000001 [INF] Executed DbCommand ("32"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T16:31:53.6685712+07:00 0HLCHD88HT12N:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T16:31:53.6938661+07:00 0HLCHD88HT12N:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T16:31:53.7184911+07:00 0HLCHD88HT12N:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T16:31:54.7035511+07:00 0HLCHD88HT12N:00000001 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 6184.4143ms (afa2e885)
+2018-03-24T16:31:54.7364060+07:00 0HLCHD88HT12N:00000001 [INF] Request finished in 6384.6299ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T16:31:54.7798995+07:00 0HLCHD88HT12N:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-app/controllers/home/index.js   (ca22a1cb)
+2018-03-24T16:31:54.8126336+07:00 0HLCHD88HT12N:00000002 [INF] Sending file. Request path: '"/client-app/controllers/home/index.js"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-app\controllers\home\index.js"' (27b0a520)
+2018-03-24T16:31:54.8211507+07:00 0HLCHD88HT12N:00000002 [INF] Request finished in 45.5142ms 200 application/javascript (791a596a)
+2018-03-24T16:31:55.4634627+07:00 0HLCHD88HT12N:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-24T16:31:55.4890627+07:00 0HLCHD88HT12N:00000003 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T16:31:55.5131681+07:00 0HLCHD88HT12N:00000003 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T16:31:55.5437005+07:00 0HLCHD88HT12N:00000003 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 55.2588ms (afa2e885)
+2018-03-24T16:31:55.5676136+07:00 0HLCHD88HT12N:00000003 [INF] Request finished in 103.7581ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T16:32:15.6416086+07:00 0HLCHD88HT12N:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44357/so-sanh-san-pham.html   (ca22a1cb)
+2018-03-24T16:32:15.6706797+07:00 0HLCHD88HT12N:00000004 [INF] Executing action method "TemplateDotNetCore.Controllers.ProductController.Compare (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T16:32:15.9406782+07:00 0HLCHD88HT12N:00000004 [INF] Executing ViewResult, running view at path "/Views/Product/Compare.cshtml". (9707eebe)
+2018-03-24T16:32:15.9810550+07:00 0HLCHD88HT12N:00000004 [INF] Executed action "TemplateDotNetCore.Controllers.ProductController.Compare (TemplateDotNetCore)" in 311.7162ms (afa2e885)
+2018-03-24T16:32:15.9877193+07:00 0HLCHD88HT12N:00000004 [INF] Request finished in 344.2831ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T16:32:31.0116814+07:00 0HLCHD88HT12N:00000005 [INF] Request starting HTTP/1.1 GET http://localhost:44357/gio-hang.html   (ca22a1cb)
+2018-03-24T16:32:31.0374552+07:00 0HLCHD88HT12N:00000005 [INF] Executing action method "TemplateDotNetCore.Controllers.ProductController.ShoppingCart (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T16:32:31.1956449+07:00 0HLCHD88HT12N:00000005 [INF] Executing ViewResult, running view at path "/Views/Product/ShoppingCart.cshtml". (9707eebe)
+2018-03-24T16:32:31.2091706+07:00 0HLCHD88HT12N:00000005 [INF] Executed action "TemplateDotNetCore.Controllers.ProductController.ShoppingCart (TemplateDotNetCore)" in 191.813ms (afa2e885)
+2018-03-24T16:32:31.2329897+07:00 0HLCHD88HT12N:00000005 [INF] Request finished in 206.8068ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T16:32:49.2753530+07:00 0HLCHD88HT12N:00000006 [INF] Request starting HTTP/1.1 GET http://localhost:44357/trang-chu.html   (ca22a1cb)
+2018-03-24T16:32:49.2809182+07:00 0HLCHD88HT12N:00000006 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T16:32:49.2847855+07:00 0HLCHD88HT12N:00000006 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T16:32:49.2964908+07:00 0HLCHD88HT12N:00000006 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 13.69ms (afa2e885)
+2018-03-24T16:32:49.3009948+07:00 0HLCHD88HT12N:00000006 [INF] Request finished in 26.3269ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T16:32:49.6540349+07:00 0HLCHD88HT12N:00000007 [INF] Request starting HTTP/1.1 GET http://localhost:44357/trang-chu.html   (ca22a1cb)
+2018-03-24T16:32:49.6786532+07:00 0HLCHD88HT12N:00000007 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T16:32:49.7020622+07:00 0HLCHD88HT12N:00000007 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T16:32:49.7316720+07:00 0HLCHD88HT12N:00000007 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 52.6233ms (afa2e885)
+2018-03-24T16:32:49.7362022+07:00 0HLCHD88HT12N:00000007 [INF] Request finished in 101.274ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T16:33:05.3309852+07:00 0HLCHD88HT12N:00000008 [INF] Request starting HTTP/1.1 GET http://localhost:44357/danh-muc-tat-ca-san-pham.html   (ca22a1cb)
+2018-03-24T16:33:05.3359459+07:00 0HLCHD88HT12N:00000008 [INF] Executing action method "TemplateDotNetCore.Controllers.ProductController.Category (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T16:33:05.8680235+07:00 0HLCHD88HT12N:00000008 [INF] Executing ViewResult, running view at path "/Views/Product/Category.cshtml". (9707eebe)
+2018-03-24T16:33:05.9714842+07:00 0HLCHD88HT12N:00000008 [INF] Executed action "TemplateDotNetCore.Controllers.ProductController.Category (TemplateDotNetCore)" in 634.8453ms (afa2e885)
+2018-03-24T16:33:05.9769397+07:00 0HLCHD88HT12N:00000008 [INF] Request finished in 665.2706ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T16:42:50.3686633+07:00 0HLCHD88HT12O:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/trang-chu.html   (ca22a1cb)
+2018-03-24T16:42:50.3939931+07:00 0HLCHD88HT12O:00000001 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T16:42:50.4185027+07:00 0HLCHD88HT12O:00000001 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T16:42:50.4483837+07:00 0HLCHD88HT12O:00000001 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 54.7199ms (afa2e885)
+2018-03-24T16:42:50.4545841+07:00 0HLCHD88HT12O:00000001 [INF] Request finished in 85.8069ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T16:42:50.8095998+07:00 0HLCHD88HT12O:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/trang-chu.html   (ca22a1cb)
+2018-03-24T16:42:50.8342821+07:00 0HLCHD88HT12O:00000002 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T16:42:50.8379886+07:00 0HLCHD88HT12O:00000002 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T16:42:50.8480500+07:00 0HLCHD88HT12O:00000002 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 33.8816ms (afa2e885)
+2018-03-24T16:42:50.8525213+07:00 0HLCHD88HT12O:00000002 [INF] Request finished in 46.1167ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:02:22.8476628+07:00  [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-24T17:02:23.0699901+07:00  [INF] Executed DbCommand ("7"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T17:02:23.1115964+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T17:02:23.1485386+07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Functions] AS [f]" (0723d8ff)
+2018-03-24T17:02:23.1772943+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [ProductCategories] AS [p]" (0723d8ff)
+2018-03-24T17:02:23.2182468+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeTitle')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T17:02:23.2443912+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaKeyword')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T17:02:23.2719922+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaDescription')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T17:02:23.7416011+07:00  [INF] Executed DbCommand ("295"ms) [Parameters=["@p0='?', @p1='?', @p2='?' (Size = 4000), @p3='?', @p4='?', @p5='?', @p6='?' (Size = 4000), @p7='?', @p8='?' (Size = 4000), @p9='?', @p10='?', @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?', @p16='?', @p17='?' (Size = 4000), @p18='?', @p19='?', @p20='?' (Size = 4000), @p21='?', @p22='?', @p23='?', @p24='?' (Size = 4000), @p25='?', @p26='?' (Size = 4000), @p27='?', @p28='?', @p29='?' (Size = 4000), @p30='?' (Size = 4000), @p31='?' (Size = 4000), @p32='?' (Size = 4000), @p33='?', @p34='?', @p35='?' (Size = 4000), @p36='?', @p37='?', @p38='?' (Size = 4000), @p39='?', @p40='?', @p41='?', @p42='?' (Size = 4000), @p43='?', @p44='?' (Size = 4000), @p45='?', @p46='?', @p47='?' (Size = 4000), @p48='?' (Size = 4000), @p49='?' (Size = 4000), @p50='?' (Size = 4000), @p51='?', @p52='?', @p53='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [ProductCategories] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, 0),
+(@p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, @p32, @p33, @p34, @p35, 1),
+(@p36, @p37, @p38, @p39, @p40, @p41, @p42, @p43, @p44, @p45, @p46, @p47, @p48, @p49, @p50, @p51, @p52, @p53, 2)) AS i ([DateCreated], [DateModified], [Discription], [HomeFlag], [HomeOrder], [HotFlag], [Image], [LanguageId], [Name], [NewFlag], [ParentId], [SeoAlias], [SeoDescription], [SeoKeywords], [SeoPageTitle], [SortOrder], [Status], [Tags], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([DateCreated], [DateModified], [Discription], [HomeFlag], [HomeOrder], [HotFlag], [Image], [LanguageId], [Name], [NewFlag], [ParentId], [SeoAlias], [SeoDescription], [SeoKeywords], [SeoPageTitle], [SortOrder], [Status], [Tags])
+VALUES (i.[DateCreated], i.[DateModified], i.[Discription], i.[HomeFlag], i.[HomeOrder], i.[HotFlag], i.[Image], i.[LanguageId], i.[Name], i.[NewFlag], i.[ParentId], i.[SeoAlias], i.[SeoDescription], i.[SeoKeywords], i.[SeoPageTitle], i.[SortOrder], i.[Status], i.[Tags])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [ProductCategories] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];" (0723d8ff)
+2018-03-24T17:02:24.1699193+07:00 0HLCHDPBLCVJP:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-24T17:02:24.3419212+07:00 0HLCHDPBLCVJP:00000001 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:02:26.7097160+07:00 0HLCHDPBLCVJP:00000001 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T17:02:28.9655572+07:00 0HLCHDPBLCVJP:00000001 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-24T17:02:29.0786553+07:00 0HLCHDPBLCVJP:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Name], [x].[Discription], [x].[ParentId], [x].[HomeOrder], [x].[Image], [x].[SeoPageTitle], [x].[SeoAlias], [x].[SeoKeywords], [x].[SeoDescription], [x].[Status], [x].[LanguageId], [x].[Tags], [x].[DateCreated], [x].[DateModified], [x].[SortOrder], [x].[HomeFlag], [x].[HotFlag], [x].[NewFlag]
+FROM [ProductCategories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2018-03-24T17:02:29.1181288+07:00 0HLCHDPBLCVJP:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:02:29.1297530+07:00 0HLCHDPBLCVJP:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:02:29.1552835+07:00 0HLCHDPBLCVJP:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:02:29.1789603+07:00 0HLCHDPBLCVJP:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:02:29.2031677+07:00 0HLCHDPBLCVJP:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:02:29.2269622+07:00 0HLCHDPBLCVJP:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:02:29.2314671+07:00 0HLCHDPBLCVJP:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:02:30.2289641+07:00 0HLCHDPBLCVJP:00000001 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 5908.4132ms (afa2e885)
+2018-03-24T17:02:30.2478630+07:00 0HLCHDPBLCVJP:00000001 [INF] Request finished in 6112.248ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:02:30.8470849+07:00 0HLCHDPBLCVJP:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-24T17:02:30.8525616+07:00 0HLCHDPBLCVJP:00000002 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:02:30.8761859+07:00 0HLCHDPBLCVJP:00000002 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T17:02:30.8868823+07:00 0HLCHDPBLCVJP:00000002 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 34.2802ms (afa2e885)
+2018-03-24T17:02:30.8912326+07:00 0HLCHDPBLCVJP:00000002 [INF] Request finished in 64.0505ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:08:04.1457475+07:00  [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-24T17:08:04.3966073+07:00  [INF] Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T17:08:04.4372962+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T17:08:04.4732377+07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Functions] AS [f]" (0723d8ff)
+2018-03-24T17:08:04.5026721+07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [ProductCategories] AS [p]" (0723d8ff)
+2018-03-24T17:08:04.5422692+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeTitle')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T17:08:04.5689549+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaKeyword')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T17:08:04.5969291+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaDescription')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T17:08:04.9512270+07:00 0HLCHDSH77611:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-24T17:08:05.1172798+07:00 0HLCHDSH77611:00000001 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:08:08.2036533+07:00 0HLCHDSH77611:00000001 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T17:08:10.5176387+07:00 0HLCHDSH77611:00000001 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-24T17:08:10.6083397+07:00 0HLCHDSH77611:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Name], [x].[Discription], [x].[ParentId], [x].[HomeOrder], [x].[Image], [x].[SeoPageTitle], [x].[SeoAlias], [x].[SeoKeywords], [x].[SeoDescription], [x].[Status], [x].[LanguageId], [x].[Tags], [x].[DateCreated], [x].[DateModified], [x].[SortOrder], [x].[HomeFlag], [x].[HotFlag], [x].[NewFlag]
+FROM [ProductCategories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2018-03-24T17:08:10.6792663+07:00 0HLCHDSH77611:00000001 [INF] Executed DbCommand ("24"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:08:10.7126119+07:00 0HLCHDSH77611:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:08:10.7381905+07:00 0HLCHDSH77611:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:08:10.7632003+07:00 0HLCHDSH77611:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:08:10.7923653+07:00 0HLCHDSH77611:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:08:10.8183714+07:00 0HLCHDSH77611:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:08:10.8451712+07:00 0HLCHDSH77611:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:08:11.9568911+07:00 0HLCHDSH77611:00000001 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 6859.6915ms (afa2e885)
+2018-03-24T17:08:11.9749118+07:00 0HLCHDSH77611:00000001 [INF] Request finished in 7057.0259ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:08:12.6819203+07:00 0HLCHDSH77611:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-24T17:08:12.6880351+07:00 0HLCHDSH77611:00000002 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:08:12.7131696+07:00 0HLCHDSH77611:00000002 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T17:08:12.7462260+07:00 0HLCHDSH77611:00000002 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 37.4463ms (afa2e885)
+2018-03-24T17:08:12.7700668+07:00 0HLCHDSH77611:00000002 [INF] Request finished in 71.3623ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:09:24.6357526+07:00 0HLCHDSH77613:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2018-03-24T17:09:24.6723859+07:00 0HLCHDSH77613:00000001 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Error (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:09:25.1507944+07:00 0HLCHDSH77613:00000001 [INF] Executing ViewResult, running view at path "/Views/Home/Error.cshtml". (9707eebe)
+2018-03-24T17:09:25.1610506+07:00 0HLCHDSH77613:00000001 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Error (TemplateDotNetCore)" in 508.6133ms (afa2e885)
+2018-03-24T17:09:25.1672385+07:00 0HLCHDSH77613:00000001 [INF] Request finished in 536.1467ms 404 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:09:41.0211558+07:00 0HLCHDSH77613:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-24T17:09:41.0455682+07:00 0HLCHDSH77613:00000002 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:09:41.0704862+07:00 0HLCHDSH77613:00000002 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T17:09:41.1060299+07:00 0HLCHDSH77613:00000002 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 57.6465ms (afa2e885)
+2018-03-24T17:09:41.1131439+07:00 0HLCHDSH77613:00000002 [INF] Request finished in 109.724ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:09:41.2458261+07:00 0HLCHDSH77613:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/style.css   (ca22a1cb)
+2018-03-24T17:09:41.3985154+07:00 0HLCHDSH77616:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/flag-english.jpg   (ca22a1cb)
+2018-03-24T17:09:41.6780791+07:00 0HLCHDSH7761C:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/slider/slide-3.jpg   (ca22a1cb)
+2018-03-24T17:09:41.7297365+07:00 0HLCHDSH77619:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/flag-spain.jpg   (ca22a1cb)
+2018-03-24T17:09:41.7585077+07:00 0HLCHDSH77614:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/flag-default.jpg   (ca22a1cb)
+2018-03-24T17:09:41.7834417+07:00 0HLCHDSH7761A:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/flag-chile.jpg   (ca22a1cb)
+2018-03-24T17:09:41.9971897+07:00 0HLCHDSH77615:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/flag-german.jpg   (ca22a1cb)
+2018-03-24T17:09:42.0297712+07:00 0HLCHDSH77618:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/flag-brazil.jpg   (ca22a1cb)
+2018-03-24T17:09:42.0633234+07:00 0HLCHDSH77617:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/logo.png   (ca22a1cb)
+2018-03-24T17:09:42.1651932+07:00 0HLCHDSH7761M:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand1.png   (ca22a1cb)
+2018-03-24T17:09:42.2079175+07:00 0HLCHDSH7761C:00000001 [INF] Sending file. Request path: '"/client-side/images/slider/slide-3.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\slider\slide-3.jpg"' (27b0a520)
+2018-03-24T17:09:42.2368716+07:00 0HLCHDSH7761F:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/banner-laptop.jpg   (ca22a1cb)
+2018-03-24T17:09:42.2528479+07:00 0HLCHDSH7761B:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/products/product-1.jpg   (ca22a1cb)
+2018-03-24T17:09:42.2747102+07:00 0HLCHDSH7761D:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/slider/slide-1.jpg   (ca22a1cb)
+2018-03-24T17:09:42.3586908+07:00 0HLCHDSH77614:00000001 [INF] Sending file. Request path: '"/client-side/images/flag-default.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\flag-default.jpg"' (27b0a520)
+2018-03-24T17:09:42.3729462+07:00 0HLCHDSH77616:00000001 [INF] Sending file. Request path: '"/client-side/images/flag-english.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\flag-english.jpg"' (27b0a520)
+2018-03-24T17:09:42.3806862+07:00 0HLCHDSH77618:00000001 [INF] Sending file. Request path: '"/client-side/images/flag-brazil.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\flag-brazil.jpg"' (27b0a520)
+2018-03-24T17:09:42.3870511+07:00 0HLCHDSH77619:00000001 [INF] Sending file. Request path: '"/client-side/images/flag-spain.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\flag-spain.jpg"' (27b0a520)
+2018-03-24T17:09:42.3964935+07:00 0HLCHDSH7761A:00000001 [INF] Sending file. Request path: '"/client-side/images/flag-chile.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\flag-chile.jpg"' (27b0a520)
+2018-03-24T17:09:42.5693977+07:00 0HLCHDSH77613:00000003 [INF] Sending file. Request path: '"/client-side/style.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\style.css"' (27b0a520)
+2018-03-24T17:09:42.5851871+07:00 0HLCHDSH7761G:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/blog-img1.jpg   (ca22a1cb)
+2018-03-24T17:09:42.6266022+07:00 0HLCHDSH7761E:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/sub1.jpg   (ca22a1cb)
+2018-03-24T17:09:42.6427219+07:00 0HLCHDSH77615:00000001 [INF] Sending file. Request path: '"/client-side/images/flag-german.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\flag-german.jpg"' (27b0a520)
+2018-03-24T17:09:42.6560039+07:00 0HLCHDSH7761I:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/sub1a.jpg   (ca22a1cb)
+2018-03-24T17:09:42.6706409+07:00 0HLCHDSH7761B:00000001 [INF] Sending file. Request path: '"/client-side/images/products/product-1.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\products\product-1.jpg"' (27b0a520)
+2018-03-24T17:09:42.6958597+07:00 0HLCHDSH77617:00000001 [INF] Sending file. Request path: '"/client-side/images/logo.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\logo.png"' (27b0a520)
+2018-03-24T17:09:42.7187301+07:00 0HLCHDSH7761D:00000001 [INF] Sending file. Request path: '"/client-side/images/slider/slide-1.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\slider\slide-1.jpg"' (27b0a520)
+2018-03-24T17:09:42.7266757+07:00 0HLCHDSH7761M:00000001 [INF] Sending file. Request path: '"/client-side/images/brand1.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand1.png"' (27b0a520)
+2018-03-24T17:09:42.7360943+07:00 0HLCHDSH7761N:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand6.png   (ca22a1cb)
+2018-03-24T17:09:42.7553018+07:00 0HLCHDSH7761L:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand2.png   (ca22a1cb)
+2018-03-24T17:09:42.8664287+07:00 0HLCHDSH7761F:00000001 [INF] Sending file. Request path: '"/client-side/images/banner-laptop.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\banner-laptop.jpg"' (27b0a520)
+2018-03-24T17:09:42.9252367+07:00 0HLCHDSH77623:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand3.png   (ca22a1cb)
+2018-03-24T17:09:42.9392595+07:00 0HLCHDSH77618:00000001 [INF] Request finished in 1282.6886ms 200 image/jpeg (791a596a)
+2018-03-24T17:09:43.0857143+07:00 0HLCHDSH77625:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/paypal.png   (ca22a1cb)
+2018-03-24T17:09:43.0968606+07:00 0HLCHDSH7761S:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand9.png   (ca22a1cb)
+2018-03-24T17:09:43.1138466+07:00 0HLCHDSH7761A:00000001 [INF] Request finished in 1365.3466ms 200 image/jpeg (791a596a)
+2018-03-24T17:09:43.1245054+07:00 0HLCHDSH77614:00000001 [INF] Request finished in 1409.3462ms 200 image/jpeg (791a596a)
+2018-03-24T17:09:43.1625984+07:00 0HLCHDSH77628:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand7.png   (ca22a1cb)
+2018-03-24T17:09:43.2128823+07:00 0HLCHDSH77627:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/visa.png   (ca22a1cb)
+2018-03-24T17:09:43.2406978+07:00 0HLCHDSH77629:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/owl.carousel.min.js   (ca22a1cb)
+2018-03-24T17:09:43.2598990+07:00 0HLCHDSH7761G:00000001 [INF] Sending file. Request path: '"/client-side/images/blog-img1.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\blog-img1.jpg"' (27b0a520)
+2018-03-24T17:09:43.2765144+07:00 0HLCHDSH7761M:00000001 [INF] Request finished in 1289.1392ms 200 image/png (791a596a)
+2018-03-24T17:09:43.2923521+07:00 0HLCHDSH7761E:00000001 [INF] Sending file. Request path: '"/client-side/images/sub1.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\sub1.jpg"' (27b0a520)
+2018-03-24T17:09:43.3233995+07:00 0HLCHDSH77617:00000001 [INF] Request finished in 1456.5837ms 200 image/png (791a596a)
+2018-03-24T17:09:43.3772575+07:00 0HLCHDSH7761I:00000001 [INF] Sending file. Request path: '"/client-side/images/sub1a.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\sub1a.jpg"' (27b0a520)
+2018-03-24T17:09:43.3917867+07:00 0HLCHDSH77615:00000001 [INF] Request finished in 1664.0159ms 200 image/jpeg (791a596a)
+2018-03-24T17:09:43.4193968+07:00 0HLCHDSH77623:00000001 [INF] Sending file. Request path: '"/client-side/images/brand3.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand3.png"' (27b0a520)
+2018-03-24T17:09:43.5018200+07:00 0HLCHDSH77613:00000003 [INF] Request finished in 1694.4001ms 200 text/css (791a596a)
+2018-03-24T17:09:43.5316195+07:00 0HLCHDSH7761N:00000001 [INF] Sending file. Request path: '"/client-side/images/brand6.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand6.png"' (27b0a520)
+2018-03-24T17:09:43.5498757+07:00 0HLCHDSH7761L:00000001 [INF] Sending file. Request path: '"/client-side/images/brand2.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand2.png"' (27b0a520)
+2018-03-24T17:09:43.5990483+07:00 0HLCHDSH77625:00000001 [INF] Sending file. Request path: '"/client-side/images/paypal.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\paypal.png"' (27b0a520)
+2018-03-24T17:09:43.6466085+07:00 0HLCHDSH77618:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/animate.css   (ca22a1cb)
+2018-03-24T17:09:43.6901356+07:00 0HLCHDSH77628:00000001 [INF] Sending file. Request path: '"/client-side/images/brand7.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand7.png"' (27b0a520)
+2018-03-24T17:09:43.7031386+07:00 0HLCHDSH7762B:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/jquery.min.js   (ca22a1cb)
+2018-03-24T17:09:43.7437806+07:00 0HLCHDSH77627:00000001 [INF] Sending file. Request path: '"/client-side/images/visa.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\visa.png"' (27b0a520)
+2018-03-24T17:09:43.7571293+07:00 0HLCHDSH77629:00000001 [INF] Sending file. Request path: '"/client-side/js/owl.carousel.min.js"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\js\owl.carousel.min.js"' (27b0a520)
+2018-03-24T17:09:43.9020597+07:00 0HLCHDSH7761A:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/font-awesome.min.css   (ca22a1cb)
+2018-03-24T17:09:43.9307925+07:00 0HLCHDSH77623:00000001 [INF] Request finished in 1046.7069ms 200 image/png (791a596a)
+2018-03-24T17:09:43.9648187+07:00 0HLCHDSH77614:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/bootstrap.min.css   (ca22a1cb)
+2018-03-24T17:09:43.9872910+07:00 0HLCHDSH7761M:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/simple-line-icons.css   (ca22a1cb)
+2018-03-24T17:09:44.0277256+07:00 0HLCHDSH7762D:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/main.js   (ca22a1cb)
+2018-03-24T17:09:44.0396170+07:00 0HLCHDSH77618:00000002 [INF] Sending file. Request path: '"/client-side/css/animate.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\animate.css"' (27b0a520)
+2018-03-24T17:09:44.0780410+07:00 0HLCHDSH7761E:00000001 [INF] Request finished in 1913.0864ms 200 image/jpeg (791a596a)
+2018-03-24T17:09:44.1003257+07:00 0HLCHDSH7761I:00000001 [INF] Request finished in 1987.8178ms 200 image/jpeg (791a596a)
+2018-03-24T17:09:44.1180312+07:00 0HLCHDSH7761N:00000001 [INF] Request finished in 2224.2349ms 200 image/png (791a596a)
+2018-03-24T17:09:44.1283439+07:00 0HLCHDSH77615:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/revolution-slider.css   (ca22a1cb)
+2018-03-24T17:09:44.1708999+07:00 0HLCHDSH7762C:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/jquery-ui.js   (ca22a1cb)
+2018-03-24T17:09:44.2048515+07:00 0HLCHDSH77617:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/flexslider.css   (ca22a1cb)
+2018-03-24T17:09:44.2797990+07:00 0HLCHDSH7762B:00000001 [INF] Sending file. Request path: '"/client-side/js/jquery.min.js"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\js\jquery.min.js"' (27b0a520)
+2018-03-24T17:09:44.2912878+07:00 0HLCHDSH7762F:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand11.png   (ca22a1cb)
+2018-03-24T17:09:44.3037733+07:00 0HLCHDSH77627:00000001 [INF] Request finished in 1067.7886ms 200 image/png (791a596a)
+2018-03-24T17:09:44.3390705+07:00 0HLCHDSH77629:00000001 [INF] Request finished in 1131.3714ms 200 application/javascript (791a596a)
+2018-03-24T17:09:44.4225494+07:00 0HLCHDSH7761A:00000002 [INF] Sending file. Request path: '"/client-side/css/font-awesome.min.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\font-awesome.min.css"' (27b0a520)
+2018-03-24T17:09:44.4387500+07:00 0HLCHDSH77618:00000002 [INF] Request finished in 862.2787ms 200 text/css (791a596a)
+2018-03-24T17:09:44.4683863+07:00 0HLCHDSH7761M:00000002 [INF] Sending file. Request path: '"/client-side/css/simple-line-icons.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\simple-line-icons.css"' (27b0a520)
+2018-03-24T17:09:44.4866646+07:00 0HLCHDSH77613:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/owl.transitions.css   (ca22a1cb)
+2018-03-24T17:09:44.5710858+07:00 0HLCHDSH77614:00000002 [INF] Sending file. Request path: '"/client-side/css/bootstrap.min.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\bootstrap.min.css"' (27b0a520)
+2018-03-24T17:09:44.5713433+07:00 0HLCHDSH7762G:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/banner-women.jpg   (ca22a1cb)
+2018-03-24T17:09:44.6068519+07:00 0HLCHDSH7762C:00000001 [INF] Sending file. Request path: '"/client-side/js/jquery-ui.js"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\js\jquery-ui.js"' (27b0a520)
+2018-03-24T17:09:44.6125569+07:00 0HLCHDSH77615:00000002 [INF] Sending file. Request path: '"/client-side/css/revolution-slider.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\revolution-slider.css"' (27b0a520)
+2018-03-24T17:09:44.6448260+07:00 0HLCHDSH77617:00000002 [INF] Sending file. Request path: '"/client-side/css/flexslider.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\flexslider.css"' (27b0a520)
+2018-03-24T17:09:44.6804250+07:00 0HLCHDSH7762D:00000001 [INF] Sending file. Request path: '"/client-side/js/main.js"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\js\main.js"' (27b0a520)
+2018-03-24T17:09:44.7505773+07:00 0HLCHDSH7761S:00000001 [INF] Sending file. Request path: '"/client-side/images/brand9.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand9.png"' (27b0a520)
+2018-03-24T17:09:44.7860668+07:00 0HLCHDSH7762F:00000001 [INF] Sending file. Request path: '"/client-side/images/brand11.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand11.png"' (27b0a520)
+2018-03-24T17:09:44.8384583+07:00 0HLCHDSH7761K:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand8.png   (ca22a1cb)
+2018-03-24T17:09:44.8883187+07:00 0HLCHDSH7761V:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/banner-arrival.jpg   (ca22a1cb)
+2018-03-24T17:09:45.0010348+07:00 0HLCHDSH7762H:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/revolution-slider.js   (ca22a1cb)
+2018-03-24T17:09:45.0177862+07:00 0HLCHDSH7762G:00000001 [INF] Sending file. Request path: '"/client-side/images/banner-women.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\banner-women.jpg"' (27b0a520)
+2018-03-24T17:09:45.0394186+07:00 0HLCHDSH7761A:00000002 [INF] Request finished in 1174.1439ms 200 text/css (791a596a)
+2018-03-24T17:09:45.0542852+07:00 0HLCHDSH77626:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/master-card.png   (ca22a1cb)
+2018-03-24T17:09:45.0955814+07:00 0HLCHDSH77622:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/footer-logo.png   (ca22a1cb)
+2018-03-24T17:09:45.1641029+07:00 0HLCHDSH7762A:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/mobile-menu.js   (ca22a1cb)
+2018-03-24T17:09:45.2359302+07:00 0HLCHDSH7761J:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand4.png   (ca22a1cb)
+2018-03-24T17:09:45.2509382+07:00 0HLCHDSH77615:00000002 [INF] Request finished in 1007.8147ms 200 text/css (791a596a)
+2018-03-24T17:09:45.2878271+07:00 0HLCHDSH77617:00000002 [INF] Request finished in 1179.5321ms 200 text/css (791a596a)
+2018-03-24T17:09:45.3171805+07:00 0HLCHDSH7761V:00000001 [INF] Sending file. Request path: '"/client-side/images/banner-arrival.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\banner-arrival.jpg"' (27b0a520)
+2018-03-24T17:09:45.3302081+07:00 0HLCHDSH7761K:00000001 [INF] Sending file. Request path: '"/client-side/images/brand8.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand8.png"' (27b0a520)
+2018-03-24T17:09:45.3424309+07:00 0HLCHDSH7762I:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/testimonials-img4.jpg   (ca22a1cb)
+2018-03-24T17:09:45.3747777+07:00 0HLCHDSH77626:00000001 [INF] Sending file. Request path: '"/client-side/images/master-card.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\master-card.png"' (27b0a520)
+2018-03-24T17:09:45.4272988+07:00 0HLCHDSH7762F:00000001 [INF] Request finished in 1117.3301ms 200 image/png (791a596a)
+2018-03-24T17:09:45.4566925+07:00 0HLCHDSH7762K:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/discover.png   (ca22a1cb)
+2018-03-24T17:09:45.4783217+07:00 0HLCHDSH7762J:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/cloud-zoom.js   (ca22a1cb)
+2018-03-24T17:09:45.5065951+07:00 0HLCHDSH7762H:00000001 [INF] Sending file. Request path: '"/client-side/js/revolution-slider.js"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\js\revolution-slider.js"' (27b0a520)
+2018-03-24T17:09:45.5376415+07:00 0HLCHDSH7762E:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/jquery.flexslider.js   (ca22a1cb)
+2018-03-24T17:09:45.6112643+07:00 0HLCHDSH77613:00000004 [INF] Sending file. Request path: '"/client-side/css/owl.transitions.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\owl.transitions.css"' (27b0a520)
+2018-03-24T17:09:45.6409299+07:00 0HLCHDSH77622:00000001 [INF] Sending file. Request path: '"/client-side/images/footer-logo.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\footer-logo.png"' (27b0a520)
+2018-03-24T17:09:45.6848193+07:00 0HLCHDSH7762A:00000001 [INF] Sending file. Request path: '"/client-side/js/mobile-menu.js"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\js\mobile-menu.js"' (27b0a520)
+2018-03-24T17:09:45.7201228+07:00 0HLCHDSH7761J:00000001 [INF] Sending file. Request path: '"/client-side/images/brand4.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand4.png"' (27b0a520)
+2018-03-24T17:09:45.7526620+07:00 0HLCHDSH77626:00000001 [INF] Request finished in 833.743ms 200 image/png (791a596a)
+2018-03-24T17:09:45.7825496+07:00 0HLCHDSH7761Q:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand10.png   (ca22a1cb)
+2018-03-24T17:09:45.8212688+07:00 0HLCHDSH7762K:00000001 [INF] Sending file. Request path: '"/client-side/images/discover.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\discover.png"' (27b0a520)
+2018-03-24T17:09:45.8452948+07:00 0HLCHDSH77616:00000001 [INF] Request finished in 4110.7985ms 200 image/jpeg (791a596a)
+2018-03-24T17:09:45.9136061+07:00 0HLCHDSH7761V:00000001 [INF] Request finished in 861.9323ms 200 image/jpeg (791a596a)
+2018-03-24T17:09:45.9502560+07:00 0HLCHDSH7762I:00000001 [INF] Sending file. Request path: '"/client-side/images/testimonials-img4.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\testimonials-img4.jpg"' (27b0a520)
+2018-03-24T17:09:45.9769827+07:00 0HLCHDSH7762L:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/bootstrap.min.js   (ca22a1cb)
+2018-03-24T17:09:46.0378285+07:00 0HLCHDSH7762J:00000001 [INF] Sending file. Request path: '"/client-side/js/cloud-zoom.js"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\js\cloud-zoom.js"' (27b0a520)
+2018-03-24T17:09:46.1407361+07:00 0HLCHDSH7761L:00000001 [INF] Request finished in 1980.7391ms 200 image/png (791a596a)
+2018-03-24T17:09:46.1686413+07:00 0HLCHDSH77619:00000001 [INF] Request finished in 4404.2368ms 200 image/jpeg (791a596a)
+2018-03-24T17:09:46.1844240+07:00 0HLCHDSH7762E:00000001 [INF] Sending file. Request path: '"/client-side/js/jquery.flexslider.js"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\js\jquery.flexslider.js"' (27b0a520)
+2018-03-24T17:09:46.2066344+07:00 0HLCHDSH7762M:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/countdown.js   (ca22a1cb)
+2018-03-24T17:09:46.2196746+07:00 0HLCHDSH7762K:00000001 [INF] Request finished in 727.7318ms 200 image/png (791a596a)
+2018-03-24T17:09:46.2685639+07:00 0HLCHDSH7761B:00000001 [INF] Request finished in 4309.62ms 200 image/jpeg (791a596a)
+2018-03-24T17:09:46.2972464+07:00 0HLCHDSH7761D:00000001 [INF] Request finished in 4358.6894ms 200 image/jpeg (791a596a)
+2018-03-24T17:09:46.3155137+07:00 0HLCHDSH7762A:00000001 [INF] Request finished in 1067.6246ms 200 application/javascript (791a596a)
+2018-03-24T17:09:46.3412959+07:00 0HLCHDSH7762N:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-app/controllers/home/index.js   (ca22a1cb)
+2018-03-24T17:09:46.3580615+07:00 0HLCHDSH7762O:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/pe-icon-7-stroke.min.css   (ca22a1cb)
+2018-03-24T17:09:46.4368739+07:00 0HLCHDSH7761J:00000001 [INF] Request finished in 1389.1261ms 200 image/png (791a596a)
+2018-03-24T17:09:46.4937007+07:00 0HLCHDSH7762P:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/jquery-ui.css   (ca22a1cb)
+2018-03-24T17:09:46.5362726+07:00 0HLCHDSH7762L:00000001 [INF] Sending file. Request path: '"/client-side/js/bootstrap.min.js"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\js\bootstrap.min.js"' (27b0a520)
+2018-03-24T17:09:46.5503763+07:00 0HLCHDSH77613:00000004 [INF] Request finished in 1913.165ms 200 text/css (791a596a)
+2018-03-24T17:09:46.6704015+07:00 0HLCHDSH7762I:00000001 [INF] Request finished in 1195.6352ms 200 image/jpeg (791a596a)
+2018-03-24T17:09:46.6988499+07:00 0HLCHDSH7762Q:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/shortcode.css   (ca22a1cb)
+2018-03-24T17:09:46.7156080+07:00 0HLCHDSH7762O:00000001 [INF] Sending file. Request path: '"/client-side/css/pe-icon-7-stroke.min.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\pe-icon-7-stroke.min.css"' (27b0a520)
+2018-03-24T17:09:46.7554807+07:00 0HLCHDSH7762J:00000001 [INF] Request finished in 1376.0472ms 200 application/javascript (791a596a)
+2018-03-24T17:09:46.7817145+07:00 0HLCHDSH7762T:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/shortcodes/featured-box.css   (ca22a1cb)
+2018-03-24T17:09:46.7990801+07:00 0HLCHDSH7762M:00000001 [INF] Sending file. Request path: '"/client-side/js/countdown.js"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\js\countdown.js"' (27b0a520)
+2018-03-24T17:09:46.8504445+07:00 0HLCHDSH7761Q:00000001 [INF] Sending file. Request path: '"/client-side/images/brand10.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand10.png"' (27b0a520)
+2018-03-24T17:09:46.8924771+07:00 0HLCHDSH7762P:00000001 [INF] Sending file. Request path: '"/client-side/css/jquery-ui.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\jquery-ui.css"' (27b0a520)
+2018-03-24T17:09:46.9192255+07:00 0HLCHDSH7762R:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/shortcodes/shortcodes.css   (ca22a1cb)
+2018-03-24T17:09:46.9846663+07:00 0HLCHDSH77631:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/blog.css   (ca22a1cb)
+2018-03-24T17:09:47.0023843+07:00 0HLCHDSH7762U:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/shortcodes/pricing-table.css   (ca22a1cb)
+2018-03-24T17:09:47.0924434+07:00 0HLCHDSH7762N:00000001 [INF] Sending file. Request path: '"/client-app/controllers/home/index.js"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-app\controllers\home\index.js"' (27b0a520)
+2018-03-24T17:09:47.1130408+07:00 0HLCHDSH7761F:00000001 [INF] Request finished in 5211.8407ms 200 image/jpeg (791a596a)
+2018-03-24T17:09:47.1361791+07:00 0HLCHDSH7762S:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/owl.carousel.css   (ca22a1cb)
+2018-03-24T17:09:47.1841297+07:00 0HLCHDSH77630:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/shortcodes/tooltip.css   (ca22a1cb)
+2018-03-24T17:09:47.2114285+07:00 0HLCHDSH7762T:00000001 [INF] Sending file. Request path: '"/client-side/css/shortcodes/featured-box.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\shortcodes\featured-box.css"' (27b0a520)
+2018-03-24T17:09:47.2309485+07:00 0HLCHDSH7762Q:00000001 [INF] Sending file. Request path: '"/client-side/css/shortcode.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\shortcode.css"' (27b0a520)
+2018-03-24T17:09:47.2391922+07:00 0HLCHDSH7762O:00000001 [INF] Request finished in 812.3698ms 200 text/css (791a596a)
+2018-03-24T17:09:47.4157966+07:00 0HLCHDSH7762V:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/style.css   (ca22a1cb)
+2018-03-24T17:09:47.4842915+07:00 0HLCHDSH7762R:00000001 [INF] Sending file. Request path: '"/client-side/css/shortcodes/shortcodes.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\shortcodes\shortcodes.css"' (27b0a520)
+2018-03-24T17:09:47.5189416+07:00 0HLCHDSH7762U:00000001 [INF] Sending file. Request path: '"/client-side/css/shortcodes/pricing-table.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\shortcodes\pricing-table.css"' (27b0a520)
+2018-03-24T17:09:47.5548195+07:00 0HLCHDSH7762P:00000001 [INF] Request finished in 895.7918ms 200 text/css (791a596a)
+2018-03-24T17:09:47.5659274+07:00 0HLCHDSH7762M:00000001 [INF] Request finished in 1259.4641ms 200 application/javascript (791a596a)
+2018-03-24T17:09:47.5945445+07:00 0HLCHDSH77631:00000001 [INF] Sending file. Request path: '"/client-side/css/blog.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\blog.css"' (27b0a520)
+2018-03-24T17:09:47.6187258+07:00 0HLCHDSH77634:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/responsive.css   (ca22a1cb)
+2018-03-24T17:09:47.6723444+07:00 0HLCHDSH7761G:00000001 [INF] Request finished in 5627.1851ms 200 image/jpeg (791a596a)
+2018-03-24T17:09:47.7015154+07:00 0HLCHDSH7762T:00000001 [INF] Request finished in 911.8451ms 200 text/css (791a596a)
+2018-03-24T17:09:47.7127960+07:00 0HLCHDSH7762S:00000001 [INF] Sending file. Request path: '"/client-side/css/owl.carousel.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\owl.carousel.css"' (27b0a520)
+2018-03-24T17:09:47.7549403+07:00 0HLCHDSH7762N:00000001 [INF] Request finished in 1529.4251ms 200 application/javascript (791a596a)
+2018-03-24T17:09:47.7706105+07:00 0HLCHDSH77632:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/quick_view_popup.css   (ca22a1cb)
+2018-03-24T17:09:47.7840864+07:00 0HLCHDSH77630:00000001 [INF] Sending file. Request path: '"/client-side/css/shortcodes/tooltip.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\shortcodes\tooltip.css"' (27b0a520)
+2018-03-24T17:09:47.9037873+07:00 0HLCHDSH77633:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/shortcodes/post.css   (ca22a1cb)
+2018-03-24T17:09:47.9823725+07:00 0HLCHDSH7762V:00000001 [INF] Sending file. Request path: '"/client-side/css/style.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\style.css"' (27b0a520)
+2018-03-24T17:09:48.0011782+07:00 0HLCHDSH7762Q:00000001 [INF] Request finished in 1287.4523ms 200 text/css (791a596a)
+2018-03-24T17:09:48.0256013+07:00 0HLCHDSH77628:00000001 [INF] Request finished in 4869.728ms 200 image/png (791a596a)
+2018-03-24T17:09:48.0379814+07:00 0HLCHDSH7761M:00000002 [INF] Request finished in 4132.1089ms 200 text/css (791a596a)
+2018-03-24T17:09:48.2050849+07:00 0HLCHDSH77634:00000001 [INF] Sending file. Request path: '"/client-side/css/responsive.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\responsive.css"' (27b0a520)
+2018-03-24T17:09:48.3202517+07:00 0HLCHDSH7762S:00000001 [INF] Request finished in 1150.4702ms 200 text/css (791a596a)
+2018-03-24T17:09:48.3319862+07:00 0HLCHDSH7762C:00000001 [INF] Request finished in 4173.6331ms 200 application/javascript (791a596a)
+2018-03-24T17:09:48.3480937+07:00 0HLCHDSH7762D:00000001 [INF] Request finished in 4530.7237ms 200 application/javascript (791a596a)
+2018-03-24T17:09:48.3627070+07:00 0HLCHDSH77631:00000001 [INF] Request finished in 1216.7643ms 200 text/css (791a596a)
+2018-03-24T17:09:48.4164211+07:00 0HLCHDSH7762G:00000001 [INF] Request finished in 3742.9334ms 200 image/jpeg (791a596a)
+2018-03-24T17:09:48.4310697+07:00 0HLCHDSH7762U:00000001 [INF] Request finished in 1293.0175ms 200 text/css (791a596a)
+2018-03-24T17:09:48.4447775+07:00 0HLCHDSH7761K:00000001 [INF] Request finished in 3587.34ms 200 image/png (791a596a)
+2018-03-24T17:09:48.4927857+07:00 0HLCHDSH77614:00000002 [INF] Request finished in 4381.2612ms 200 text/css (791a596a)
+2018-03-24T17:09:48.5038752+07:00 0HLCHDSH77632:00000001 [INF] Sending file. Request path: '"/client-side/css/quick_view_popup.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\quick_view_popup.css"' (27b0a520)
+2018-03-24T17:09:48.5654462+07:00 0HLCHDSH77625:00000001 [INF] Request finished in 4531.3167ms 200 image/png (791a596a)
+2018-03-24T17:09:48.5927526+07:00 0HLCHDSH77622:00000001 [INF] Request finished in 3554.4539ms 200 image/png (791a596a)
+2018-03-24T17:09:48.6931874+07:00 0HLCHDSH77633:00000001 [INF] Sending file. Request path: '"/client-side/css/shortcodes/post.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\shortcodes\post.css"' (27b0a520)
+2018-03-24T17:09:48.7789743+07:00 0HLCHDSH77634:00000001 [INF] Request finished in 1265.5797ms 200 text/css (791a596a)
+2018-03-24T17:09:48.8006707+07:00 0HLCHDSH77630:00000001 [INF] Request finished in 1760.915ms 200 text/css (791a596a)
+2018-03-24T17:09:48.9362819+07:00 0HLCHDSH7761Q:00000001 [INF] Request finished in 3894.2823ms 200 image/png (791a596a)
+2018-03-24T17:09:49.1830784+07:00 0HLCHDSH7762H:00000001 [INF] Request finished in 4252.6849ms 200 application/javascript (791a596a)
+2018-03-24T17:09:49.1974069+07:00 0HLCHDSH7762R:00000001 [INF] Request finished in 2256.1567ms 200 text/css (791a596a)
+2018-03-24T17:09:49.2153450+07:00 0HLCHDSH7762B:00000001 [INF] Request finished in 5621.5369ms 200 application/javascript (791a596a)
+2018-03-24T17:09:49.2774712+07:00 0HLCHDSH7762V:00000001 [INF] Request finished in 1742.9476ms 200 text/css (791a596a)
+2018-03-24T17:09:49.2976815+07:00 0HLCHDSH7761C:00000001 [INF] Request finished in 7358.3607ms 200 image/jpeg (791a596a)
+2018-03-24T17:09:49.3351369+07:00 0HLCHDSH7761I:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/bg_text_des.png   (ca22a1cb)
+2018-03-24T17:09:49.3594445+07:00 0HLCHDSH7761E:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/select-arrow.png   (ca22a1cb)
+2018-03-24T17:09:49.4324405+07:00 0HLCHDSH7761N:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/fonts/pe-icon-7-stroke/Pe-icon-7-stroke.woff?d7yf1v   (ca22a1cb)
+2018-03-24T17:09:49.5045183+07:00 0HLCHDSH77633:00000001 [INF] Request finished in 1979.8893ms 200 text/css (791a596a)
+2018-03-24T17:09:49.5250904+07:00 0HLCHDSH7762L:00000001 [INF] Request finished in 2808.2402ms 200 application/javascript (791a596a)
+2018-03-24T17:09:49.5459634+07:00 0HLCHDSH7762E:00000001 [INF] Request finished in 3342.9885ms 200 application/javascript (791a596a)
+2018-03-24T17:09:49.5580594+07:00 0HLCHDSH7761L:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/fonts/simple-line-icons/Simple-Line-Icons.woff2?v=2.4.0   (ca22a1cb)
+2018-03-24T17:09:49.6652586+07:00 0HLCHDSH77627:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-24T17:09:49.7383434+07:00 0HLCHDSH7761I:00000002 [INF] Sending file. Request path: '"/client-side/images/bg_text_des.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\bg_text_des.png"' (27b0a520)
+2018-03-24T17:09:49.7668443+07:00 0HLCHDSH77623:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/fonts/font-awesome/fontawesome-webfont.woff2?v=4.7.0   (ca22a1cb)
+2018-03-24T17:09:49.8113520+07:00 0HLCHDSH7761E:00000002 [INF] Sending file. Request path: '"/client-side/images/select-arrow.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\select-arrow.png"' (27b0a520)
+2018-03-24T17:09:49.8198454+07:00 0HLCHDSH7761N:00000002 [INF] Sending file. Request path: '"/client-side/fonts/pe-icon-7-stroke/Pe-icon-7-stroke.woff"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\fonts\pe-icon-7-stroke\Pe-icon-7-stroke.woff"' (27b0a520)
+2018-03-24T17:09:49.8330617+07:00 0HLCHDSH7761S:00000001 [INF] Request finished in 3193.0523ms 200 image/png (791a596a)
+2018-03-24T17:09:49.9073910+07:00 0HLCHDSH7761H:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/banner-left.jpg   (ca22a1cb)
+2018-03-24T17:09:49.9485707+07:00 0HLCHDSH77632:00000001 [INF] Request finished in 1651.7042ms 200 text/css (791a596a)
+2018-03-24T17:09:50.1246781+07:00 0HLCHDSH77627:00000002 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:09:50.2100745+07:00 0HLCHDSH7761L:00000002 [INF] Sending file. Request path: '"/client-side/fonts/simple-line-icons/Simple-Line-Icons.woff2"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\fonts\simple-line-icons\Simple-Line-Icons.woff2"' (27b0a520)
+2018-03-24T17:09:50.2319211+07:00 0HLCHDSH7761I:00000002 [INF] Request finished in 987.9853ms 200 image/png (791a596a)
+2018-03-24T17:09:50.2693730+07:00 0HLCHDSH7761O:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand5.png   (ca22a1cb)
+2018-03-24T17:09:50.2811624+07:00 0HLCHDSH7761P:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/banner-sunglasses.jpg   (ca22a1cb)
+2018-03-24T17:09:50.3001233+07:00 0HLCHDSH7761R:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/slider/slide-2.jpg   (ca22a1cb)
+2018-03-24T17:09:50.3164369+07:00 0HLCHDSH7761T:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/testimonials-img3.jpg   (ca22a1cb)
+2018-03-24T17:09:50.3466363+07:00 0HLCHDSH77621:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/testimonials-img2.jpg   (ca22a1cb)
+2018-03-24T17:09:50.3645824+07:00 0HLCHDSH7761U:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/banner-kids.jpg   (ca22a1cb)
+2018-03-24T17:09:50.3897513+07:00 0HLCHDSH7761E:00000002 [INF] Request finished in 1153.767ms 200 image/png (791a596a)
+2018-03-24T17:09:50.4155220+07:00 0HLCHDSH7761N:00000002 [INF] Request finished in 909.7007ms 200 application/font-woff (791a596a)
+2018-03-24T17:09:50.4526926+07:00 0HLCHDSH7761H:00000001 [INF] Sending file. Request path: '"/client-side/images/banner-left.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\banner-left.jpg"' (27b0a520)
+2018-03-24T17:09:50.5512505+07:00 0HLCHDSH77623:00000002 [INF] Sending file. Request path: '"/client-side/fonts/font-awesome/fontawesome-webfont.woff2"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\fonts\font-awesome\fontawesome-webfont.woff2"' (27b0a520)
+2018-03-24T17:09:50.5607715+07:00 0HLCHDSH77627:00000002 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T17:09:50.5972420+07:00 0HLCHDSH77620:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/banner-mob.jpg   (ca22a1cb)
+2018-03-24T17:09:50.7164574+07:00 0HLCHDSH7761O:00000001 [INF] Sending file. Request path: '"/client-side/images/brand5.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand5.png"' (27b0a520)
+2018-03-24T17:09:50.7293384+07:00 0HLCHDSH7761P:00000001 [INF] Sending file. Request path: '"/client-side/images/banner-sunglasses.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\banner-sunglasses.jpg"' (27b0a520)
+2018-03-24T17:09:50.7416390+07:00 0HLCHDSH7761R:00000001 [INF] Sending file. Request path: '"/client-side/images/slider/slide-2.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\slider\slide-2.jpg"' (27b0a520)
+2018-03-24T17:09:50.7466705+07:00 0HLCHDSH7761U:00000001 [INF] Sending file. Request path: '"/client-side/images/banner-kids.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\banner-kids.jpg"' (27b0a520)
+2018-03-24T17:09:50.7892633+07:00 0HLCHDSH7761T:00000001 [INF] Sending file. Request path: '"/client-side/images/testimonials-img3.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\testimonials-img3.jpg"' (27b0a520)
+2018-03-24T17:09:50.8248800+07:00 0HLCHDSH77621:00000001 [INF] Sending file. Request path: '"/client-side/images/testimonials-img2.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\testimonials-img2.jpg"' (27b0a520)
+2018-03-24T17:09:50.8450527+07:00 0HLCHDSH77624:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/testimonials-img1.jpg   (ca22a1cb)
+2018-03-24T17:09:50.9759066+07:00 0HLCHDSH77620:00000001 [INF] Sending file. Request path: '"/client-side/images/banner-mob.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\banner-mob.jpg"' (27b0a520)
+2018-03-24T17:09:50.9960662+07:00 0HLCHDSH7761L:00000002 [INF] Request finished in 1544.5757ms 200 font/woff2 (791a596a)
+2018-03-24T17:09:51.0204817+07:00 0HLCHDSH77623:00000002 [INF] Request finished in 1830.5166ms 200 font/woff2 (791a596a)
+2018-03-24T17:09:51.0981548+07:00 0HLCHDSH77627:00000002 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 1125.0508ms (afa2e885)
+2018-03-24T17:09:51.1126294+07:00 0HLCHDSH7761O:00000001 [INF] Request finished in 9111.2094ms 200 image/png (791a596a)
+2018-03-24T17:09:51.1652497+07:00 0HLCHDSH7761U:00000001 [INF] Request finished in 8862.7078ms 200 image/jpeg (791a596a)
+2018-03-24T17:09:51.1927749+07:00 0HLCHDSH7761P:00000001 [INF] Request finished in 9094.7215ms 200 image/jpeg (791a596a)
+2018-03-24T17:09:51.2198769+07:00 0HLCHDSH77624:00000001 [INF] Sending file. Request path: '"/client-side/images/testimonials-img1.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\testimonials-img1.jpg"' (27b0a520)
+2018-03-24T17:09:51.2284718+07:00 0HLCHDSH7761H:00000001 [INF] Request finished in 8871.7329ms 200 image/jpeg (791a596a)
+2018-03-24T17:09:51.2533350+07:00 0HLCHDSH7761R:00000001 [INF] Request finished in 9153.6588ms 200 image/jpeg (791a596a)
+2018-03-24T17:09:51.2656087+07:00 0HLCHDSH7761T:00000001 [INF] Request finished in 8950.5078ms 200 image/jpeg (791a596a)
+2018-03-24T17:09:51.3414883+07:00 0HLCHDSH77621:00000001 [INF] Request finished in 8914.3004ms 200 image/jpeg (791a596a)
+2018-03-24T17:09:51.4694803+07:00 0HLCHDSH77629:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/favicon.ico   (ca22a1cb)
+2018-03-24T17:09:51.4939998+07:00 0HLCHDSH77627:00000002 [INF] Request finished in 1937.9662ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:09:51.5160051+07:00 0HLCHDSH77624:00000001 [INF] Request finished in 9088.5194ms 200 image/jpeg (791a596a)
+2018-03-24T17:09:51.5406878+07:00 0HLCHDSH77620:00000001 [INF] Request finished in 9134.8404ms 200 image/jpeg (791a596a)
+2018-03-24T17:09:51.5460183+07:00 0HLCHDSH77629:00000002 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\favicon.ico"' (27b0a520)
+2018-03-24T17:09:51.5519359+07:00 0HLCHDSH77618:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/favicon.ico   (ca22a1cb)
+2018-03-24T17:09:51.5564266+07:00 0HLCHDSH77618:00000003 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\favicon.ico"' (27b0a520)
+2018-03-24T17:09:51.7300739+07:00 0HLCHDSH77618:00000003 [INF] Request finished in 342.6041ms 200 image/x-icon (791a596a)
+2018-03-24T17:09:51.7516834+07:00 0HLCHDSH77629:00000002 [INF] Request finished in 526.8596ms 200 image/x-icon (791a596a)
+2018-03-24T17:09:57.9337298+07:00 0HLCHDSH7761A:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2018-03-24T17:09:57.9392868+07:00 0HLCHDSH7761A:00000003 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Error (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:09:57.9444454+07:00 0HLCHDSH7761A:00000003 [INF] Executing ViewResult, running view at path "/Views/Home/Error.cshtml". (9707eebe)
+2018-03-24T17:09:57.9521866+07:00 0HLCHDSH7761A:00000003 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Error (TemplateDotNetCore)" in 11.4868ms (afa2e885)
+2018-03-24T17:09:57.9577594+07:00 0HLCHDSH7761A:00000003 [INF] Request finished in 23.3208ms 404 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:10:59.2829263+07:00 0HLCHDSH77635:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-24T17:10:59.2885705+07:00 0HLCHDSH77635:00000001 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:10:59.2924240+07:00 0HLCHDSH77635:00000001 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T17:10:59.3035335+07:00 0HLCHDSH77635:00000001 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 15.9367ms (afa2e885)
+2018-03-24T17:10:59.3118670+07:00 0HLCHDSH77635:00000001 [INF] Request finished in 25.2965ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:10:59.4051967+07:00 0HLCHDSH77636:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/style.css   (ca22a1cb)
+2018-03-24T17:10:59.4704936+07:00 0HLCHDSH7763B:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/logo.png   (ca22a1cb)
+2018-03-24T17:10:59.6393884+07:00 0HLCHDSH77635:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/flag-chile.jpg   (ca22a1cb)
+2018-03-24T17:10:59.8297855+07:00 0HLCHDSH7763A:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/flag-english.jpg   (ca22a1cb)
+2018-03-24T17:10:59.8967390+07:00 0HLCHDSH7763B:00000001 [INF] Sending file. Request path: '"/client-side/images/logo.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\logo.png"' (27b0a520)
+2018-03-24T17:11:00.0903006+07:00 0HLCHDSH77638:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/flag-spain.jpg   (ca22a1cb)
+2018-03-24T17:11:00.1137009+07:00 0HLCHDSH77636:00000001 [INF] The file "/client-side/style.css" was not modified (f1f8d725)
+2018-03-24T17:11:00.1553305+07:00 0HLCHDSH7763D:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/mobile-menu.js   (ca22a1cb)
+2018-03-24T17:11:00.1745412+07:00 0HLCHDSH77637:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/bootstrap.min.js   (ca22a1cb)
+2018-03-24T17:11:00.2025467+07:00 0HLCHDSH7763E:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/jquery.min.js   (ca22a1cb)
+2018-03-24T17:11:00.2334603+07:00 0HLCHDSH7763I:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/jquery-ui.js   (ca22a1cb)
+2018-03-24T17:11:00.2522572+07:00 0HLCHDSH77639:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/main.js   (ca22a1cb)
+2018-03-24T17:11:00.3495763+07:00 0HLCHDSH7763A:00000001 [INF] The file "/client-side/images/flag-english.jpg" was not modified (f1f8d725)
+2018-03-24T17:11:00.4477234+07:00 0HLCHDSH7763Q:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/flag-brazil.jpg   (ca22a1cb)
+2018-03-24T17:11:00.4762157+07:00 0HLCHDSH7763F:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/countdown.js   (ca22a1cb)
+2018-03-24T17:11:00.4987085+07:00 0HLCHDSH77635:00000002 [INF] Sending file. Request path: '"/client-side/images/flag-chile.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\flag-chile.jpg"' (27b0a520)
+2018-03-24T17:11:00.5860215+07:00 0HLCHDSH77636:00000001 [INF] Request finished in 776.755ms 304 text/css (791a596a)
+2018-03-24T17:11:00.6282125+07:00 0HLCHDSH7763I:00000001 [INF] The file "/client-side/js/jquery-ui.js" was not modified (f1f8d725)
+2018-03-24T17:11:00.6524159+07:00 0HLCHDSH7763K:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/jquery.flexslider.js   (ca22a1cb)
+2018-03-24T17:11:00.6661827+07:00 0HLCHDSH7763P:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/revolution-slider.js   (ca22a1cb)
+2018-03-24T17:11:00.6947768+07:00 0HLCHDSH7763A:00000001 [INF] Request finished in 944.267ms 304 image/jpeg (791a596a)
+2018-03-24T17:11:00.7068392+07:00 0HLCHDSH7763B:00000001 [INF] Request finished in 667.1286ms 200 image/png (791a596a)
+2018-03-24T17:11:00.7922737+07:00 0HLCHDSH77638:00000001 [INF] Sending file. Request path: '"/client-side/images/flag-spain.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\flag-spain.jpg"' (27b0a520)
+2018-03-24T17:11:00.8199540+07:00 0HLCHDSH7763D:00000001 [INF] The file "/client-side/js/mobile-menu.js" was not modified (f1f8d725)
+2018-03-24T17:11:00.8386962+07:00 0HLCHDSH77639:00000001 [INF] The file "/client-side/js/main.js" was not modified (f1f8d725)
+2018-03-24T17:11:00.8776793+07:00 0HLCHDSH7763E:00000001 [INF] The file "/client-side/js/jquery.min.js" was not modified (f1f8d725)
+2018-03-24T17:11:00.9026709+07:00 0HLCHDSH77637:00000001 [INF] The file "/client-side/js/bootstrap.min.js" was not modified (f1f8d725)
+2018-03-24T17:11:00.9298436+07:00 0HLCHDSH7763Q:00000001 [INF] The file "/client-side/images/flag-brazil.jpg" was not modified (f1f8d725)
+2018-03-24T17:11:00.9889416+07:00 0HLCHDSH7763F:00000001 [INF] The file "/client-side/js/countdown.js" was not modified (f1f8d725)
+2018-03-24T17:11:01.0307957+07:00 0HLCHDSH7763I:00000001 [INF] Request finished in 1101.7741ms 304 application/javascript (791a596a)
+2018-03-24T17:11:01.0544084+07:00 0HLCHDSH7763H:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/products/product-1.jpg   (ca22a1cb)
+2018-03-24T17:11:01.0817989+07:00 0HLCHDSH7763L:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-app/controllers/home/index.js   (ca22a1cb)
+2018-03-24T17:11:01.1050554+07:00 0HLCHDSH77635:00000002 [INF] Request finished in 1144.677ms 200 image/jpeg (791a596a)
+2018-03-24T17:11:01.1490502+07:00 0HLCHDSH77636:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/animate.css   (ca22a1cb)
+2018-03-24T17:11:01.1924528+07:00 0HLCHDSH7763D:00000001 [INF] Request finished in 1386.222ms 304 application/javascript (791a596a)
+2018-03-24T17:11:01.2536198+07:00 0HLCHDSH7763K:00000001 [INF] The file "/client-side/js/jquery.flexslider.js" was not modified (f1f8d725)
+2018-03-24T17:11:01.2786276+07:00 0HLCHDSH7763P:00000001 [INF] The file "/client-side/js/revolution-slider.js" was not modified (f1f8d725)
+2018-03-24T17:11:01.3173543+07:00 0HLCHDSH7763Q:00000001 [INF] Request finished in 1100.9406ms 304 image/jpeg (791a596a)
+2018-03-24T17:11:01.3356792+07:00 0HLCHDSH77644:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand1.png   (ca22a1cb)
+2018-03-24T17:11:01.3899532+07:00 0HLCHDSH77639:00000001 [INF] Request finished in 1404.9772ms 304 application/javascript (791a596a)
+2018-03-24T17:11:01.4253886+07:00 0HLCHDSH7763E:00000001 [INF] Request finished in 1443.9385ms 304 application/javascript (791a596a)
+2018-03-24T17:11:01.4907950+07:00 0HLCHDSH77637:00000001 [INF] Request finished in 1544.2466ms 304 application/javascript (791a596a)
+2018-03-24T17:11:01.5082587+07:00 0HLCHDSH77638:00000001 [INF] Request finished in 1584.6057ms 200 image/jpeg (791a596a)
+2018-03-24T17:11:01.5223206+07:00 0HLCHDSH7763B:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/bootstrap.min.css   (ca22a1cb)
+2018-03-24T17:11:01.5607134+07:00 0HLCHDSH77636:00000002 [INF] Sending file. Request path: '"/client-side/css/animate.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\animate.css"' (27b0a520)
+2018-03-24T17:11:01.5981799+07:00 0HLCHDSH77645:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/blog-img1.jpg   (ca22a1cb)
+2018-03-24T17:11:01.6584880+07:00 0HLCHDSH7763F:00000001 [INF] Request finished in 1484.9929ms 304 application/javascript (791a596a)
+2018-03-24T17:11:01.7136362+07:00 0HLCHDSH7763P:00000001 [INF] Request finished in 1478.0711ms 304 application/javascript (791a596a)
+2018-03-24T17:11:01.7307274+07:00 0HLCHDSH77644:00000001 [INF] Sending file. Request path: '"/client-side/images/brand1.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand1.png"' (27b0a520)
+2018-03-24T17:11:01.8039078+07:00 0HLCHDSH77647:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand8.png   (ca22a1cb)
+2018-03-24T17:11:01.8996131+07:00 0HLCHDSH77649:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/banner-arrival.jpg   (ca22a1cb)
+2018-03-24T17:11:01.9341502+07:00 0HLCHDSH7763K:00000001 [INF] Request finished in 1641.9632ms 304 application/javascript (791a596a)
+2018-03-24T17:11:01.9775666+07:00 0HLCHDSH7763B:00000002 [INF] The file "/client-side/css/bootstrap.min.css" was not modified (f1f8d725)
+2018-03-24T17:11:02.0098558+07:00 0HLCHDSH7763H:00000001 [INF] Sending file. Request path: '"/client-side/images/products/product-1.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\products\product-1.jpg"' (27b0a520)
+2018-03-24T17:11:02.0437753+07:00 0HLCHDSH77636:00000002 [INF] Request finished in 882.6663ms 200 text/css (791a596a)
+2018-03-24T17:11:02.0978427+07:00 0HLCHDSH77645:00000001 [INF] Sending file. Request path: '"/client-side/images/blog-img1.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\blog-img1.jpg"' (27b0a520)
+2018-03-24T17:11:02.1116462+07:00 0HLCHDSH7764A:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/banner-sunglasses.jpg   (ca22a1cb)
+2018-03-24T17:11:02.1322680+07:00 0HLCHDSH7764C:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand10.png   (ca22a1cb)
+2018-03-24T17:11:02.1971343+07:00 0HLCHDSH77644:00000001 [INF] Request finished in 917.5435ms 200 image/png (791a596a)
+2018-03-24T17:11:02.2333109+07:00 0HLCHDSH7764D:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/testimonials-img1.jpg   (ca22a1cb)
+2018-03-24T17:11:02.2681550+07:00 0HLCHDSH77647:00000001 [INF] Sending file. Request path: '"/client-side/images/brand8.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand8.png"' (27b0a520)
+2018-03-24T17:11:02.2918100+07:00 0HLCHDSH7764I:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/testimonials-img3.jpg   (ca22a1cb)
+2018-03-24T17:11:02.3058912+07:00 0HLCHDSH7763L:00000001 [INF] The file "/client-app/controllers/home/index.js" was not modified (f1f8d725)
+2018-03-24T17:11:02.3296818+07:00 0HLCHDSH7763C:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/owl.carousel.min.js   (ca22a1cb)
+2018-03-24T17:11:02.3431135+07:00 0HLCHDSH7764E:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/visa.png   (ca22a1cb)
+2018-03-24T17:11:02.3603375+07:00 0HLCHDSH7764F:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/sub1a.jpg   (ca22a1cb)
+2018-03-24T17:11:02.4630637+07:00 0HLCHDSH7764G:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand5.png   (ca22a1cb)
+2018-03-24T17:11:02.5067528+07:00 0HLCHDSH77649:00000001 [INF] Sending file. Request path: '"/client-side/images/banner-arrival.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\banner-arrival.jpg"' (27b0a520)
+2018-03-24T17:11:02.5278886+07:00 0HLCHDSH7763B:00000002 [INF] Request finished in 1002.1763ms 304 text/css (791a596a)
+2018-03-24T17:11:02.5692677+07:00 0HLCHDSH7763H:00000001 [INF] Request finished in 2542.8995ms 200 image/jpeg (791a596a)
+2018-03-24T17:11:02.5996333+07:00 0HLCHDSH77645:00000001 [INF] Request finished in 1011.8486ms 200 image/jpeg (791a596a)
+2018-03-24T17:11:02.6090879+07:00 0HLCHDSH7764K:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/footer-logo.png   (ca22a1cb)
+2018-03-24T17:11:02.6776082+07:00 0HLCHDSH7764A:00000001 [INF] Sending file. Request path: '"/client-side/images/banner-sunglasses.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\banner-sunglasses.jpg"' (27b0a520)
+2018-03-24T17:11:02.6937125+07:00 0HLCHDSH7764C:00000001 [INF] Sending file. Request path: '"/client-side/images/brand10.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand10.png"' (27b0a520)
+2018-03-24T17:11:02.7360919+07:00 0HLCHDSH7764D:00000001 [INF] Sending file. Request path: '"/client-side/images/testimonials-img1.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\testimonials-img1.jpg"' (27b0a520)
+2018-03-24T17:11:02.7397609+07:00 0HLCHDSH77647:00000001 [INF] Request finished in 991.7206ms 200 image/png (791a596a)
+2018-03-24T17:11:02.7637569+07:00 0HLCHDSH7764M:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/banner-kids.jpg   (ca22a1cb)
+2018-03-24T17:11:02.7796147+07:00 0HLCHDSH7764I:00000001 [INF] Sending file. Request path: '"/client-side/images/testimonials-img3.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\testimonials-img3.jpg"' (27b0a520)
+2018-03-24T17:11:02.8365849+07:00 0HLCHDSH7764E:00000001 [INF] Sending file. Request path: '"/client-side/images/visa.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\visa.png"' (27b0a520)
+2018-03-24T17:11:02.8515993+07:00 0HLCHDSH7764J:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand11.png   (ca22a1cb)
+2018-03-24T17:11:02.9384333+07:00 0HLCHDSH7764F:00000001 [INF] Sending file. Request path: '"/client-side/images/sub1a.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\sub1a.jpg"' (27b0a520)
+2018-03-24T17:11:02.9553089+07:00 0HLCHDSH7764G:00000001 [INF] Sending file. Request path: '"/client-side/images/brand5.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand5.png"' (27b0a520)
+2018-03-24T17:11:03.0312290+07:00 0HLCHDSH7764K:00000001 [INF] Sending file. Request path: '"/client-side/images/footer-logo.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\footer-logo.png"' (27b0a520)
+2018-03-24T17:11:03.1944672+07:00 0HLCHDSH7764C:00000001 [INF] Request finished in 1160.9761ms 200 image/png (791a596a)
+2018-03-24T17:11:03.2095720+07:00 0HLCHDSH77649:00000001 [INF] Request finished in 1229.3482ms 200 image/jpeg (791a596a)
+2018-03-24T17:11:03.2601013+07:00 0HLCHDSH7763U:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/banner-laptop.jpg   (ca22a1cb)
+2018-03-24T17:11:03.2956425+07:00 0HLCHDSH7764N:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/testimonials-img2.jpg   (ca22a1cb)
+2018-03-24T17:11:03.3101220+07:00 0HLCHDSH7764A:00000001 [INF] Request finished in 1145.4118ms 200 image/jpeg (791a596a)
+2018-03-24T17:11:03.3242154+07:00 0HLCHDSH7764J:00000001 [INF] Sending file. Request path: '"/client-side/images/brand11.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand11.png"' (27b0a520)
+2018-03-24T17:11:03.3425885+07:00 0HLCHDSH7764D:00000001 [INF] Request finished in 1145.6098ms 200 image/jpeg (791a596a)
+2018-03-24T17:11:03.3699884+07:00 0HLCHDSH77642:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand6.png   (ca22a1cb)
+2018-03-24T17:11:03.3802189+07:00 0HLCHDSH7764M:00000001 [INF] Sending file. Request path: '"/client-side/images/banner-kids.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\banner-kids.jpg"' (27b0a520)
+2018-03-24T17:11:03.3841221+07:00 0HLCHDSH7764I:00000001 [INF] Request finished in 917.1251ms 200 image/jpeg (791a596a)
+2018-03-24T17:11:03.4311937+07:00 0HLCHDSH7763M:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand2.png   (ca22a1cb)
+2018-03-24T17:11:03.4823957+07:00 0HLCHDSH7763L:00000001 [INF] Request finished in 2646.4064ms 304 application/javascript (791a596a)
+2018-03-24T17:11:03.4967064+07:00 0HLCHDSH7763C:00000001 [INF] The file "/client-side/js/owl.carousel.min.js" was not modified (f1f8d725)
+2018-03-24T17:11:03.5133341+07:00 0HLCHDSH7764E:00000001 [INF] Request finished in 1158.7578ms 200 image/png (791a596a)
+2018-03-24T17:11:03.5293456+07:00 0HLCHDSH7764G:00000001 [INF] Request finished in 1097.8247ms 200 image/png (791a596a)
+2018-03-24T17:11:03.5822558+07:00 0HLCHDSH7763J:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/cloud-zoom.js   (ca22a1cb)
+2018-03-24T17:11:03.6076740+07:00 0HLCHDSH7763G:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/flag-default.jpg   (ca22a1cb)
+2018-03-24T17:11:03.6326652+07:00 0HLCHDSH7764K:00000001 [INF] Request finished in 935.9071ms 200 image/png (791a596a)
+2018-03-24T17:11:03.6626402+07:00 0HLCHDSH7764F:00000001 [INF] Request finished in 1313.4398ms 200 image/jpeg (791a596a)
+2018-03-24T17:11:03.7145038+07:00 0HLCHDSH7763U:00000001 [INF] Sending file. Request path: '"/client-side/images/banner-laptop.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\banner-laptop.jpg"' (27b0a520)
+2018-03-24T17:11:03.8266863+07:00 0HLCHDSH7764N:00000001 [INF] Sending file. Request path: '"/client-side/images/testimonials-img2.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\testimonials-img2.jpg"' (27b0a520)
+2018-03-24T17:11:03.8403258+07:00 0HLCHDSH77642:00000001 [INF] Sending file. Request path: '"/client-side/images/brand6.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand6.png"' (27b0a520)
+2018-03-24T17:11:03.8830142+07:00 0HLCHDSH7764J:00000001 [INF] Request finished in 988.2556ms 200 image/png (791a596a)
+2018-03-24T17:11:03.9295176+07:00 0HLCHDSH77648:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/banner-women.jpg   (ca22a1cb)
+2018-03-24T17:11:03.9905057+07:00 0HLCHDSH7764M:00000001 [INF] Request finished in 1253.7038ms 200 image/jpeg (791a596a)
+2018-03-24T17:11:04.0064950+07:00 0HLCHDSH7763M:00000001 [INF] Sending file. Request path: '"/client-side/images/brand2.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand2.png"' (27b0a520)
+2018-03-24T17:11:04.0184203+07:00 0HLCHDSH77646:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand7.png   (ca22a1cb)
+2018-03-24T17:11:04.1091138+07:00 0HLCHDSH7764B:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/testimonials-img4.jpg   (ca22a1cb)
+2018-03-24T17:11:04.1334366+07:00 0HLCHDSH7763U:00000001 [INF] Request finished in 950.1459ms 200 image/jpeg (791a596a)
+2018-03-24T17:11:04.2322719+07:00 0HLCHDSH7764L:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/paypal.png   (ca22a1cb)
+2018-03-24T17:11:04.2667746+07:00 0HLCHDSH7764H:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand9.png   (ca22a1cb)
+2018-03-24T17:11:04.2794805+07:00 0HLCHDSH7764P:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/discover.png   (ca22a1cb)
+2018-03-24T17:11:04.3226170+07:00 0HLCHDSH7764O:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/master-card.png   (ca22a1cb)
+2018-03-24T17:11:04.3645764+07:00 0HLCHDSH77642:00000001 [INF] Request finished in 991.1948ms 200 image/png (791a596a)
+2018-03-24T17:11:04.4107106+07:00 0HLCHDSH7764N:00000001 [INF] Request finished in 1165.752ms 200 image/jpeg (791a596a)
+2018-03-24T17:11:04.4280158+07:00 0HLCHDSH77648:00000001 [INF] Sending file. Request path: '"/client-side/images/banner-women.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\banner-women.jpg"' (27b0a520)
+2018-03-24T17:11:04.4441181+07:00 0HLCHDSH7764Q:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/font-awesome.min.css   (ca22a1cb)
+2018-03-24T17:11:04.5127359+07:00 0HLCHDSH7764R:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/simple-line-icons.css   (ca22a1cb)
+2018-03-24T17:11:04.5465501+07:00 0HLCHDSH7764U:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/owl.transitions.css   (ca22a1cb)
+2018-03-24T17:11:04.5605918+07:00 0HLCHDSH77646:00000001 [INF] Sending file. Request path: '"/client-side/images/brand7.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand7.png"' (27b0a520)
+2018-03-24T17:11:04.6408082+07:00 0HLCHDSH7764P:00000001 [INF] Sending file. Request path: '"/client-side/images/discover.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\discover.png"' (27b0a520)
+2018-03-24T17:11:04.6631391+07:00 0HLCHDSH7764B:00000001 [INF] Sending file. Request path: '"/client-side/images/testimonials-img4.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\testimonials-img4.jpg"' (27b0a520)
+2018-03-24T17:11:04.7114196+07:00 0HLCHDSH7764L:00000001 [INF] Sending file. Request path: '"/client-side/images/paypal.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\paypal.png"' (27b0a520)
+2018-03-24T17:11:04.7980957+07:00 0HLCHDSH7764O:00000001 [INF] Sending file. Request path: '"/client-side/images/master-card.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\master-card.png"' (27b0a520)
+2018-03-24T17:11:04.8238474+07:00 0HLCHDSH77651:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/blog.css   (ca22a1cb)
+2018-03-24T17:11:04.8516111+07:00 0HLCHDSH7764V:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/flexslider.css   (ca22a1cb)
+2018-03-24T17:11:04.9126861+07:00 0HLCHDSH77648:00000001 [INF] Request finished in 972.7087ms 200 image/jpeg (791a596a)
+2018-03-24T17:11:04.9264018+07:00 0HLCHDSH7764U:00000001 [INF] Sending file. Request path: '"/client-side/css/owl.transitions.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\owl.transitions.css"' (27b0a520)
+2018-03-24T17:11:04.9668055+07:00 0HLCHDSH7764Q:00000001 [INF] Sending file. Request path: '"/client-side/css/font-awesome.min.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\font-awesome.min.css"' (27b0a520)
+2018-03-24T17:11:04.9794787+07:00 0HLCHDSH77652:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/quick_view_popup.css   (ca22a1cb)
+2018-03-24T17:11:05.0234337+07:00 0HLCHDSH7764H:00000001 [INF] Sending file. Request path: '"/client-side/images/brand9.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand9.png"' (27b0a520)
+2018-03-24T17:11:05.0394885+07:00 0HLCHDSH7763M:00000001 [INF] Request finished in 1282.9296ms 200 image/png (791a596a)
+2018-03-24T17:11:05.0758417+07:00 0HLCHDSH7764R:00000001 [INF] Sending file. Request path: '"/client-side/css/simple-line-icons.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\simple-line-icons.css"' (27b0a520)
+2018-03-24T17:11:05.1748070+07:00 0HLCHDSH7764P:00000001 [INF] Request finished in 890.5715ms 200 image/png (791a596a)
+2018-03-24T17:11:05.1882348+07:00 0HLCHDSH77646:00000001 [INF] Request finished in 1144.0544ms 200 image/png (791a596a)
+2018-03-24T17:11:05.2000499+07:00 0HLCHDSH77653:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/revolution-slider.css   (ca22a1cb)
+2018-03-24T17:11:05.2425277+07:00 0HLCHDSH77651:00000001 [INF] The file "/client-side/css/blog.css" was not modified (f1f8d725)
+2018-03-24T17:11:05.3291184+07:00 0HLCHDSH7764B:00000001 [INF] Request finished in 1230.168ms 200 image/jpeg (791a596a)
+2018-03-24T17:11:05.3652472+07:00 0HLCHDSH7764T:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/owl.carousel.css   (ca22a1cb)
+2018-03-24T17:11:05.3804251+07:00 0HLCHDSH77652:00000001 [INF] The file "/client-side/css/quick_view_popup.css" was not modified (f1f8d725)
+2018-03-24T17:11:05.3982535+07:00 0HLCHDSH7764O:00000001 [INF] Request finished in 1025.9326ms 200 image/png (791a596a)
+2018-03-24T17:11:05.4248383+07:00 0HLCHDSH7764L:00000001 [INF] Request finished in 1136.4167ms 200 image/png (791a596a)
+2018-03-24T17:11:05.4445199+07:00 0HLCHDSH7764U:00000001 [INF] Request finished in 941.7864ms 200 text/css (791a596a)
+2018-03-24T17:11:05.4887321+07:00 0HLCHDSH77655:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/shortcodes/featured-box.css   (ca22a1cb)
+2018-03-24T17:11:05.5187610+07:00 0HLCHDSH7764V:00000001 [INF] Sending file. Request path: '"/client-side/css/flexslider.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\flexslider.css"' (27b0a520)
+2018-03-24T17:11:05.5918542+07:00 0HLCHDSH7764H:00000001 [INF] Request finished in 1462.1928ms 200 image/png (791a596a)
+2018-03-24T17:11:05.6637186+07:00 0HLCHDSH77651:00000001 [INF] Request finished in 832.5286ms 304 text/css (791a596a)
+2018-03-24T17:11:05.7235460+07:00 0HLCHDSH7764R:00000001 [INF] Request finished in 1190.0052ms 200 text/css (791a596a)
+2018-03-24T17:11:05.7361453+07:00 0HLCHDSH77653:00000001 [INF] The file "/client-side/css/revolution-slider.css" was not modified (f1f8d725)
+2018-03-24T17:11:05.7600255+07:00 0HLCHDSH77652:00000001 [INF] Request finished in 765.1418ms 304 text/css (791a596a)
+2018-03-24T17:11:05.7789625+07:00 0HLCHDSH77657:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/shortcode.css   (ca22a1cb)
+2018-03-24T17:11:05.8146823+07:00 0HLCHDSH7764Q:00000001 [INF] Request finished in 1214.4532ms 200 text/css (791a596a)
+2018-03-24T17:11:05.9124506+07:00 0HLCHDSH77656:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/shortcodes/pricing-table.css   (ca22a1cb)
+2018-03-24T17:11:05.9443921+07:00 0HLCHDSH77655:00000001 [INF] The file "/client-side/css/shortcodes/featured-box.css" was not modified (f1f8d725)
+2018-03-24T17:11:06.0147933+07:00 0HLCHDSH77650:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/jquery-ui.css   (ca22a1cb)
+2018-03-24T17:11:06.0713586+07:00 0HLCHDSH77659:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/shortcodes/tooltip.css   (ca22a1cb)
+2018-03-24T17:11:06.0838405+07:00 0HLCHDSH7764S:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/pe-icon-7-stroke.min.css   (ca22a1cb)
+2018-03-24T17:11:06.1029651+07:00 0HLCHDSH77657:00000001 [INF] The file "/client-side/css/shortcode.css" was not modified (f1f8d725)
+2018-03-24T17:11:06.1511365+07:00 0HLCHDSH7764V:00000001 [INF] Request finished in 1306.7783ms 200 text/css (791a596a)
+2018-03-24T17:11:06.2271128+07:00 0HLCHDSH7764T:00000001 [INF] Sending file. Request path: '"/client-side/css/owl.carousel.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\owl.carousel.css"' (27b0a520)
+2018-03-24T17:11:06.2380184+07:00 0HLCHDSH77654:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/shortcodes/shortcodes.css   (ca22a1cb)
+2018-03-24T17:11:06.2617317+07:00 0HLCHDSH77658:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/shortcodes/post.css   (ca22a1cb)
+2018-03-24T17:11:06.2777261+07:00 0HLCHDSH77653:00000001 [INF] Request finished in 1063.3544ms 304 text/css (791a596a)
+2018-03-24T17:11:06.2915094+07:00 0HLCHDSH7765A:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/style.css   (ca22a1cb)
+2018-03-24T17:11:06.3124884+07:00 0HLCHDSH7763C:00000001 [INF] Request finished in 3863.2786ms 304 application/javascript (791a596a)
+2018-03-24T17:11:06.3538529+07:00 0HLCHDSH77655:00000001 [INF] Request finished in 828.2078ms 304 text/css (791a596a)
+2018-03-24T17:11:06.3947264+07:00 0HLCHDSH7765B:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/responsive.css   (ca22a1cb)
+2018-03-24T17:11:06.4087337+07:00 0HLCHDSH77656:00000001 [INF] The file "/client-side/css/shortcodes/pricing-table.css" was not modified (f1f8d725)
+2018-03-24T17:11:06.4436551+07:00 0HLCHDSH77650:00000001 [INF] Sending file. Request path: '"/client-side/css/jquery-ui.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\jquery-ui.css"' (27b0a520)
+2018-03-24T17:11:06.4991084+07:00 0HLCHDSH7763J:00000001 [INF] The file "/client-side/js/cloud-zoom.js" was not modified (f1f8d725)
+2018-03-24T17:11:06.5575533+07:00 0HLCHDSH77659:00000001 [INF] The file "/client-side/css/shortcodes/tooltip.css" was not modified (f1f8d725)
+2018-03-24T17:11:06.5763184+07:00 0HLCHDSH7764S:00000001 [INF] Sending file. Request path: '"/client-side/css/pe-icon-7-stroke.min.css"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\css\pe-icon-7-stroke.min.css"' (27b0a520)
+2018-03-24T17:11:06.6299049+07:00 0HLCHDSH7763R:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand3.png   (ca22a1cb)
+2018-03-24T17:11:06.6425608+07:00 0HLCHDSH77657:00000001 [INF] Request finished in 737.6846ms 304 text/css (791a596a)
+2018-03-24T17:11:06.6715658+07:00 0HLCHDSH77654:00000001 [INF] The file "/client-side/css/shortcodes/shortcodes.css" was not modified (f1f8d725)
+2018-03-24T17:11:06.6907029+07:00 0HLCHDSH77658:00000001 [INF] The file "/client-side/css/shortcodes/post.css" was not modified (f1f8d725)
+2018-03-24T17:11:06.7002812+07:00 0HLCHDSH7765A:00000001 [INF] The file "/client-side/css/style.css" was not modified (f1f8d725)
+2018-03-24T17:11:06.7763108+07:00 0HLCHDSH7763G:00000001 [INF] The file "/client-side/images/flag-default.jpg" was not modified (f1f8d725)
+2018-03-24T17:11:06.8526295+07:00 0HLCHDSH7764T:00000001 [INF] Request finished in 2379.2685ms 200 text/css (791a596a)
+2018-03-24T17:11:06.9509043+07:00 0HLCHDSH7765B:00000001 [INF] The file "/client-side/css/responsive.css" was not modified (f1f8d725)
+2018-03-24T17:11:06.9926698+07:00 0HLCHDSH77656:00000001 [INF] Request finished in 1080.3954ms 304 text/css (791a596a)
+2018-03-24T17:11:07.0056219+07:00 0HLCHDSH77650:00000001 [INF] Request finished in 893.7849ms 200 text/css (791a596a)
+2018-03-24T17:11:07.0248440+07:00 0HLCHDSH7763J:00000001 [INF] Request finished in 6865.7699ms 304 application/javascript (791a596a)
+2018-03-24T17:11:07.0510709+07:00 0HLCHDSH77659:00000001 [INF] Request finished in 1083.2564ms 304 text/css (791a596a)
+2018-03-24T17:11:07.0806773+07:00 0HLCHDSH7763N:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/flag-german.jpg   (ca22a1cb)
+2018-03-24T17:11:07.0962782+07:00 0HLCHDSH7764S:00000001 [INF] Request finished in 1037.3198ms 200 text/css (791a596a)
+2018-03-24T17:11:07.1093185+07:00 0HLCHDSH7763R:00000001 [INF] Sending file. Request path: '"/client-side/images/brand3.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand3.png"' (27b0a520)
+2018-03-24T17:11:07.1225017+07:00 0HLCHDSH7763O:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/banner-left.jpg   (ca22a1cb)
+2018-03-24T17:11:07.1415357+07:00 0HLCHDSH77654:00000001 [INF] Request finished in 960.9663ms 304 text/css (791a596a)
+2018-03-24T17:11:07.1568056+07:00 0HLCHDSH77658:00000001 [INF] Request finished in 957.0153ms 304 text/css (791a596a)
+2018-03-24T17:11:07.1909153+07:00 0HLCHDSH7765A:00000001 [INF] Request finished in 833.6379ms 304 text/css (791a596a)
+2018-03-24T17:11:07.2465084+07:00 0HLCHDSH7763T:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/slider/slide-3.jpg   (ca22a1cb)
+2018-03-24T17:11:07.3523608+07:00 0HLCHDSH7763G:00000001 [INF] Request finished in 7142.8127ms 304 image/jpeg (791a596a)
+2018-03-24T17:11:07.3886215+07:00 0HLCHDSH7765B:00000001 [INF] Request finished in 1052.0319ms 304 text/css (791a596a)
+2018-03-24T17:11:07.4761063+07:00 0HLCHDSH7763A:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/select-arrow.png   (ca22a1cb)
+2018-03-24T17:11:07.6351972+07:00 0HLCHDSH77635:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/bg_text_des.png   (ca22a1cb)
+2018-03-24T17:11:07.6545338+07:00 0HLCHDSH7763R:00000001 [INF] Request finished in 7303.9738ms 200 image/png (791a596a)
+2018-03-24T17:11:07.7255687+07:00 0HLCHDSH7763I:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-24T17:11:07.7525731+07:00 0HLCHDSH7763N:00000001 [INF] The file "/client-side/images/flag-german.jpg" was not modified (f1f8d725)
+2018-03-24T17:11:07.7742703+07:00 0HLCHDSH7763O:00000001 [INF] Sending file. Request path: '"/client-side/images/banner-left.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\banner-left.jpg"' (27b0a520)
+2018-03-24T17:11:07.7883262+07:00 0HLCHDSH7763T:00000001 [INF] Sending file. Request path: '"/client-side/images/slider/slide-3.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\slider\slide-3.jpg"' (27b0a520)
+2018-03-24T17:11:07.7938329+07:00 0HLCHDSH7763V:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/slider/slide-2.jpg   (ca22a1cb)
+2018-03-24T17:11:07.8216805+07:00 0HLCHDSH7763S:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/slider/slide-1.jpg   (ca22a1cb)
+2018-03-24T17:11:07.8414573+07:00 0HLCHDSH77640:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/brand4.png   (ca22a1cb)
+2018-03-24T17:11:07.8800926+07:00 0HLCHDSH7763A:00000002 [INF] Sending file. Request path: '"/client-side/images/select-arrow.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\select-arrow.png"' (27b0a520)
+2018-03-24T17:11:08.0745274+07:00 0HLCHDSH77641:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/sub1.jpg   (ca22a1cb)
+2018-03-24T17:11:08.1137396+07:00 0HLCHDSH77635:00000003 [INF] Sending file. Request path: '"/client-side/images/bg_text_des.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\bg_text_des.png"' (27b0a520)
+2018-03-24T17:11:08.1423022+07:00 0HLCHDSH7763I:00000002 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:11:08.1661979+07:00 0HLCHDSH7763N:00000001 [INF] Request finished in 7923.548ms 304 image/jpeg (791a596a)
+2018-03-24T17:11:08.1782631+07:00 0HLCHDSH7763V:00000001 [INF] Sending file. Request path: '"/client-side/images/slider/slide-2.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\slider\slide-2.jpg"' (27b0a520)
+2018-03-24T17:11:08.2050352+07:00 0HLCHDSH77643:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/images/banner-mob.jpg   (ca22a1cb)
+2018-03-24T17:11:08.2266779+07:00 0HLCHDSH7763S:00000001 [INF] Sending file. Request path: '"/client-side/images/slider/slide-1.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\slider\slide-1.jpg"' (27b0a520)
+2018-03-24T17:11:08.2516323+07:00 0HLCHDSH77640:00000001 [INF] Sending file. Request path: '"/client-side/images/brand4.png"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\brand4.png"' (27b0a520)
+2018-03-24T17:11:08.2670061+07:00 0HLCHDSH7763O:00000001 [INF] Request finished in 8048.7261ms 200 image/jpeg (791a596a)
+2018-03-24T17:11:08.3735704+07:00 0HLCHDSH7763T:00000001 [INF] Request finished in 7995.8897ms 200 image/jpeg (791a596a)
+2018-03-24T17:11:08.5190791+07:00 0HLCHDSH77641:00000001 [INF] Sending file. Request path: '"/client-side/images/sub1.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\sub1.jpg"' (27b0a520)
+2018-03-24T17:11:08.5214961+07:00 0HLCHDSH7763D:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2018-03-24T17:11:08.5648841+07:00 0HLCHDSH7763I:00000002 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T17:11:08.5701029+07:00 0HLCHDSH7763A:00000002 [INF] Request finished in 1104.2093ms 200 image/png (791a596a)
+2018-03-24T17:11:08.6180688+07:00 0HLCHDSH77643:00000001 [INF] Sending file. Request path: '"/client-side/images/banner-mob.jpg"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\client-side\images\banner-mob.jpg"' (27b0a520)
+2018-03-24T17:11:08.6391209+07:00 0HLCHDSH77635:00000003 [INF] Request finished in 1156.0256ms 200 image/png (791a596a)
+2018-03-24T17:11:08.6988574+07:00 0HLCHDSH7763S:00000001 [INF] Request finished in 8243.1548ms 200 image/jpeg (791a596a)
+2018-03-24T17:11:08.7251779+07:00 0HLCHDSH77640:00000001 [INF] Request finished in 8242.45ms 200 image/png (791a596a)
+2018-03-24T17:11:08.7827866+07:00 0HLCHDSH7763V:00000001 [INF] Request finished in 8243.0458ms 200 image/jpeg (791a596a)
+2018-03-24T17:11:08.7899752+07:00 0HLCHDSH7763D:00000002 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Error (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:11:08.8129836+07:00 0HLCHDSH77641:00000001 [INF] Request finished in 8511.3467ms 200 image/jpeg (791a596a)
+2018-03-24T17:11:08.8191892+07:00 0HLCHDSH77643:00000001 [INF] Request finished in 8561.371ms 200 image/jpeg (791a596a)
+2018-03-24T17:11:08.8301000+07:00 0HLCHDSH7763D:00000002 [INF] Executing ViewResult, running view at path "/Views/Home/Error.cshtml". (9707eebe)
+2018-03-24T17:11:08.8339720+07:00 0HLCHDSH7763I:00000002 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 914.507ms (afa2e885)
+2018-03-24T17:11:08.8586574+07:00 0HLCHDSH7763I:00000002 [INF] Request finished in 1642.1753ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:11:08.9091435+07:00 0HLCHDSH7763D:00000002 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Error (TemplateDotNetCore)" in 315.263ms (afa2e885)
+2018-03-24T17:11:08.9173691+07:00 0HLCHDSH7763D:00000002 [INF] Request finished in 862.1191ms 404 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:14:23.8326074+07:00 0HLCHDSH7765C:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-24T17:14:23.8384069+07:00 0HLCHDSH7765C:00000001 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:14:23.8638556+07:00 0HLCHDSH7765C:00000001 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T17:14:24.0661782+07:00 0HLCHDSH7765C:00000001 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 207.252ms (afa2e885)
+2018-03-24T17:14:24.0853366+07:00 0HLCHDSH7765C:00000001 [INF] Request finished in 238.8672ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:14:24.2626490+07:00 0HLCHDSH7765C:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2018-03-24T17:14:24.2693646+07:00 0HLCHDSH7765C:00000002 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Error (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:14:24.2765002+07:00 0HLCHDSH7765C:00000002 [INF] Executing ViewResult, running view at path "/Views/Home/Error.cshtml". (9707eebe)
+2018-03-24T17:14:24.2897771+07:00 0HLCHDSH7765C:00000002 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Error (TemplateDotNetCore)" in 17.784ms (afa2e885)
+2018-03-24T17:14:24.3035343+07:00 0HLCHDSH7765C:00000002 [INF] Request finished in 33.5375ms 404 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:14:24.4747571+07:00 0HLCHDSH7765C:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-24T17:14:24.5010517+07:00 0HLCHDSH7765C:00000003 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:14:24.5054447+07:00 0HLCHDSH7765C:00000003 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T17:14:24.5237894+07:00 0HLCHDSH7765C:00000003 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 37.1105ms (afa2e885)
+2018-03-24T17:14:24.5299939+07:00 0HLCHDSH7765C:00000003 [INF] Request finished in 54.9076ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:15:35.0629517+07:00  [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-24T17:15:35.3211086+07:00  [INF] Executed DbCommand ("11"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T17:15:35.3649904+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T17:15:35.4016845+07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Functions] AS [f]" (0723d8ff)
+2018-03-24T17:15:35.4312695+07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [ProductCategories] AS [p]" (0723d8ff)
+2018-03-24T17:15:35.4763057+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeTitle')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T17:15:35.5039692+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaKeyword')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T17:15:35.5319569+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaDescription')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T17:15:35.9782153+07:00 0HLCHE0NKGLAS:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-24T17:15:36.1369633+07:00 0HLCHE0NKGLAS:00000001 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:15:38.7105923+07:00 0HLCHE0NKGLAS:00000001 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T17:15:41.0666530+07:00 0HLCHE0NKGLAS:00000001 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-24T17:15:41.1769009+07:00 0HLCHE0NKGLAS:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Name], [x].[Discription], [x].[ParentId], [x].[HomeOrder], [x].[Image], [x].[SeoPageTitle], [x].[SeoAlias], [x].[SeoKeywords], [x].[SeoDescription], [x].[Status], [x].[LanguageId], [x].[Tags], [x].[DateCreated], [x].[DateModified], [x].[SortOrder], [x].[HomeFlag], [x].[HotFlag], [x].[NewFlag]
+FROM [ProductCategories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2018-03-24T17:15:41.2453835+07:00 0HLCHE0NKGLAS:00000001 [INF] Executed DbCommand ("25"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:15:41.2584384+07:00 0HLCHE0NKGLAS:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:15:41.2842178+07:00 0HLCHE0NKGLAS:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:15:41.3096961+07:00 0HLCHE0NKGLAS:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:15:41.3351317+07:00 0HLCHE0NKGLAS:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:15:41.3604556+07:00 0HLCHE0NKGLAS:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:15:41.3850782+07:00 0HLCHE0NKGLAS:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:15:42.4414965+07:00 0HLCHE0NKGLAS:00000001 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 6324.1586ms (afa2e885)
+2018-03-24T17:15:42.4607312+07:00 0HLCHE0NKGLAS:00000001 [INF] Request finished in 6516.9771ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:15:43.2893797+07:00 0HLCHE0NKGLAS:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-24T17:15:43.3147189+07:00 0HLCHE0NKGLAS:00000002 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:15:43.3386718+07:00 0HLCHE0NKGLAS:00000002 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T17:15:43.3513826+07:00 0HLCHE0NKGLAS:00000002 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 55.9972ms (afa2e885)
+2018-03-24T17:15:43.3571366+07:00 0HLCHE0NKGLAS:00000002 [INF] Request finished in 85.9732ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:17:34.8589921+07:00 0HLCHE0NKGLAU:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-24T17:17:34.8846308+07:00 0HLCHE0NKGLAU:00000001 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:17:34.9098226+07:00 0HLCHE0NKGLAU:00000001 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T17:17:35.2058391+07:00 0HLCHE0NKGLAU:00000001 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 340.957ms (afa2e885)
+2018-03-24T17:17:35.2127254+07:00 0HLCHE0NKGLAU:00000001 [INF] Request finished in 353.7914ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:17:35.5946820+07:00 0HLCHE0NKGLAU:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-24T17:17:35.6188401+07:00 0HLCHE0NKGLAU:00000002 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:17:35.6434781+07:00 0HLCHE0NKGLAU:00000002 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T17:17:35.6539736+07:00 0HLCHE0NKGLAU:00000002 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 54.9724ms (afa2e885)
+2018-03-24T17:17:35.6782186+07:00 0HLCHE0NKGLAU:00000002 [INF] Request finished in 83.4618ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:17:35.8210500+07:00 0HLCHE0NKGLAU:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/favicon.ico   (ca22a1cb)
+2018-03-24T17:17:35.8304576+07:00 0HLCHE0NKGLAU:00000003 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\favicon.ico"' (27b0a520)
+2018-03-24T17:17:35.8436782+07:00 0HLCHE0NKGLAU:00000003 [INF] Request finished in 22.8104ms 200 image/x-icon (791a596a)
+2018-03-24T17:17:57.2249032+07:00 0HLCHE0NKGLAU:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44357/dien-thoai-c.5.html   (ca22a1cb)
+2018-03-24T17:17:57.2542935+07:00 0HLCHE0NKGLAU:00000004 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Error (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:17:57.4254511+07:00 0HLCHE0NKGLAU:00000004 [INF] Executing ViewResult, running view at path "/Views/Home/Error.cshtml". (9707eebe)
+2018-03-24T17:17:57.4381136+07:00 0HLCHE0NKGLAU:00000004 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Error (TemplateDotNetCore)" in 202.9929ms (afa2e885)
+2018-03-24T17:17:57.4453318+07:00 0HLCHE0NKGLAU:00000004 [INF] Request finished in 222.9522ms 404 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:18:07.3714920+07:00 0HLCHE0NKGLAU:00000005 [INF] Request starting HTTP/1.1 GET http://localhost:44357/may-tinh-bang-c.6.html   (ca22a1cb)
+2018-03-24T17:18:07.3965030+07:00 0HLCHE0NKGLAU:00000005 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Error (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:18:07.4222048+07:00 0HLCHE0NKGLAU:00000005 [INF] Executing ViewResult, running view at path "/Views/Home/Error.cshtml". (9707eebe)
+2018-03-24T17:18:07.4289924+07:00 0HLCHE0NKGLAU:00000005 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Error (TemplateDotNetCore)" in 51.7487ms (afa2e885)
+2018-03-24T17:18:07.4337588+07:00 0HLCHE0NKGLAU:00000005 [INF] Request finished in 63.7672ms 404 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:22:25.5518739+07:00 0HLCHE0NKGLAV:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/may-tinh-bang-c.6.html   (ca22a1cb)
+2018-03-24T17:22:25.5759427+07:00 0HLCHE0NKGLAV:00000001 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Error (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:22:25.7297508+07:00 0HLCHE0NKGLAV:00000001 [INF] Executing ViewResult, running view at path "/Views/Home/Error.cshtml". (9707eebe)
+2018-03-24T17:22:25.7428131+07:00 0HLCHE0NKGLAV:00000001 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Error (TemplateDotNetCore)" in 183.2449ms (afa2e885)
+2018-03-24T17:22:25.7693992+07:00 0HLCHE0NKGLAV:00000001 [INF] Request finished in 216.8315ms 404 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:22:26.0201076+07:00 0HLCHE0NKGLAV:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/favicon.ico   (ca22a1cb)
+2018-03-24T17:22:26.0243146+07:00 0HLCHE0NKGLAV:00000002 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"F:\TemplateDotNetCore\TemplateDotNetCore\wwwroot\favicon.ico"' (27b0a520)
+2018-03-24T17:22:26.0492581+07:00 0HLCHE0NKGLAV:00000002 [INF] Request finished in 10.9171ms 200 image/x-icon (791a596a)
+2018-03-24T17:22:35.5060441+07:00 0HLCHE0NKGLAV:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/trang-chu.html   (ca22a1cb)
+2018-03-24T17:22:35.5319364+07:00 0HLCHE0NKGLAV:00000003 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:22:35.5376691+07:00 0HLCHE0NKGLAV:00000003 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T17:22:35.5500448+07:00 0HLCHE0NKGLAV:00000003 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 36.1497ms (afa2e885)
+2018-03-24T17:22:35.5549218+07:00 0HLCHE0NKGLAV:00000003 [INF] Request finished in 50.1641ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:22:35.9730317+07:00 0HLCHE0NKGLAV:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44357/trang-chu.html   (ca22a1cb)
+2018-03-24T17:22:35.9780613+07:00 0HLCHE0NKGLAV:00000004 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:22:35.9824761+07:00 0HLCHE0NKGLAV:00000004 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T17:22:36.0132063+07:00 0HLCHE0NKGLAV:00000004 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 14.5426ms (afa2e885)
+2018-03-24T17:22:36.0207010+07:00 0HLCHE0NKGLAV:00000004 [INF] Request finished in 64.1508ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:29:35.6236377+07:00  [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-24T17:29:35.8428095+07:00  [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T17:29:35.8602981+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T17:29:35.8983947+07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Functions] AS [f]" (0723d8ff)
+2018-03-24T17:29:35.9277900+07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [ProductCategories] AS [p]" (0723d8ff)
+2018-03-24T17:29:35.9685647+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeTitle')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T17:29:35.9960318+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaKeyword')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T17:29:36.0239393+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaDescription')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T17:29:36.2419552+07:00 0HLCHE8I21C3C:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-24T17:29:36.4164006+07:00 0HLCHE8I21C3C:00000001 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:29:38.8771151+07:00 0HLCHE8I21C3C:00000001 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T17:29:41.0681747+07:00 0HLCHE8I21C3C:00000001 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-24T17:29:41.1648902+07:00 0HLCHE8I21C3C:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Name], [x].[Discription], [x].[ParentId], [x].[HomeOrder], [x].[Image], [x].[SeoPageTitle], [x].[SeoAlias], [x].[SeoKeywords], [x].[SeoDescription], [x].[Status], [x].[LanguageId], [x].[Tags], [x].[DateCreated], [x].[DateModified], [x].[SortOrder], [x].[HomeFlag], [x].[HotFlag], [x].[NewFlag]
+FROM [ProductCategories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2018-03-24T17:29:41.2309248+07:00 0HLCHE8I21C3C:00000001 [INF] Executed DbCommand ("24"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:29:41.2649217+07:00 0HLCHE8I21C3C:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:29:41.2895156+07:00 0HLCHE8I21C3C:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:29:41.3163236+07:00 0HLCHE8I21C3C:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:29:41.3421409+07:00 0HLCHE8I21C3C:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:29:41.3677954+07:00 0HLCHE8I21C3C:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:29:41.3736593+07:00 0HLCHE8I21C3C:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:29:42.4137648+07:00 0HLCHE8I21C3C:00000001 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 6000.1449ms (afa2e885)
+2018-03-24T17:29:42.4477756+07:00 0HLCHE8I21C3C:00000001 [INF] Request finished in 6220.8504ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:29:43.1216661+07:00 0HLCHE8I21C3C:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-24T17:29:43.1469275+07:00 0HLCHE8I21C3C:00000002 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:29:43.1711704+07:00 0HLCHE8I21C3C:00000002 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T17:29:43.2057826+07:00 0HLCHE8I21C3C:00000002 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 58.8147ms (afa2e885)
+2018-03-24T17:29:43.2113629+07:00 0HLCHE8I21C3C:00000002 [INF] Request finished in 109.0132ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:30:54.6348191+07:00  [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-24T17:30:54.8563364+07:00  [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T17:30:54.8958959+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T17:30:54.9323214+07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Functions] AS [f]" (0723d8ff)
+2018-03-24T17:30:54.9617389+07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [ProductCategories] AS [p]" (0723d8ff)
+2018-03-24T17:30:55.0058459+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeTitle')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T17:30:55.0344669+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaKeyword')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T17:30:55.0634174+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaDescription')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-24T17:30:55.4896324+07:00 0HLCHE99LOJUI:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-24T17:30:55.6471624+07:00 0HLCHE99LOJUI:00000001 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:30:58.3034976+07:00 0HLCHE99LOJUI:00000001 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T17:31:00.5089126+07:00 0HLCHE99LOJUI:00000001 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-24T17:31:00.5900053+07:00 0HLCHE99LOJUI:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Name], [x].[Discription], [x].[ParentId], [x].[HomeOrder], [x].[Image], [x].[SeoPageTitle], [x].[SeoAlias], [x].[SeoKeywords], [x].[SeoDescription], [x].[Status], [x].[LanguageId], [x].[Tags], [x].[DateCreated], [x].[DateModified], [x].[SortOrder], [x].[HomeFlag], [x].[HotFlag], [x].[NewFlag]
+FROM [ProductCategories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2018-03-24T17:31:00.6643326+07:00 0HLCHE99LOJUI:00000001 [INF] Executed DbCommand ("32"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:31:00.7002666+07:00 0HLCHE99LOJUI:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:31:00.7258452+07:00 0HLCHE99LOJUI:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:31:00.7517562+07:00 0HLCHE99LOJUI:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:31:00.7778022+07:00 0HLCHE99LOJUI:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:31:00.8039769+07:00 0HLCHE99LOJUI:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:31:00.8109945+07:00 0HLCHE99LOJUI:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-24T17:31:01.9723064+07:00 0HLCHE99LOJUI:00000001 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 6329.0187ms (afa2e885)
+2018-03-24T17:31:02.0106803+07:00 0HLCHE99LOJUI:00000001 [INF] Request finished in 6536.1254ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:31:02.7599327+07:00 0HLCHE99LOJUI:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-24T17:31:02.7716625+07:00 0HLCHE99LOJUI:00000002 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:31:02.7959698+07:00 0HLCHE99LOJUI:00000002 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-24T17:31:02.8086995+07:00 0HLCHE99LOJUI:00000002 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 37.7915ms (afa2e885)
+2018-03-24T17:31:02.8132747+07:00 0HLCHE99LOJUI:00000002 [INF] Request finished in 53.8978ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-24T17:31:04.5334266+07:00 0HLCHE99LOJUI:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/blog-review-cong-nghe.html   (ca22a1cb)
+2018-03-24T17:31:04.5609461+07:00 0HLCHE99LOJUI:00000003 [INF] Executing action method "TemplateDotNetCore.Controllers.BlogController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-24T17:31:04.8980822+07:00 0HLCHE99LOJUI:00000003 [INF] Executing ViewResult, running view at path "/Views/Blog/Index.cshtml". (9707eebe)
+2018-03-24T17:31:04.9399192+07:00 0HLCHE99LOJUI:00000003 [INF] Executed action "TemplateDotNetCore.Controllers.BlogController.Index (TemplateDotNetCore)" in 397.6701ms (afa2e885)
+2018-03-24T17:31:04.9486248+07:00 0HLCHE99LOJUI:00000003 [INF] Request finished in 430.2773ms 200 text/html; charset=utf-8 (791a596a)

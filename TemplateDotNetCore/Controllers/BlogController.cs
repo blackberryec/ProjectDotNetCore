@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TemplateDotNetCore.Controllers
 {
-    public class ShoppingCartController : Controller
+    public class BlogController : Controller
     {
-        [Route("gio-hang.html")]
+        [Route("blog-review-cong-nghe.html")]
         public IActionResult Index()
         {
             return View();

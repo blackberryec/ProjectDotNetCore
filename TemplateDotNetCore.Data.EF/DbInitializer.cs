@@ -151,8 +151,13 @@ namespace TemplateDotNetCore.Data.EF
                             new Product(){Name = "Máy tính để bàn - PC 3",DateCreated=DateTime.Now,Image="/client-side/images/products/iphone-x.jpg",SeoAlias = "may-tinh-de-ban-pc-3",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
                             new Product(){Name = "Máy tính để bàn - PC 4",DateCreated=DateTime.Now,Image="/client-side/images/products/iphone-x.jpg",SeoAlias = "may-tinh-de-ban-pc-4",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
                             new Product(){Name = "Máy tính để bàn - PC 5",DateCreated=DateTime.Now,Image="/client-side/images/products/iphone-x.jpg",SeoAlias = "may-tinh-de-ban-pc-5",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
-                        }}
-                };
+                        }},
+                    new ProductCategory() { Name="Các loại phụ kiện",SeoAlias="cac-loai-phu-kien",ParentId = null,Status=Status.Active,SortOrder=1},
+                    new ProductCategory() { Name="Photo & Camera",SeoAlias="photo-and-camera",ParentId = null,Status=Status.Active,SortOrder=1},
+                    new ProductCategory() { Name="CD & License Key",SeoAlias="photo-and-camera",ParentId = null,Status=Status.Active,SortOrder=1},
+
+                    };
+
                 _context.ProductCategories.AddRange(listProductCategory);
             }
 
@@ -186,6 +191,8 @@ namespace TemplateDotNetCore.Data.EF
                     Status = Status.Active
                 });
             }
+
+
 
             //save seed data to db
             await _context.SaveChangesAsync();
