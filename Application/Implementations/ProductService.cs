@@ -16,12 +16,14 @@ namespace TemplateDotNetCore.Application.Implementations
 {
     public class ProductService : IProductService
     {
-        IProductRepository _productRepository;
-        IUnitOfWork _unitOfWork;
-        public ProductService(IProductRepository productRepository, IUnitOfWork unitOfWork)
+        private readonly IProductRepository _productRepository;
+        private readonly IProductImageRepository _productImageRepository;
+        private readonly IUnitOfWork _unitOfWork;
+        public ProductService(IProductRepository productRepository, IUnitOfWork unitOfWork, IProductImageRepository productImageRepository)
         {
             _productRepository = productRepository;
             _unitOfWork = unitOfWork;
+            _productImageRepository = productImageRepository;
         }
 
         public ProductViewModel Add(ProductViewModel productViewModel)
@@ -30,16 +32,33 @@ namespace TemplateDotNetCore.Application.Implementations
             return new ProductViewModel();
         }
 
+        //public void Update(ProductViewModel productCategoryVm)
+        //{
+        //    var product = Mapper.Map<ProductViewModel, Product>(productCategoryVm);
+        //    _productRepository.Update(product);
+        //}
+
+        public List<ProductImageViewModel> GetImages(int productId)
+        {
+            return _productImageRepository.FindAll(x => x.ProductId == productId)
+                .ProjectTo<ProductImageViewModel>().ToList();
+        }
+
+        public List<ProductViewModel> GetHotProducts(int top)
+        {
+            return _productRepository.FindAll(x => x.Status == Status.Active && x.HotFlag == true)
+                .OrderByDescending(x => x.DateCreated)
+                .Take(top)
+                .ProjectTo<ProductViewModel>()
+                .ToList();
+        }
+
         public void Delete(int id)
         {
             _productRepository.Remove(id);
         }
 
-        public void Dispose()
-        {
-            GC.SuppressFinalize(this);
-        }
-
+        
         public IQueryable<ProductViewModel> GetAll()
         {
             return _productRepository.FindAll(x => x.ProductCategory).ProjectTo<ProductViewModel>();
@@ -76,10 +95,9 @@ namespace TemplateDotNetCore.Application.Implementations
             _unitOfWork.Commit();
         }
 
-        public void Update(ProductViewModel productCategoryVm)
+        public void Dispose()
         {
-            var product = Mapper.Map<ProductViewModel, Product>(productCategoryVm);
-            _productRepository.Update(product);
+            GC.SuppressFinalize(this);
         }
     }
 }

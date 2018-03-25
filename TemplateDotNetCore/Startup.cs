@@ -87,6 +87,8 @@ namespace TemplateDotNetCore
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<ISlideRepository, SlideRepository>();
             services.AddTransient<ISlideService, SlideService>();
+            services.AddTransient<IProductImageRepository, ProductImageRepository>();
+            services.AddTransient<IProductService, ProductService>();
 
         }
 

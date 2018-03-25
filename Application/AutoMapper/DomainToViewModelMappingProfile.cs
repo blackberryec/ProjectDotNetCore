@@ -12,6 +12,7 @@ namespace TemplateDotNetCore.Application.AutoMapper
             CreateMap<Product, ProductViewModel>();
             CreateMap<Function, FunctionViewModel>();
             CreateMap<Slide, SlideViewModel>();
+            CreateMap<ProductImage, ProductImageViewModel>();
         }
     }
 }

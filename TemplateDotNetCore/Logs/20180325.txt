@@ -1,0 +1,456 @@
+2018-03-25T22:59:38.0181197+07:00  [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-25T22:59:38.3115616+07:00  [INF] Executed DbCommand ("7"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-25T22:59:38.3539268+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-25T22:59:38.3925736+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Functions] AS [f]" (0723d8ff)
+2018-03-25T22:59:38.4248344+07:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [ProductCategories] AS [p]" (0723d8ff)
+2018-03-25T22:59:38.4749049+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeTitle')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-25T22:59:38.4835053+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaKeyword')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-25T22:59:38.4926494+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaDescription')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-25T22:59:38.5008067+07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Slides] AS [s]" (0723d8ff)
+2018-03-25T22:59:38.9264496+07:00 0HLCID5KTIBPO:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-25T22:59:39.1117425+07:00 0HLCID5KTIBPO:00000001 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-25T22:59:42.3636851+07:00 0HLCID5KTIBPO:00000001 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-25T22:59:50.5523848+07:00 0HLCID5KTIBPO:00000001 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-25T22:59:50.6337425+07:00 0HLCID5KTIBPO:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Name], [x].[Description], [x].[Image], [x].[ContentUrl], [x].[Url], [x].[DisplayOrder], [x].[Status], [x].[Content], [x].[GroupAlias]
+FROM [Slides] AS [x]
+ORDER BY [x].[DisplayOrder]" (0723d8ff)
+2018-03-25T22:59:51.1072712+07:00 0HLCID5KTIBPO:00000001 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 12006.4995ms (afa2e885)
+2018-03-25T22:59:51.2514237+07:00 0HLCID5KTIBPO:00000001 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.InvalidOperationException: Unable to resolve service for type 'TemplateDotNetCore.Data.IRepositories.IProductImageRepository' while attempting to activate 'TemplateDotNetCore.Application.Implementations.ProductService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, ISet`1 callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(Type serviceType, Type implementationType, ISet`1 callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, ISet`1 callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, ISet`1 callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, ISet`1 callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(Type serviceType, ServiceProvider serviceProvider)
+   at System.Collections.Concurrent.ConcurrentDictionaryExtensions.GetOrAdd[TKey,TValue,TArg](ConcurrentDictionary`2 dictionary, TKey key, Func`3 valueFactory, TArg arg)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Internal.TypeActivatorCache.CreateInstance[TInstance](IServiceProvider serviceProvider, Type implementationType)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentActivator.Create(ViewComponentContext context)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentFactory.CreateViewComponent(ViewComponentContext context)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentInvoker.<InvokeAsyncCore>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentInvoker.<InvokeAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentHelper.<InvokeCoreAsync>d__12.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at AspNetCore._Views_Home_Index_cshtml.<ExecuteAsync>d__8.MoveNext() in F:\TemplateDotNetCore\TemplateDotNetCore\Views\Home\Index.cshtml:line 12
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.<RenderPageCoreAsync>d__16.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.<RenderPageAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.<RenderAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.<ExecuteAsync>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.<ExecuteAsync>d__21.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.ViewResult.<ExecuteResultAsync>d__26.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeResultAsync>d__19.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResultFilterAsync>d__24.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeFilterPipelineAsync>d__17.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.<InvokeAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2018-03-25T22:59:51.3812757+07:00 0HLCID5KTIBPO:00000001 [INF] Request finished in 12480.1467ms 500 text/html; charset=utf-8 (791a596a)
+2018-03-25T23:01:09.6430786+07:00  [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-25T23:01:09.8589778+07:00  [INF] Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-25T23:01:09.8994227+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-25T23:01:09.9391405+07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Functions] AS [f]" (0723d8ff)
+2018-03-25T23:01:09.9689890+07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [ProductCategories] AS [p]" (0723d8ff)
+2018-03-25T23:01:10.0145155+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeTitle')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-25T23:01:10.0221932+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaKeyword')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-25T23:01:10.0509078+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaDescription')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-25T23:01:10.0795596+07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Slides] AS [s]" (0723d8ff)
+2018-03-25T23:01:10.3306908+07:00 0HLCID6G5CJQ3:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-25T23:01:10.5005317+07:00 0HLCID6G5CJQ3:00000001 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-25T23:01:13.1655697+07:00 0HLCID6G5CJQ3:00000001 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-25T23:01:13.2311503+07:00 0HLCID6G5CJQ3:00000001 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-25T23:01:13.3108689+07:00 0HLCID6G5CJQ3:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Name], [x].[Description], [x].[Image], [x].[ContentUrl], [x].[Url], [x].[DisplayOrder], [x].[Status], [x].[Content], [x].[GroupAlias]
+FROM [Slides] AS [x]
+ORDER BY [x].[DisplayOrder]" (0723d8ff)
+2018-03-25T23:01:13.8763329+07:00 0HLCID6G5CJQ3:00000001 [INF] Executed DbCommand ("70"ms) [Parameters=["@__p_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id] AS [Id1], [x].[Status], [x].[DateCreated], [x].[Sold], [x].[DateModified], [x].[Color], [x].[Image], [x].[Size], [x].[SeoPageTitle], [x].[SeoAlias], [x].[SeoKeywords], [x].[SeoDescription], [x].[Name], [x].[CategoryId] AS [Id0], [x].[Price], [x].[Description], [x].[Content], [x].[PromotionPrice], [x].[Unit], [x].[HomeFlag], [x].[HotFlag], [x].[NewFlag], [x].[Tags], [x].[LanguageId], [x].[PurchaseTime], [x].[ErrorTime], [x].[Warranty], [x].[Quantity], [x].[Star], CASE
+    WHEN [x].[CategoryId] IS NOT NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, [x.ProductCategory].[Name] AS [Name0], [x.ProductCategory].[Discription], [x.ProductCategory].[ParentId], [x.ProductCategory].[HomeOrder], [x.ProductCategory].[Image] AS [Image0], [x.ProductCategory].[SeoPageTitle] AS [SeoPageTitle0], [x.ProductCategory].[SeoAlias] AS [SeoAlias0], [x.ProductCategory].[SeoKeywords] AS [SeoKeywords0], [x.ProductCategory].[SeoDescription] AS [SeoDescription0], [x.ProductCategory].[Status] AS [Status0], [x.ProductCategory].[LanguageId] AS [LanguageId0], [x.ProductCategory].[Tags] AS [Tags0], [x.ProductCategory].[DateCreated] AS [DateCreated0], [x.ProductCategory].[DateModified] AS [DateModified0], [x.ProductCategory].[SortOrder], [x.ProductCategory].[HomeFlag] AS [HomeFlag0], [x.ProductCategory].[HotFlag] AS [HotFlag0], [x.ProductCategory].[NewFlag] AS [NewFlag0], [x.ProductCategory].[Id]
+FROM [Products] AS [x]
+INNER JOIN [ProductCategories] AS [x.ProductCategory] ON [x].[CategoryId] = [x.ProductCategory].[Id]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2018-03-25T23:01:16.1864823+07:00 0HLCID6G5CJQ3:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Name], [x].[Discription], [x].[ParentId], [x].[HomeOrder], [x].[Image], [x].[SeoPageTitle], [x].[SeoAlias], [x].[SeoKeywords], [x].[SeoDescription], [x].[Status], [x].[LanguageId], [x].[Tags], [x].[DateCreated], [x].[DateModified], [x].[SortOrder], [x].[HomeFlag], [x].[HotFlag], [x].[NewFlag]
+FROM [ProductCategories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2018-03-25T23:01:16.2260418+07:00 0HLCID6G5CJQ3:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-25T23:01:16.2546565+07:00 0HLCID6G5CJQ3:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-25T23:01:16.2800475+07:00 0HLCID6G5CJQ3:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-25T23:01:16.3052243+07:00 0HLCID6G5CJQ3:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-25T23:01:16.3373824+07:00 0HLCID6G5CJQ3:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-25T23:01:16.3622301+07:00 0HLCID6G5CJQ3:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-25T23:01:16.3887163+07:00 0HLCID6G5CJQ3:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@_outer_Id='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [dto].[Id], [dto].[Status], [dto].[DateCreated], [dto].[Sold], [dto].[DateModified], [dto].[Color], [dto].[Image], [dto].[Size], [dto].[SeoPageTitle], [dto].[SeoAlias], [dto].[SeoKeywords], [dto].[SeoDescription], [dto].[Name], [dto].[CategoryId], [dto].[Price], [dto].[Description], [dto].[Content], [dto].[PromotionPrice], [dto].[Unit], [dto].[HomeFlag], [dto].[HotFlag], [dto].[NewFlag], [dto].[Tags], [dto].[LanguageId], [dto].[PurchaseTime], [dto].[ErrorTime], [dto].[Warranty], [dto].[Quantity], [dto].[Star]
+FROM [Products] AS [dto]
+WHERE @_outer_Id = [dto].[CategoryId]" (0723d8ff)
+2018-03-25T23:01:17.6596815+07:00 0HLCID6G5CJQ4:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/style.css   (ca22a1cb)
+2018-03-25T23:01:17.6789269+07:00 0HLCID6G5CJQ4:00000001 [INF] The file "/client-side/style.css" was not modified (f1f8d725)
+2018-03-25T23:01:17.6897240+07:00 0HLCID6G5CJQ3:00000001 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 7206.4026ms (afa2e885)
+2018-03-25T23:01:17.8111544+07:00 0HLCID6G5CJQ3:00000001 [INF] Request finished in 7428.0069ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-25T23:01:17.8515930+07:00 0HLCID6G5CJQ8:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/bootstrap.min.js   (ca22a1cb)
+2018-03-25T23:01:17.8781679+07:00 0HLCID6G5CJQB:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/revolution-slider.js   (ca22a1cb)
+2018-03-25T23:01:17.9089373+07:00 0HLCID6G5CJQ4:00000001 [INF] Request finished in 44.8201ms 304 text/css (791a596a)
+2018-03-25T23:01:17.9795905+07:00 0HLCID6G5CJQ7:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/jquery.min.js   (ca22a1cb)
+2018-03-25T23:01:18.0189505+07:00 0HLCID6G5CJQ9:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/jquery.flexslider.js   (ca22a1cb)
+2018-03-25T23:01:18.0824274+07:00 0HLCID6G5CJQ6:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/owl.carousel.min.js   (ca22a1cb)
+2018-03-25T23:01:18.1169747+07:00 0HLCID6G5CJQ5:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/countdown.js   (ca22a1cb)
+2018-03-25T23:01:18.1421924+07:00 0HLCID6G5CJQ8:00000001 [INF] The file "/client-side/js/bootstrap.min.js" was not modified (f1f8d725)
+2018-03-25T23:01:18.2161143+07:00 0HLCID6G5CJQB:00000001 [INF] The file "/client-side/js/revolution-slider.js" was not modified (f1f8d725)
+2018-03-25T23:01:18.2803892+07:00 0HLCID6G5CJQ9:00000001 [INF] The file "/client-side/js/jquery.flexslider.js" was not modified (f1f8d725)
+2018-03-25T23:01:18.3534321+07:00 0HLCID6G5CJQ3:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/pe-icon-7-stroke.min.css   (ca22a1cb)
+2018-03-25T23:01:18.3665431+07:00 0HLCID6G5CJQ7:00000001 [INF] The file "/client-side/js/jquery.min.js" was not modified (f1f8d725)
+2018-03-25T23:01:18.4081036+07:00 0HLCID6G5CJQ4:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/main.js   (ca22a1cb)
+2018-03-25T23:01:18.4198384+07:00 0HLCID6G5CJQ4:00000002 [INF] The file "/client-side/js/main.js" was not modified (f1f8d725)
+2018-03-25T23:01:18.4368881+07:00 0HLCID6G5CJQ4:00000002 [INF] Request finished in 221.522ms 304 application/javascript (791a596a)
+2018-03-25T23:01:18.4589799+07:00 0HLCID6G5CJQB:00000001 [INF] Request finished in 507.786ms 304 application/javascript (791a596a)
+2018-03-25T23:01:18.4851433+07:00 0HLCID6G5CJQ5:00000001 [INF] The file "/client-side/js/countdown.js" was not modified (f1f8d725)
+2018-03-25T23:01:18.5206929+07:00 0HLCID6G5CJQ6:00000001 [INF] The file "/client-side/js/owl.carousel.min.js" was not modified (f1f8d725)
+2018-03-25T23:01:18.6297753+07:00 0HLCID6G5CJQ8:00000001 [INF] Request finished in 438.8671ms 304 application/javascript (791a596a)
+2018-03-25T23:01:18.6716930+07:00 0HLCID6G5CJQ3:00000002 [INF] The file "/client-side/css/pe-icon-7-stroke.min.css" was not modified (f1f8d725)
+2018-03-25T23:01:18.6830111+07:00 0HLCID6G5CJQ5:00000001 [INF] Request finished in 759.9143ms 304 application/javascript (791a596a)
+2018-03-25T23:01:18.6957103+07:00 0HLCID6G5CJQ9:00000001 [INF] Request finished in 576.4446ms 304 application/javascript (791a596a)
+2018-03-25T23:01:18.7116566+07:00 0HLCID6G5CJQA:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/cloud-zoom.js   (ca22a1cb)
+2018-03-25T23:01:18.7472927+07:00 0HLCID6G5CJQ7:00000001 [INF] Request finished in 662.9698ms 304 application/javascript (791a596a)
+2018-03-25T23:01:18.8219183+07:00 0HLCID6G5CJQ3:00000002 [INF] Request finished in 629.7854ms 304 text/css (791a596a)
+2018-03-25T23:01:18.8488346+07:00 0HLCID6G5CJQA:00000001 [INF] The file "/client-side/js/cloud-zoom.js" was not modified (f1f8d725)
+2018-03-25T23:01:18.8927284+07:00 0HLCID6G5CJQ6:00000001 [INF] Request finished in 804.2596ms 304 application/javascript (791a596a)
+2018-03-25T23:01:18.9975302+07:00 0HLCID6G5CJQF:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/simple-line-icons.css   (ca22a1cb)
+2018-03-25T23:01:19.0528321+07:00 0HLCID6G5CJQC:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/jquery-ui.js   (ca22a1cb)
+2018-03-25T23:01:19.0785238+07:00 0HLCID6G5CJQF:00000001 [INF] The file "/client-side/css/simple-line-icons.css" was not modified (f1f8d725)
+2018-03-25T23:01:19.0913456+07:00 0HLCID6G5CJQA:00000001 [INF] Request finished in 280.7007ms 304 application/javascript (791a596a)
+2018-03-25T23:01:19.1904049+07:00 0HLCID6G5CJQC:00000001 [INF] The file "/client-side/js/jquery-ui.js" was not modified (f1f8d725)
+2018-03-25T23:01:19.2327843+07:00 0HLCID6G5CJQG:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/font-awesome.min.css   (ca22a1cb)
+2018-03-25T23:01:19.2627533+07:00 0HLCID6G5CJQC:00000001 [INF] Request finished in 594.9342ms 304 application/javascript (791a596a)
+2018-03-25T23:01:19.2898920+07:00 0HLCID6G5CJQH:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/bootstrap.min.css   (ca22a1cb)
+2018-03-25T23:01:19.3500982+07:00 0HLCID6G5CJQE:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/js/mobile-menu.js   (ca22a1cb)
+2018-03-25T23:01:19.3721735+07:00 0HLCID6G5CJQL:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/owl.carousel.css   (ca22a1cb)
+2018-03-25T23:01:19.4024391+07:00 0HLCID6G5CJQF:00000001 [INF] Request finished in 132.0157ms 304 text/css (791a596a)
+2018-03-25T23:01:19.4302993+07:00 0HLCID6G5CJQD:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-app/controllers/home/index.js   (ca22a1cb)
+2018-03-25T23:01:19.5787606+07:00 0HLCID6G5CJQH:00000001 [INF] The file "/client-side/css/bootstrap.min.css" was not modified (f1f8d725)
+2018-03-25T23:01:19.6175818+07:00 0HLCID6G5CJQM:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/animate.css   (ca22a1cb)
+2018-03-25T23:01:19.6482721+07:00 0HLCID6G5CJQI:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/owl.transitions.css   (ca22a1cb)
+2018-03-25T23:01:19.7034665+07:00 0HLCID6G5CJQE:00000001 [INF] The file "/client-side/js/mobile-menu.js" was not modified (f1f8d725)
+2018-03-25T23:01:19.7565739+07:00 0HLCID6G5CJQD:00000001 [INF] The file "/client-app/controllers/home/index.js" was not modified (f1f8d725)
+2018-03-25T23:01:19.8095682+07:00 0HLCID6G5CJQG:00000001 [INF] The file "/client-side/css/font-awesome.min.css" was not modified (f1f8d725)
+2018-03-25T23:01:19.8565418+07:00 0HLCID6G5CJQJ:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/jquery-ui.css   (ca22a1cb)
+2018-03-25T23:01:19.8760618+07:00 0HLCID6G5CJQL:00000001 [INF] The file "/client-side/css/owl.carousel.css" was not modified (f1f8d725)
+2018-03-25T23:01:19.8941742+07:00 0HLCID6G5CJQI:00000001 [INF] The file "/client-side/css/owl.transitions.css" was not modified (f1f8d725)
+2018-03-25T23:01:19.9093714+07:00 0HLCID6G5CJQH:00000001 [INF] Request finished in 601.1707ms 304 text/css (791a596a)
+2018-03-25T23:01:19.9311951+07:00 0HLCID6G5CJQE:00000001 [INF] Request finished in 784.1968ms 304 application/javascript (791a596a)
+2018-03-25T23:01:19.9899032+07:00 0HLCID6G5CJQM:00000001 [INF] The file "/client-side/css/animate.css" was not modified (f1f8d725)
+2018-03-25T23:01:20.0255650+07:00 0HLCID6G5CJQL:00000001 [INF] Request finished in 587.0342ms 304 text/css (791a596a)
+2018-03-25T23:01:20.0768171+07:00 0HLCID6G5CJQD:00000001 [INF] Request finished in 888.0304ms 304 application/javascript (791a596a)
+2018-03-25T23:01:20.0995715+07:00 0HLCID6G5CJQG:00000001 [INF] Request finished in 863.6523ms 304 text/css (791a596a)
+2018-03-25T23:01:20.1230579+07:00 0HLCID6G5CJQO:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/shortcodes/shortcodes.css   (ca22a1cb)
+2018-03-25T23:01:20.1758749+07:00 0HLCID6G5CJQJ:00000001 [INF] The file "/client-side/css/jquery-ui.css" was not modified (f1f8d725)
+2018-03-25T23:01:20.2051391+07:00 0HLCID6G5CJQI:00000001 [INF] Request finished in 826.513ms 304 text/css (791a596a)
+2018-03-25T23:01:20.2248278+07:00 0HLCID6G5CJQQ:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/shortcode.css   (ca22a1cb)
+2018-03-25T23:01:20.2512961+07:00 0HLCID6G5CJQO:00000001 [INF] The file "/client-side/css/shortcodes/shortcodes.css" was not modified (f1f8d725)
+2018-03-25T23:01:20.3281672+07:00 0HLCID6G5CJQS:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/shortcodes/tooltip.css   (ca22a1cb)
+2018-03-25T23:01:20.3472150+07:00 0HLCID6G5CJQP:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/revolution-slider.css   (ca22a1cb)
+2018-03-25T23:01:20.3716824+07:00 0HLCID6G5CJQM:00000001 [INF] Request finished in 533.834ms 304 text/css (791a596a)
+2018-03-25T23:01:20.4711537+07:00 0HLCID6G5CJQO:00000001 [INF] Request finished in 175.4302ms 304 text/css (791a596a)
+2018-03-25T23:01:20.5034682+07:00 0HLCID6G5CJQQ:00000001 [INF] The file "/client-side/css/shortcode.css" was not modified (f1f8d725)
+2018-03-25T23:01:20.5485676+07:00 0HLCID6G5CJQQ:00000001 [INF] Request finished in 456.0918ms 304 text/css (791a596a)
+2018-03-25T23:01:20.6153204+07:00 0HLCID6G5CJQT:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/shortcodes/featured-box.css   (ca22a1cb)
+2018-03-25T23:01:20.6165349+07:00 0HLCID6G5CJQP:00000001 [INF] The file "/client-side/css/revolution-slider.css" was not modified (f1f8d725)
+2018-03-25T23:01:20.7030636+07:00 0HLCID6G5CJQK:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/flexslider.css   (ca22a1cb)
+2018-03-25T23:01:20.7284163+07:00 0HLCID6G5CJQJ:00000001 [INF] Request finished in 744.7724ms 304 text/css (791a596a)
+2018-03-25T23:01:20.7504658+07:00 0HLCID6G5CJQV:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/quick_view_popup.css   (ca22a1cb)
+2018-03-25T23:01:20.7944551+07:00 0HLCID6G5CJQT:00000001 [INF] The file "/client-side/css/shortcodes/featured-box.css" was not modified (f1f8d725)
+2018-03-25T23:01:20.8066625+07:00 0HLCID6G5CJQN:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/blog.css   (ca22a1cb)
+2018-03-25T23:01:20.8224374+07:00 0HLCID6G5CJQS:00000001 [INF] The file "/client-side/css/shortcodes/tooltip.css" was not modified (f1f8d725)
+2018-03-25T23:01:20.9320191+07:00 0HLCID6G5CJQP:00000001 [INF] Request finished in 663.2416ms 304 text/css (791a596a)
+2018-03-25T23:01:21.0129613+07:00 0HLCID6G5CJQV:00000001 [INF] The file "/client-side/css/quick_view_popup.css" was not modified (f1f8d725)
+2018-03-25T23:01:21.0484233+07:00 0HLCID6G5CJQU:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/style.css   (ca22a1cb)
+2018-03-25T23:01:21.0715098+07:00 0HLCID6G5CJQR:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/shortcodes/pricing-table.css   (ca22a1cb)
+2018-03-25T23:01:21.0946956+07:00 0HLCID6G5CJQK:00000001 [INF] The file "/client-side/css/flexslider.css" was not modified (f1f8d725)
+2018-03-25T23:01:21.1088874+07:00 0HLCID6G5CJQT:00000001 [INF] Request finished in 493.328ms 304 text/css (791a596a)
+2018-03-25T23:01:21.1335408+07:00 0HLCID6G5CJQS:00000001 [INF] Request finished in 712.4054ms 304 text/css (791a596a)
+2018-03-25T23:01:21.1595988+07:00 0HLCID6G5CJQN:00000001 [INF] The file "/client-side/css/blog.css" was not modified (f1f8d725)
+2018-03-25T23:01:21.1940437+07:00 0HLCID6G5CJQV:00000001 [INF] Request finished in 684.8886ms 304 text/css (791a596a)
+2018-03-25T23:01:21.2402209+07:00 0HLCID6G5CJR0:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/shortcodes/post.css   (ca22a1cb)
+2018-03-25T23:01:21.3468362+07:00 0HLCID6G5CJQN:00000001 [INF] Request finished in 635.2989ms 304 text/css (791a596a)
+2018-03-25T23:01:21.3606001+07:00 0HLCID6G5CJQK:00000001 [INF] Request finished in 698.1528ms 304 text/css (791a596a)
+2018-03-25T23:01:21.3692978+07:00 0HLCID6G5CJR1:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/responsive.css   (ca22a1cb)
+2018-03-25T23:01:21.3951459+07:00 0HLCID6G5CJQR:00000001 [INF] The file "/client-side/css/shortcodes/pricing-table.css" was not modified (f1f8d725)
+2018-03-25T23:01:21.4184068+07:00 0HLCID6G5CJR1:00000001 [INF] The file "/client-side/css/responsive.css" was not modified (f1f8d725)
+2018-03-25T23:01:21.4460464+07:00 0HLCID6G5CJR0:00000001 [INF] The file "/client-side/css/shortcodes/post.css" was not modified (f1f8d725)
+2018-03-25T23:01:21.4677084+07:00 0HLCID6G5CJR1:00000001 [INF] Request finished in 180.0449ms 304 text/css (791a596a)
+2018-03-25T23:01:21.4894479+07:00 0HLCID6G5CJQU:00000001 [INF] The file "/client-side/css/style.css" was not modified (f1f8d725)
+2018-03-25T23:01:21.5139421+07:00 0HLCID6G5CJQR:00000001 [INF] Request finished in 600.7191ms 304 text/css (791a596a)
+2018-03-25T23:01:21.5602295+07:00 0HLCID6G5CJR0:00000001 [INF] Request finished in 287.2615ms 304 text/css (791a596a)
+2018-03-25T23:01:21.5672098+07:00 0HLCID6G5CJQU:00000001 [INF] Request finished in 499.3918ms 304 text/css (791a596a)
+2018-03-25T23:01:21.7251684+07:00 0HLCID6G5CJQ9:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/fonts/pe-icon-7-stroke/Pe-icon-7-stroke.woff?d7yf1v   (ca22a1cb)
+2018-03-25T23:01:21.7468819+07:00 0HLCID6G5CJQB:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/fonts/simple-line-icons/Simple-Line-Icons.woff2?v=2.4.0   (ca22a1cb)
+2018-03-25T23:01:21.7688074+07:00 0HLCID6G5CJQ8:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/fonts/font-awesome/fontawesome-webfont.woff2?v=4.7.0   (ca22a1cb)
+2018-03-25T23:01:21.8675261+07:00 0HLCID6G5CJQ9:00000002 [INF] The file "/client-side/fonts/pe-icon-7-stroke/Pe-icon-7-stroke.woff" was not modified (f1f8d725)
+2018-03-25T23:01:21.9029588+07:00 0HLCID6G5CJQ9:00000002 [INF] Request finished in 199.4551ms 304 application/font-woff (791a596a)
+2018-03-25T23:01:21.9222690+07:00 0HLCID6G5CJQ7:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-25T23:01:21.9261288+07:00 0HLCID6G5CJQ8:00000002 [INF] The file "/client-side/fonts/font-awesome/fontawesome-webfont.woff2" was not modified (f1f8d725)
+2018-03-25T23:01:21.9582267+07:00 0HLCID6G5CJQ8:00000002 [INF] Request finished in 280.4166ms 304 font/woff2 (791a596a)
+2018-03-25T23:01:22.0034858+07:00 0HLCID6G5CJQB:00000002 [INF] The file "/client-side/fonts/simple-line-icons/Simple-Line-Icons.woff2" was not modified (f1f8d725)
+2018-03-25T23:01:22.0135382+07:00 0HLCID6G5CJQ7:00000002 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-25T23:01:22.0398215+07:00 0HLCID6G5CJQB:00000002 [INF] Request finished in 334.9075ms 304 font/woff2 (791a596a)
+2018-03-25T23:01:22.0651016+07:00 0HLCID6G5CJQ7:00000002 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-25T23:01:22.0713637+07:00 0HLCID6G5CJQ7:00000002 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-25T23:01:22.0999338+07:00 0HLCID6G5CJQ7:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__p_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id] AS [Id1], [x].[Status], [x].[DateCreated], [x].[Sold], [x].[DateModified], [x].[Color], [x].[Image], [x].[Size], [x].[SeoPageTitle], [x].[SeoAlias], [x].[SeoKeywords], [x].[SeoDescription], [x].[Name], [x].[CategoryId] AS [Id0], [x].[Price], [x].[Description], [x].[Content], [x].[PromotionPrice], [x].[Unit], [x].[HomeFlag], [x].[HotFlag], [x].[NewFlag], [x].[Tags], [x].[LanguageId], [x].[PurchaseTime], [x].[ErrorTime], [x].[Warranty], [x].[Quantity], [x].[Star], CASE
+    WHEN [x].[CategoryId] IS NOT NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, [x.ProductCategory].[Name] AS [Name0], [x.ProductCategory].[Discription], [x.ProductCategory].[ParentId], [x.ProductCategory].[HomeOrder], [x.ProductCategory].[Image] AS [Image0], [x.ProductCategory].[SeoPageTitle] AS [SeoPageTitle0], [x.ProductCategory].[SeoAlias] AS [SeoAlias0], [x.ProductCategory].[SeoKeywords] AS [SeoKeywords0], [x.ProductCategory].[SeoDescription] AS [SeoDescription0], [x.ProductCategory].[Status] AS [Status0], [x.ProductCategory].[LanguageId] AS [LanguageId0], [x.ProductCategory].[Tags] AS [Tags0], [x.ProductCategory].[DateCreated] AS [DateCreated0], [x.ProductCategory].[DateModified] AS [DateModified0], [x.ProductCategory].[SortOrder], [x.ProductCategory].[HomeFlag] AS [HomeFlag0], [x.ProductCategory].[HotFlag] AS [HotFlag0], [x.ProductCategory].[NewFlag] AS [NewFlag0], [x.ProductCategory].[Id]
+FROM [Products] AS [x]
+INNER JOIN [ProductCategories] AS [x.ProductCategory] ON [x].[CategoryId] = [x.ProductCategory].[Id]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2018-03-25T23:01:22.1442122+07:00 0HLCID6G5CJQ7:00000002 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" in 177.3727ms (afa2e885)
+2018-03-25T23:01:22.1653295+07:00 0HLCID6G5CJQ7:00000002 [INF] Request finished in 231.8758ms 200 text/html; charset=utf-8 (791a596a)
+2018-03-25T23:01:53.2701310+07:00 0HLCID6G5CJQ4:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2018-03-25T23:01:53.2811773+07:00 0HLCID6G5CJQ4:00000003 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Error (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-25T23:01:53.6014261+07:00 0HLCID6G5CJQ4:00000003 [INF] Executing ViewResult, running view at path "/Views/Home/Error.cshtml". (9707eebe)
+2018-03-25T23:01:53.6304469+07:00 0HLCID6G5CJQ4:00000003 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Error (TemplateDotNetCore)" in 331.1082ms (afa2e885)
+2018-03-25T23:01:53.6366676+07:00 0HLCID6G5CJQ4:00000003 [INF] Request finished in 384.7658ms 404 text/html; charset=utf-8 (791a596a)
+2018-03-25T23:02:02.3244722+07:00 0HLCID6G5CJQ5:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44357/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2018-03-25T23:02:02.3487700+07:00 0HLCID6G5CJQ5:00000002 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Error (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-25T23:02:02.3539339+07:00 0HLCID6G5CJQ5:00000002 [INF] Executing ViewResult, running view at path "/Views/Home/Error.cshtml". (9707eebe)
+2018-03-25T23:02:02.3611584+07:00 0HLCID6G5CJQ5:00000002 [INF] Executed action "TemplateDotNetCore.Controllers.HomeController.Error (TemplateDotNetCore)" in 31.0498ms (afa2e885)
+2018-03-25T23:02:02.3660887+07:00 0HLCID6G5CJQ5:00000002 [INF] Request finished in 41.0358ms 404 text/html; charset=utf-8 (791a596a)
+2018-03-25T23:56:06.3398499+07:00  [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-25T23:56:06.5614751+07:00  [INF] Executed DbCommand ("7"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppRoles] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-25T23:56:06.6037455+07:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AppUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-25T23:56:06.6421934+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Functions] AS [f]" (0723d8ff)
+2018-03-25T23:56:06.6706357+07:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [ProductCategories] AS [p]" (0723d8ff)
+2018-03-25T23:56:06.7095694+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeTitle')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-25T23:56:06.7379100+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaKeyword')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-25T23:56:06.7655781+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SystemConfigs] AS [x]
+        WHERE [x].[Id] = N'HomeMetaDescription')
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2018-03-25T23:56:06.7934936+07:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Slides] AS [s]" (0723d8ff)
+2018-03-25T23:56:07.0357252+07:00 0HLCIE56L9APC:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44357/   (ca22a1cb)
+2018-03-25T23:56:07.2049731+07:00 0HLCIE56L9APC:00000001 [INF] Executing action method "TemplateDotNetCore.Controllers.HomeController.Index (TemplateDotNetCore)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2018-03-25T23:56:09.9301608+07:00 0HLCIE56L9APC:00000001 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2018-03-25T23:56:09.9924640+07:00 0HLCIE56L9APC:00000001 [INF] Entity Framework Core "2.0.1-rtm-125" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=TemplateDotNetCore.Data.EF " (9958f5bb)
+2018-03-25T23:56:10.0779735+07:00 0HLCIE56L9APC:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Name], [x].[Description], [x].[Image], [x].[ContentUrl], [x].[Url], [x].[DisplayOrder], [x].[Status], [x].[Content], [x].[GroupAlias]
+FROM [Slides] AS [x]
+ORDER BY [x].[DisplayOrder]" (0723d8ff)
+2018-03-25T23:57:08.8356830+07:00 0HLCIE56L9APC:00000001 [INF] Executed DbCommand ("35"ms) [Parameters=["@__p_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id] AS [Id1], [x].[Status], [x].[DateCreated], [x].[Sold], [x].[DateModified], [x].[Color], [x].[Image], [x].[Size], [x].[SeoPageTitle], [x].[SeoAlias], [x].[SeoKeywords], [x].[SeoDescription], [x].[Name], [x].[CategoryId] AS [Id0], [x].[Price], [x].[Description], [x].[Content], [x].[PromotionPrice], [x].[Unit], [x].[HomeFlag], [x].[HotFlag], [x].[NewFlag], [x].[Tags], [x].[LanguageId], [x].[PurchaseTime], [x].[ErrorTime], [x].[Warranty], [x].[Quantity], [x].[Star], CASE
+    WHEN [x].[CategoryId] IS NOT NULL
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END, [x.ProductCategory].[Name] AS [Name0], [x.ProductCategory].[Discription], [x.ProductCategory].[ParentId], [x.ProductCategory].[HomeOrder], [x.ProductCategory].[Image] AS [Image0], [x.ProductCategory].[SeoPageTitle] AS [SeoPageTitle0], [x.ProductCategory].[SeoAlias] AS [SeoAlias0], [x.ProductCategory].[SeoKeywords] AS [SeoKeywords0], [x.ProductCategory].[SeoDescription] AS [SeoDescription0], [x.ProductCategory].[Status] AS [Status0], [x.ProductCategory].[LanguageId] AS [LanguageId0], [x.ProductCategory].[Tags] AS [Tags0], [x.ProductCategory].[DateCreated] AS [DateCreated0], [x.ProductCategory].[DateModified] AS [DateModified0], [x.ProductCategory].[SortOrder], [x.ProductCategory].[HomeFlag] AS [HomeFlag0], [x.ProductCategory].[HotFlag] AS [HotFlag0], [x.ProductCategory].[NewFlag] AS [NewFlag0], [x.ProductCategory].[Id]
+FROM [Products] AS [x]
+INNER JOIN [ProductCategories] AS [x.ProductCategory] ON [x].[CategoryId] = [x.ProductCategory].[Id]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
