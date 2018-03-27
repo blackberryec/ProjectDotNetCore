@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace TemplateDotNetCore.Data.EF.Migrations
 {
-    public partial class Dbinit : Migration
+    public partial class InitDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

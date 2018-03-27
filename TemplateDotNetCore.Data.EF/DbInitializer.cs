@@ -11,8 +11,8 @@ namespace TemplateDotNetCore.Data.EF
     public class DbInitializer
     {
         private readonly AppDbContext _context;
-        private UserManager<AppUser> _userManager;
-        private RoleManager<AppRole> _roleManager;
+        private readonly UserManager<AppUser> _userManager;
+        private readonly RoleManager<AppRole> _roleManager;
 
         public DbInitializer(AppDbContext context, UserManager<AppUser> userManager, RoleManager<AppRole> roleManager)
         {
@@ -73,7 +73,7 @@ namespace TemplateDotNetCore.Data.EF
                 var newuser = await _userManager.FindByNameAsync("NamHai");
                 await _userManager.AddToRoleAsync(newuser, "Admin");
             }
-            if (_context.Functions.Count() == 0)
+            if (!_context.Functions.Any())
             {
                 List<Function> functions = new List<Function>()
                 {
@@ -110,46 +110,46 @@ namespace TemplateDotNetCore.Data.EF
                 _context.Functions.AddRange(functions);
             }
 
-            if (_context.ProductCategories.Count() == 0)
+            if (!_context.ProductCategories.Any())
             {
                 List<ProductCategory> listProductCategory = new List<ProductCategory>()
                 {
                     new ProductCategory() { Name="Điện thoại",SeoAlias="dien-thoai",ParentId = null,Status=Status.Active,SortOrder=1,
                         Products = new List<Product>()
                         {
-                            new Product(){Name = "Điện thoại 1",DateCreated=DateTime.Now,Image="/client-side/images/products/iphone-x.jpg",SeoAlias = "dien-thoai-1",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
-                            new Product(){Name = "Điện thoại 2",DateCreated=DateTime.Now,Image="/client-side/images/products/iphone-x.jpg",SeoAlias = "dien-thoai-2",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
-                            new Product(){Name = "Điện thoại 3",DateCreated=DateTime.Now,Image="/client-side/images/products/iphone-x.jpg",SeoAlias = "dien-thoai-3",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
-                            new Product(){Name = "Điện thoại 4",DateCreated=DateTime.Now,Image="/client-side/images/products/iphone-x.jpg",SeoAlias = "dien-thoai-4",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
-                            new Product(){Name = "Điện thoại 5",DateCreated=DateTime.Now,Image="/client-side/images/products/iphone-x.jpg",SeoAlias = "dien-thoai-5",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
+                            new Product(){Name = "Điện thoại 1",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "dien-thoai-1",Price = 1000,Status = Status.Active,HotFlag = true, NewFlag = true, HomeFlag = true, PromotionPrice = 1100},
+                            new Product(){Name = "Điện thoại 2",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "dien-thoai-2",Price = 1000,Status = Status.Active,HotFlag = true, PromotionPrice = 1100},
+                            new Product(){Name = "Điện thoại 3",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "dien-thoai-3",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
+                            new Product(){Name = "Điện thoại 4",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "dien-thoai-4",Price = 1000,Status = Status.Active,HotFlag = true, HomeFlag = true, PromotionPrice = 1100},
+                            new Product(){Name = "Điện thoại 5",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "dien-thoai-5",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
                         }
                     },
                     new ProductCategory() { Name="Máy tính bảng",SeoAlias="may-tinh-bang",ParentId = null,Status=Status.Active ,SortOrder=2,
                         Products = new List<Product>()
                         {
-                            new Product(){Name = "Máy tính bảng 1",DateCreated=DateTime.Now,Image="/client-side/images/products/iphone-x.jpg",SeoAlias = "may-tinh-bang-1",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
-                            new Product(){Name = "Máy tính bảng 2",DateCreated=DateTime.Now,Image="/client-side/images/products/iphone-x.jpg",SeoAlias = "may-tinh-bang-2",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
-                            new Product(){Name = "Máy tính bảng 3",DateCreated=DateTime.Now,Image="/client-side/images/products/iphone-x.jpg",SeoAlias = "may-tinh-bang-3",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
-                            new Product(){Name = "Máy tính bảng 4",DateCreated=DateTime.Now,Image="/client-side/images/products/iphone-x.jpg",SeoAlias = "may-tinh-bang-4",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
-                            new Product(){Name = "Máy tính bảng 5",DateCreated=DateTime.Now,Image="/client-side/images/products/iphone-x.jpg",SeoAlias = "may-tinh-bang-5",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
+                            new Product(){Name = "Máy tính bảng 1",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-bang-1",Price = 1000,Status = Status.Active,HotFlag = true, NewFlag = true, HomeFlag = true, PromotionPrice = 1100},
+                            new Product(){Name = "Máy tính bảng 2",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-bang-2",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
+                            new Product(){Name = "Máy tính bảng 3",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-bang-3",Price = 1000,Status = Status.Active,HotFlag = true, NewFlag = true, HomeFlag = true, PromotionPrice = 1100},
+                            new Product(){Name = "Máy tính bảng 4",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-bang-4",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
+                            new Product(){Name = "Máy tính bảng 5",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-bang-5",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
                         }},
                     new ProductCategory() { Name="Máy tính xách tay",SeoAlias="may-tinh-xach-tay",ParentId = null,Status=Status.Active ,SortOrder=3,
                         Products = new List<Product>()
                         {
-                            new Product(){Name = "Máy tính xách tay 1",DateCreated=DateTime.Now,Image="/client-side/images/products/iphone-x.jpg",SeoAlias = "may-tinh-xach-tay-1",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
-                            new Product(){Name = "Máy tính xách tay 2",DateCreated=DateTime.Now,Image="/client-side/images/products/iphone-x.jpg",SeoAlias = "may-tinh-xach-tay-2",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
-                            new Product(){Name = "Máy tính xách tay 3",DateCreated=DateTime.Now,Image="/client-side/images/products/iphone-x.jpg",SeoAlias = "may-tinh-xach-tay-3",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
-                            new Product(){Name = "Máy tính xách tay 4",DateCreated=DateTime.Now,Image="/client-side/images/products/iphone-x.jpg",SeoAlias = "may-tinh-xach-tay-4",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
-                            new Product(){Name = "Máy tính xách tay 5",DateCreated=DateTime.Now,Image="/client-side/images/products/iphone-x.jpg",SeoAlias = "may-tinh-xach-tay-5",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
+                            new Product(){Name = "Máy tính xách tay 1",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-xach-tay-1",Price = 1000,Status = Status.Active,HotFlag = true, HomeFlag = true, PromotionPrice = 1100},
+                            new Product(){Name = "Máy tính xách tay 2",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-xach-tay-2",Price = 1000,Status = Status.Active,NewFlag = true, PromotionPrice = 1100},
+                            new Product(){Name = "Máy tính xách tay 3",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-xach-tay-3",Price = 1000,Status = Status.Active, HomeFlag = true, PromotionPrice = 1100},
+                            new Product(){Name = "Máy tính xách tay 4",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-xach-tay-4",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
+                            new Product(){Name = "Máy tính xách tay 5",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-xach-tay-5",Price = 1000,Status = Status.Active,HotFlag = true, PromotionPrice = 1100},
                         }},
                     new ProductCategory() { Name="Máy tính để bàn - PC",SeoAlias="may-tinh-de-ban-pc",ParentId = null,Status=Status.Active,SortOrder=4,
                         Products = new List<Product>()
                         {
-                            new Product(){Name = "Máy tính để bàn - PC 1",DateCreated=DateTime.Now,Image="/client-side/images/products/iphone-x.jpg",SeoAlias = "may-tinh-de-ban-pc-1",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
-                            new Product(){Name = "Máy tính để bàn - PC 2",DateCreated=DateTime.Now,Image="/client-side/images/products/iphone-x.jpg",SeoAlias = "may-tinh-de-ban-pc-2",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
-                            new Product(){Name = "Máy tính để bàn - PC 3",DateCreated=DateTime.Now,Image="/client-side/images/products/iphone-x.jpg",SeoAlias = "may-tinh-de-ban-pc-3",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
-                            new Product(){Name = "Máy tính để bàn - PC 4",DateCreated=DateTime.Now,Image="/client-side/images/products/iphone-x.jpg",SeoAlias = "may-tinh-de-ban-pc-4",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
-                            new Product(){Name = "Máy tính để bàn - PC 5",DateCreated=DateTime.Now,Image="/client-side/images/products/iphone-x.jpg",SeoAlias = "may-tinh-de-ban-pc-5",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
+                            new Product(){Name = "Máy tính để bàn - PC 1",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-de-ban-pc-1",Price = 1000,Status = Status.Active,HotFlag = true, PromotionPrice = 1100},
+                            new Product(){Name = "Máy tính để bàn - PC 2",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-de-ban-pc-2",Price = 1000,Status = Status.Active,HotFlag = true, PromotionPrice = 1100},
+                            new Product(){Name = "Máy tính để bàn - PC 3",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-de-ban-pc-3",Price = 1000,Status = Status.Active,HotFlag = true, PromotionPrice = 1100},
+                            new Product(){Name = "Máy tính để bàn - PC 4",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-de-ban-pc-4",Price = 1000,Status = Status.Active, HomeFlag = true, PromotionPrice = 1100},
+                            new Product(){Name = "Máy tính để bàn - PC 5",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-de-ban-pc-5",Price = 1000,Status = Status.Active, HomeFlag = true, PromotionPrice = 1100},
                         }},
                     new ProductCategory() { Name="Các loại phụ kiện",SeoAlias="cac-loai-phu-kien",ParentId = null,Status=Status.Active,SortOrder=1},
                     new ProductCategory() { Name="Photo & Camera",SeoAlias="photo-and-camera",ParentId = null,Status=Status.Active,SortOrder=1},
@@ -192,13 +192,13 @@ namespace TemplateDotNetCore.Data.EF
                 });
             }
 
-            if (_context.Slides.Count() == 0)
+            if (!_context.Slides.Any())
             {
                 List<Slide> slides = new List<Slide>()
                 {
-                    new Slide(){Name = "Template for your business", Content = "Easy to modify", Description = "Perfect website solution for your", ContentUrl = "Get Started", Url = "/danh-muc-san-pham.html", Image = "~/client-side/images/slider/slide-3.jpg", Status = Status.Active, GroupAlias = "/slide" },
-                    new Slide(){Name = "Smooth, Rich & Loud Audio", Content = "headphone", Description = "World's Most advanced Wireless earbuds.", ContentUrl = "EXPLORE NOW", Url = "/blog-review.html", Image = "~/client-side/images/slider/slide-1.jpg", Status = Status.Active, GroupAlias = "/slide" },
-                    new Slide(){Name = "It’s Time To Look", Content = "The New Standard", Description = "The New Standard. under favorable smartwatches", ContentUrl = "Start Buying", Url = "/danh-muc-san-pham.html", Image = "~/client-side/images/slider/slide-2.jpg", Status = Status.Active, GroupAlias = "/slide" },
+                    new Slide(){Name = "Template for your business", Content = "Easy to modify", Description = "Perfect website solution for your", ContentUrl = "Get Started", Url = "/danh-muc-san-pham.html", Image = "/client-side/images/slider/slide-3.jpg", Status = Status.Active, GroupAlias = "/slide" },
+                    new Slide(){Name = "Smooth, Rich & Loud Audio", Content = "headphone", Description = "World's Most advanced Wireless earbuds.", ContentUrl = "EXPLORE NOW", Url = "/blog-review.html", Image = "/client-side/images/slider/slide-1.jpg", Status = Status.Active, GroupAlias = "/slide" },
+                    new Slide(){Name = "It’s Time To Look", Content = "The New Standard", Description = "The New Standard. under favorable smartwatches", ContentUrl = "Start Buying", Url = "/danh-muc-san-pham.html", Image = "/client-side/images/slider/slide-2.jpg", Status = Status.Active, GroupAlias = "/slide" },
                 };
                 _context.Slides.AddRange(slides);
             }

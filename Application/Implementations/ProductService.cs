@@ -46,7 +46,7 @@ namespace TemplateDotNetCore.Application.Implementations
 
         public List<ProductViewModel> GetHotProducts(int top)
         {
-            return _productRepository.FindAll(x => x.Status == Status.Active && x.HotFlag == true)
+            return _productRepository.FindAll(x => x.Status == Status.Active && x.HomeFlag == true)
                 .OrderByDescending(x => x.DateCreated)
                 .Take(top)
                 .ProjectTo<ProductViewModel>()

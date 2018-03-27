@@ -12,8 +12,8 @@ using TemplateDotNetCore.Data.Enums;
 namespace TemplateDotNetCore.Data.EF.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20180324113707_Dbinit")]
-    partial class Dbinit
+    [Migration("20180327164549_InitDb")]
+    partial class InitDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

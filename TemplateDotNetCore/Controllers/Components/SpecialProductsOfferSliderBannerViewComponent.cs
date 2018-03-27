@@ -12,12 +12,10 @@ namespace TemplateDotNetCore.Controllers.Components
     public class SpecialProductsOfferSliderBannerViewComponent : ViewComponent
     {
         private IProductService _productService;
-        private IMemoryCache _memoryCache;
 
-        public SpecialProductsOfferSliderBannerViewComponent(IProductService productService, IMemoryCache memoryCache)
+        public SpecialProductsOfferSliderBannerViewComponent(IProductService productService)
         {
             _productService = productService;
-            _memoryCache = memoryCache;
         }
 
 
