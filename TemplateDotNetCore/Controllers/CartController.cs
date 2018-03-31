@@ -13,11 +13,13 @@ namespace TemplateDotNetCore.Controllers
 {
     public class CartController : Controller
     {
-        IProductService _productService;
+        private readonly IProductService _productService;
+        private readonly IBillService _billService;
 
-        public CartController(IProductService productService)
+        public CartController(IProductService productService, IBillService billService)
         {
             _productService = productService;
+            _billService = billService;
         }
 
         [Route("gio-hang.html")]
@@ -61,9 +63,30 @@ namespace TemplateDotNetCore.Controllers
                     {
                         Product = product,
                         Quantity = quantity,
-                        Color = _
+                        Color = _billService.GetColors(color),
+                        Price = product.PromotionPrice ?? product.Price
                     });
+                    hasChanged = true;
                 }
+
+                //Update back to cart 
+                if (hasChanged)
+                {
+                    HttpContext.Session.Set(CommonConstants.CartSession, session);
+                }
+            }
+            else
+            {
+                //add new cart 
+                var cart = new List<ShoppingCartViewModel>();
+                cart.Add(new ShoppingCartViewModel()
+                {
+                    Product = product,
+                    Quantity = quantity,
+                    Color = _billService.GetColors(color),
+                    Price = product.PromotionPrice ?? product.Price
+                });
+                HttpContext.Session.Set(CommonConstants.CartSession, cart);
             }
 
             return new OkObjectResult(productId); 
