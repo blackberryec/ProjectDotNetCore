@@ -6,6 +6,8 @@ namespace TemplateDotNetCore.Utilities.Constants
 {
     public class CommonConstants
     {
+        public const string CartSession = "CartSession";
+
         public const string AdminRole = "Admin";
     }
 }

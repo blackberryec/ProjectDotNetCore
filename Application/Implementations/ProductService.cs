@@ -64,6 +64,11 @@ namespace TemplateDotNetCore.Application.Implementations
             return _productRepository.FindAll(x => x.ProductCategory).ProjectTo<ProductViewModel>();
         }
 
+        public ProductViewModel GetById(int id)
+        {
+            return Mapper.Map<Product, ProductViewModel>(_productRepository.FindById(id));
+        }
+
         public PagedResult<ProductViewModel> GetAllPaging(int? categoryId, string keyword, int page, int pageSize)
         {
             var query = _productRepository.FindAll(x => x.Status == Status.Active);

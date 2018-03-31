@@ -11,6 +11,8 @@ namespace TemplateDotNetCore.Application.Interfaces
     {
         IQueryable<ProductViewModel> GetAll();
 
+        ProductViewModel GetById(int id);
+
         PagedResult<ProductViewModel> GetAllPaging(int? categoryId, string keyword, int page, int pageSize);
 
         //void Update(ProductViewModel productVm);
