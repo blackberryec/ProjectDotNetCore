@@ -1,12 +1,15 @@
-﻿  <!-- Main Container -->
+﻿@using TemplateDotNetCore.Data.Enums
+@model List<ShoppingCartViewModel>
+  <!-- Main Container -->
 <section class="main-container col1-layout">
     <div class="main container">
         <div class="col-main">
             <div class="cart">
 
+
                 <div class="page-content page-order">
                     <div class="page-title">
-                        <h2>Shopping Cart</h2>
+                        <h2>Giỏ hàng</h2>
                     </div>
 
 
@@ -15,70 +18,54 @@
                             <table class="table table-bordered cart_summary">
                                 <thead>
                                     <tr>
-                                        <th class="cart_product">Product</th>
-                                        <th>Description</th>
-                                        <th>Avail.</th>
-                                        <th>Unit price</th>
-                                        <th>Qty</th>
-                                        <th>Total</th>
+                                        <th class="cart_product">Tên sản phẩm</th>
+                                        <th>Thông tin</th>
+                                        <th>Trạng thái</th>
+                                        <th>Giá</th>
+                                        <th>Số lượng</th>
+                                        <th>Tổng</th>
                                         <th class="action"><i class="fa fa-trash-o"></i></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td class="cart_product"><a href="#"><img src="~/client-side/images/products/product-1.jpg" alt="Product"></a></td>
-                                        <td class="cart_description">
-                                            <p class="product-name"><a href="#">Ipsums Dolors Untra </a></p>
-                                            <small><a href="#">Color : Red</a></small>
-                                            <small><a href="#">Size : M</a></small>
-                                        </td>
-                                        <td class="availability in-stock"><span class="label">In stock</span></td>
-                                        <td class="price"><span>$49.88</span></td>
-                                        <td class="qty"><input class="form-control input-sm" type="text" value="1"></td>
-                                        <td class="price"><span>$49.88</span></td>
-                                        <td class="action"><a href="#"><i class="icon-close"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="cart_product"><a href="#"><img src="~/client-side/images/products/product-1.jpg" alt="Product"></a></td>
-                                        <td class="cart_description">
-                                            <p class="product-name"><a href="#">Ipsums Dolors Untra </a></p>
-                                            <small><a href="#">Color : Green</a></small>
-                                            <small><a href="#">Size : XL</a></small>
-                                        </td>
-                                        <td class="availability out-of-stock"><span class="label">No stock</span></td>
-                                        <td class="price"><span>$00.00</span></td>
-                                        <td class="qty"><input class="form-control input-sm" type="text" value="0"></td>
-                                        <td class="price"><span>00.00</span></td>
-                                        <td class="action"><a href="#"><i class="icon-close"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="cart_product"><a href="#"><img src="~/client-side/images/products/product-1.jpg" alt="Product"></a></td>
-                                        <td class="cart_description">
-                                            <p class="product-name"><a href="#">Ipsums Dolors Untra </a></p>
-                                            <small><a href="#">Color : Blue</a></small>
-                                            <small><a href="#">Size : S</a></small>
-                                        </td>
-                                        <td class="availability in-stock"><span class="label">In stock</span></td>
-                                        <td class="price"><span>$99.00</span></td>
-                                        <td class="qty"><input class="form-control input-sm" type="text" value="2"></td>
-                                        <td class="price"><span>$188.00</span></td>
-                                        <td class="action"><a href="#"><i class="icon-close"></i></a></td>
-                                    </tr>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td class="cart_product"><a href="#"><img src="@item.Product.Image" alt="@item.Product.Name"></a></td>
+                                            <td class="cart_description">
+                                                <p class="product-name"><a href="#">@item.Product.Name</a></p>
+                                                <small><a href="#">Color : @item.Color</a></small>
+                                            </td>
+                                            @if (item.Product.Status == Status.Active)
+                                            {
+                                                <td class="availability in-stock"><span class="label">Còn hàng</span></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="availability out-of-stock"><span class="label">Tạm hết</span></td>
+
+                                            }
+                                            <td class="price"><span>@((item.Product.PromotionPrice ?? item.Product.Price).ToString("N0"))</span></td>
+                                            <td class="qty"><input class="form-control input-sm" type="text" value="@item.Quantity"></td>
+                                            <td class="price"><span> @(item.Quantity * (item.Product.PromotionPrice ?? item.Product.Price))</span></td>
+                                            <td class="action"><a href="#"><i class="icon-close"></i></a></td>
+                                        </tr>
+                                    }
                                 </tbody>
                                 <tfoot>
                                     <tr>
                                         <td colspan="2" rowspan="2"></td>
-                                        <td colspan="3">Total products (tax incl.)</td>
-                                        <td colspan="2">$237.88 </td>
+                                        <td colspan="3">Tổng chi phí (đã bao gồm thuế.)</td>
+                                        <td colspan="2">@Model.Sum(x => x.Quantity * x.Price).ToString("N0")</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="3"><strong>Total</strong></td>
-                                        <td colspan="2"><strong>$237.88 </strong></td>
+                                        <td colspan="3"><strong>Tổng chi phí</strong></td>
+                                        <td colspan="2"><strong>@Model.Sum(x => x.Quantity * x.Price).ToString("N0")</strong></td>
                                     </tr>
                                 </tfoot>
                             </table>
                         </div>
-                        <div class="cart_navigation"> <a class="continue-btn" href="#"><i class="fa fa-arrow-left"> </i>&nbsp; Continue shopping</a> <a class="checkout-btn" href="#"><i class="fa fa-check"></i> Proceed to checkout</a> </div>
+                        <div class="cart_navigation"> <a class="continue-btn" href="#"><i class="fa fa-arrow-left"> </i>&nbsp; Tiếp tục mua hàng</a> <a class="checkout-btn" href="#"><i class="fa fa-check"></i> Thực thi thủ tục thanh toán</a> </div>
                     </div>
                 </div>
             </div>
