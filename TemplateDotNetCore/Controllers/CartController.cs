@@ -99,6 +99,30 @@ namespace TemplateDotNetCore.Controllers
             return new OkObjectResult(productId); 
         }
 
+        public IActionResult RemoveItemOnCart(int productId)
+        {
+            var session = HttpContext.Session.Get<List<ShoppingCartViewModel>>(CommonConstants.CartSession);
+            if (session != null)
+            {
+                bool hasChanged = false;
+                foreach (var item in session)
+                {
+                    if (item.Product.Id == productId)
+                    {
+                        session.Remove(item);
+                        hasChanged = true;
+                        break;
+                    }
+                }
+                if (hasChanged)
+                {
+                    HttpContext.Session.Set(CommonConstants.CartSession,session);
+                }
+                return new ObjectResult(productId);
+            }
+            return new EmptyResult();
+        }
+
         #endregion
     }
 }

@@ -26,7 +26,24 @@
             });
         });
 
-
+        $('body').on('click', '.remove-cart', function (e) {
+            e.preventDefault();
+            var id = $(this).data('id');
+            $.ajax({
+                url: '/Cart/RemoveItemOnCart',
+                type: 'post',
+                data: {
+                    productId: id
+                },
+                success: function (response) {
+                    common.notify('Đã xóa khỏi giỏ hàng', 'success');
+                    loadHeaderCart();
+                },
+                error: function (response) {
+                    common.notify('Đã có lỗi. Phiền bạn thử lại', 'error');
+                }
+            });
+        });
 
     }
 
