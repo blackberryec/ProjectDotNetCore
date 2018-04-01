@@ -1,12 +1,12 @@
 ﻿var BaseController = function () {
     this.initialize = function () {
         registerEvents();
-    }
+    };
 
     function registerEvents() {
         $('body').on('click', '.add-to-cart', function (e) {
             e.preventDefault();
-            var id = $(this).data('id');
+            var id = parseInt($(this).data('id'));
             var color = $(this).data('color');
             $.ajax({
                 url: '/Cart/AddToCart',
@@ -19,6 +19,9 @@
                 success: function (response) {
                     common.notify('Sản phẩm đã được thêm vào giỏ hàng.', 'success');
                     loadHeaderCart();
+                },
+                error: function (response) {
+                    common.notify('Không thể thêm vào giỏ hàng. Phiền bạn thử lại', 'error');
                 }
             });
         });
@@ -30,4 +33,4 @@
     function loadHeaderCart() {
         $('#headerCart').load('/AjaxContent/HeaderCart');
     }
-}
+};

@@ -40,6 +40,12 @@ namespace TemplateDotNetCore
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+                options.Cookie.HttpOnly = true;
+            });
+
             // Configure Identity
             services.Configure<IdentityOptions>(options =>
             {
@@ -89,6 +95,10 @@ namespace TemplateDotNetCore
             services.AddTransient<ISlideService, SlideService>();
             services.AddTransient<IProductImageRepository, ProductImageRepository>();
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IBillDetailRepository,BillDetailRepository>();
+            services.AddTransient<IBillRepository,BillRepository>();
+            services.AddTransient<IBillService,BillService>();
+            services.AddTransient<IColorRepository,ColorRepository>();
 
         }
 
@@ -113,6 +123,8 @@ namespace TemplateDotNetCore
             app.UseStaticFiles();
 
             app.UseAuthentication();
+
+            app.UseSession();
 
             app.UseMvc(routes =>
             {
