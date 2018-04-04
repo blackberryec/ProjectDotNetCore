@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using TemplateDotNetCore.Application.Interfaces;
 using TemplateDotNetCore.Application.ViewModels;
+using TemplateDotNetCore.Application.ViewModels.Common;
 using TemplateDotNetCore.Data.Entities;
 using TemplateDotNetCore.Data.Enums;
 using TemplateDotNetCore.Data.IRepositories;
@@ -18,12 +19,16 @@ namespace TemplateDotNetCore.Application.Implementations
     {
         private readonly IProductRepository _productRepository;
         private readonly IProductImageRepository _productImageRepository;
+        private readonly ITagRepository _tagRepository;
+        private readonly IProductTagRepository _productTagRepository;
         private readonly IUnitOfWork _unitOfWork;
-        public ProductService(IProductRepository productRepository, IUnitOfWork unitOfWork, IProductImageRepository productImageRepository)
+        public ProductService(IProductRepository productRepository, IUnitOfWork unitOfWork, IProductImageRepository productImageRepository,ITagRepository tagRepository, IProductTagRepository productTagRepository)
         {
             _productRepository = productRepository;
             _unitOfWork = unitOfWork;
             _productImageRepository = productImageRepository;
+            _productTagRepository = productTagRepository;
+            _tagRepository = tagRepository;
         }
 
         public ProductViewModel Add(ProductViewModel productViewModel)
@@ -103,6 +108,33 @@ namespace TemplateDotNetCore.Application.Implementations
         public void Dispose()
         {
             GC.SuppressFinalize(this);
+        }
+
+        public List<ProductViewModel> GetRelatedProducts(int id, int top)
+        {
+            var product = _productRepository.FindById(id);
+            return _productRepository.FindAll(x => x.Status == Status.Active && x.Id != id && x.CategoryId == product.CategoryId)
+                .OrderByDescending(x => x.DateCreated)
+                .Take(top)
+                .ProjectTo<ProductViewModel>()
+                .ToList();
+        }
+
+        public List<TagViewModel> GetProductTags(int productId)
+        {
+            var tags = _tagRepository.FindAll();
+            var productTags = _productTagRepository.FindAll();
+
+            var query = from t in tags
+                        join pt in productTags
+                        on t.Id equals pt.TagId
+                        where pt.ProductId == productId
+                        select new TagViewModel()
+                        {
+                            Id = t.Id,
+                            Name = t.Name
+                        };
+            return query.ToList();
         }
     }
 }

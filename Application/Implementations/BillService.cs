@@ -143,11 +143,15 @@ namespace TemplateDotNetCore.Application.Implementations
                 .ProjectTo<BillDetailViewModel>().ToList();
         }
 
-        public ColorViewModel GetColors(int id)
+        public ColorViewModel GetColor(int id)
         {
             return Mapper.Map<Color, ColorViewModel>(_colorRepository.FindById(id));
         }
-
+        
+        public List<ColorViewModel> GetColors()
+        {
+            return _colorRepository.FindAll().ProjectTo<ColorViewModel>().ToList();
+        }
 
         public void Save()
         {

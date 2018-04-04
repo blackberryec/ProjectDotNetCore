@@ -23,7 +23,10 @@ namespace TemplateDotNetCore.Application.Interfaces
 
         List<BillDetailViewModel> GetBillDetails(int billId);
 
-        ColorViewModel GetColors(int id);
+        List<ColorViewModel> GetColors();
+
+        ColorViewModel GetColor(int id);
+
 
         void Save();
     }

@@ -70,7 +70,7 @@ namespace TemplateDotNetCore.Controllers
                     {
                         Product = product,
                         Quantity = quantity,
-                        Color = _billService.GetColors(color),
+                        Color = _billService.GetColor(color),
                         Price = product.PromotionPrice ?? product.Price
                     });
                     hasChanged = true;
@@ -90,7 +90,7 @@ namespace TemplateDotNetCore.Controllers
                 {
                     Product = product,
                     Quantity = quantity,
-                    Color = _billService.GetColors(color),
+                    Color = _billService.GetColor(color),
                     Price = product.PromotionPrice ?? product.Price
                 });
                 HttpContext.Session.Set(CommonConstants.CartSession, cart);

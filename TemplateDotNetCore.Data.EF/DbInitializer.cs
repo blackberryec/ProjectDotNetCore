@@ -117,26 +117,26 @@ namespace TemplateDotNetCore.Data.EF
                     new ProductCategory() { Name="Điện thoại",SeoAlias="dien-thoai",ParentId = null,Status=Status.Active,SortOrder=1,
                         Products = new List<Product>()
                         {
-                            new Product(){Name = "Điện thoại 1",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "dien-thoai-1",Price = 1000,Status = Status.Active,HotFlag = true, NewFlag = true, HomeFlag = true, PromotionPrice = 1100},
+                            new Product(){Name = "Điện thoại 1",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "dien-thoai-1",Price = 1000,Status = Status.Active,HotFlag = true, NewFlag = true, HomeFlag = true, PromotionPrice = 1100, Star = 5},
                             new Product(){Name = "Điện thoại 2",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "dien-thoai-2",Price = 1000,Status = Status.Active,HotFlag = true, PromotionPrice = 1100},
                             new Product(){Name = "Điện thoại 3",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "dien-thoai-3",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
-                            new Product(){Name = "Điện thoại 4",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "dien-thoai-4",Price = 1000,Status = Status.Active,HotFlag = true, HomeFlag = true, PromotionPrice = 1100},
+                            new Product(){Name = "Điện thoại 4",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "dien-thoai-4",Price = 1000,Status = Status.Active,HotFlag = true, HomeFlag = true, PromotionPrice = 1100, Star = 3},
                             new Product(){Name = "Điện thoại 5",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "dien-thoai-5",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
                         }
                     },
                     new ProductCategory() { Name="Máy tính bảng",SeoAlias="may-tinh-bang",ParentId = null,Status=Status.Active ,SortOrder=2,
                         Products = new List<Product>()
                         {
-                            new Product(){Name = "Máy tính bảng 1",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-bang-1",Price = 1000,Status = Status.Active,HotFlag = true, NewFlag = true, HomeFlag = true, PromotionPrice = 1100},
+                            new Product(){Name = "Máy tính bảng 1",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-bang-1",Price = 1000,Status = Status.Active,HotFlag = true, NewFlag = true, HomeFlag = true, PromotionPrice = 1100, Star = 4},
                             new Product(){Name = "Máy tính bảng 2",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-bang-2",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
-                            new Product(){Name = "Máy tính bảng 3",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-bang-3",Price = 1000,Status = Status.Active,HotFlag = true, NewFlag = true, HomeFlag = true, PromotionPrice = 1100},
+                            new Product(){Name = "Máy tính bảng 3",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-bang-3",Price = 1000,Status = Status.Active,HotFlag = true, NewFlag = true, HomeFlag = true, PromotionPrice = 1100, Star = 4},
                             new Product(){Name = "Máy tính bảng 4",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-bang-4",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
                             new Product(){Name = "Máy tính bảng 5",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-bang-5",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
                         }},
                     new ProductCategory() { Name="Máy tính xách tay",SeoAlias="may-tinh-xach-tay",ParentId = null,Status=Status.Active ,SortOrder=3,
                         Products = new List<Product>()
                         {
-                            new Product(){Name = "Máy tính xách tay 1",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-xach-tay-1",Price = 1000,Status = Status.Active,HotFlag = true, HomeFlag = true, PromotionPrice = 1100},
+                            new Product(){Name = "Máy tính xách tay 1",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-xach-tay-1",Price = 1000,Status = Status.Active,HotFlag = true, HomeFlag = true, PromotionPrice = 1100, Star = 4},
                             new Product(){Name = "Máy tính xách tay 2",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-xach-tay-2",Price = 1000,Status = Status.Active,NewFlag = true, PromotionPrice = 1100},
                             new Product(){Name = "Máy tính xách tay 3",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-xach-tay-3",Price = 1000,Status = Status.Active, HomeFlag = true, PromotionPrice = 1100},
                             new Product(){Name = "Máy tính xách tay 4",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-xach-tay-4",Price = 1000,Status = Status.Active,PromotionPrice = 1100},

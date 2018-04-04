@@ -99,7 +99,8 @@ namespace TemplateDotNetCore
             services.AddTransient<IBillRepository,BillRepository>();
             services.AddTransient<IBillService,BillService>();
             services.AddTransient<IColorRepository,ColorRepository>();
-
+            services.AddTransient<IProductTagRepository, ProductTagRepository>();
+            services.AddTransient<ITagRepository, TagRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

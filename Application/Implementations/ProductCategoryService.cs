@@ -55,5 +55,10 @@ namespace TemplateDotNetCore.Application.Implementations
             return _productCategoryRepository.FindAll().OrderBy(x => x.ParentId)
                  .ProjectTo<ProductCategoryViewModel>().ToList();
         }
+
+        public ProductCategoryViewModel GetById(int id)
+        {
+            return Mapper.Map<ProductCategory, ProductCategoryViewModel>(_productCategoryRepository.FindById(id));
+        }
     }
 }

@@ -18,6 +18,8 @@ namespace TemplateDotNetCore.Application.Interfaces
 
         List<ProductCategoryViewModel> GetAll();
 
+        ProductCategoryViewModel GetById(int id);
+
         void Save();
     }
 }

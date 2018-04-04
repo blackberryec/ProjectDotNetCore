@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TemplateDotNetCore.Application.ViewModels;
+using TemplateDotNetCore.Application.ViewModels.Common;
 using TemplateDotNetCore.Utilities.Dtos;
 
 namespace TemplateDotNetCore.Application.Interfaces
@@ -20,6 +21,10 @@ namespace TemplateDotNetCore.Application.Interfaces
         List<ProductImageViewModel> GetImages(int productId);
 
         List<ProductViewModel> GetHotProducts(int top);
+
+        List<ProductViewModel> GetRelatedProducts(int id, int top);
+
+        List<TagViewModel> GetProductTags(int productId);
 
         void Delete(int id);
 
