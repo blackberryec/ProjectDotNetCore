@@ -117,49 +117,316 @@ namespace TemplateDotNetCore.Data.EF
                     new ProductCategory() { Name="Điện thoại",SeoAlias="dien-thoai",ParentId = null,Status=Status.Active,SortOrder=1,
                         Products = new List<Product>()
                         {
-                            new Product(){Name = "Điện thoại 1",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "dien-thoai-1",Price = 1000,Status = Status.Active,HotFlag = true, NewFlag = true, HomeFlag = true, PromotionPrice = 1100, Star = 5},
-                            new Product(){Name = "Điện thoại 2",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "dien-thoai-2",Price = 1000,Status = Status.Active,HotFlag = true, PromotionPrice = 1100},
-                            new Product(){Name = "Điện thoại 3",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "dien-thoai-3",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
-                            new Product(){Name = "Điện thoại 4",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "dien-thoai-4",Price = 1000,Status = Status.Active,HotFlag = true, HomeFlag = true, PromotionPrice = 1100, Star = 3},
-                            new Product(){Name = "Điện thoại 5",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "dien-thoai-5",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
+                            new Product()
+                            {
+                                Name = "Điện thoại 1",
+                                DateCreated=DateTime.Now,
+                                Image="/client-side/images/products/product-1.jpg",
+                                SeoAlias = "dien-thoai-1",
+                                Price = 1000,
+                                Status = Status.Active,
+                                HotFlag = true,
+                                NewFlag = true,
+                                HomeFlag = true,
+                                PromotionPrice = 1100,
+                                Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.",
+                                Description = "Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.",
+                                Star = 5
+                            },
+                            new Product()
+                            {
+                                Name = "Điện thoại 2",
+                                DateCreated=DateTime.Now,
+                                Image="/client-side/images/products/product-1.jpg",
+                                SeoAlias = "dien-thoai-2",
+                                Price = 1000,
+                                Status = Status.Active,
+                                HotFlag = true,
+                                PromotionPrice = 1100,
+                                Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.",
+                                Description = "Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.",
+                            },
+                            new Product()
+                            {
+                                Name = "Điện thoại 3",
+                                DateCreated=DateTime.Now,
+                                Image="/client-side/images/products/product-1.jpg",
+                                SeoAlias = "dien-thoai-3",
+                                Price = 1000,
+                                Status = Status.Active,
+                                PromotionPrice = 1100,
+                                Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.",
+                                Description = "Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.",
+                            },
+                            new Product()
+                            {
+                                Name = "Điện thoại 4",
+                                DateCreated=DateTime.Now,
+                                Image="/client-side/images/products/product-1.jpg",
+                                SeoAlias = "dien-thoai-4",
+                                Price = 1000,
+                                Status = Status.Active,
+                                HotFlag = true,
+                                HomeFlag = true,
+                                PromotionPrice = 1100,
+                                Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.",
+                                Description = "Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.",
+                                
+                                Star = 3
+                            },
+                            new Product()
+                            {
+                                Name = "Điện thoại 5",
+                                DateCreated=DateTime.Now,
+                                Image="/client-side/images/products/product-1.jpg",
+                                SeoAlias = "dien-thoai-5",
+                                Price = 1000,
+                                Status = Status.Active,
+                                PromotionPrice = 1100,
+                                Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.",
+                                Description = "Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.",
+                            },
                         }
                     },
                     new ProductCategory() { Name="Máy tính bảng",SeoAlias="may-tinh-bang",ParentId = null,Status=Status.Active ,SortOrder=2,
                         Products = new List<Product>()
                         {
-                            new Product(){Name = "Máy tính bảng 1",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-bang-1",Price = 1000,Status = Status.Active,HotFlag = true, NewFlag = true, HomeFlag = true, PromotionPrice = 1100, Star = 4},
-                            new Product(){Name = "Máy tính bảng 2",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-bang-2",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
-                            new Product(){Name = "Máy tính bảng 3",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-bang-3",Price = 1000,Status = Status.Active,HotFlag = true, NewFlag = true, HomeFlag = true, PromotionPrice = 1100, Star = 4},
-                            new Product(){Name = "Máy tính bảng 4",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-bang-4",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
-                            new Product(){Name = "Máy tính bảng 5",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-bang-5",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
+                            new Product()
+                            {
+                                Name = "Máy tính bảng 1",
+                                DateCreated=DateTime.Now,
+                                Image="/client-side/images/products/product-1.jpg",
+                                SeoAlias = "may-tinh-bang-1",Price = 1000,
+                                Status = Status.Active,
+                                HotFlag = true,
+                                NewFlag = true,
+                                HomeFlag = true,
+                                PromotionPrice = 1100,
+                                Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.",
+                                Description = "Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.",
+                                Star = 4
+                            },
+                            new Product()
+                            {
+                                Name = "Máy tính bảng 2",
+                                DateCreated=DateTime.Now,
+                                Image="/client-side/images/products/product-1.jpg",
+                                SeoAlias = "may-tinh-bang-2",
+                                Price = 1000,
+                                Status = Status.Active,
+                                Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.",
+                                Description = "Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.",
+                                PromotionPrice = 1100
+                            },
+                            new Product()
+                            {
+                                Name = "Máy tính bảng 3",
+                                DateCreated=DateTime.Now,
+                                Image="/client-side/images/products/product-1.jpg",
+                                SeoAlias = "may-tinh-bang-3",
+                                Price = 1000,
+                                Status = Status.Active,HotFlag = true,
+                                NewFlag = true, HomeFlag = true,
+                                PromotionPrice = 1100,
+                                Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.",
+                                Description = "Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.",
+                                Star = 4
+                            },
+                            new Product()
+                            {
+                                Name = "Máy tính bảng 4",
+                                DateCreated=DateTime.Now,
+                                Image="/client-side/images/products/product-1.jpg",
+                                SeoAlias = "may-tinh-bang-4",
+                                Price = 1000,
+                                Status = Status.Active,
+                                Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.",
+                                Description = "Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.",
+                                PromotionPrice = 1100
+                            },
+                            new Product()
+                            {
+                                Name = "Máy tính bảng 5",
+                                DateCreated=DateTime.Now,
+                                Image="/client-side/images/products/product-1.jpg",
+                                SeoAlias = "may-tinh-bang-5",
+                                Price = 1000,
+                                Status = Status.Active,
+                                PromotionPrice = 1100,
+                                Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.",
+                                Description = "Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.",
+                            },
                         }},
                     new ProductCategory() { Name="Máy tính xách tay",SeoAlias="may-tinh-xach-tay",ParentId = null,Status=Status.Active ,SortOrder=3,
                         Products = new List<Product>()
                         {
-                            new Product(){Name = "Máy tính xách tay 1",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-xach-tay-1",Price = 1000,Status = Status.Active,HotFlag = true, HomeFlag = true, PromotionPrice = 1100, Star = 4},
-                            new Product(){Name = "Máy tính xách tay 2",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-xach-tay-2",Price = 1000,Status = Status.Active,NewFlag = true, PromotionPrice = 1100},
-                            new Product(){Name = "Máy tính xách tay 3",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-xach-tay-3",Price = 1000,Status = Status.Active, HomeFlag = true, PromotionPrice = 1100},
-                            new Product(){Name = "Máy tính xách tay 4",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-xach-tay-4",Price = 1000,Status = Status.Active,PromotionPrice = 1100},
-                            new Product(){Name = "Máy tính xách tay 5",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-xach-tay-5",Price = 1000,Status = Status.Active,HotFlag = true, PromotionPrice = 1100},
+                            new Product()
+                            {
+                                Name = "Máy tính xách tay 1",
+                                DateCreated=DateTime.Now,
+                                Image="/client-side/images/products/product-1.jpg",
+                                SeoAlias = "may-tinh-xach-tay-1",
+                                Price = 1000,
+                                Status = Status.Active,
+                                HotFlag = true,
+                                HomeFlag = true,
+                                PromotionPrice = 1100,
+                                Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.",
+                                Description = "Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.",
+                                Star = 4
+                            },
+                            new Product()
+                            {
+                                Name = "Máy tính xách tay 2",
+                                DateCreated=DateTime.Now,
+                                Image="/client-side/images/products/product-1.jpg",
+                                SeoAlias = "may-tinh-xach-tay-2",
+                                Price = 1000,Status = Status.Active,
+                                NewFlag = true,
+                                PromotionPrice = 1100,
+                                Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.",
+                                Description = "Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.",
+                            },
+                            new Product()
+                            {
+                                Name = "Máy tính xách tay 3",
+                                DateCreated=DateTime.Now,
+                                Image="/client-side/images/products/product-1.jpg",
+                                SeoAlias = "may-tinh-xach-tay-3",
+                                Price = 1000,
+                                Status = Status.Active,
+                                HomeFlag = true,
+                                Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.",
+                                Description = "Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.",
+                                PromotionPrice = 1100
+                            },
+                            new Product()
+                            {
+                                Name = "Máy tính xách tay 4",
+                                DateCreated=DateTime.Now,
+                                Image="/client-side/images/products/product-1.jpg",
+                                SeoAlias = "may-tinh-xach-tay-4",
+                                Price = 1000,
+                                Status = Status.Active,
+                                Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.",
+                                Description = "Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.",
+                                PromotionPrice = 1100
+                            },
+                            new Product()
+                            {
+                                Name = "Máy tính xách tay 5",
+                                DateCreated=DateTime.Now,
+                                Image="/client-side/images/products/product-1.jpg",
+                                SeoAlias = "may-tinh-xach-tay-5",
+                                Price = 1000,Status = Status.Active,
+                                HotFlag = true,
+                                Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.",
+                                Description = "Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.",
+                                PromotionPrice = 1100
+                            },
                         }},
                     new ProductCategory() { Name="Máy tính để bàn - PC",SeoAlias="may-tinh-de-ban-pc",ParentId = null,Status=Status.Active,SortOrder=4,
                         Products = new List<Product>()
                         {
-                            new Product(){Name = "Máy tính để bàn - PC 1",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-de-ban-pc-1",Price = 1000,Status = Status.Active,HotFlag = true, PromotionPrice = 1100},
-                            new Product(){Name = "Máy tính để bàn - PC 2",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-de-ban-pc-2",Price = 1000,Status = Status.Active,HotFlag = true, PromotionPrice = 1100},
-                            new Product(){Name = "Máy tính để bàn - PC 3",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-de-ban-pc-3",Price = 1000,Status = Status.Active,HotFlag = true, PromotionPrice = 1100},
-                            new Product(){Name = "Máy tính để bàn - PC 4",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-de-ban-pc-4",Price = 1000,Status = Status.Active, HomeFlag = true, PromotionPrice = 1100},
-                            new Product(){Name = "Máy tính để bàn - PC 5",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "may-tinh-de-ban-pc-5",Price = 1000,Status = Status.Active, HomeFlag = true, PromotionPrice = 1100},
+                            new Product()
+                            {
+                                Name = "Máy tính để bàn - PC 1",
+                                DateCreated=DateTime.Now,
+                                Image="/client-side/images/products/product-1.jpg",
+                                SeoAlias = "may-tinh-de-ban-pc-1",
+                                Price = 1000,
+                                Status = Status.Active,
+                                HotFlag = true, PromotionPrice = 1100,
+                                Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.",
+                                Description = "Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.",
+                            },
+                            new Product()
+                            {
+                                Name = "Máy tính để bàn - PC 2",
+                                DateCreated=DateTime.Now,
+                                Image="/client-side/images/products/product-1.jpg",
+                                SeoAlias = "may-tinh-de-ban-pc-2",
+                                Price = 1000,
+                                Status = Status.Active,
+                                HotFlag = true,
+                                Star = 5,
+                                Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.",
+                                Description = "Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.",
+                                PromotionPrice = 1100
+                            },
+                            new Product()
+                            {
+                                Name = "Máy tính để bàn - PC 3",
+                                DateCreated=DateTime.Now,
+                                Image="/client-side/images/products/product-1.jpg",
+                                SeoAlias = "may-tinh-de-ban-pc-3",
+                                Price = 1000,
+                                Status = Status.Active,
+                                HotFlag = true,
+                                Star = 5,
+                                Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.",
+                                Description = "Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.",
+                                PromotionPrice = 1100
+                            },
+                            new Product()
+                            {
+                                Name = "Máy tính để bàn - PC 4",
+                                DateCreated=DateTime.Now,
+                                Image="/client-side/images/products/product-1.jpg",
+                                SeoAlias = "may-tinh-de-ban-pc-4",
+                                Price = 1000,
+                                Status = Status.Active,
+                                HomeFlag = true, 
+                                PromotionPrice = 1100,
+                                Star = 5,
+                                Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.",
+                                Description = "Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.",
+                            },
+                            new Product()
+                            {
+                                Name = "Máy tính để bàn - PC 5",
+                                DateCreated=DateTime.Now,
+                                Image="/client-side/images/products/product-1.jpg",
+                                SeoAlias = "may-tinh-de-ban-pc-5",
+                                Price = 1000,
+                                Status = Status.Active,
+                                HomeFlag = true, 
+                                Star = 4,
+                                Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.",
+                                Description = "Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.",
+                                PromotionPrice = 1100
+                            },
                         }},
-                    new ProductCategory() { Name="Các loại phụ kiện",SeoAlias="cac-loai-phu-kien",ParentId = null,Status=Status.Active,SortOrder=1},
-                    new ProductCategory() { Name="Photo & Camera",SeoAlias="photo-and-camera",ParentId = null,Status=Status.Active,SortOrder=1},
-                    new ProductCategory() { Name="CD & License Key",SeoAlias="photo-and-camera",ParentId = null,Status=Status.Active,SortOrder=1}
+                    new ProductCategory()
+                    {
+                        Name="Các loại phụ kiện",
+                        SeoAlias="cac-loai-phu-kien",
+                        ParentId = null,
+                        Status=Status.Active,
+                        SortOrder=1
+                    },
+                    new ProductCategory()
+                    {
+                        Name="Photo & Camera",
+                        SeoAlias="photo-and-camera",
+                        ParentId = null,
+                        Status=Status.Active,
+                        SortOrder=1
+                    },
+                    new ProductCategory()
+                    {
+                        Name="CD & License Key",
+                        SeoAlias="photo-and-camera",
+                        ParentId = null,
+                        Status=Status.Active,
+                        SortOrder=1
+                    }
                     };
 
                 _context.ProductCategories.AddRange(listProductCategory);
             }
 
-         
+
 
             if (!_context.SystemConfigs.Any(x => x.Id == "HomeTitle"))
             {

@@ -55,7 +55,7 @@ namespace TemplateDotNetCore.Data.Entities
         [DefaultValue(0)]
         public decimal Price { get; set; }
 
-        [StringLength(255)]
+        [StringLength(1255)]
         public string Description { get; set; }
 
         [StringLength(255)]

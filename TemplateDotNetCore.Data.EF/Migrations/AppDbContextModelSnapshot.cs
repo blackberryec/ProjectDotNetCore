@@ -754,7 +754,7 @@ namespace TemplateDotNetCore.Data.EF.Migrations
                     b.Property<DateTime>("DateModified");
 
                     b.Property<string>("Description")
-                        .HasMaxLength(255);
+                        .HasMaxLength(1255);
 
                     b.Property<DateTime>("ErrorTime");
 

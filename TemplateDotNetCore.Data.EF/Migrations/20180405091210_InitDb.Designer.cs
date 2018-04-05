@@ -12,7 +12,7 @@ using TemplateDotNetCore.Data.Enums;
 namespace TemplateDotNetCore.Data.EF.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20180327164549_InitDb")]
+    [Migration("20180405091210_InitDb")]
     partial class InitDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -755,7 +755,7 @@ namespace TemplateDotNetCore.Data.EF.Migrations
                     b.Property<DateTime>("DateModified");
 
                     b.Property<string>("Description")
-                        .HasMaxLength(255);
+                        .HasMaxLength(1255);
 
                     b.Property<DateTime>("ErrorTime");
 

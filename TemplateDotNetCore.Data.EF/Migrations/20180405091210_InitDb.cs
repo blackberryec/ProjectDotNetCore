@@ -642,7 +642,7 @@ namespace TemplateDotNetCore.Data.EF.Migrations
                     Content = table.Column<string>(maxLength: 255, nullable: true),
                     DateCreated = table.Column<DateTime>(nullable: false),
                     DateModified = table.Column<DateTime>(nullable: false),
-                    Description = table.Column<string>(maxLength: 255, nullable: true),
+                    Description = table.Column<string>(maxLength: 1255, nullable: true),
                     ErrorTime = table.Column<DateTime>(nullable: false),
                     HomeFlag = table.Column<bool>(nullable: true),
                     HotFlag = table.Column<bool>(nullable: true),

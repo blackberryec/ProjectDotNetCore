@@ -30,10 +30,11 @@
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
+                                        var url = "/" + item.Product.SeoAlias + "-p." + item.Product.Id + ".html";
                                         <tr>
-                                            <td class="cart_product"><a href="#"><img src="@item.Product.Image" alt="@item.Product.Name"></a></td>
+                                            <td class="cart_product"><a href="@url"><img src="@item.Product.Image" alt="@item.Product.Name"></a></td>
                                             <td class="cart_description">
-                                                <p class="product-name"><a href="#">@item.Product.Name</a></p>
+                                                <p class="product-name"><a href="@url">@item.Product.Name</a></p>
                                                 <small><a href="#">Color : @item.Color</a></small>
                                             </td>
                                             @if (item.Product.Status == Status.Active)
